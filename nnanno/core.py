@@ -39,7 +39,7 @@ def get_max_workers(data=None):
 gen_data = (i for i in range(4))
 assert get_max_workers(gen_data) == multiprocessing.cpu_count()
 list_data = [1,2,3,4]
-assert get_max_workers(list_data) == len(list_data)
+assert get_max_workers(list_data) == min(multiprocessing.cpu_count(), len(list_data))
 df = pd.DataFrame(list_data)
 assert get_max_workers(df) == 4
 
