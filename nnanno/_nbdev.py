@@ -2,9 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"get_max_workers": "00_core.ipynb",
+         "gen_data": "00_core.ipynb",
+         "list_data": "00_core.ipynb",
+         "df": "00_core.ipynb",
+         "load_url_image": "00_core.ipynb",
+         "save_image": "00_core.ipynb",
+         "download_image": "00_core.ipynb",
+         "parse_box": "00_core.ipynb",
+         "create_iiif_url": "00_core.ipynb",
+         "iif_df_apply": "00_core.ipynb"}
 
-modules = []
+modules = ["core.py"]
 
 doc_url = "https://davanstrien.github.io/nnanno/"
 
