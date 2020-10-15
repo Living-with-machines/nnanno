@@ -11,9 +11,24 @@ index = {"get_max_workers": "00_core.ipynb",
          "download_image": "00_core.ipynb",
          "parse_box": "00_core.ipynb",
          "create_iiif_url": "00_core.ipynb",
-         "iif_df_apply": "00_core.ipynb"}
+         "iif_df_apply": "00_core.ipynb",
+         "create_session": "00_core.ipynb",
+         "create_cached_session": "00_core.ipynb",
+         "get_json_url": "01_sample.ipynb",
+         "load_json": "01_sample.ipynb",
+         "count_json_iter": "01_sample.ipynb",
+         "get_year_size": "01_sample.ipynb",
+         "get_year_sizes": "01_sample.ipynb",
+         "get_all_year_sizes": "01_sample.ipynb",
+         "sample_stream": "01_sample.ipynb",
+         "calc_frac_size": "01_sample.ipynb",
+         "calc_year_from_total": "01_sample.ipynb",
+         "reduce_df_memory": "01_sample.ipynb",
+         "sample_year": "01_sample.ipynb",
+         "nnSampler": "01_sample.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "sample.py"]
 
 doc_url = "https://davanstrien.github.io/nnanno/"
 
