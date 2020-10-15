@@ -41,7 +41,7 @@ assert get_max_workers(gen_data) == multiprocessing.cpu_count()
 list_data = [1,2,3,4]
 assert get_max_workers(list_data) == min(multiprocessing.cpu_count(), len(list_data))
 df = pd.DataFrame(list_data)
-assert get_max_workers(df) == 4
+assert get_max_workers(df) == min(multiprocessing.cpu_count(),4)
 
 # Cell
 def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
