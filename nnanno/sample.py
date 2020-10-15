@@ -202,7 +202,7 @@ def sample_year(kind:str,sample_size:Union[int,float], year:int) ->np.array:
 # Cell
 class nnSampler:
     def __init__(self):
-        self.population = pd.read_csv(pkg_resources.resource_stream('nnAnnotator', 'data/all_year_counts.csv'),
+        self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
 
     def create_sample(
