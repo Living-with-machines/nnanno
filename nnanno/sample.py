@@ -9,22 +9,24 @@ from .core import *
 # Cell
 # TODO tidy imports
 
-from datetime import datetime
+# sys
+import io
 import shutil
+import pkg_resources
 from pathlib import Path
+from datetime import datetime
+
+# other
 from tqdm.auto import trange, tqdm
 import requests
-import time
 import ijson
 import functools
 import math
 from cytoolz import dicttoolz, itertoolz
 import random
-import pkg_resources
 import json
 from PIL import Image
 import PIL
-import io
 import concurrent.futures
 import numpy as np
 import itertools
@@ -32,6 +34,8 @@ from pandas import json_normalize
 import pandas as pd
 from functools import partial
 import numpy as np
+
+# typing
 from typing import (
     Any,
     Optional,
@@ -173,6 +177,7 @@ def reduce_df_memory(df):
             {"score": "float64",
                 "page_seq_num": "int32",
                 "batch": "category",
+                "box":"object",
                 "lccn": "category",
                 "page_url": "category",
                 "name": "category",
@@ -204,6 +209,10 @@ class nnSampler:
     def __init__(self):
         self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}')
+
 
     def create_sample(
         self,
@@ -288,4 +297,5 @@ class nnSampler:
             today = datetime.today()
             time_stamp = today.strftime("%Y_%d_%m_%H_%M")
             csv_name = f"{time_stamp}_{len(self.download_df)}_sample"
-        self.download_df.to_csv(f'{out_dir}/{csv_name}.csv')
+        #self.download_df.to_csv(f'{out_dir}/{csv_name}.csv')
+        self.download_df.to_json(f'{out_dir}/{csv_name}.json') # TODO make sure to use json for saving outputs of samples
