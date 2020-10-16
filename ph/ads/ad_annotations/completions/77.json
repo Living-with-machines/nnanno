@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237248,
+      "id": 77001,
+      "lead_time": 2.196,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "KOF3HLRy-s",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/89304978eb76b9e5382981ad1566efba-iahi_electabuzz_ver01_data_sn87058318_0027952892A_1860051701_0192_001_6_96.jpg"
+  },
+  "id": 77
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237245,
+      "id": 228001,
+      "lead_time": 1.136,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "jMHxX-ggJn",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c77f78c29764ac0967f89254fb9f9fe8-mimtptc_flint_ver01_data_sn85033549_00296023966_1875020301_0019_000_6_90.jpg"
+  },
+  "id": 228
+}

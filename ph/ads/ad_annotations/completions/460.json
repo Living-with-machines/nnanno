@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236712,
+      "id": 460001,
+      "lead_time": 0.932,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "newa8ostSN",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a77916d876a25ba83f6a480a50f1c415-txdn_chevy_ver01_data_sn83025733_00200294701_1880111701_0325_002_6_98.jpg"
+  },
+  "id": 460
+}

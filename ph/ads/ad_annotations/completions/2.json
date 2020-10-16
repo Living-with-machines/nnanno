@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236783,
+      "id": 2001,
+      "lead_time": 0.978,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "gG0wS9anMJ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8021a85cf454c6c910094f5733843413-az_fireant_ver01_data_sn84021912_00211104302_1890101801_0416_005_6_92.jpg"
+  },
+  "id": 2
+}

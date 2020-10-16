@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237049,
+      "id": 128001,
+      "lead_time": 3.066,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "abw-896eaE",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b9c5f2ef88fee93d33401be98ee7d561-in_fairmount_ver02_data_sn86058541_00202191472_1860071901_0549_012_6_95.jpg"
+  },
+  "id": 128
+}

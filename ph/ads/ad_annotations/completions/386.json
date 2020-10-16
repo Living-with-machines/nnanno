@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237313,
+      "id": 386001,
+      "lead_time": 0.791,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "BxUolhcrOo",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d9b5195fabcc49b98899a832a2abb175-pst_intramural_ver01_data_sn83032006_00296028551_1860060101_0702_004_6_95.jpg"
+  },
+  "id": 386
+}

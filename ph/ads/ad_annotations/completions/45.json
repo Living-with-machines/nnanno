@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237411,
+      "id": 45001,
+      "lead_time": 0.862,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "5DTEygoPxn",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e07c6cdb04e69b9360c8c8327a88a143-dlc_earl_ver02_data_sn87062244_211103000_1895021201_0342_005_6_98.jpg"
+  },
+  "id": 45
+}

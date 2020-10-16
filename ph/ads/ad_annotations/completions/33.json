@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237305,
+      "id": 33001,
+      "lead_time": 1.101,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "TtK1LXNvGW",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3bdb22c82542e2ee8ced9efee061a56e-deu_accio_ver01_data_sn82014805_00271740323_1880092001_0891_003_6_97.jpg"
+  },
+  "id": 33
+}

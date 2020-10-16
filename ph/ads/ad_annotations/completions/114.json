@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236693,
+      "id": 114001,
+      "lead_time": 1.075,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "yjFEXQFff7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4e73e320b92189cb5560d2ed934c2703-in_dillinger_ver02_data_sn84038005_0020029581A_1870111701_0274_002_6_97.jpg"
+  },
+  "id": 114
+}

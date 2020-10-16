@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237046,
+      "id": 467001,
+      "lead_time": 0.85,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "tLlQzc57uy",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f47033bb3880c42e36f0e3df1ab13f2e-txdn_garza_ver01_data_sn83045227_00279521122_1885080301_0120_005_6_94.jpg"
+  },
+  "id": 467
+}

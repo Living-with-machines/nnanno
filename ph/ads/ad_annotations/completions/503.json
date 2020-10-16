@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236974,
+      "id": 503001,
+      "lead_time": 1.265,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "rWWEOYJDBm",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/50104fcc8c6df2cecfcc30ba23367d53-vtu_jay_ver01_data_sn84023428_00202197425_1865111501_0238_001_6_92.jpg"
+  },
+  "id": 503
+}

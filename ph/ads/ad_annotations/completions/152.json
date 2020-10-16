@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237512,
+      "id": 152001,
+      "lead_time": 2.155,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Qhdq0S6rNi",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9c322c9db0489088fd2427108839bbe8-iune_bibliography_ver01_data_sn84038582_00212472098_1865070101_0050_008_6_90.jpg"
+  },
+  "id": 152
+}

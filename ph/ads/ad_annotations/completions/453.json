@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236798,
+      "id": 453001,
+      "lead_time": 0.792,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "zR2QdrFIDP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/7c3666647f7e4639d3320050c39ce674-tu_kitty_ver01_data_sn85033711_00212470272_1860041301_0363_003_6_90.jpg"
+  },
+  "id": 453
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237397,
+      "id": 198001,
+      "lead_time": 1.257,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WDt7qX6_Qy",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/75cd97463d00710ac32b1a1db83f9562-lu_ninetails_ver01_data_sn85034235_00295874594_1900051701_0500_002_6_97.jpg"
+  },
+  "id": 198
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237231,
+      "id": 163001,
+      "lead_time": 0.895,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "VaI33r7pcP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/dce8a30b78eb1325ee1c5714d5c3bdc4-iune_ephemera_ver01_data_sn92053934_00212471793_1895040401_0499_001_6_99.jpg"
+  },
+  "id": 163
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237484,
+      "id": 404001,
+      "lead_time": 2.752,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "3_ZSmY0UO7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/95127caf10bf62881821a266e8660748-scu_idacox_ver02_data_sn84026853_00202193997_1870040801_0110_001_6_96.jpg"
+  },
+  "id": 404
+}

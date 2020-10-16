@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237227,
+      "id": 242001,
+      "lead_time": 0.73,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "uxCUOciORf",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ff5af5e69b298656b4ac5a6fb40381c3-mnhi_dassel_ver01_data_sn90059522_00175035588_1885042001_0454_017_6_93.jpg"
+  },
+  "id": 242
+}

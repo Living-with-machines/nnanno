@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236751,
+      "id": 440001,
+      "lead_time": 3.706,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ukiTRAphPT",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/618c3f056127fa4f11dcb6203209d844-tu_grady_ver01_data_sn83025718_00200293800_1865120701_0589_003_6_95.jpg"
+  },
+  "id": 440
+}

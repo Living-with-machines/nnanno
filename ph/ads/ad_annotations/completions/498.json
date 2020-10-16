@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236704,
+      "id": 498001,
+      "lead_time": 1.268,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "A5jJkwuDOM",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/709445fa7d6d721b1f55806401fc0171-vtu_foxville_ver01_data_sn84022473_00280777559_1875052001_0439_003_6_96.jpg"
+  },
+  "id": 498
+}

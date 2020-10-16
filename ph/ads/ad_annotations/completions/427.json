@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237379,
+      "id": 427001,
+      "lead_time": 0.777,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FpBBOMA_KG",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cf14c6c13e97e00911a106c9bc05d774-tu_charlie_ver01_data_sn83045160_00280779581_1880041801_0353_008_6_92.jpg"
+  },
+  "id": 427
+}

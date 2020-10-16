@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237478,
+      "id": 421001,
+      "lead_time": 1.135,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "w4ptsMLGJv",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/55a6286623092e9fbb0022317a9757eb-tu_bonnielou_ver01_data_sn83045160_00200293010_1870051401_0483_002_6_96.jpg"
+  },
+  "id": 421
+}

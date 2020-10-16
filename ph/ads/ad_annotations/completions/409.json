@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237476,
+      "id": 409001,
+      "lead_time": 0.896,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "4zi8DNz3xB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4f5f5c33a46a3cced289d4bd3db85006-sdhi_aruba_ver01_data_sn98069095_00415625169_1900101801_0846_003_6_96.jpg"
+  },
+  "id": 409
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236972,
+      "id": 524001,
+      "lead_time": 2.277,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NHuP6JJWbY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cd5f0dd3a8b6eaeb399d5b84d137057b-whi_inez_ver01_data_sn86086769_00271769775_1860020701_0376_000_6_98.jpg"
+  },
+  "id": 524
+}

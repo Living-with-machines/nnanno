@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237340,
+      "id": 313001,
+      "lead_time": 1.277,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "sOY_tQEgQ6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/60da9fca09c96cdb07f9034c728d5074-nvln_ely_ver01_data_sn84022040_00415668314_1870011101_0646_000_6_96.jpg"
+  },
+  "id": 313
+}

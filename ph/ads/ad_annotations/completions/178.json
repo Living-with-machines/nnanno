@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237271,
+      "id": 178001,
+      "lead_time": 0.859,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "PVIgla_4v7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5f6cfa418581481be67d4eddc41405a2-khi_dole_ver01_data_sn83040340_00237283223_1890120501_0242_001_6_95.jpg"
+  },
+  "id": 178
+}

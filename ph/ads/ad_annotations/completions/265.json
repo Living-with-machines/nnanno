@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236825,
+      "id": 265001,
+      "lead_time": 0.994,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "QIsL2OzLB4",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e50e8c3b8eb558ef1cd66d9047533ef1-msar_ikat_ver01_data_sn85034447_00199917262_1880051401_0256_001_6_97.jpg"
+  },
+  "id": 265
+}

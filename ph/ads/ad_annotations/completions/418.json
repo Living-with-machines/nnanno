@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237360,
+      "id": 418001,
+      "lead_time": 1.921,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Y7iEXQWZtQ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/93610b5cbec2549431e933011bd830f6-sdhi_falcon_ver01_data_sn99068076_00415623355_1885073101_0958_002_6_91.jpg"
+  },
+  "id": 418
+}

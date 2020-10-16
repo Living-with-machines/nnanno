@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237151,
+      "id": 108001,
+      "lead_time": 1.106,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "1A3hLsWvRH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/970505ea4bc91976e94d669abe3ad848-in_ashbel_ver01_data_sn82015679_00295870370_1890022401_0534_002_6_96.jpg"
+  },
+  "id": 108
+}

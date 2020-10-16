@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237461,
+      "id": 511001,
+      "lead_time": 1.17,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "225kAYWw-R",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/88e536b28687c10337e530053adafa28-wa_entiat_ver01_data_sn83045604_00202199033_1890042701_0107_005_6_96.jpg"
+  },
+  "id": 511
+}

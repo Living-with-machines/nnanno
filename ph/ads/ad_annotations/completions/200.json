@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236768,
+      "id": 200001,
+      "lead_time": 0.923,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "2AIJWTPlc9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/aa320981ca2d620f5da429918443fad5-mdu_annapolis_ver01_data_sn85025350_00415627701_1885022801_0267_005_6_91.jpg"
+  },
+  "id": 200
+}

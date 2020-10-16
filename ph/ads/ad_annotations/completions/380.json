@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237368,
+      "id": 380001,
+      "lead_time": 0.996,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "lM2zw5duQe",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/fbfc39ae1474034c0890142b0f995559-pst_franco_ver01_data_sn84024546_00237280143_1890072601_0270_006_6_96.jpg"
+  },
+  "id": 380
+}

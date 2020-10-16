@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237571,
+      "id": 478001,
+      "lead_time": 2.468,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "IECx_DWm0T",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ad6b0c0692a9ab366b94debeec0b8964-uuml_hornacek_ver01_data_sn83045555_206539732_1895091101_0769_001_6_98.jpg"
+  },
+  "id": 478
+}

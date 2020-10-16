@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236790,
+      "id": 227001,
+      "lead_time": 4.235,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "sBdInvBry_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/59519db501482edb131149dc5c053687-mimtptc_alpena_ver01_data_sn85033611_00202198004_1860082301_0495_001_6_97.jpg"
+  },
+  "id": 227
+}

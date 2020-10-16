@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236740,
+      "id": 401001,
+      "lead_time": 0.879,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "6GroWp5HL4",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d293f4e87be44b77a708d973d87a89fd-scu_ettabaker_ver02_data_sn93067634_00237288130_1900062801_0419_000_6_96.jpg"
+  },
+  "id": 401
+}

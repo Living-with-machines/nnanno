@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237066,
+      "id": 102001,
+      "lead_time": 0.741,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "o2rauA4hnA",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b7332d1befee36f9f4ebb20d1fb1d652-idhi_eliot_ver01_data_sn84022135_00295869616_1885080701_0778_002_6_93.jpg"
+  },
+  "id": 102
+}

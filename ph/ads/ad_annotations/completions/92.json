@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237208,
+      "id": 92001,
+      "lead_time": 0.978,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "UswW-EvuCg",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a951cc214d308ac89af4615ca2ea6c16-iahi_ivysaur_ver01_data_sn83025182_00279528347_1865082601_0094_000_6_98.jpg"
+  },
+  "id": 92
+}

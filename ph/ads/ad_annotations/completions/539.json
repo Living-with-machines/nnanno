@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237574,
+      "id": 539001,
+      "lead_time": 1.963,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "KrNda96KWi",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6ce04c6da6d3c54b6ad406c16bbc3e56-wvu_deforest_ver02_data_sn84026847_00415665106_1870012801_0101_009_6_90.jpg"
+  },
+  "id": 539
+}

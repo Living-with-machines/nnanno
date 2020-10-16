@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237220,
+      "id": 335001,
+      "lead_time": 1.243,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "jDjzqZtLRA",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/43e545fe760b71811077be4de07385e5-ohi_guildenstern_ver01_data_sn84028745_00280775332_1860123101_0409_000_6_97.jpg"
+  },
+  "id": 335
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237509,
+      "id": 445001,
+      "lead_time": 2.678,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "oOD4fQPeST",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ccc531632470075bb881faeb99d0e952-tu_hubert_ver01_data_sn89058128_00296021155_1900041901_0068_005_6_94.jpg"
+  },
+  "id": 445
+}

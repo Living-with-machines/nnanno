@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236862,
+      "id": 134001,
+      "lead_time": 1.106,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "1LxGiNVnyf",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1bb0c7278603634e695b4749ebe45465-in_indianapolisolympians_ver02_data_sn86058250_0027174478A_1865101901_0604_000_6_96.jpg"
+  },
+  "id": 134
+}

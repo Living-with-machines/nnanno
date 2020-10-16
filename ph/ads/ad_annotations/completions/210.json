@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236806,
+      "id": 210001,
+      "lead_time": 1.664,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qsfTT_0OSP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4f5a32eff3e5585cb048e2aac041d0f0-me_aroostook_ver01_data_sn84022374_00332895035_1860091401_0159_000_6_94.jpg"
+  },
+  "id": 210
+}

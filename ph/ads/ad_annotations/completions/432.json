@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236737,
+      "id": 432001,
+      "lead_time": 1.112,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "JSrH7ozft6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6674842c603a2e995c3c79f36ad29e9b-tu_dolly_ver01_data_sn85038518_00200293307_1860100701_0344_001_6_90.jpg"
+  },
+  "id": 432
+}

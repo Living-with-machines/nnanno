@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237035,
+      "id": 250001,
+      "lead_time": 1.176,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "MBKqmE2Ib2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/15a9d2f7e0db13b0692c56fc89e37912-mnhi_volvo_ver01_data_sn83025440_00295876475_1880031101_0796_005_6_90.jpg"
+  },
+  "id": 250
+}

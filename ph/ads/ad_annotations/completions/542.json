@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237524,
+      "id": 542001,
+      "lead_time": 1.968,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "3BOKth1-Nl",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5d205bf7f56145f60cded81ef611282c-wvu_gore_ver01_data_sn86092518_00279550390_1890061301_0580_007_6_91.jpg"
+  },
+  "id": 542
+}

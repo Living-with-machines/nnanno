@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236842,
+      "id": 129001,
+      "lead_time": 0.823,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WB9WnN3MEy",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/853fd5aeac91771902d5341d879dbd23-in_fairmount_ver02_data_sn86058541_00202191472_1860110101_0608_008_6_95.jpg"
+  },
+  "id": 129
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237505,
+      "id": 240001,
+      "lead_time": 0.69,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "K4I-WjJgoY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/36cc890c24f13235bdcb9427ac0139ff-mnhi_anoka_ver02_data_sn83025287_0010049386A_1880020201_0158_003_6_96.jpg"
+  },
+  "id": 240
+}

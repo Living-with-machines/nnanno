@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237473,
+      "id": 131001,
+      "lead_time": 0.96,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "7wlgp6yiAE",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/674f1931fb2bd90ba9097b23f61a5fe1-in_gary_ver01_data_sn87056600_00202191575_1875042901_0159_001_6_98.jpg"
+  },
+  "id": 131
+}

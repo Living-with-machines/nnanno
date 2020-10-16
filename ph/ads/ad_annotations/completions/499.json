@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236808,
+      "id": 499001,
+      "lead_time": 1.594,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "hQj8rMz3Yn",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f63cde0d5bcd73deb41fa64cacecb6bc-vtu_graniteville_ver01_data_sn84023200_0028077764A_1865051901_0956_000_6_95.jpg"
+  },
+  "id": 499
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237396,
+      "id": 117001,
+      "lead_time": 0.782,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "MAYewnc8g_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c845d19799538dd4a3264e0c43199de4-in_england_ver02_data_sn82015683_00202191423_1865011001_0039_009_6_94.jpg"
+  },
+  "id": 117
+}

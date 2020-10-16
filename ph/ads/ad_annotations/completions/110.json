@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236858,
+      "id": 110001,
+      "lead_time": 5.501,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "fVRywhCwvp",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9a8eab56ff813cab9b373357e06a86c5-in_chacha_ver03_data_sn84038034_00200294567_1860120601_0075_004_6_92.jpg"
+  },
+  "id": 110
+}

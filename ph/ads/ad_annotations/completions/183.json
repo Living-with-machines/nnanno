@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237111,
+      "id": 183001,
+      "lead_time": 0.938,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Z0St--lFnH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/066943e0978896256ef84a11b32163cf-kyu_excalibur_ver01_data_sn85052020_00206533857_1890111101_0397_002_6_97.jpg"
+  },
+  "id": 183
+}

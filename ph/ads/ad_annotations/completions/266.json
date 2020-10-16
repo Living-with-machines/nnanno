@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237449,
+      "id": 266001,
+      "lead_time": 0.765,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "eqaH7mt4fp",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ec223900cf80e95fe6a2bd64214d9ca8-msar_junebug_ver01_data_sn83016943_00415662269_1875102301_0354_002_6_95.jpg"
+  },
+  "id": 266
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237250,
+      "id": 329001,
+      "lead_time": 0.988,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "nOzbMgWAH2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5ae3f357c1bc0d9d8af420d1dbf10ff9-ohi_delta_ver01_data_sn85038119_0023728267A_1890052901_0400_002_6_96.jpg"
+  },
+  "id": 329
+}

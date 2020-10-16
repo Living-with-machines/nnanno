@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236882,
+      "id": 46001,
+      "lead_time": 1.168,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "pIn_8bc5ax",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3e0330d3186f818e8ac3358ee102c088-dlc_fortran_ver01_data_sn83030214_00206530947_1870032801_0629_000_6_96.jpg"
+  },
+  "id": 46
+}

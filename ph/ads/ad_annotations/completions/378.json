@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236818,
+      "id": 378001,
+      "lead_time": 3.886,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "GfrwkHkiba",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b5a8174828b88f5d7f75e0516bb3ca93-pst_erie_ver02_data_sn86071045_00296026505_1895121201_0587_012_6_90.jpg"
+  },
+  "id": 378
+}

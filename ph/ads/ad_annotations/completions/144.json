@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237088,
+      "id": 144001,
+      "lead_time": 5.614,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Ur6FIfEwHr",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/51d5ab680840d40d96bdab104333d294-in_kerr_ver01_data_sn82015679_00415665520_1895010501_0043_007_6_94.jpg"
+  },
+  "id": 144
+}

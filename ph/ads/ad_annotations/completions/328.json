@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236992,
+      "id": 328001,
+      "lead_time": 7.593,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "pWc8dkCJsQ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ab01a3fa6d1f3a1beebf55f25acf3836-ohi_cobweb_ver04_data_sn85026050_00280775848_1860081701_0359_000_6_98.jpg"
+  },
+  "id": 328
+}

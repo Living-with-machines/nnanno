@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237239,
+      "id": 535001,
+      "lead_time": 0.737,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Jys3IMyD_c",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/047bb125e44c03e4445e8cdcdd8932ac-wvu_bones_ver01_data_sn84026824_00271767882_1900042601_0073_007_6_92.jpg"
+  },
+  "id": 535
+}

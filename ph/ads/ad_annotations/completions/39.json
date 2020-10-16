@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237064,
+      "id": 39001,
+      "lead_time": 2.037,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "XPj-rvvEfF",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1df465fe281ebffab79e69ca9905aee6-dlc_chester_ver02_data_sn83027091_00211103528_1900060901_0405_003_6_92.jpg"
+  },
+  "id": 39
+}

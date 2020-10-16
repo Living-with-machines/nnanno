@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236670,
+      "id": 388001,
+      "lead_time": 0.853,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kZ4cYBHkHH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a2b9fc42ded3536812dca8ec7890b93a-pst_jordan_ver01_data_sn84026050_00280776798_1870071901_0248_000_6_90.jpg"
+  },
+  "id": 388
+}

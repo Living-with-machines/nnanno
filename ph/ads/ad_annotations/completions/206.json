@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237104,
+      "id": 206001,
+      "lead_time": 0.764,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "9Ah-eHR5lw",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/df4d933d9142dfe9093f5c9852a438f5-mdu_galena_ver02_data_sn88065721_00279521572_1885042001_0200_000_6_98.jpg"
+  },
+  "id": 206
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237218,
+      "id": 376001,
+      "lead_time": 0.747,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FszIi27LRY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9de3d86111a2951da1407d5b04600732-pst_erie_ver02_data_sn86071045_00296026499_1890121201_0210_008_6_95.jpg"
+  },
+  "id": 376
+}

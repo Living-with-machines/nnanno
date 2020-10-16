@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237249,
+      "id": 259001,
+      "lead_time": 0.718,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Lu-29Cez4n",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f50570a98701537ec4bbb4200ece1e8e-msar_braeburn_ver01_data_sn85034374_00295877674_1900072801_0283_002_6_94.jpg"
+  },
+  "id": 259
+}

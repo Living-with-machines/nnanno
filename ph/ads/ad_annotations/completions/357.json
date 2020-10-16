@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237516,
+      "id": 357001,
+      "lead_time": 0.879,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "o2MW7IYOfd",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d06c52397fadd40458c79b44d743098e-okhi_avocado_ver01_data_sn85042303_00200295304_1895010501_0019_001_6_98.jpg"
+  },
+  "id": 357
+}

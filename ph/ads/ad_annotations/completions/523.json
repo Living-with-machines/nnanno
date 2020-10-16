@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237032,
+      "id": 523001,
+      "lead_time": 0.779,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ygz1akPeYO",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a577ff4974f7d450cd252d0212d41691-whi_imp_ver01_data_sn85040705_00414214848_1900122701_0658_002_6_98.jpg"
+  },
+  "id": 523
+}

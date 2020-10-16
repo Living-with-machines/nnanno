@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237229,
+      "id": 358001,
+      "lead_time": 0.777,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Mac6FMln9u",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/28133f03f895992872fa7aa3c4cd07e4-okhi_ellis_ver01_data_sn86063952_00237281196_1900110501_0342_002_6_99.jpg"
+  },
+  "id": 358
+}

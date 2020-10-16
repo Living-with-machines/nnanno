@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236710,
+      "id": 342001,
+      "lead_time": 0.917,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NQRlpr74bX",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ab4aa0b4221e09e20a9b0a777b205a8c-ohi_ichabod_ver01_data_sn85025948_00279555405_1885061801_0312_006_6_97.jpg"
+  },
+  "id": 342
+}

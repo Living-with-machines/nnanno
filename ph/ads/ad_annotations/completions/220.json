@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237155,
+      "id": 220001,
+      "lead_time": 0.884,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "aNo0arMckj",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/fe9b9cad04ff7d76ea554cc1c633de48-me_farmington_ver01_data_sn83016025_00279525395_1875070901_0074_001_6_94.jpg"
+  },
+  "id": 220
+}

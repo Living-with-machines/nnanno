@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237019,
+      "id": 65001,
+      "lead_time": 0.831,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "uV1WnXvsZt",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d727f704ac3a0eda405caaf1f01dfb6e-hihouml_brick_ver01_data_sn82015415_00237283892_1900051401_0094_003_6_97.jpg"
+  },
+  "id": 65
+}

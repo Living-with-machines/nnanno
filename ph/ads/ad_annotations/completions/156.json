@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236885,
+      "id": 156001,
+      "lead_time": 1.08,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "8CTcLPKRGf",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f554900fdc8b06702802520b3b5f2b3a-iune_broadsheet_ver01_data_sn84038628_00295879968_1870063001_0617_001_6_95.jpg"
+  },
+  "id": 156
+}

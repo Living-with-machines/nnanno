@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236672,
+      "id": 346001,
+      "lead_time": 1.223,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kaco17tTWr",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/7236dfde856fce8ef2ff7ff676eef41f-ohi_jaques_ver01_data_sn84028490_00280774868_1885080601_0567_003_6_95.jpg"
+  },
+  "id": 346
+}

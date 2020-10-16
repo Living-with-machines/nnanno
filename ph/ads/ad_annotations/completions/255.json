@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237240,
+      "id": 255001,
+      "lead_time": 0.9,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "PcEikx2zSh",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5342c097fafd345f97c1ecac1bfd574e-mohi_eadweard_ver01_data_sn85034076_00200292388_1875072301_0240_003_6_97.jpg"
+  },
+  "id": 255
+}

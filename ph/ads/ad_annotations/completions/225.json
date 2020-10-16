@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237142,
+      "id": 225001,
+      "lead_time": 2.507,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "r56eSIehDF",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/18243ffa3ddbaa2e65722cc25c691b8b-mimtptc_alpena_ver01_data_sn85026455_0020219803A_1880042401_0328_000_6_98.jpg"
+  },
+  "id": 225
+}

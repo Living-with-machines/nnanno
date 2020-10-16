@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236861,
+      "id": 311001,
+      "lead_time": 0.987,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qoqI99jwBk",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/083dc77331e8680bb1de6e22993c560e-nvln_dayton_ver01_data_sn86076999_0041562735A_1880081801_0373_000_6_98.jpg"
+  },
+  "id": 311
+}

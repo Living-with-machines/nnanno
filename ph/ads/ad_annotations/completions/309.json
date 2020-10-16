@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237067,
+      "id": 309001,
+      "lead_time": 1.107,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "KLv4sFR3f5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ca63c4cfcd41ddaad9f1267d518c22ea-nvln_caliente_ver02_data_sn84022048_00415668387_1875073101_0387_000_6_95.jpg"
+  },
+  "id": 309
+}

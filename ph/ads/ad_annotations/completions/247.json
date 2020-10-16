@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237295,
+      "id": 247001,
+      "lead_time": 2.312,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "koMyxvm0sr",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/29ae54caf490ca86f8aa018ab8798e15-mnhi_golf_ver01_data_sn85025620_00212479305_1875060401_0152_000_6_90.jpg"
+  },
+  "id": 247
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237506,
+      "id": 36001,
+      "lead_time": 0.909,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "E0VlkdMYXJ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8826aec4d49d04f1a4155434ad7c9467-deu_arden_ver01_data_sn85042354_00383343367_1895051801_0948_006_6_92.jpg"
+  },
+  "id": 36
+}

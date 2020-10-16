@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237242,
+      "id": 69001,
+      "lead_time": 0.774,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NaNI8Ihweq",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e02894726e1b78a57af3e1e6aa31349e-hihouml_lilac_ver02_data_sn82015408_00212471380_1860031701_0833_005_6_90.jpg"
+  },
+  "id": 69
+}

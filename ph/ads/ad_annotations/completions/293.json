@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237147,
+      "id": 293001,
+      "lead_time": 0.891,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FaNyVMvbfB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3d013f6a382f923576f95b25a0fb60c8-njr_ginger_ver02_data_sn87068097_00383340731_1890040901_0342_003_6_95.jpg"
+  },
+  "id": 293
+}

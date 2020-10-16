@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236791,
+      "id": 25001,
+      "lead_time": 1.328,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "iiT4C_WVcV",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/661aa8af192b6bf853f2d6275df272bf-curiv_lytton_ver01_data_sn82014381_00175037901_1880040501_0412_005_6_94.jpg"
+  },
+  "id": 25
+}

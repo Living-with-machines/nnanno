@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236759,
+      "id": 186001,
+      "lead_time": 1.118,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Hvmq4IMs8D",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/45f05dadfd48fd29273e16da78a2d94c-kyu_hendrix_ver01_data_sn85052020_0017504551A_1900022701_0074_000_6_99.jpg"
+  },
+  "id": 186
+}

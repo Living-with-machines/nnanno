@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237069,
+      "id": 192001,
+      "lead_time": 0.731,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "C6KOAjVj8X",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/96e5735bc7262602d7e3dff54bdfe2e7-lu_haunter_ver01_data_sn83016555_00295874077_1875121501_0479_000_6_91.jpg"
+  },
+  "id": 192
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237569,
+      "id": 300001,
+      "lead_time": 0.804,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "YxcMbZ2Ee6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4315d53149a5d1e32d7185e3b51b8fcd-nmu_bronte_ver01_data_sn86063592_00415626757_1900071101_0118_008_6_98.jpg"
+  },
+  "id": 300
+}

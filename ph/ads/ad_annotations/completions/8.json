@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237027,
+      "id": 8001,
+      "lead_time": 0.785,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "CmRCDgFnVE",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a03e6361a06446b99156853d800bca03-ct_forest_ver01_data_sn82015483_00271764030_1890040401_0327_005_6_91.jpg"
+  },
+  "id": 8
+}

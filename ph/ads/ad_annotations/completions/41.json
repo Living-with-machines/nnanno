@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237098,
+      "id": 41001,
+      "lead_time": 0.849,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "agh6F35JDQ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d10d8a9810651449ca15fe2533d2d968-dlc_eagle_ver01_data_sn83030214_00175038425_1890090801_0106_007_6_95.jpg"
+  },
+  "id": 41
+}

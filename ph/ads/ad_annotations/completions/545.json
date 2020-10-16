@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236719,
+      "id": 545001,
+      "lead_time": 0.932,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "mnS18AsUM0",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f561ec1977f908287a0cfb226807cbd8-wvu_isner_ver01_data_sn86092518_0041418683A_1895092601_0550_003_6_94.jpg"
+  },
+  "id": 545
+}

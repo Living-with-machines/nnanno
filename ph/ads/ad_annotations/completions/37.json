@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237226,
+      "id": 37001,
+      "lead_time": 0.827,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "cNhoKYiNry",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0e83cf519eee01e95f72c50146ce1391-deu_bear_ver01_data_sn85042354_00383343434_1900090601_0624_006_6_98.jpg"
+  },
+  "id": 37
+}

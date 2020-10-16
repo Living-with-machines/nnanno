@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237013,
+      "id": 383001,
+      "lead_time": 3.986,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ffU3Ben2TB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/81a205f3a75f282bc77d20bb2f75e325-pst_grange_ver01_data_sn84026005_00280776415_1870082901_0419_003_6_92.jpg"
+  },
+  "id": 383
+}

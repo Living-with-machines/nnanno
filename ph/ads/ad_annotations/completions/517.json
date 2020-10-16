@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237544,
+      "id": 517001,
+      "lead_time": 0.726,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "7dtw9jodav",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cc4a2e1abee022d37ac75ef8470541d8-wa_juno_ver02_data_sn84022770_00200291086_1880120301_0691_004_6_96.jpg"
+  },
+  "id": 517
+}

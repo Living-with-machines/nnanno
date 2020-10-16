@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236998,
+      "id": 419001,
+      "lead_time": 5.378,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "h4XnAEVmH6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cfd126456ece6cf7653f5e63f2fd068a-sdhi_faroe_ver01_data_sn99062034_00279523180_1900061101_0131_002_6_98.jpg"
+  },
+  "id": 419
+}

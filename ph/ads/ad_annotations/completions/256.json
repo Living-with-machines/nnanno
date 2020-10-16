@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237475,
+      "id": 256001,
+      "lead_time": 0.921,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "CCrhJ7llrJ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c578d8356bcd3f92feafea84829f99a8-mohi_edwards_ver01_data_sn86063624_0021110935A_1895091001_0101_001_6_99.jpg"
+  },
+  "id": 256
+}

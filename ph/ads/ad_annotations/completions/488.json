@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236943,
+      "id": 488001,
+      "lead_time": 44.843,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FfHzxT_-H-",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/db5a89d48c2275508865110f581da5f3-vi_indy_ver01_data_sn84024738_0028077795A_1865022801_0202_003_6_90.jpg"
+  },
+  "id": 488
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236778,
+      "id": 5001,
+      "lead_time": 0.811,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "OlaRMYpBeh",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/df3a2701ee63c5e08aadce06dd5bf532-az_manzanita_ver01_data_sn95070521_00211104831_1890021201_0172_002_6_91.jpg"
+  },
+  "id": 5
+}

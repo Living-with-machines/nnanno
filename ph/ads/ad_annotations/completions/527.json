@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237135,
+      "id": 527001,
+      "lead_time": 0.912,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ChBK_g5_Rx",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f1b446a8750779f409211f794208baa3-whi_lucretia_ver01_data_sn86086852_00271768916_1885050101_0566_003_6_96.jpg"
+  },
+  "id": 527
+}

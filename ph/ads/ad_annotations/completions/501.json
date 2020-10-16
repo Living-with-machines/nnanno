@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237021,
+      "id": 501001,
+      "lead_time": 0.809,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "neh29h8wZ6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/7aa9ed4c11703a83dddb9a20a438a7fa-vtu_hildene_ver01_data_sn84023209_00202199288_1865082901_1113_001_6_91.jpg"
+  },
+  "id": 501
+}

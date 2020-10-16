@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236848,
+      "id": 363001,
+      "lead_time": 0.858,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "-V-IaV091m",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4b9961065fa3ca6791d0c5bffd729598-oru_ireland_ver01_data_sn84022644_00295867541_1870092301_0114_000_6_97.jpg"
+  },
+  "id": 363
+}

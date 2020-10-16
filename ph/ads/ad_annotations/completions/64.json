@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236979,
+      "id": 64001,
+      "lead_time": 0.864,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Ebb7wcmKbD",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3021518981a99af327162c1f15c7adcd-hihouml_azure_ver01_data_sn83025121_00211108861_1875121501_0375_004_6_92.jpg"
+  },
+  "id": 64
+}

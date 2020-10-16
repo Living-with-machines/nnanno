@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237394,
+      "id": 211001,
+      "lead_time": 1.225,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ucqJPSucC5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e0f5b879b1f5ad8b8d4ee43cc9c0b858-me_baxter_ver01_data_sn83009653_00279524068_1880062901_0120_015_6_93.jpg"
+  },
+  "id": 211
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237323,
+      "id": 495001,
+      "lead_time": 0.771,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "r3rs6ySuF-",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5b23c11fd7d08b8eb308fbb684405a59-vi_ozzyosbourne_ver01_data_sn85026941_0017503237A_1885110601_0338_004_6_96.jpg"
+  },
+  "id": 495
+}

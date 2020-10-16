@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236878,
+      "id": 251001,
+      "lead_time": 1.04,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "HZPLBwWrmP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f33bbf6c65b2d5cabe6b003e2b417e61-mohi_ansel_ver01_data_sn85034039_00294559929_1875060401_0097_002_6_96.jpg"
+  },
+  "id": 251
+}

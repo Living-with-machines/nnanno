@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237230,
+      "id": 6001,
+      "lead_time": 0.979,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "1sAwyo3RKO",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3e3d213bf99db3c0688a52e4166ef9d0-cohi_elkton_ver01_data_sn90051267_00383340913_1900021001_1175_002_6_98.jpg"
+  },
+  "id": 6
+}

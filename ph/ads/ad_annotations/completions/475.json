@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236717,
+      "id": 475001,
+      "lead_time": 0.795,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "h4hgBj6Z82",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9030f1d6e84d3c0092daf418313416df-uuml_eaton_ver01_data_sn85058130_00206535908_1880112701_0514_009_6_92.jpg"
+  },
+  "id": 475
+}

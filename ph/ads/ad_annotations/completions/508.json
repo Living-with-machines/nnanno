@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236725,
+      "id": 508001,
+      "lead_time": 2.831,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "KN6VKDyCo3",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3b1a76794a0ccaad946ff262d6ff1a15-wa_dungeness_ver03_data_sn83045611_00202198922_1885052901_0511_001_6_94.jpg"
+  },
+  "id": 508
+}

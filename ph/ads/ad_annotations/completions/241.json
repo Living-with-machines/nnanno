@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237109,
+      "id": 241001,
+      "lead_time": 0.828,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "0aE4P4Ngk5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6f8101ff65e8ae01d40a9e315dbffa6c-mnhi_blaine_ver01_data_sn83025287_00100493871_1880062401_0391_004_6_92.jpg"
+  },
+  "id": 241
+}

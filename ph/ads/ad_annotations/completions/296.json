@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237367,
+      "id": 296001,
+      "lead_time": 0.896,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "fn6EFhZZE1",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/fa51dd7576868ace2d1ab4c7387a23c8-njr_juniper_ver01_data_sn83032103_00383340640_1870123001_0409_008_6_91.jpg"
+  },
+  "id": 296
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237503,
+      "id": 20001,
+      "lead_time": 0.721,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "hypLABIsk_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1f46e48ae2d29893ee855be802678f45-curiv_knotgrass_ver01_data_sn82015099_00279556689_1870121001_0615_004_6_92.jpg"
+  },
+  "id": 20
+}

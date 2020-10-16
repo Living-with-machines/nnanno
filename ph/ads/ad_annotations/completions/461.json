@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236736,
+      "id": 461001,
+      "lead_time": 1.067,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "nHwo0QQcVq",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e9d797e8aab2ebff9a4cd296aa012aa5-txdn_chevy_ver01_data_sn83025733_00200294774_1885011701_0632_003_6_97.jpg"
+  },
+  "id": 461
+}

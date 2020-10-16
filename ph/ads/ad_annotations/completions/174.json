@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237319,
+      "id": 174001,
+      "lead_time": 1.05,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "j7g8fT29gv",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/222b870e44db59de95db2fa0aecffa06-khi_allen_ver02_data_sn82015484_00294555675_1880120201_0168_003_6_95.jpg"
+  },
+  "id": 174
+}

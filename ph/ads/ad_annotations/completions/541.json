@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236678,
+      "id": 541001,
+      "lead_time": 1.058,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "7W_8R6B2xK",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5bea8fe99f1a4c9f5f9eaf8251d7d17d-wvu_france_ver01_data_sn84026844_0020219364A_1895081501_0331_005_6_95.jpg"
+  },
+  "id": 541
+}

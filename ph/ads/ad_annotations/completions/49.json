@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237042,
+      "id": 49001,
+      "lead_time": 1.118,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "We-BHBdVe1",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ed5361e5f52e58627373ca92d2e06f81-dlc_havanese_ver01_data_sn83045462_00280654991_1895040401_0442_007_6_93.jpg"
+  },
+  "id": 49
+}

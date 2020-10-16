@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237259,
+      "id": 369001,
+      "lead_time": 0.922,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "E8kyN23d1P",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f4de78c060381fedace32e7d4d09c2cd-oru_mazama_ver01_data_sn84022644_0029586834A_1895032901_0054_003_6_98.jpg"
+  },
+  "id": 369
+}

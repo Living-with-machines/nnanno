@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237089,
+      "id": 1,
+      "lead_time": 1.629,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ixx7wOTEa6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ad7b960ceb2457b1ff0ffbbe0a016655-arhi_bulbasaur_ver01_data_sn84022960_00414212001_1890011801_0060_003_6_95.jpg"
+  },
+  "id": 0
+}

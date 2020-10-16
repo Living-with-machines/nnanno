@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236767,
+      "id": 14001,
+      "lead_time": 0.907,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "mBDvjBe5LQ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/bca48db7be1f2f258515803b1a665d4f-curiv_dogtown_ver01_data_sn85066387_00175037317_1895121501_0501_003_6_92.jpg"
+  },
+  "id": 14
+}

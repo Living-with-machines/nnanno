@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236676,
+      "id": 286001,
+      "lead_time": 3.558,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "EX2OuHTLkb",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/95fe4815a12f6b000710b853ad6d0edd-nbu_julius_ver01_data_sn99021999_00237284975_1900091401_0646_005_6_96.jpg"
+  },
+  "id": 286
+}

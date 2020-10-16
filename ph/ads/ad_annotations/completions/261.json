@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237284,
+      "id": 261001,
+      "lead_time": 1.106,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "2acGDFoLze",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5e684ed027549d01e4c753da11a178d8-msar_cloudchaser_ver01_data_sn85034299_00295877510_1875050801_0409_002_6_93.jpg"
+  },
+  "id": 261
+}

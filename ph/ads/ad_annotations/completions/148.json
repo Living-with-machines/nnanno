@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236662,
+      "id": 148001,
+      "lead_time": 0.874,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "EVCem2oHK6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c3ea96c319bf20078696404ed361257c-iune_archives_ver01_data_sn87082573_00211101143_1880011401_0750_002_6_91.jpg"
+  },
+  "id": 148
+}

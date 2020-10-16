@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237291,
+      "id": 416001,
+      "lead_time": 0.74,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "US1PA_Qeeh",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/74e8c31d03aa59225b4177f18f64babb-sdhi_corsair_ver06_data_sn96090256_00415623136_1890082201_0803_002_6_90.jpg"
+  },
+  "id": 416
+}

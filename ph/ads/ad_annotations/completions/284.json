@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237126,
+      "id": 284001,
+      "lead_time": 1.078,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "X2d--PczRo",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2f00ef7b36b08a7d1731de12fe549486-nbu_julius_ver01_data_sn99021999_00237284963_1900051401_0134_005_6_98.jpg"
+  },
+  "id": 284
+}

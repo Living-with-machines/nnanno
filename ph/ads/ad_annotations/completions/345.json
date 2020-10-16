@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237026,
+      "id": 345001,
+      "lead_time": 0.982,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "HNwDfQ6C2c",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/41a44b0062a3b4959cfbacddebb52073-ohi_janie_ver01_data_sn83035546_00279555442_1875042701_0392_000_6_97.jpg"
+  },
+  "id": 345
+}

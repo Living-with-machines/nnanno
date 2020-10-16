@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237272,
+      "id": 197001,
+      "lead_time": 0.833,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WwWU_ixzmq",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d3e5212321211b7e27e8116a25606645-lu_lenin_ver01_data_sn83026389_00212474903_1875121801_0208_007_6_91.jpg"
+  },
+  "id": 197
+}

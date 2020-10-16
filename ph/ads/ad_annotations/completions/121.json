@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236715,
+      "id": 121001,
+      "lead_time": 0.939,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "nfvwUOYf10",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ff8927c3da699468eedd4376272e1acc-in_england_ver02_data_sn82015683_00202191435_1865082101_0389_009_6_94.jpg"
+  },
+  "id": 121
+}

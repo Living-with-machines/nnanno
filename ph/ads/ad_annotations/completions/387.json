@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237106,
+      "id": 387001,
+      "lead_time": 0.8,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ry455VzM2G",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c8bda47dac636e8fc6ee8cfe276f82a7-pst_irvin_ver01_data_sn84026106_00280776567_1875080501_0121_001_6_96.jpg"
+  },
+  "id": 387
+}

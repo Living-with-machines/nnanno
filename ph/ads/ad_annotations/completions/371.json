@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237418,
+      "id": 371001,
+      "lead_time": 1.136,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "X7Umwodp8B",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/33a0341d22d0c4a361af6e74c973edbb-prru_cebolla_ver02_data_2013201074_00295865362_1870052801_0292_000_6_98.jpg"
+  },
+  "id": 371
+}

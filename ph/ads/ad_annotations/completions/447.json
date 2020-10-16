@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237518,
+      "id": 447001,
+      "lead_time": 0.778,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ZdssVFNfpA",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a06655c989812eb68f60f7bc0056eb8b-tu_kay_ver01_data_sn88061072_00296020643_1890073101_0835_004_6_96.jpg"
+  },
+  "id": 447
+}

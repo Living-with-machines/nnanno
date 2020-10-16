@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237351,
+      "id": 331001,
+      "lead_time": 5.902,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "2Yn1xf5O9u",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b55834ec66ebc5636bbd8afcbd05d186-ohi_feste_ver01_data_sn85026241_00280775289_1885031901_0044_006_6_97.jpg"
+  },
+  "id": 331
+}

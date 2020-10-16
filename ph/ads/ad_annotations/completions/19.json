@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237563,
+      "id": 19001,
+      "lead_time": 1.14,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "MC9Av8fxO0",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2555193d113cc80df979d4e0235b127f-curiv_keswick_ver01_data_sn84038806_00280768960_1875091501_0274_007_6_90.jpg"
+  },
+  "id": 19
+}

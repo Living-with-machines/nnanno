@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236983,
+      "id": 373001,
+      "lead_time": 3.903,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "yqSYwFRtBv",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/25429b94badf8e64d5fb067ee42848b2-pst_altoona_ver02_data_sn88080711_00296027716_1860053001_0100_000_6_93.jpg"
+  },
+  "id": 373
+}

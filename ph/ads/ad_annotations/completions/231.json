@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237385,
+      "id": 231001,
+      "lead_time": 1.029,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "jXtOPOUIdD",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/548a2328737a20547c7ee71754ff6b6a-mimtptc_gaylord_ver02_data_sn85033781_00296023747_1875051401_0885_007_6_91.jpg"
+  },
+  "id": 231
+}

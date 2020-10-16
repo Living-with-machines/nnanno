@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236820,
+      "id": 472001,
+      "lead_time": 0.912,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WYodBgRHNf",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a5a652133b7e20f77a034a0b4b177dd4-txdn_juliet_ver02_data_sn84022097_00206536196_1890041801_0066_002_6_96.jpg"
+  },
+  "id": 472
+}

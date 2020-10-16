@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236752,
+      "id": 213001,
+      "lead_time": 1.004,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "BIDC_to79D",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b9f225f9eeb36db981d9666afa890a20-me_calais_ver02_data_sn82014248_00332895163_1870112801_1116_005_6_92.jpg"
+  },
+  "id": 213
+}

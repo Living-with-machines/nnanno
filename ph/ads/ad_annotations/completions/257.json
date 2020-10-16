@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237391,
+      "id": 257001,
+      "lead_time": 0.81,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "8pwIhR1xk3",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b815b9c3247e12905cd98ab376b9fdc0-mohi_felice_ver01_data_sn86063662_00200292418_1885012201_0018_009_6_93.jpg"
+  },
+  "id": 257
+}

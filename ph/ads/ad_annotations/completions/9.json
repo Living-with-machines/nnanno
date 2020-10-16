@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237283,
+      "id": 9001,
+      "lead_time": 3.718,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "eR4hz61XdZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ac8bbb6b7357393bff31cf62fd413364-ct_gum_ver01_data_sn94053256_00271762987_1895080301_0123_004_6_91.jpg"
+  },
+  "id": 9
+}

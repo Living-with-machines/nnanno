@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237006,
+      "id": 182001,
+      "lead_time": 1.161,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LK6v_RezS_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/073bf424ec3251c5fc29c8bed8c4ac97-kyu_dracula_ver01_data_sn85052141_0020653364A_1885013001_0218_002_6_98.jpg"
+  },
+  "id": 182
+}

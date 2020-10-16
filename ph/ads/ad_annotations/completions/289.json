@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237426,
+      "id": 289001,
+      "lead_time": 2.843,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "uymY1JTdTN",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0c6cc75a27bcdb554a1569ff6b2d2c54-ncu_frankenver01_data_sn92073232_00295879713_1890103001_0395_005_6_91.jpg"
+  },
+  "id": 289
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236965,
+      "id": 218001,
+      "lead_time": 0.75,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "nyeZv3uZhJ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/906aae37a1d6afe7c0c2b21fdf143876-me_edgecomb_ver02_data_sn83016025_00279525206_1865102301_0639_001_6_94.jpg"
+  },
+  "id": 218
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237279,
+      "id": 47001,
+      "lead_time": 0.905,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "hWWrJSVJY3",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/372f4adc20fd192145dcfd0c04150a1e-dlc_franklin_ver01_data_sn82016187_00211102949_1890021301_0288_005_6_95.jpg"
+  },
+  "id": 47
+}

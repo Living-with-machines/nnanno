@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236970,
+      "id": 479001,
+      "lead_time": 1.04,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "0czCyc1OGj",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c554bc016776d5c68475537049ca5be0-uuml_kirilenko_ver01_data_sn85058117_206534114_1885102001_0105_003_6_96.jpg"
+  },
+  "id": 479
+}

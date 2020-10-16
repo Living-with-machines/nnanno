@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237160,
+      "id": 408001,
+      "lead_time": 0.871,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "-vuJLUmVMh",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/fbbd5b9e4d563830cf5f1e2a96f69357-scu_joshwhite_ver01_data_sn84026853_00202194059_1885090901_0219_004_6_91.jpg"
+  },
+  "id": 408
+}

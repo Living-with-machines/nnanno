@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237108,
+      "id": 235001,
+      "lead_time": 0.742,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Bma9UEQb5y",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/671463a5c8bb4002150cc015e7aa0e95-mimtptc_ionia_ver01_data_sn98066392_00296024491_1890090301_0080_015_6_91.jpg"
+  },
+  "id": 235
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237487,
+      "id": 116001,
+      "lead_time": 1.04,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "We_S63lP4_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/26ca2043dc613756a07100c6029bc0df-in_england_ver02_data_sn82015683_00202191423_1865010501_0024_001_6_99.jpg"
+  },
+  "id": 116
+}

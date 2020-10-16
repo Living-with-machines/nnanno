@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236775,
+      "id": 277001,
+      "lead_time": 1.134,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "R8p-DghxLw",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4605c485658b70219fbddcd9233666d7-mthi_jewelwing_ver01_data_sn85053057_00295860273_1900011801_0147_008_6_96.jpg"
+  },
+  "id": 277
+}

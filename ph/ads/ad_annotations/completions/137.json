@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237241,
+      "id": 137001,
+      "lead_time": 1.093,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "UBpu2Yqyuu",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b62e7457ff25ddee8432d691702a2121-in_irvington_ver01_data_sn86059181_00296022068_1865122801_0301_002_6_96.jpg"
+  },
+  "id": 137
+}

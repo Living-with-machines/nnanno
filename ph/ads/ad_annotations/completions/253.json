@@ -1,0 +1,45 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237468,
+      "id": 253001,
+      "lead_time": 1.79,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "HJrgZ0C0dW",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "created_at": 1602237471,
+      "id": 253002,
+      "lead_time": 835.624,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "HJrgZ0C0dW",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2bdd0aa5ef71653ffea210565cced1ce-mohi_beetlebailey_ver01_data_sn89066350_0028077974A_1885031201_1551_005_6_90.jpg"
+  },
+  "id": 253,
+  "predictions": []
+}

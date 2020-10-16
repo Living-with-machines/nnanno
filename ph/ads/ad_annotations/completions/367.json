@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237068,
+      "id": 367001,
+      "lead_time": 0.787,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "PYSx5-yw_G",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e1202ccd40c881bb736f9292858f7e12-oru_jones_ver01_data_sn96061150_00200298391_1885102201_0392_003_6_96.jpg"
+  },
+  "id": 367
+}

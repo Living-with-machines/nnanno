@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236964,
+      "id": 417001,
+      "lead_time": 1.044,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "XKsrWQWZUy",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6254381ffbdeb0929e5eaff177fa686a-sdhi_eigg_ver01_data_sn99062034_00279523325_1895020501_1131_001_6_97.jpg"
+  },
+  "id": 417
+}

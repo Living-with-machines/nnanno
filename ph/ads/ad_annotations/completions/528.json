@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237477,
+      "id": 528001,
+      "lead_time": 0.904,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "gjUPk5OlP-",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6db309b24126dd39ff710d80d72bf59d-wvu_antares_ver02_data_sn84026824_0027176781A_1880060501_0301_001_6_96.jpg"
+  },
+  "id": 528
+}

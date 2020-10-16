@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236697,
+      "id": 359001,
+      "lead_time": 2.031,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "gTe2nLmYg_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c7c9f1b16e13c45a8c7e9b48e7f77c00-okhi_icecream_ver01_data_sn83025010_00295864746_1890022001_0037_007_6_91.jpg"
+  },
+  "id": 359
+}

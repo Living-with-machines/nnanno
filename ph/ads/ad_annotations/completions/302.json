@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237052,
+      "id": 302001,
+      "lead_time": 2.48,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "DMHolnhW2U",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0a9294754868254d34e4d7fce8b580b0-nmu_graywolf_ver02_data_sn87090373_00296025550_1895120601_0674_003_6_95.jpg"
+  },
+  "id": 302
+}

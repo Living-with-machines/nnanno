@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236871,
+      "id": 518001,
+      "lead_time": 0.829,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "o3P2iJdSYE",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/92f86af7a657f49593e7d0b596950f88-whi_ada_ver01_data_sn85033078_00271769441_1875081901_0169_000_6_98.jpg"
+  },
+  "id": 518
+}

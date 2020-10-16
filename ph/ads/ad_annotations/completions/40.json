@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237025,
+      "id": 40001,
+      "lead_time": 1.624,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "tZrfCdPC7S",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cae73d843aaf2b17bf9c4ace5b512984-dlc_chester_ver02_data_sn83027091_00211103528_1900110301_0742_001_6_95.jpg"
+  },
+  "id": 40
+}

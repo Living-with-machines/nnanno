@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237260,
+      "id": 462001,
+      "lead_time": 1.48,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "b5Jh-WV_9p",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/329e8ab25ac5c83be5b434911994f231-txdn_delta_ver01_data_sn86089174_00175036337_1895052901_0181_007_6_90.jpg"
+  },
+  "id": 462
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237293,
+      "id": 422001,
+      "lead_time": 0.818,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "F3-rvoB8R-",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/078ac75ffb1232909e33dcde608b4822-tu_brownie_ver01_data_sn85033429_00280779313_1875102801_0930_002_6_93.jpg"
+  },
+  "id": 422
+}

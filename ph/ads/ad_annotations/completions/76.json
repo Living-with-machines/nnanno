@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237562,
+      "id": 76001,
+      "lead_time": 1.038,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "juLZTM_Edr",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d95383f11a133bf3158d0707702dbf2b-iahi_electabuzz_ver01_data_sn84038485_00279528967_1875112501_0141_001_6_94.jpg"
+  },
+  "id": 76
+}

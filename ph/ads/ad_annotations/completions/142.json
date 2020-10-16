@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237018,
+      "id": 142001,
+      "lead_time": 0.907,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kgo9Yh2mvw",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/70b99c663d320fd2aebbe3d9a7a6727a-in_julian_ver02_data_sn82014296_00296022172_1870020901_0292_001_6_93.jpg"
+  },
+  "id": 142
+}

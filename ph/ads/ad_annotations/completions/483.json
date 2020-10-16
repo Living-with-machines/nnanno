@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237269,
+      "id": 483001,
+      "lead_time": 0.739,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "x0EU_J1khi",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f011e3ac53d6f39c7cfb83cf192fe644-vi_fawn_ver01_data_sn86071868_00175031650_1890121001_0551_002_6_95.jpg"
+  },
+  "id": 483
+}

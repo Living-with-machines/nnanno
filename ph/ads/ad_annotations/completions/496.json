@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237212,
+      "id": 496001,
+      "lead_time": 4.163,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WIZUbPjxUC",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/312a355e316d53d530ca44c6c60f37da-vi_pink_ver01_data_sn85025007_00175034389_1890073101_0199_002_6_91.jpg"
+  },
+  "id": 496
+}

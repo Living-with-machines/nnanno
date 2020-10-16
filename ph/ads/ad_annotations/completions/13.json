@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236899,
+      "id": 13001,
+      "lead_time": 1.002,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "C-2EMOrPw3",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/933f61ee43fb656df0d8f34298d12fc0-curiv_angelica_ver01_data_sn86064439_00271742782_1900120601_0143_000_6_99.jpg"
+  },
+  "id": 13
+}

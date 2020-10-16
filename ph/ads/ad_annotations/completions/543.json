@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237020,
+      "id": 543001,
+      "lead_time": 1.032,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LvynbIzfX9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8708622de45542f58c50f99b987b984c-wvu_gorn_ver01_data_sn84026789_00271768047_1865053101_0133_003_6_95.jpg"
+  },
+  "id": 543
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237118,
+      "id": 323001,
+      "lead_time": 0.934,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "iHfxJy4VGy",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/458f270f5aa7e1f0f6524b64a7393e7e-ohi_atticus_ver01_data_sn83045582_0027955632A_1880121901_0768_004_6_93.jpg"
+  },
+  "id": 323
+}

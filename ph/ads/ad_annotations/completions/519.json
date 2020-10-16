@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237073,
+      "id": 519001,
+      "lead_time": 1.229,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "7pJusgiRu6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a5b5d8df04a74edbaa003fe5422e7d2f-whi_augurey_ver01_data_sn85040749_00271769015_1900061201_0192_003_6_98.jpg"
+  },
+  "id": 519
+}

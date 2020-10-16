@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237307,
+      "id": 327001,
+      "lead_time": 0.798,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LXs9Hd-DDw",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cce8d8985d39540e2b3abf2c9d93c291-ohi_charlie_ver01_data_sn87075213_00237283491_1900033101_0115_000_6_99.jpg"
+  },
+  "id": 327
+}

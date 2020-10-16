@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237096,
+      "id": 103001,
+      "lead_time": 1.107,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "nTX92DGkjC",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/7a45da16cdb810cc248fc76191cc0e07-idhi_hurston_ver02_data_sn82007023_00295867851_1900062101_0835_004_6_90.jpg"
+  },
+  "id": 103
+}

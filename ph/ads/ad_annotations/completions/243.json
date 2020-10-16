@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237354,
+      "id": 243001,
+      "lead_time": 2.065,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "25TgZyjX9y",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d9c43e690b448d0e963b8e15d89f839e-mnhi_datsun_ver01_data_sn83016836_00212472517_1860071201_0385_001_6_93.jpg"
+  },
+  "id": 243
+}

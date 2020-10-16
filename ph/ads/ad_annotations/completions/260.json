@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237336,
+      "id": 260001,
+      "lead_time": 2.705,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Tyakij-TL5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/430aeee2836f675340595b431f5b39f0-msar_braeburn_ver01_data_sn85034374_00295877674_1900101301_0388_004_6_95.jpg"
+  },
+  "id": 260
+}

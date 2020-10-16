@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237040,
+      "id": 189001,
+      "lead_time": 1.116,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "OELUNEDr65",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0de05a3c1c19940d035d7d57ea61b732-lu_gonne_ver01_data_sn88064428_00202190145_1885052901_0140_000_6_98.jpg"
+  },
+  "id": 189
+}

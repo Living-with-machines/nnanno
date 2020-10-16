@@ -1,0 +1,7 @@
+<View>
+  <Image name="image" value="$image"></Image>
+  <Choices name="choice" toName="image" showInLine="true">
+    <Choice value="text-only" background="blue"></Choice>
+    <Choice value="illustrations" background="green"></Choice>
+  </Choices>
+</View>

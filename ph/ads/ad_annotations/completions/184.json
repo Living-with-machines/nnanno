@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237333,
+      "id": 184001,
+      "lead_time": 2.56,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WmByv8DlaT",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/036ea8b5b2d8e62e608f15ca9065dcf1-kyu_gandhi_ver01_data_sn86069117_00211103723_1900053101_0532_005_6_92.jpg"
+  },
+  "id": 184
+}

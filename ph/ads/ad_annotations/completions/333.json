@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236679,
+      "id": 333001,
+      "lead_time": 1.096,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "lO-_ViC039",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e9ba3f84ec1262f1f402389270e753ca-ohi_fu_ver01_data_sn85038184_00296026785_1860040301_0155_000_6_97.jpg"
+  },
+  "id": 333
+}

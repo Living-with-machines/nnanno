@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237113,
+      "id": 238001,
+      "lead_time": 1.136,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "gt4wR5U0nD",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a8e5e9a81bfe4c95d6c6ee44c164bf98-mimtptc_jonesville_ver01_data_sn96077142_00415669987_1900080401_0274_002_6_98.jpg"
+  },
+  "id": 238
+}

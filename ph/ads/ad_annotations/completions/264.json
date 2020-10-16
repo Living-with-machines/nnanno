@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237055,
+      "id": 264001,
+      "lead_time": 2.025,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "e2r7Qd_OJ9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/982c3e912c7b5cd311f8051d529e5c92-msar_icydrop_ver05_data_sn83016951_00295877972_1860080901_0760_000_6_95.jpg"
+  },
+  "id": 264
+}

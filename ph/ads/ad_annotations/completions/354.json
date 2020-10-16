@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236879,
+      "id": 354001,
+      "lead_time": 0.957,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "tlQgwK7Pkl",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8f5c5c2c5d59837195661731e4486660-ohi_lysander_ver01_data_sn84028645_00280774716_1865060901_0369_000_6_93.jpg"
+  },
+  "id": 354
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237043,
+      "id": 139001,
+      "lead_time": 1.065,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "O7duU1O5VQ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cf225a74b16202e6c46d947f885e3fa2-in_ittenbach_ver01_data_sn82015679_00202191915_1900092901_0275_002_6_99.jpg"
+  },
+  "id": 139
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236886,
+      "id": 202001,
+      "lead_time": 0.913,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "IiDbQiVqA2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a45ec51830e693a8c3a3734003dc3935-mdu_cain_ver02_data_sn89060119_00415623483_1860011201_0423_007_6_93.jpg"
+  },
+  "id": 202
+}

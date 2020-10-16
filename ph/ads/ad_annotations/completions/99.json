@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237517,
+      "id": 99001,
+      "lead_time": 1.198,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "sf0j4wRJHe",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2c0346ca5769c69659434a448e2caccb-idhi_damascus_ver01_data_sn89055091_00414211811_1900083001_0988_005_6_90.jpg"
+  },
+  "id": 99
+}

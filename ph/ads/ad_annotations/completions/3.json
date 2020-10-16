@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237408,
+      "id": 3001,
+      "lead_time": 1.512,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "xlnnxo06wm",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9ffa8f07fd78ec7c6693d5d0ce2bb54f-az_gecko_ver01_data_sn84020558_00202192154_1895032901_0820_000_6_98.jpg"
+  },
+  "id": 3
+}

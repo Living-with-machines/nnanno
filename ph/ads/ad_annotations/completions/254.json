@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236683,
+      "id": 254001,
+      "lead_time": 2.387,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "blOQTGm9Vk",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c3aa227fa480ad635619f8fd12c281d5-mohi_dorothea_ver01_data_sn86063984_00200292819_1875061601_0842_000_6_97.jpg"
+  },
+  "id": 254
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237145,
+      "id": 480001,
+      "lead_time": 1.406,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WdKLMdi9FU",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0b41f539d4e2c4838b1218b19058c02e-vi_dior_ver01_data_sn85025007_00415663493_1860042401_0395_001_6_96.jpg"
+  },
+  "id": 480
+}

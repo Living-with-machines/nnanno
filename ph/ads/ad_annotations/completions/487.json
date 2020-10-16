@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237261,
+      "id": 487001,
+      "lead_time": 1.161,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "pQaTmi131t",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/77f4621ab78a1afd56909a01bcce6c3e-vi_hazel_ver01_data_sn86071779_00175031431_1900020801_0418_003_6_92.jpg"
+  },
+  "id": 487
+}

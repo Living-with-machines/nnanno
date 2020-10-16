@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236657,
+      "id": 520001,
+      "lead_time": 21.37,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "6rFWUSSd9G",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/efbf651a5eb534c923adb074141ed4ea-whi_belle_ver01_data_sn85033078_00271768564_1895011001_0112_004_6_97.jpg"
+  },
+  "id": 520
+}

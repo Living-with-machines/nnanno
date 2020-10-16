@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237221,
+      "id": 444001,
+      "lead_time": 0.908,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "1zWGdyrr86",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a23d7e8170a054972cbc84e0ca99a5c6-tu_homer_ver01_data_sn88061082_00212470314_1875071701_0739_003_6_96.jpg"
+  },
+  "id": 444
+}

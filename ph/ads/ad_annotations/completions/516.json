@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237303,
+      "id": 516001,
+      "lead_time": 1.571,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "g2nWGKsWxI",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/fb18f51d23003ff41e4d38ce6afaca95-wa_index_ver01_data_sn83045604_00202199720_1900101901_0294_001_6_98.jpg"
+  },
+  "id": 516
+}

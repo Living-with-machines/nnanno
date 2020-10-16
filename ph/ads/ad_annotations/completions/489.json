@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237452,
+      "id": 489001,
+      "lead_time": 1.128,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "KQysGm4wPX",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/af895e800df0a3f316f8ec20f6ee135f-vi_journey_ver01_data_sn84024738_00206531010_1880100301_0335_009_6_92.jpg"
+  },
+  "id": 489
+}

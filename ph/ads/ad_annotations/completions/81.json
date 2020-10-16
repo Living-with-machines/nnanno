@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237344,
+      "id": 81001,
+      "lead_time": 3.537,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "cV0WUrLJkF",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/243f2bc17819e4baf50e2574f797322e-iahi_gastly_ver01_data_sn82015737_00279529091_1860040601_0542_002_6_92.jpg"
+  },
+  "id": 81
+}

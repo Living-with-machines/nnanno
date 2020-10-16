@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236852,
+      "id": 481001,
+      "lead_time": 3.25,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "wPc6Tr8Hmu",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/27abebd520759118c91ce9fd94d5c8a0-vi_ellis_ver01_data_sn85025007_00415663584_1865121101_0139_000_6_92.jpg"
+  },
+  "id": 481
+}

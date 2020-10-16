@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237225,
+      "id": 390001,
+      "lead_time": 2.434,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "xVnoblttcs",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1647947cab33a6f19da33a7e1188a30a-scu_alexiavalentine_ver01_data_sn84027008_00294551645_1865092801_0048_000_6_99.jpg"
+  },
+  "id": 390
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236969,
+      "id": 168001,
+      "lead_time": 2.337,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "BierdNGt5a",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ec3a195c5db4e3eef3ebea55d0d7f0a4-iune_juliet_ver01_data_sn88074142_00280761473_1870061701_0256_002_6_97.jpg"
+  },
+  "id": 168
+}

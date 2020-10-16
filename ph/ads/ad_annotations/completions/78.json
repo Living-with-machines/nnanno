@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236780,
+      "id": 78001,
+      "lead_time": 0.761,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "vIObheyjhh",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6b4cd2baf7a7f75243a81cae75a7a8d0-iahi_electabuzz_ver01_data_sn87058333_00279528943_1870060201_0089_001_6_96.jpg"
+  },
+  "id": 78
+}

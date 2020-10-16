@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236797,
+      "id": 191001,
+      "lead_time": 2.386,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "YnUPXuxnOZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c9134f1b593dfea25e6f9b2e2e86b267-lu_growlithe_ver01_data_sn83016555_00295875860_1870072901_0618_002_6_93.jpg"
+  },
+  "id": 191
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237547,
+      "id": 319001,
+      "lead_time": 0.777,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "287F0HdrTH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2de042e6b7dc21412abc25073853599a-nvln_tonopah_ver01_data_sn84022053_00279554516_1895061501_0099_004_6_93.jpg"
+  },
+  "id": 319
+}

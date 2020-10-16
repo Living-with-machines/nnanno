@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236766,
+      "id": 372001,
+      "lead_time": 1.079,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Ep6RhgNxmD",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ac8e772d5f552c9b723657b3a7931c80-prru_delfin_ver01_data_sn91099747_00271766130_1895082901_0501_002_6_94.jpg"
+  },
+  "id": 372
+}

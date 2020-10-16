@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237244,
+      "id": 224001,
+      "lead_time": 0.781,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "pZCq2vbajZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/48080e19facf1a6bfca992e248581b3b-me_halfwayrock_ver01_data_sn83016025_00414210934_1890123101_0617_006_6_95.jpg"
+  },
+  "id": 224
+}

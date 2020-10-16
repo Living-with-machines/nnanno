@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237547,
+      "id": 133001,
+      "lead_time": 0.724,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qaiTyMQU5v",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a7f7097a2c936b3d3dc4e8684fbe375e-in_hoosier_ver01_data_sn87056600_00202191666_1880061601_0198_016_6_95.jpg"
+  },
+  "id": 133
+}

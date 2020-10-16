@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237419,
+      "id": 407001,
+      "lead_time": 0.965,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Fu8wWx2SHP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d9c8079e5befed7542fff05a0b540eb5-scu_irmookrastrut_ver01_data_sn93067757_00295862610_1900061301_0073_001_6_97.jpg"
+  },
+  "id": 407
+}

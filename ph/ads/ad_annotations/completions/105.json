@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237543,
+      "id": 105001,
+      "lead_time": 0.766,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "oSiLKbcN8_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/06afe33aed5db86f944923a66010db02-in_abraham_ver02_data_sn84023963_00200295912_1890100301_0733_000_6_98.jpg"
+  },
+  "id": 105
+}

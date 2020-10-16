@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237097,
+      "id": 385001,
+      "lead_time": 0.92,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "De5GnK-5P6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0dd362595764b16f850e78104b814903-pst_intramural_ver01_data_sn83008556_00296028514_1880010101_0610_004_6_96.jpg"
+  },
+  "id": 385
+}

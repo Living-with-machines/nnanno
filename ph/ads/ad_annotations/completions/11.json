@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237302,
+      "id": 11001,
+      "lead_time": 0.755,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "4DiXF0NlnA",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3eadc3fdfed9c57911ade790066b456e-ct_maple_ver01_data_sn92051487_0027176327A_1900020201_0470_008_6_97.jpg"
+  },
+  "id": 11
+}

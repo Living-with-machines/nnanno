@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236758,
+      "id": 464001,
+      "lead_time": 5.411,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NTnae5uqK3",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8d4274f54f7830acd56b1b129f248b87-txdn_eagle_ver01_data_sn84022279_02202296588_1885052101_0585_003_6_90.jpg"
+  },
+  "id": 464
+}

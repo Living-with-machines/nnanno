@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236771,
+      "id": 59001,
+      "lead_time": 0.811,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "sU8N67g3IH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/14a9876f067494719aae196a78ff9929-gu_endeavour_ver01_data_sn86063034_00414182161_1895091901_0178_003_6_98.jpg"
+  },
+  "id": 59
+}

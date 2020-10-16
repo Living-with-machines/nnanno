@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236701,
+      "id": 415001,
+      "lead_time": 1.601,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "2l65Lyf-tG",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/798efb24e97cfaff0049fcaea08722c0-sdhi_cayman_ver01_data_sn00065154_00279523404_1900011901_0617_007_6_92.jpg"
+  },
+  "id": 415
+}

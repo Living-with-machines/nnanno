@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237479,
+      "id": 10001,
+      "lead_time": 0.705,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "sdvKTMfL3J",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/68eb5b55dce97fecd2128f4cdb35cc3d-ct_hickory_ver01_data_sn93053725_00271762896_1900112001_0369_000_6_98.jpg"
+  },
+  "id": 10
+}

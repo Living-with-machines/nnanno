@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236966,
+      "id": 325001,
+      "lead_time": 1.193,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Cr0BsG6CLo",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/dcf5ac70487df6934fa5d341fa31ea56-ohi_borachio_ver02_data_sn85038158_00237283612_1875052701_0091_000_6_98.jpg"
+  },
+  "id": 325
+}

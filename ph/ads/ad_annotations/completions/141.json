@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237404,
+      "id": 141001,
+      "lead_time": 0.778,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "CqGyf-DCrp",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/34eab89239f04ee1f6f5534c46745892-in_julian_ver02_data_sn82014296_00296022172_1870011101_0193_001_6_92.jpg"
+  },
+  "id": 141
+}

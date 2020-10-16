@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237243,
+      "id": 208001,
+      "lead_time": 0.775,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "xwjpsyx-aS",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/bdb6958e6a8ec0570e76360698765bb2-mdu_henson_ver01_data_sn83016107_00415625558_1890062001_0103_004_6_92.jpg"
+  },
+  "id": 208
+}

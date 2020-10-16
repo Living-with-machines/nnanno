@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237300,
+      "id": 60001,
+      "lead_time": 3.213,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "dASOFIBVer",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/691d891ec6ba57fc38084f90a5156c1d-gu_gadget_ver01_data_sn89053684_00414182306_1900082101_1277_000_6_96.jpg"
+  },
+  "id": 60
+}

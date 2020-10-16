@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237412,
+      "id": 426001,
+      "lead_time": 0.976,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kJJa7Dw2gC",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/93585bdc48aa1f285567296883081295-tu_charlie_ver01_data_sn83045160_00280779581_1880031701_0241_002_6_97.jpg"
+  },
+  "id": 426
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237403,
+      "id": 540001,
+      "lead_time": 0.907,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "HbfIeH9vzA",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/87158a342fa75f51424f50561163aa45-wvu_enterprise_ver02_data_sn84026847_00415665210_1875082101_0185_006_6_94.jpg"
+  },
+  "id": 540
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237489,
+      "id": 71001,
+      "lead_time": 0.671,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "wYDdzl_nfq",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b3d6b57059ce078f318253aa3c223c61-iahi_carson_ver01_data_sn85049554_00416159312_1900010401_0233_012_6_91.jpg"
+  },
+  "id": 71
+}

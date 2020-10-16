@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237451,
+      "id": 321001,
+      "lead_time": 1.046,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "4E6JOaUhq2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d4e29a309c06894a7a51740c3ace13a5-ohi_ariel_ver02_data_sn84028385_00237286868_1870030901_0517_001_6_97.jpg"
+  },
+  "id": 321
+}

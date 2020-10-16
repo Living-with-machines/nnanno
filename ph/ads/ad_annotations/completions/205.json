@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236714,
+      "id": 205001,
+      "lead_time": 1.493,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "-bdN1HwZn-",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ff4c2ae1699d43c3f1a7a45326d90843-mdu_fennel_ver01_data_sn83045081_0029602238A_1900070401_0029_001_6_97.jpg"
+  },
+  "id": 205
+}

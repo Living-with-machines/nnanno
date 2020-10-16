@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237028,
+      "id": 70001,
+      "lead_time": 1.155,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "-tyk9WpuVf",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c9d851902e0b4019c6d9a9c4f936fe83-iahi_bellsprout_ver01_data_sn84027352_00279528578_1860020201_0444_002_6_93.jpg"
+  },
+  "id": 70
+}

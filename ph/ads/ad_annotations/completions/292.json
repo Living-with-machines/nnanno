@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236963,
+      "id": 292001,
+      "lead_time": 0.841,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kMfEHSjQ3v",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6ba2d6198ec066f91ac63053d15aaa2e-ndhi_bisbee_ver01_data_sn85042588_00212478301_1895080901_0692_002_6_95.jpg"
+  },
+  "id": 292
+}

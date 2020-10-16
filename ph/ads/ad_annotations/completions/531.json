@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236720,
+      "id": 531001,
+      "lead_time": 1.208,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "B1rwXFs5RZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e12bf9225819999df5a19c4b5ac9b073-wvu_austria_ver01_data_sn84026845_00202190650_1860032201_0277_000_6_96.jpg"
+  },
+  "id": 531
+}

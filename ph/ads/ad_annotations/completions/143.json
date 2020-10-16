@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236669,
+      "id": 143001,
+      "lead_time": 0.899,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "oS65CBjoza",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/50a9b3aa48777c349b1d478c2c8c06cc-in_julian_ver02_data_sn82014296_00296022172_1870022301_0341_001_6_94.jpg"
+  },
+  "id": 143
+}

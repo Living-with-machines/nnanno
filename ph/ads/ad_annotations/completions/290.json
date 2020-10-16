@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237105,
+      "id": 290001,
+      "lead_time": 0.707,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LTqwPlNPNd",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ebb7c6f293b127769b50c641ac6ca991-ncu_hawk_ver02_data_sn84026472_00416156384_1865120601_0917_002_6_94.jpg"
+  },
+  "id": 290
+}

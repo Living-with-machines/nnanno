@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236870,
+      "id": 291001,
+      "lead_time": 4.257,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "htlrxu4Ku4",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/96c6a29dc7764fde225f8c3ff07cbd9a-ncu_lumber_ver01_data_sn84026536_00295879130_1870061001_0094_000_6_98.jpg"
+  },
+  "id": 291
+}

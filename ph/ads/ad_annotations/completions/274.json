@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237357,
+      "id": 274001,
+      "lead_time": 2,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Bnd2yjjwO8",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5aa61d0a37db357ac3e8af6659077948-mthi_fox_ver01_data_sn84038123_00295860649_1875110501_0376_000_6_96.jpg"
+  },
+  "id": 274
+}

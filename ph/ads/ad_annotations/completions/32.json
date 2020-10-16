@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237005,
+      "id": 32001,
+      "lead_time": 0.899,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FQMIazDUdr",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d2e6a1a07ca72128b98e51928059694e-curiv_ogilby_ver01_data_sn85042461_00280769642_1895121901_0654_005_6_97.jpg"
+  },
+  "id": 32
+}

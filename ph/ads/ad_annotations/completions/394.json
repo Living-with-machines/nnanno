@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236738,
+      "id": 394001,
+      "lead_time": 0.922,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LaEZ2sADVY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e69565f4ced498c60e46657fe267057d-scu_carlacox_ver01_data_sn84026965_00294551244_1860112901_0060_004_6_92.jpg"
+  },
+  "id": 394
+}

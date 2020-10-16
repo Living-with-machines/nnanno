@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237459,
+      "id": 95001,
+      "lead_time": 1.981,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "h44l-eviXs",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ba6f417661c3aab694c60450e683dd56-iahi_ivysaur_ver01_data_sn83025182_00279528670_1860051401_0681_002_6_90.jpg"
+  },
+  "id": 95
+}

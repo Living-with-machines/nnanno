@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237148,
+      "id": 492001,
+      "lead_time": 1.002,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "hixNBrcM0V",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d79ff86b87cd70879f1d5fb2ebff8b74-vi_lilac_ver01_data_sn86071868_00175031753_1895042701_0261_001_6_98.jpg"
+  },
+  "id": 492
+}

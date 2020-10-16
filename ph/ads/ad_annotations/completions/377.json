@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237352,
+      "id": 377001,
+      "lead_time": 0.692,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "C-wpnR-74o",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b31d38d2741cc9858ff55094b3cf41bd-pst_erie_ver02_data_sn86071045_00296026505_1895110701_0563_001_6_95.jpg"
+  },
+  "id": 377
+}

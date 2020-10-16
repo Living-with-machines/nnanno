@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237039,
+      "id": 252001,
+      "lead_time": 2.495,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "E6nrkZKXtp",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/592e7a3b4a5babf1c32f5532508ee0bf-mohi_beetlebailey_ver01_data_sn88068010_00294556023_1900031601_0723_000_6_99.jpg"
+  },
+  "id": 252
+}

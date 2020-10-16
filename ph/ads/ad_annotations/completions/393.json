@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237228,
+      "id": 393001,
+      "lead_time": 0.72,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NHcBOPd5-u",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3ea3a29e026a4c8f2238f0057ad0b233-scu_carlacox_ver01_data_sn84026965_00294551244_1860100401_0031_006_6_93.jpg"
+  },
+  "id": 393
+}

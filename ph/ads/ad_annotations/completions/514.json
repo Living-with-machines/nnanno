@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236892,
+      "id": 514001,
+      "lead_time": 1.676,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "luUW3m4_Rq",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/53e69702f8b112913e03af98c1e80c09-wa_hoquiam_ver01_data_sn83045604_00202199689_1900021601_0699_007_6_96.jpg"
+  },
+  "id": 514
+}

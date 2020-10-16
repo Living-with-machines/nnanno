@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236746,
+      "id": 324001,
+      "lead_time": 0.834,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ka-32_GNSe",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5e6c98335a4bf6c2476464d547d97727-ohi_borachio_ver02_data_sn85038158_0028077585A_1880041501_0199_008_6_92.jpg"
+  },
+  "id": 324
+}

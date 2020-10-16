@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237122,
+      "id": 248001,
+      "lead_time": 1.346,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "fis7mCsKt7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/97756c17b40fddae89997606acc493f4-mnhi_gonvick_ver01_data_sn90059522_00175033506_1890081301_0399_005_6_94.jpg"
+  },
+  "id": 248
+}

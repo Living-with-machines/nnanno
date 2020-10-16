@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236661,
+      "id": 360001,
+      "lead_time": 1.216,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qo9cxaFZNE",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/819e8f48327c487fac7b3b127bc5d8cb-oru_desalvo_ver01_data_sn99063952_00280760298_1890061301_0538_000_6_97.jpg"
+  },
+  "id": 360
+}

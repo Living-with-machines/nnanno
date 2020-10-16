@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236689,
+      "id": 420001,
+      "lead_time": 3.75,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "K4jYSyKyjS",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a604ecdf982cb55bc1410831a6457309-tu_arthur_ver01_data_sn95068565_00212470478_1860020901_0841_000_6_98.jpg"
+  },
+  "id": 420
+}

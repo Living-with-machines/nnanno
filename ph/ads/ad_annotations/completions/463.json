@@ -1,0 +1,45 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236801,
+      "id": 463001,
+      "lead_time": 1.959,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WCmMw0wcEB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "created_at": 1602236804,
+      "id": 463002,
+      "lead_time": 168.74,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WCmMw0wcEB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b1db5dde788993d580d360905e956b2e-txdn_eagle_ver01_data_sn84022278_00200296540_1870120301_0623_001_6_96.jpg"
+  },
+  "id": 463,
+  "predictions": []
+}

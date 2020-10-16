@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237494,
+      "id": 435001,
+      "lead_time": 0.769,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "7yIp_bwJOR",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c9332585fb485d3b6328c78a0b7b1e71-tu_elvis_ver01_data_sn85038519_00200293332_1865121501_0045_000_6_95.jpg"
+  },
+  "id": 435
+}

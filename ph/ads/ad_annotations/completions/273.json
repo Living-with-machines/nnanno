@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237234,
+      "id": 273001,
+      "lead_time": 1.472,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "2Z1mOKtyUP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/279eb987c09293995144ea40a9fc68e7-mthi_elk_ver01_data_sn84036012_00294550562_1890121801_1143_003_6_96.jpg"
+  },
+  "id": 273
+}

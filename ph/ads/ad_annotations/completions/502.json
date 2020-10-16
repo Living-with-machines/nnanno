@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237443,
+      "id": 502001,
+      "lead_time": 0.744,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "dXuyfoFhdQ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/96ee9355a7cf9bb595d9d1f82c3db012-vtu_iceberg_ver01_data_sn83025668_00415629217_1865050201_0782_001_6_94.jpg"
+  },
+  "id": 502
+}

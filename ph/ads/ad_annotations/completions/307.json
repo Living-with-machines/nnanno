@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237000,
+      "id": 307001,
+      "lead_time": 0.765,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "YHKxEH1AS6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d8180197fdf7eebd2483caf862204e51-nn_hanyu_ver01_data_sn83030193_00206539537_1890020502_0396_005_6_96.jpg"
+  },
+  "id": 307
+}

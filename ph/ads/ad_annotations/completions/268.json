@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236765,
+      "id": 268001,
+      "lead_time": 5.834,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "mQneA9u1x_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b901ff83b31ebe0bed7ceb8c8d94f58e-msar_kingsombra_ver01_data_sn87065300_00415662130_1895071901_0280_001_6_98.jpg"
+  },
+  "id": 268
+}

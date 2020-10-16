@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236772,
+      "id": 403001,
+      "lead_time": 0.968,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qd7qgy8IRu",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/bb9593c175152a63f323bf1d72e05784-scu_floydcouncil_ver01_data_sn84026909_00237286984_1870030901_0264_004_6_93.jpg"
+  },
+  "id": 403
+}

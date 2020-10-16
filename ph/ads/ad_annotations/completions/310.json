@@ -1,0 +1,45 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237498,
+      "id": 310001,
+      "lead_time": 3.03,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Q5NwV7FBoX",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "created_at": 1602237501,
+      "id": 310002,
+      "lead_time": 865.49,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Q5NwV7FBoX",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e2ea842fa926e473a66e7831c12d0f02-nvln_caliente_ver02_data_sn84022048_00415668387_1875111301_0693_002_6_91.jpg"
+  },
+  "id": 310,
+  "predictions": []
+}

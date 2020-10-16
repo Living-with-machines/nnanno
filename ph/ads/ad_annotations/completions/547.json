@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237287,
+      "id": 547001,
+      "lead_time": 1.028,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "l5vvHgw0aU",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d743523f66705be6b3f1cb9b76971238-wvu_lincoln_ver01_data_sn86092339_00279550262_1860050401_0038_000_6_96.jpg"
+  },
+  "id": 547
+}

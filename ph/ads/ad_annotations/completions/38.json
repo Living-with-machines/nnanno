@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237252,
+      "id": 38001,
+      "lead_time": 1.094,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "57D4Pu_2zP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/535ee9b198eded563d5d894209ed8463-deu_kedavra_ver01_data_sn88053137_00271741285_1895082201_0167_004_6_94.jpg"
+  },
+  "id": 38
+}

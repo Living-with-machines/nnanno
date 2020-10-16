@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236776,
+      "id": 180001,
+      "lead_time": 1.057,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "JkkvqdHgeI",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b93af550994f6593dac3864a8b803a0d-khi_finney_ver02_data_sn83040198_00212473534_1900090701_0200_001_6_99.jpg"
+  },
+  "id": 180
+}

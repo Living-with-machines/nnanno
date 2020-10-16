@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236893,
+      "id": 22001,
+      "lead_time": 1.123,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Orziegng-F",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/72e9d7db1b2d1cc3585ab44f4c1e07be-curiv_lytton_ver01_data_sn82014381_00175036465_1885040401_0146_001_6_96.jpg"
+  },
+  "id": 22
+}

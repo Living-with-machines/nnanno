@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236809,
+      "id": 454001,
+      "lead_time": 1.07,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "dkqM92DoJk",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3600084902a18cf43a2904d5e2c58571-tu_monroe_ver01_data_sn96091617_00280779271_1880031701_0497_003_6_90.jpg"
+  },
+  "id": 454
+}

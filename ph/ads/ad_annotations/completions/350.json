@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237435,
+      "id": 350001,
+      "lead_time": 0.812,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "mWAs4kmwFP",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/545853f5d8f006a39c9de68313586215-ohi_jaques_ver01_data_sn84028490_00280775022_1875040801_0120_002_6_96.jpg"
+  },
+  "id": 350
+}

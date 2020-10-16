@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237581,
+      "id": 209001,
+      "lead_time": 0.751,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FpuMyxfhHx",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a5c847aed81b894ae92ac1369ad08201-mdu_indianhead_ver01_data_sn83016368_00415627567_1885092601_0383_005_6_95.jpg"
+  },
+  "id": 209
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237559,
+      "id": 279001,
+      "lead_time": 0.966,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kGj-BYZMJB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5775bd2e6c932327d4ba08380a48c202-nbu_dunning_ver01_data_sn84022835_00237285062_1895120601_0160_008_6_91.jpg"
+  },
+  "id": 279
+}

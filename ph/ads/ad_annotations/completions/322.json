@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237316,
+      "id": 322001,
+      "lead_time": 2.294,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "tG2k5qCku0",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a2d81819fed0123888940fb4d5d833ef-ohi_arnarson_ver01_data_sn83035173_00296027297_1860121201_0412_000_6_94.jpg"
+  },
+  "id": 322
+}

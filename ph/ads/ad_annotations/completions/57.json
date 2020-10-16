@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237263,
+      "id": 57001,
+      "lead_time": 1.084,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "mxtmzK1GUd",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5cb6a49b6cf550c98fad15aab8c9a86d-gu_ace_ver02_data_sn82015137_00414181910_1885092401_0197_006_6_93.jpg"
+  },
+  "id": 57
+}

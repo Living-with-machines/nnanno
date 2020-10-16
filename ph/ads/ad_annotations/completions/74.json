@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237490,
+      "id": 74001,
+      "lead_time": 0.861,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "pHs8vhyu3r",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c8abbdb887c6cfc9a1ac8c867766a879-iahi_dragonite_ver01_data_sn83025161_00279529327_1865051901_1075_002_6_92.jpg"
+  },
+  "id": 74
+}

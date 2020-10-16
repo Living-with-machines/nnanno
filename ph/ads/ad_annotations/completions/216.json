@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236734,
+      "id": 216001,
+      "lead_time": 0.846,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "OvYkvYee3A",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1e9c7b2f661b65f858758879a0de0c11-me_camden_ver01_data_sn78000873_00279524780_1895091901_0310_000_6_98.jpg"
+  },
+  "id": 216
+}

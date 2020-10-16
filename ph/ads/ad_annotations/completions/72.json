@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237374,
+      "id": 72001,
+      "lead_time": 3.525,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Jj15y3Rovi",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a2c29c42fc43fe3cab74e250dadb81c6-iahi_charizard_ver01_data_sn82014141_00279529455_1860070501_0738_002_6_95.jpg"
+  },
+  "id": 72
+}

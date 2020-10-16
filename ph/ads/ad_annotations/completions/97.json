@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236844,
+      "id": 97001,
+      "lead_time": 0.925,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Y5EQ6PbJw5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/844b883b921544ff53baf4aaef77ba32-iahi_jigglypuff_ver01_data_sn84027352_00279528748_1870011301_0554_008_6_91.jpg"
+  },
+  "id": 97
+}

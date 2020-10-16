@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236711,
+      "id": 379001,
+      "lead_time": 1.248,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "9VqzY7fU6P",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/97ca2a7cb5ac074bb7c9874403b4678c-pst_fenske_ver02_data_sn84026497_00280776129_1880042101_0834_002_6_96.jpg"
+  },
+  "id": 379
+}

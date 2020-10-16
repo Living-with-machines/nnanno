@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236680,
+      "id": 305001,
+      "lead_time": 0.876,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "3aK-fFu45j",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1ed98ad158b144694cf07a2f9701a73a-nn_carson_ver02_data_sn83030272_0020653347A_1875112301_0302_002_6_94.jpg"
+  },
+  "id": 305
+}

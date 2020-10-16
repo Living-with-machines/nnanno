@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237131,
+      "id": 263001,
+      "lead_time": 0.885,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FLJdCyeKoB",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/eb4900fc7c6eecf65a1b0fef8d5967ec-msar_goldenharvest_ver01_data_sn85034374_00295878162_1895120701_0952_004_6_93.jpg"
+  },
+  "id": 263
+}

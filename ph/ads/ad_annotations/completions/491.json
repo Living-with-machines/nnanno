@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237278,
+      "id": 491001,
+      "lead_time": 1.02,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "g5tIetEUjO",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a3af42a9ba55ee949bef47329fd86bbd-vi_kelly_ver01_data_sn95079481_00175031777_1895122901_0693_005_6_91.jpg"
+  },
+  "id": 491
+}

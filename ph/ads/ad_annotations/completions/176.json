@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237095,
+      "id": 176001,
+      "lead_time": 0.998,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "tD7ruUzxDg",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/25b7b8ab9343f5a7d6e3499db12a1ad4-khi_brown_ver01_data_sn82016419_0021247292A_1860090101_0224_000_6_91.jpg"
+  },
+  "id": 176
+}

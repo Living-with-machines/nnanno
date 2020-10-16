@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237398,
+      "id": 203001,
+      "lead_time": 0.999,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "RHKZC7EJCg",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4e4f0a9403dba7cf982e8684ebab7d1c-mdu_dill_ver01_data_sn83045081_00294559346_1890112201_0381_000_6_93.jpg"
+  },
+  "id": 203
+}

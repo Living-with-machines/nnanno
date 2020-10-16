@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237001,
+      "id": 190001,
+      "lead_time": 1.114,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "UwAu-6P8Ir",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/bab56a8dc33ba225b08e6dfdc17c9fa2-lu_gonne_ver01_data_sn88064428_00202190145_1885103001_0230_000_6_97.jpg"
+  },
+  "id": 190
+}

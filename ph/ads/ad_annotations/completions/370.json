@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236950,
+      "id": 370001,
+      "lead_time": 6.523,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "VXEql9U4xi",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0e45cacdc07bdac30146f2a57bbabf37-oru_quartz_ver02_data_sn84022643_00416152615_1870043001_0292_000_6_98.jpg"
+  },
+  "id": 370
+}

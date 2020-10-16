@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237463,
+      "id": 339001,
+      "lead_time": 2.021,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "nQZJIeEUP2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/cf498cf7c9004c2012ebb7f2f3f6345f-ohi_iago_ver01_data_sn85042591_00280774959_1860051801_0280_002_6_93.jpg"
+  },
+  "id": 339
+}

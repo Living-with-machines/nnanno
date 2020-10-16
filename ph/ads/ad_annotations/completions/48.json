@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237355,
+      "id": 48001,
+      "lead_time": 0.775,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "t0WZ1hzRpG",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/886d85d6430deb2c1dcd56ce8c8e628e-dlc_geo_ver01_data_sn83030214_00175038061_1885082301_0472_001_6_98.jpg"
+  },
+  "id": 48
+}

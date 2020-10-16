@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237312,
+      "id": 513001,
+      "lead_time": 0.899,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "6PYt2oj8GL",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/57f3962040bbfa7345e7e501da3e4eef-wa_grace_ver02_data_sn83045604_00202199355_1895110301_0389_002_6_99.jpg"
+  },
+  "id": 513
+}

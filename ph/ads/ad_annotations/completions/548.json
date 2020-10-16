@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237365,
+      "id": 548001,
+      "lead_time": 0.859,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "HXcLr0xhYE",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/436b7679259477053f72a6db0d17e031-wvu_odona_ver04_data_sn86092518_00383341723_1885011001_0248_004_6_95.jpg"
+  },
+  "id": 548
+}

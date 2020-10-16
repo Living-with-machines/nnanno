@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237504,
+      "id": 362001,
+      "lead_time": 0.685,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "DRkVKB_6JD",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/92e20220396f562af85a12693c3aab00-oru_iraryan_ver01_data_sn96061150_00200298263_1890120801_0573_027_6_91.jpg"
+  },
+  "id": 362
+}

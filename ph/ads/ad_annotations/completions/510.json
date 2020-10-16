@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237338,
+      "id": 510001,
+      "lead_time": 1.02,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "f8ou6LlQIZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/df6a4ea913aef26989241de2d61a6feb-wa_duwamish_ver01_data_sn87093109_00200291001_1880090901_0301_003_6_94.jpg"
+  },
+  "id": 510
+}

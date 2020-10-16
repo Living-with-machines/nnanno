@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237285,
+      "id": 337001,
+      "lead_time": 1.068,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LZqYRYBnj2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6292857d976cf9154465f771a724bf30-ohi_himilco_ver01_data_sn85025759_00296026967_1880061501_1074_006_6_92.jpg"
+  },
+  "id": 337
+}

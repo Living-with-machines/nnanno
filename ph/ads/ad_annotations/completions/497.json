@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237445,
+      "id": 497001,
+      "lead_time": 0.785,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "x22cQGjTaS",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1f55e40fde67a5bcc53950e2872a34f5-vtu_burlington_ver01_data_sn86072143_00280777079_1885103001_0978_003_6_98.jpg"
+  },
+  "id": 497
+}

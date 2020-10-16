@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237568,
+      "id": 258001,
+      "lead_time": 1.046,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ufLmQspJ33",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/07bf90870464fc394e68a1ff726235fa-msar_abolitionist_ver02_data_sn86074033_00199916270_1895051101_0341_002_6_99.jpg"
+  },
+  "id": 258
+}

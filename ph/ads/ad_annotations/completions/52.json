@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237045,
+      "id": 52001,
+      "lead_time": 1.033,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "yltgs7Y-uK",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6776eadab436159d2898a762b818dbaf-dlc_hugo_ver01_data_sn83030214_00206531216_1875060901_0715_000_6_97.jpg"
+  },
+  "id": 52
+}

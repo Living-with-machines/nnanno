@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237248,
+      "id": 113001,
+      "lead_time": 0.772,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Q3kLIX061P",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/430c7d256c3c7be4f8d62206d2b2d4e3-in_chacha_ver03_data_sn87056248_00200294543_1860111501_0359_001_6_91.jpg"
+  },
+  "id": 113
+}

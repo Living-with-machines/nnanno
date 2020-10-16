@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237217,
+      "id": 364001,
+      "lead_time": 0.705,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "vXQLH0GEv9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2af798dab13657cc38c8a4e96d09daa2-oru_jaeger_ver01_data_sn93051669_00200298883_1895060101_0094_007_6_95.jpg"
+  },
+  "id": 364
+}

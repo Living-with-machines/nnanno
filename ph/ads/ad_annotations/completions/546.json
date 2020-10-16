@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236782,
+      "id": 546001,
+      "lead_time": 1.235,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "5am26deRoF",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ef9cbfaa5ec6d48ed05914ad71f37eee-wvu_jordan_ver03_data_sn84026817_00202193791_1880120801_0397_001_6_95.jpg"
+  },
+  "id": 546
+}

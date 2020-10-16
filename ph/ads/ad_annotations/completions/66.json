@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237232,
+      "id": 66001,
+      "lead_time": 1.541,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "1tS__HK7F8",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5a7c16c5cc0acf82c98715fe7d38a6e4-hihouml_brutus_ver02_data_sn85047084_00202195635_1890033101_0300_000_6_96.jpg"
+  },
+  "id": 66
+}

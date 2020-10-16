@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236814,
+      "id": 471001,
+      "lead_time": 5.16,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "wIwqZ7uf92",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/bc2dfa68192567ece494170a82127ab0-txdn_infiniti_ver03_data_sn86088652_00200297003_1900120101_0623_003_6_99.jpg"
+  },
+  "id": 471
+}

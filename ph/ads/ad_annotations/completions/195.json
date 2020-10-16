@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237413,
+      "id": 195001,
+      "lead_time": 1.14,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "RtGBdLHtGR",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/598113d7a0f33869f6ea16fe800944e7-lu_lapras_ver01_data_sn86053696_0029587384A_1880103001_0678_000_6_91.jpg"
+  },
+  "id": 195
+}

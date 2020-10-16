@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237579,
+      "id": 212001,
+      "lead_time": 0.788,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "GEtXSueSz4",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e1aa45f5d44ca00658aeb4330e84ae2b-me_calais_ver02_data_sn82014248_00332895163_1870071101_0643_003_6_92.jpg"
+  },
+  "id": 212
+}

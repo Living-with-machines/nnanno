@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237472,
+      "id": 100001,
+      "lead_time": 0.99,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "DsjDs-Dicj",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c84103e1ac36307379aee6db06724247-idhi_dickens_ver01_data_sn82015407_00295869458_1865021801_0074_006_6_92.jpg"
+  },
+  "id": 100
+}

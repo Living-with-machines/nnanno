@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237401,
+      "id": 275001,
+      "lead_time": 0.983,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "oiNCCP3taw",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/7ba27fbb7bf9a497038a82a2cfb1eb0e-mthi_ibis_ver01_data_sn84036228_00294550112_1895051601_0082_005_6_95.jpg"
+  },
+  "id": 275
+}

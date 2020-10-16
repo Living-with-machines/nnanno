@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237450,
+      "id": 162001,
+      "lead_time": 0.996,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "3J1TqW5aBc",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a4a96c269db868f5853ea62312706278-iune_deckle_ver01_data_sn92053945_00212471677_1890102801_0028_012_6_91.jpg"
+  },
+  "id": 162
+}

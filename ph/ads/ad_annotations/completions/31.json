@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236849,
+      "id": 31001,
+      "lead_time": 0.952,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "8HqA9WIrEh",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/99935e3e781a51e93a86fc43faca5b94-curiv_oakland_ver01_data_sn82014381_00175036635_1890091301_0218_003_6_97.jpg"
+  },
+  "id": 31
+}

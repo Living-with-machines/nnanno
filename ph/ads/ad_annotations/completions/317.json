@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237226,
+      "id": 317001,
+      "lead_time": 0.849,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "2VUsJCwO07",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3145a3f787c91d402c890ff133755327-nvln_sparks_ver01_data_sn84022044_00279555247_1885072301_0691_008_6_90.jpg"
+  },
+  "id": 317
+}

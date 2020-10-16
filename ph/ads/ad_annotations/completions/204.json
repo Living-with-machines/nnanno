@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237058,
+      "id": 204001,
+      "lead_time": 1.055,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "5dTfAwrhoV",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/92db93cda0c920c5c87608f9d9b800a8-mdu_endive_ver01_data_sn83045081_00296022287_1895110401_0327_004_6_97.jpg"
+  },
+  "id": 204
+}

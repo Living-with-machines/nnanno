@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237036,
+      "id": 458001,
+      "lead_time": 1.046,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "OWCDf65zMb",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3e7162c5f29d7e31636199993334fa3e-txdn_argentina_ver01_data_sn84022109_00211101891_1885072401_0713_002_6_96.jpg"
+  },
+  "id": 458
+}

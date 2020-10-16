@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237427,
+      "id": 118001,
+      "lead_time": 1.084,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "gAuG9TGrpm",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a3430a26404a8845a8af4e6afdead661-in_england_ver02_data_sn82015683_00202191423_1865061001_0555_000_6_98.jpg"
+  },
+  "id": 118
+}

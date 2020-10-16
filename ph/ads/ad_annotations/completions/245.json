@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236769,
+      "id": 245001,
+      "lead_time": 0.921,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "olQVo5DUQD",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/229286923b692cfff4be09db4936b835-mnhi_edina_ver01_data_sn90059522_00175033518_1890090701_0056_005_6_95.jpg"
+  },
+  "id": 245
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237237,
+      "id": 315001,
+      "lead_time": 2.856,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "SPGruaamUk",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0dca0e5b770f802bd03433ad821dfd15-nvln_manhattan_ver01_data_sn84020355_00279554917_1895062801_0606_002_6_95.jpg"
+  },
+  "id": 315
+}

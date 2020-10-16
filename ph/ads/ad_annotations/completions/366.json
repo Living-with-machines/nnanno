@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237057,
+      "id": 366001,
+      "lead_time": 0.742,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "J9Eg4jkBB9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/26f533533cb1facadd3712fe15f9dce0-oru_jones_ver01_data_sn96061150_00200298391_1885092701_0311_006_6_93.jpg"
+  },
+  "id": 366
+}

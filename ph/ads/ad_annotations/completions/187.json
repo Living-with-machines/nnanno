@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237309,
+      "id": 187001,
+      "lead_time": 0.828,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "uqIp2Tkb5g",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/7eae8ee954d6da528b522f5a7ad16752-kyu_kinks_ver01_data_sn85052141_00175045466_1900101901_0342_002_6_98.jpg"
+  },
+  "id": 187
+}

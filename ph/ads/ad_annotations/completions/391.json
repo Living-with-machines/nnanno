@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237400,
+      "id": 391001,
+      "lead_time": 0.852,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "6gjGCBHHj2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0f2d06912daabb9ce564dbc793f425a4-scu_brandonblaze_ver01_data_sn84026994_0029455175A_1870012601_0086_000_6_95.jpg"
+  },
+  "id": 391
+}

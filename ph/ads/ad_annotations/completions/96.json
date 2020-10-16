@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237377,
+      "id": 96001,
+      "lead_time": 2.425,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "5RhW-DFUcx",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6a28cf41192ed1a299835d89f84c7155-iahi_ivysaur_ver01_data_sn83025182_00279528670_1860070701_0861_003_6_94.jpg"
+  },
+  "id": 96
+}

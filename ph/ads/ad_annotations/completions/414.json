@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237341,
+      "id": 414001,
+      "lead_time": 0.845,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "SuV89uDb31",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5caaf9e425163f8862af40d6ceab13cc-sdhi_bearcat_ver02_data_sn91099608_0041562301A_1885111001_0388_005_6_97.jpg"
+  },
+  "id": 414
+}

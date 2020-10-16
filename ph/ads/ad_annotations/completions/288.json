@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237448,
+      "id": 288001,
+      "lead_time": 0.852,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "WR0kDRLc7X",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4e65e9ccd38da9fa0228a3d32005a283-nbu_lee_ver01_data_sn84020109_00212470685_1865100501_0432_002_6_91.jpg"
+  },
+  "id": 288
+}

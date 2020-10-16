@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237031,
+      "id": 301001,
+      "lead_time": 0.922,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qxnL1IMUGl",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/456fcde48ad89aeea6c8a69db6d2ee8b-nmu_fleming_ver01_data_sn84020631_00415628961_1895060101_0518_002_6_98.jpg"
+  },
+  "id": 301
+}

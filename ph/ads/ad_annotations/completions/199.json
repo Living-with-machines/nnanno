@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236866,
+      "id": 199001,
+      "lead_time": 2.888,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "POnEyuqx1W",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/00848cc373fb9266ceba06eede5ebaac-lu_oddish_ver01_data_sn88064323_00295878861_1900110301_0083_003_6_95.jpg"
+  },
+  "id": 199
+}

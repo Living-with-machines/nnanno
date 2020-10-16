@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236747,
+      "id": 486001,
+      "lead_time": 1.132,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qBrFaSTpfm",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8bc8d874b8c923c37acebbf256c4e0ae-vi_glass_ver01_data_sn87060165_00175032149_1900011301_0507_004_6_97.jpg"
+  },
+  "id": 486
+}

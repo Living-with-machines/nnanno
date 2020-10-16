@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237217,
+      "id": 521001,
+      "lead_time": 0.729,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "CLOzgtQ5vY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/76c4a6795e1e6d638edc791d752255ed-whi_dorothy_ver01_data_sn85033295_00279550055_1885052701_0441_011_6_91.jpg"
+  },
+  "id": 521
+}

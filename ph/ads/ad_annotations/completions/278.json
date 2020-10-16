@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236999,
+      "id": 278001,
+      "lead_time": 0.829,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LTuDa1NjnM",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d5d0e7d7245f8ac82bbaa26e43c14766-nbu_dewitt_ver01_data_sn99021999_00206538016_1880061101_0586_002_6_94.jpg"
+  },
+  "id": 278
+}

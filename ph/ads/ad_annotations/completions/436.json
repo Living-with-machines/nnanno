@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237422,
+      "id": 436001,
+      "lead_time": 2.91,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "r6B05kEDnv",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9bba90c917aab60c31d8ecb85e4e183c-tu_ernie_ver01_data_sn86090474_00296020503_1885080801_1294_000_6_98.jpg"
+  },
+  "id": 436
+}

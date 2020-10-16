@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236692,
+      "id": 344001,
+      "lead_time": 1.023,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Q75xxmW0-7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8d449424d74cf50c9dba798124d34de0-ohi_ingstad_ver01_data_sn84028296_00296029130_1885071601_0719_000_6_98.jpg"
+  },
+  "id": 344
+}

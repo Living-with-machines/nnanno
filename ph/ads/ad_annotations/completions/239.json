@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237029,
+      "id": 239001,
+      "lead_time": 1.219,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "73-KJfzbMY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2de2f8e5cb1772de9f652d4e36d92468-mnhi_allemande_ver01_data_sn85025570_00199919945_1880032501_0286_000_6_95.jpg"
+  },
+  "id": 239
+}

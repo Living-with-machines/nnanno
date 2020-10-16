@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237080,
+      "id": 159001,
+      "lead_time": 1.359,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "GZV3lXocU7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/85e38fcc79aeb84d7341e81ec5e73caf-iune_columnist_ver01_data_sn92053943_00295873553_1880052501_0085_005_6_98.jpg"
+  },
+  "id": 159
+}

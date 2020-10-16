@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237258,
+      "id": 120001,
+      "lead_time": 1.089,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "zBZfoilRZR",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6c5a632579efdbef510a55af7a8f2ed2-in_england_ver02_data_sn82015683_00202191435_1865080101_0322_008_6_95.jpg"
+  },
+  "id": 120
+}

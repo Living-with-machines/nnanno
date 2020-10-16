@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236978,
+      "id": 533001,
+      "lead_time": 3.845,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "_Z_xCyx_lH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4923d33ab1c644bac2796423fa802a33-wvu_belgium_ver01_data_sn84026844_00202190856_1870081201_0770_002_6_94.jpg"
+  },
+  "id": 533
+}

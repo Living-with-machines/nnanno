@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237301,
+      "id": 522001,
+      "lead_time": 0.783,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "yknCIx3SmG",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b24c1f39b9c473c4e499f848a0f5e0fb-whi_flobberworm_ver01_data_sn85033019_00414215543_1875030501_0325_003_6_93.jpg"
+  },
+  "id": 522
+}

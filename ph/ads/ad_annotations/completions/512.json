@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236984,
+      "id": 512001,
+      "lead_time": 0.868,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "7IWHStmBVG",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a7bcd71793937d83f61455bd6faa6d78-wa_entiat_ver01_data_sn83045604_00202199045_1890090801_0817_001_6_96.jpg"
+  },
+  "id": 512
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237132,
+      "id": 68001,
+      "lead_time": 0.8,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "XDIocjI72Z",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9fb727c47f127314dd17bf0383f101f4-hihouml_desdemona_ver03_data_sn85047084_0029602465A_1900112201_0228_010_6_91.jpg"
+  },
+  "id": 68
+}

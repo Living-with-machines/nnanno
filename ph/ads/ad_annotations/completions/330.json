@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237482,
+      "id": 330001,
+      "lead_time": 1.406,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "G7vmCxsi-O",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/90a652497e349252b02d8900318467f8-ohi_delta_ver01_data_sn87075048_00237289535_1895020201_0693_000_6_94.jpg"
+  },
+  "id": 330
+}

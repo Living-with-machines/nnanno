@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237103,
+      "id": 94001,
+      "lead_time": 1.771,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "BTHUGXQmHd",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/6aa6f9b70d89e82b91b2e895aced8ace-iahi_ivysaur_ver01_data_sn83025182_00279528347_1865122701_0505_002_6_94.jpg"
+  },
+  "id": 94
+}

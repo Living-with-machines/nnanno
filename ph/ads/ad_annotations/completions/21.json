@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237215,
+      "id": 21001,
+      "lead_time": 1.831,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "UUqTGaoZD2",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0e6ae16d8dc934137280c047a2c1bb7f-curiv_lovage_ver01_data_sn82014998_00279558029_1870102201_0244_000_6_95.jpg"
+  },
+  "id": 21
+}

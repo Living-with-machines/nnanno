@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237112,
+      "id": 375001,
+      "lead_time": 1.024,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Bqdsvr_I-s",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0d5a54e48f71d28d4602c7b8ab44d0c5-pst_atherton_ver01_data_sn84026355_00237281950_1900091101_0516_002_6_97.jpg"
+  },
+  "id": 375
+}

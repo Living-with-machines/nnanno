@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237143,
+      "id": 181001,
+      "lead_time": 0.972,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "C1CssOJtSZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d3d9303db78a6ab36bc17dd414d04933-khi_higuchi_ver01_data_sn82016014_00295871180_1900111401_0358_006_6_93.jpg"
+  },
+  "id": 181
+}

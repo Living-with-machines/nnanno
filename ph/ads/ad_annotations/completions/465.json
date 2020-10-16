@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236822,
+      "id": 465001,
+      "lead_time": 0.953,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "f2WS8z8NFR",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0ae55420f0cb2fc22ebd6ebde4fc7f4c-txdn_foxtrot_ver01_data_sn86064205_00175035187_1885091201_1194_002_6_95.jpg"
+  },
+  "id": 465
+}

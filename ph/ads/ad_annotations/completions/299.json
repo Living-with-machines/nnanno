@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237034,
+      "id": 299001,
+      "lead_time": 0.828,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "sfJDfcfLPy",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1cbfb9d4ce3d90eab59f89bdf0d60306-nmu_barberry_ver04_data_sn86090456_00280774492_1895060401_0613_009_6_95.jpg"
+  },
+  "id": 299
+}

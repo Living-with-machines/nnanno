@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236659,
+      "id": 303001,
+      "lead_time": 2.148,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "33Dv5Jaok5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5557daf3f4233d8b7048df8a13679282-nn_aristotle_ver01_data_sn83030272_100479771_1900122101_0713_001_6_99.jpg"
+  },
+  "id": 303
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237062,
+      "id": 459001,
+      "lead_time": 2.304,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "-j7-IOSq5_",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/560f90aa94ebaf00d42af7de47a1888c-txdn_bentley_ver01_data_sn83025733_00200297544_1875011301_0476_003_6_92.jpg"
+  },
+  "id": 459
+}

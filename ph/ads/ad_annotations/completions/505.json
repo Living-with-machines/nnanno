@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237454,
+      "id": 505001,
+      "lead_time": 2.199,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "5EF5_eCEPL",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1712c0146738649afb2caed09903979c-vtu_leek_ver01_data_sn90000523_0041562959A_1890082801_0350_000_6_94.jpg"
+  },
+  "id": 505
+}

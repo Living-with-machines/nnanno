@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237119,
+      "id": 73001,
+      "lead_time": 1.121,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FvOkb16PNZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b5bd6b941669b0355362f47e4f6a41e4-iahi_charizard_ver01_data_sn84038074_00279529467_1865010501_0703_000_6_98.jpg"
+  },
+  "id": 73
+}

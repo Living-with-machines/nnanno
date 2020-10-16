@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237053,
+      "id": 166001,
+      "lead_time": 0.906,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ZFsLvcwhCg",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/008ddfc809454f8c9db6ab00183da769-iune_juliet_ver01_data_sn85033413_00211101180_1875011301_0828_007_6_95.jpg"
+  },
+  "id": 166
+}

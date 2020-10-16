@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237545,
+      "id": 400001,
+      "lead_time": 0.775,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "zo4zO_ztU6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/99e275d4117307580da99f7a5ee47287-scu_drinksmall_ver01_data_sn93067705_00237288439_1880031301_0900_000_6_96.jpg"
+  },
+  "id": 400
+}

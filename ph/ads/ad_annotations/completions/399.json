@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236702,
+      "id": 399001,
+      "lead_time": 0.927,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "fduhVqMCsm",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2ab190d6fd59984f712a98e214c8a5ee-scu_chitlinstrut_ver01_data_sn84026925_00295862750_1875032501_0267_006_6_91.jpg"
+  },
+  "id": 399
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237384,
+      "id": 281001,
+      "lead_time": 4.218,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "cfCA3O5ID0",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/1097466afc3a0afa3b92a00f18f5805b-nbu_indianola_ver01_data_sn94056415_00206536688_1900052501_0292_002_6_99.jpg"
+  },
+  "id": 281
+}

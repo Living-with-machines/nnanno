@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237204,
+      "id": 438001,
+      "lead_time": 44.3,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "BblAxXheGs",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0f42e7f23231c1144d9e7bc481eb8f14-tu_grady_ver01_data_sn83025718_00200293794_1865041401_0348_003_6_94.jpg"
+  },
+  "id": 438
+}

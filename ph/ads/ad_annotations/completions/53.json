@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237270,
+      "id": 53001,
+      "lead_time": 0.715,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "-8C9BBxQf3",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/053777a8a9c62401a81826260a87ba78-dlc_jaguar_ver01_data_sn83030214_00175038851_1895111101_0188_006_6_93.jpg"
+  },
+  "id": 53
+}

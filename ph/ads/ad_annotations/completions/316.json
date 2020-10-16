@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236973,
+      "id": 316001,
+      "lead_time": 0.753,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "0SnqE0BB7l",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/91e9f96bdab80391ac6c96bb2fa32ae3-nvln_rhyolite_ver01_data_sn84022044_00279555314_1880012301_0919_002_6_96.jpg"
+  },
+  "id": 316
+}

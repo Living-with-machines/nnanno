@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237017,
+      "id": 282001,
+      "lead_time": 2.401,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "bWRXZkAcGN",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c5d9db12b23a01b7597aebb35bd08916-nbu_jackinthepulpit_ver01_data_2017270200_00279528037_1895031401_0926_001_6_96.jpg"
+  },
+  "id": 282
+}

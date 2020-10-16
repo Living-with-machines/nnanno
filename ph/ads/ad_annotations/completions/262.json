@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237380,
+      "id": 262001,
+      "lead_time": 0.982,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "VSieDw_4t7",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/64c0c93939d2d889e30ecff54e0432ce-msar_emerald_ver02_data_sn87065614_00383343793_1890072401_0962_001_6_91.jpg"
+  },
+  "id": 262
+}

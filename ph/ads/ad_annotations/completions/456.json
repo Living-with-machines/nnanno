@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236770,
+      "id": 456001,
+      "lead_time": 0.835,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "pHT0IxX2k0",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8f71571dc9cc90f49167fa46c569c896-tu_nancy_ver01_data_sn85033673_00280779386_1870092101_0866_006_6_92.jpg"
+  },
+  "id": 456
+}

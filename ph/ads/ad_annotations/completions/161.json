@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237446,
+      "id": 161001,
+      "lead_time": 0.727,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "VC5hCYtVAY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/64ad010c091525851ed333e0bccd984e-iune_deadline_ver01_data_sn92053944_00295873711_1885120301_0220_009_6_90.jpg"
+  },
+  "id": 161
+}

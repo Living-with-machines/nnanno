@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237128,
+      "id": 175001,
+      "lead_time": 0.982,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "tFV55J66aZ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a0d9242598c922673721268f92c79e2f-khi_brockovich_ver02_data_sn83045789_00237281937_1885091901_0222_002_6_95.jpg"
+  },
+  "id": 175
+}

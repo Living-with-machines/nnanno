@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237292,
+      "id": 374001,
+      "lead_time": 0.767,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "PYT-lvc-mJ",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4bad00b35efe85690be2784da0da8fd5-pst_atherton_ver01_data_sn84026355_00237281950_1900081401_0311_005_6_98.jpg"
+  },
+  "id": 374
+}

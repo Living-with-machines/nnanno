@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237065,
+      "id": 423001,
+      "lead_time": 1.02,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "FlPE_TarkG",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/e91fc920f8dae26598a5f19b8894035e-tu_brownie_ver01_data_sn85033429_00280779325_1885111201_0335_005_6_95.jpg"
+  },
+  "id": 423
+}

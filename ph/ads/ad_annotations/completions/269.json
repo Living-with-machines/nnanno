@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237319,
+      "id": 269001,
+      "lead_time": 0.842,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "VQ4cVsTT5m",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/8cbbb8bb0e27e890f899825cdc23b92f-msar_lightningbolt_ver03_data_sn85038603_00415662142_1880111301_0418_000_6_99.jpg"
+  },
+  "id": 269
+}

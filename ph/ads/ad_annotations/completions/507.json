@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237002,
+      "id": 507001,
+      "lead_time": 1.171,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "AX5YYZl4FH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/319f3507ef708c305eaa8f37dbdca202-wa_camas_ver01_data_sn83045610_00202198235_1880030501_0605_005_6_90.jpg"
+  },
+  "id": 507
+}

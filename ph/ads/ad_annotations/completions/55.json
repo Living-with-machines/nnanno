@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237583,
+      "id": 55001,
+      "lead_time": 2.459,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "lRmvhwVOIH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3d36e487ea0111f2fa090f81148df30f-dlc_yorkie_ver01_data_sn83045462_00280654528_1880011501_0453_000_6_90.jpg"
+  },
+  "id": 55
+}

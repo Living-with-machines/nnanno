@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236734,
+      "id": 87001,
+      "lead_time": 0.968,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "qWYGtgI7Yp",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/abcd409bcccb1c6e2546d53d4056afa5-iahi_hypno_ver01_data_sn83045646_00279529170_1865060801_0684_001_6_95.jpg"
+  },
+  "id": 87
+}

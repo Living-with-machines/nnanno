@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237447,
+      "id": 485001,
+      "lead_time": 1.368,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "R0jLSUTeM9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/91190418d9972c35938bd94d2d177a50-vi_fezza_ver01_data_sn85025007_00415663729_1875042301_0399_001_6_96.jpg"
+  },
+  "id": 485
+}

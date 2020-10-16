@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237405,
+      "id": 67001,
+      "lead_time": 1.092,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "e-qWObcbDc",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/bc945cc5acb3b30f4dc3681c54e2160b-hihouml_damsel_ver01_data_sn83025121_00211108940_1890031101_0297_005_6_92.jpg"
+  },
+  "id": 67
+}

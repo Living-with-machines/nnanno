@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237041,
+      "id": 153001,
+      "lead_time": 1.146,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NfMAmBWvNe",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/02e5b4653959e2866a8d13ff5080cfc5-iune_broadsheet_ver01_data_sn84038628_0029587997A_1870110401_0431_002_6_91.jpg"
+  },
+  "id": 153
+}

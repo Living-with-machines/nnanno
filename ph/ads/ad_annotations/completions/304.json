@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237488,
+      "id": 304001,
+      "lead_time": 0.709,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "INDtacWfpO",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c54bf9bf2e7f9c7266d5549253eda328-nn_brown_ver01_data_sn83030272_00206533468_1875081001_1017_001_6_95.jpg"
+  },
+  "id": 304
+}

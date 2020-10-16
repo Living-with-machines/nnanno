@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236777,
+      "id": 306001,
+      "lead_time": 0.853,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "xEFEs1v4XR",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0ba5e435ef5a1fc827ca62f7c63fdac0-nn_erinna_ver01_data_sn83030272_00175042830_1895123101_0796_000_6_97.jpg"
+  },
+  "id": 306
+}

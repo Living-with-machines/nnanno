@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236799,
+      "id": 381001,
+      "lead_time": 1.666,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "vnyHn7DpgF",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d5928e879acb2c9f159e876b2079d71e-pst_grange_ver01_data_sn83025925_00280776294_1870062001_0352_007_6_90.jpg"
+  },
+  "id": 381
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237337,
+      "id": 271001,
+      "lead_time": 1.083,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ju4IccZgmC",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/5266accf35bba67ae4728abe636fcbe6-mthi_antelope_ver02_data_sn86075021_00294550422_1885110101_1061_000_6_96.jpg"
+  },
+  "id": 271
+}

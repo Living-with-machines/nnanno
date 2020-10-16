@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236726,
+      "id": 412001,
+      "lead_time": 1.088,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "kkY12pla-5",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/9691ecd856379731c64903f5b08e3490-sdhi_avenger_ver01_data_sn91099607_00415665416_1875052601_0138_001_6_93.jpg"
+  },
+  "id": 412
+}

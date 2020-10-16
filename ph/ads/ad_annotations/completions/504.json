@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237423,
+      "id": 504001,
+      "lead_time": 0.893,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "xZ7TAGQpJt",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c2c0ba0334925102192212e1aabb6a47-vtu_killington_ver02_data_sn84023296_00200296114_1875012701_0371_000_6_96.jpg"
+  },
+  "id": 504
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237558,
+      "id": 165001,
+      "lead_time": 0.748,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "NZEF9e7BQW",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/a18fb04b2290a3a701aada4936746a9f-iune_folio_ver01_data_sn92053934_00212471999_1900090801_0722_005_6_98.jpg"
+  },
+  "id": 165
+}

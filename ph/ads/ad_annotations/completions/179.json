@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237157,
+      "id": 179001,
+      "lead_time": 2.068,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "dQ8Vo5QYPH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/f50d632c4a445220fa5a252405753980-khi_earhart_ver01_data_sn85032814_00237283260_1890073101_0445_001_6_97.jpg"
+  },
+  "id": 179
+}

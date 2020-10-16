@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236785,
+      "id": 222001,
+      "lead_time": 0.923,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "UT43nSFRrW",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/fee712d3b882a57eb12e9ed72931e1f9-me_graftonnotch_ver01_data_sn83016025_00279525486_1880062601_0478_007_6_90.jpg"
+  },
+  "id": 222
+}

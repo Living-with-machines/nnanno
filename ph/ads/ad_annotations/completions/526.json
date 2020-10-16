@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237121,
+      "id": 526001,
+      "lead_time": 1.036,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "r2rw8Mzms9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/557d570913840039fb048df7a93fc43c-whi_lucretia_ver01_data_sn86086852_0027176893A_1890091901_0264_011_6_91.jpg"
+  },
+  "id": 526
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236841,
+      "id": 249001,
+      "lead_time": 3.418,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Jc92BPvGTR",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0bda95180b59c830df9281b626ffc5a6-mnhi_jabbah_ver01_data_sn90059653_0019991926A_1880070701_0336_000_6_94.jpg"
+  },
+  "id": 249
+}

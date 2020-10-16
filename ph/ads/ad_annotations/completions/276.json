@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237366,
+      "id": 276001,
+      "lead_time": 1.75,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "X1_ET_-c2m",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/0118954d38a637af2a275e816a0ea1dc-mthi_jackrabbit_ver02_data_sn84036012_00294550392_1895111901_0230_001_6_99.jpg"
+  },
+  "id": 276
+}

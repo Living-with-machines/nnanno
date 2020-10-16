@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237146,
+      "id": 1001,
+      "lead_time": 0.859,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "D4EoO00Id-",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/13feb5ea66432a6485537e9d67a38003-az_coyote_ver01_data_sn84020558_00211106426_1890120201_0123_001_6_98.jpg"
+  },
+  "id": 1
+}

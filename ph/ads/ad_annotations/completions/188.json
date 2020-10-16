@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237428,
+      "id": 188001,
+      "lead_time": 0.9,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ffTw6j2YoY",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/19d5900ad2dc1243a6b11b817488172e-lu_forge_ver01_data_sn85038558_00280761540_1880060501_0302_003_6_92.jpg"
+  },
+  "id": 188
+}

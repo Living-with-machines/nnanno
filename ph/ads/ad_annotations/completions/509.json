@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237076,
+      "id": 509001,
+      "lead_time": 3.635,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "DyMtBlrn1B",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/31f511df42eb4cb8f608e21bd5365c6a-wa_dungeness_ver03_data_sn83045611_00202198922_1885081501_0780_001_6_93.jpg"
+  },
+  "id": 509
+}

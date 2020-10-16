@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236874,
+      "id": 332001,
+      "lead_time": 2.434,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "BREN2LiD86",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/31a373ed38fee970c0ecfbdda9c900b1-ohi_foxtrot_ver01_data_sn87076843_00237282760_1900113001_0396_007_6_93.jpg"
+  },
+  "id": 332
+}

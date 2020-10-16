@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236884,
+      "id": 537001,
+      "lead_time": 0.994,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "ABL9QyE6Jg",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/2ba5a9e768fca25eb5aff681c1a6404a-wvu_chekhov_ver01_data_sn84026847_00415665003_1865032701_0284_000_6_97.jpg"
+  },
+  "id": 537
+}

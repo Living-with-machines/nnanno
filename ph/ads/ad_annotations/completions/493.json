@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237359,
+      "id": 493001,
+      "lead_time": 1.016,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "17C_CwtGHb",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/92ada93043a5fa8a18627c005cd2ee1a-vi_lure_ver01_data_sn84024718_00280762489_1870110101_0584_000_6_94.jpg"
+  },
+  "id": 493
+}

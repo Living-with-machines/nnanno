@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237355,
+      "id": 272001,
+      "lead_time": 0.714,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Ab0kLC859U",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/b5c710562b1c1c096d3747923a6e51e5-mthi_bobcat_ver02_data_sn84036012_00294550550_1890040801_0139_001_6_91.jpg"
+  },
+  "id": 272
+}

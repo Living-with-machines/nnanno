@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237140,
+      "id": 446001,
+      "lead_time": 0.947,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "VqF7DJMo2c",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/c45a3adecc91042e79c34d0e6881a03d-tu_jimmy_ver02_data_sn85033437_00296021039_1880081701_0174_001_6_96.jpg"
+  },
+  "id": 446
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237542,
+      "id": 98001,
+      "lead_time": 17.343,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Vgkisn4vd6",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ec777080c16772918978cbad5d2ff34b-idhi_cather_ver01_data_sn86091172_00295868053_1890122901_1234_008_6_90.jpg"
+  },
+  "id": 98
+}

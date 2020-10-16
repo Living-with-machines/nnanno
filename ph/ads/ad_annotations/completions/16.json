@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236771,
+      "id": 16001,
+      "lead_time": 0.941,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "QxPKPjlT3l",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/69a54c1757162a8c12a5a3baebb641de-curiv_jojoba_ver01_data_sn84038814_00279557190_1860042001_1012_002_6_95.jpg"
+  },
+  "id": 16
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237238,
+      "id": 361001,
+      "lead_time": 1.122,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "LyQoijTCx9",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/d54a2c1e2b62a01d12d5a4f0831739d6-oru_ibis_ver01_data_sn85042448_00200298780_1895060301_0522_000_6_98.jpg"
+  },
+  "id": 361
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602236828,
+      "id": 246001,
+      "lead_time": 1.194,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "_N2Hvho3dU",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/87d9342bd977d1827dec245308f3896f-mnhi_edsel_ver01_data_sn89081022_0021247275A_1900080801_0279_003_6_94.jpg"
+  },
+  "id": 246
+}

@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237504,
+      "id": 431001,
+      "lead_time": 0.773,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Kn_qDNs9rH",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/4ed0af22dc1ba52ca198d8a7914bf3a7-tu_chet_ver01_data_sn83045160_00200293113_1875041101_0316_010_6_92.jpg"
+  },
+  "id": 431
+}

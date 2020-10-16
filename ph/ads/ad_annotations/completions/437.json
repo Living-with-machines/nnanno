@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237323,
+      "id": 437001,
+      "lead_time": 2.3,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "Hv5B29IEEM",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/32ccf3e6a5b32d4ffa65b3ba5cd9f959-tu_furry_ver01_data_sn83045628_00200293587_1860042101_0069_000_6_94.jpg"
+  },
+  "id": 437
+}

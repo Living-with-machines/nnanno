@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237395,
+      "id": 413001,
+      "lead_time": 1.565,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "QMBG6sYy_4",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "illustrations"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/ab0c1572e2768fefc3c6862a290f80b4-sdhi_avenger_ver01_data_sn91099608_00415665362_1880102801_0619_004_6_90.jpg"
+  },
+  "id": 413
+}

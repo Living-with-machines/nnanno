@@ -1,0 +1,26 @@
+{
+  "completions": [
+    {
+      "created_at": 1602237444,
+      "id": 28001,
+      "lead_time": 0.971,
+      "result": [
+        {
+          "from_name": "choice",
+          "id": "n6HaEpQU8C",
+          "to_name": "image",
+          "type": "choices",
+          "value": {
+            "choices": [
+              "text-only"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "data": {
+    "image": "http://localhost:8081/data/upload/3950bfaedacfd2ba6170832fd56d0ea4-curiv_nicasio_ver01_data_sn84038806_00280768959_1875043001_0422_005_6_92.jpg"
+  },
+  "id": 28
+}
