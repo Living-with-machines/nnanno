@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_max_workers": "00_core.ipynb",
+index = {"create_session": "00_core.ipynb",
+         "create_cached_session": "00_core.ipynb",
+         "get_max_workers": "00_core.ipynb",
          "gen_data": "00_core.ipynb",
          "list_data": "00_core.ipynb",
          "df": "00_core.ipynb",
@@ -12,8 +14,6 @@ index = {"get_max_workers": "00_core.ipynb",
          "parse_box": "00_core.ipynb",
          "create_iiif_url": "00_core.ipynb",
          "iif_df_apply": "00_core.ipynb",
-         "create_session": "00_core.ipynb",
-         "create_cached_session": "00_core.ipynb",
          "get_json_url": "01_sample.ipynb",
          "load_json": "01_sample.ipynb",
          "count_json_iter": "01_sample.ipynb",
@@ -25,10 +25,16 @@ index = {"get_max_workers": "00_core.ipynb",
          "calc_year_from_total": "01_sample.ipynb",
          "reduce_df_memory": "01_sample.ipynb",
          "sample_year": "01_sample.ipynb",
-         "nnSampler": "01_sample.ipynb"}
+         "nnSampler": "01_sample.ipynb",
+         "load_df": "02_annotate.ipynb",
+         "load_completions": "02_annotate.ipynb",
+         "get_og_filepath": "02_annotate.ipynb",
+         "anno_sample_merge": "02_annotate.ipynb",
+         "nnAnnotations": "02_annotate.ipynb"}
 
 modules = ["core.py",
-           "sample.py"]
+           "sample.py",
+           "annotate.py"]
 
 doc_url = "https://davanstrien.github.io/nnanno/"
 
