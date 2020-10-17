@@ -191,7 +191,7 @@ def sample_year(kind:str,sample_size:Union[int,float], year:int) ->np.array:
     url = get_json_url(year, kind)
     if type(sample_size) is float:
         sample_size = calc_frac_size(url, sample_size)
-    if kind == ('ads' or 'headlines') and int(year) >=1870:
+    if kind == 'ads' and int(year) >=1870 or (kind == 'headlines'):
         session = create_session()
     else:
         session = create_cached_session()
