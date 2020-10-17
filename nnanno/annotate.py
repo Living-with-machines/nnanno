@@ -6,12 +6,11 @@ __all__ = ['load_df', 'load_completions', 'get_og_filepath', 'anno_sample_merge'
 from tqdm.notebook import trange, tqdm
 import pandas as pd
 from pandas import json_normalize
-import rapidjson as json
+import json
 import requests
 import re
 from glob import glob
 from pathlib import Path
-import rapidjson as json
 
 # Cell
 def load_df(json_file):
