@@ -95,7 +95,7 @@ def get_year_size(year,kind):
     session = None
     dset_size = {}
     url = get_json_url(year,kind)
-    if kind == ('ads' or 'headlines') and int(year) >=1870:
+    if kind == 'ads' and int(year) >=1870 or (kind == 'headlines'):
         session = create_session()
     dset_size[str(year)] = count_json_iter(url, session)
     return dset_size
