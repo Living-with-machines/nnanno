@@ -270,7 +270,7 @@ class nnSampler:
                     "You need to create a sample before downloading, or pass in a previously created "
                 )
         self.download_df["iiif_url"] = self.download_df.apply(
-            lambda x: iif_df_apply(
+            lambda x: iiif_df_apply(
                 x,
                 original=original,
                 pct=pct,
