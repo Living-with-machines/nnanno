@@ -24,12 +24,39 @@ from PIL import Image
 import PIL
 
 # Cell
+from fastai.vision.all import *
+
+# Cell
 def _filter_replace_none_image(results:List[Optional[PIL.Image.Image]]):
     fakeim = Image.fromarray(244 * np.ones((250,250,3), np.uint8))
     results = L(results)
     none_image_index = results.argwhere(lambda x: x is None) # Gets the index for images which are none
     results[none_image_index] = fakeim # Replaces None with fakeim
     return results.items, none_image_index
+
+# Cell
+def _create_pred_header(fname, dls=None):
+    columns=[
+            "filepath",
+            "pub_date",
+            "page_seq_num",
+            "edition_seq_num",
+            "batch",
+            "lccn",
+            "box",
+            "score",
+            "ocr",
+            "place_of_publication",
+            "geographic_coverage",
+            "name",
+            "publisher",
+            "url",
+            "page_url",
+            "iiif_url",
+            "pred_decoded"]
+    if dls:
+        columns = columns + (list(dls.vocab))
+    return pd.DataFrame(columns=columns).to_csv(fname, index=None)
 
 # Cell
 class nnPredict:
