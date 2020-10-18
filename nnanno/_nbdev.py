@@ -13,7 +13,7 @@ index = {"create_session": "00_core.ipynb",
          "download_image": "00_core.ipynb",
          "parse_box": "00_core.ipynb",
          "create_iiif_url": "00_core.ipynb",
-         "iif_df_apply": "00_core.ipynb",
+         "iiif_df_apply": "00_core.ipynb",
          "get_json_url": "01_sample.ipynb",
          "load_json": "01_sample.ipynb",
          "count_json_iter": "01_sample.ipynb",
@@ -30,11 +30,13 @@ index = {"create_session": "00_core.ipynb",
          "load_completions": "02_annotate.ipynb",
          "get_og_filepath": "02_annotate.ipynb",
          "anno_sample_merge": "02_annotate.ipynb",
-         "nnAnnotations": "02_annotate.ipynb"}
+         "nnAnnotations": "02_annotate.ipynb",
+         "nnPredict": "03_inference.ipynb"}
 
 modules = ["core.py",
            "sample.py",
-           "annotate.py"]
+           "annotate.py",
+           "inference.py"]
 
 doc_url = "https://davanstrien.github.io/nnanno/"
 
