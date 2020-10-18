@@ -60,8 +60,9 @@ def _create_pred_header(fname, dls=None):
 
 # Cell
 class nnPredict:
-    def __init__(self, learner, tyr_gpu=True):
+    def __init__(self, learner, try_gpu=True):
         self.learner = learner
+        self.try_gpu = try_gpu
         self.learner.model
         self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
@@ -72,6 +73,13 @@ class nnPredict:
         # TODO docstring
         self.sample_df = sample_df
        # Path(out_dir).mkdir(exist_ok=True)
+        if self.try_gpu:
+            if torch.cuda.is_available:
+                gpu = True
+            else:
+                gpu = False
+        if gpu:
+            self.learner.model = self.learner.model.cuda()
         self.sample_df['iiif_url'] = self.sample_df.apply(lambda x: iiif_df_apply(x,size=(250,250)),axis=1)
         dfs = []
         splits = round(len(self.sample_df)/bs)
@@ -89,6 +97,8 @@ class nnPredict:
             else:
                 pass
             test_data = self.learner.dls.test_dl(im_as_arrays)
+            if gpu:
+                test_data.to('cuda')
             with self.learner.no_bar():
                 pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
             pred_decoded = L(pred_tuple[2], use_list=True)
@@ -127,7 +137,14 @@ class nnPredict:
 #                     f"type{sample_size} is not an int. Fractions are only supported for sampling by year"
 #                 )
 #             sample_size = calc_year_from_total(sample_size, start_year, end_year, step)
-
+        if self.try_gpu:
+            if torch.cuda.is_available():
+                gpu = True
+                print('using gpu')
+            else:
+                gpu = False
+        if gpu:
+            self.learner.model = self.learner.model.cuda()
         years = range(start_year, end_year + 1, step)
         total = self._get_year_sample_size(kind,years).sum()
         pbar = tqdm(years,total=total)
@@ -148,7 +165,7 @@ class nnPredict:
                 for i,batch in enumerate(tqdm(
                     batches, total=round(year_total//bs),leave=False, desc='Batch Progress')):
                     df = pd.DataFrame(batch)
-                    df["iiif_url"] = df.apply(lambda x: iif_df_apply(x), axis=1)
+                    df["iiif_url"] = df.apply(lambda x: iiif_df_apply(x), axis=1)
                     futures = []
                     workers = get_max_workers(df)
                     for iif_url in df["iiif_url"].values:

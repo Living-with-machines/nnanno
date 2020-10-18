@@ -202,7 +202,7 @@ def sample_year(kind:str,sample_size:Union[int,float], year:int) ->np.array:
                 sample_data = sample_stream(iter(data), sample_size)
             except requests.exceptions.RequestException as e:
                 sample_data = np.nan
-    return sample_data
+        return sample_data
 
 # Cell
 class nnSampler:
@@ -235,7 +235,7 @@ class nnSampler:
         years = range(start_year, end_year + 1, step)
         _year_sample = partial(sample_year, kind, sample_size)
         with tqdm(total=len(years)) as progress:
-            with concurrent.futures.ThreadPoolExecutor(2) as executor:
+            with concurrent.futures.ThreadPoolExecutor(8) as executor:
                 for year in years:
                     future = executor.submit(_year_sample, year)
                     future.add_done_callback(lambda p: progress.update())
