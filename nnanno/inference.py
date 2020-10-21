@@ -63,7 +63,6 @@ class nnPredict:
     def __init__(self, learner, try_gpu=True):
         self.learner = learner
         self.try_gpu = try_gpu
-        self.learner.model
         self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
     def _get_year_sample_size(self, kind,year):
