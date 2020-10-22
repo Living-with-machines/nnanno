@@ -10,6 +10,10 @@ from cytoolz import itertoolz
 from tqdm.notebook import tqdm
 
 # Cell
+from .core import *
+from .sample import *
+
+# Cell
 from typing import (
     Any,
     Optional,
@@ -59,9 +63,21 @@ def _create_pred_header(fname, dls=None):
     return pd.DataFrame(columns=columns).to_csv(fname, index=None)
 
 # Cell
+def _create_year_csv(out_dir, year,kind,dls=None):
+    fname = Path(f"{out_dir}/{year}_{kind}.csv")
+    _create_pred_header(fname, dls)
+    return fname
+
+# Cell
+def _create_year_json(out_dir, year,kind, batch):
+    fname = Path(f"{out_dir}/{year}_{kind}_{batch}.json")
+    return fname
+
+# Cell
 class nnPredict:
     def __init__(self, learner, try_gpu=True):
         self.learner = learner
+        self.dls = learner.dls
         self.try_gpu = try_gpu
         self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
@@ -106,7 +122,7 @@ class nnPredict:
             df["pred_decoded"] = pred_decoded.items
             df["pred_decoded"] = df['pred_decoded'].astype(float)
             # create an empty df column for each class in dls.vocab
-            for c in dls.vocab:
+            for c in self.dls.vocab:
                 df[f'{c}_prob'] = ''
             # append the tensor predictions to the last `c` colomns of the df
             df.iloc[:,-dls.c:] = np.hsplit(pred_tensor.numpy(),dls.c) #split into columns
@@ -125,9 +141,10 @@ class nnPredict:
         end_year: int = 1950,
         step: int = 1,
         year_sample:bool=True,
+        size=None
     ):
-        if Path(out_dir).exists() and len(os.scandir(out_dir)) >=1:
-            raise ValueError(f'{out_fn} already exists and is not empty')
+        #if Path(out_dir).exists() and len(list(os.scandir(out_dir))) >=1:
+         #   raise ValueError(f'{out_fn} already exists and is not empty')
         Path(out_dir).mkdir(exist_ok=True)
 #         if sample_size and not year_sample:
 #             if not type(sample_size) == int:
@@ -147,7 +164,7 @@ class nnPredict:
         total = self._get_year_sample_size(kind,years).sum()
         pbar = tqdm(years,total=total)
         for year in pbar:
-            out_fn = _create_year_csv(out_dir,year,kind, dls)
+            out_fn = _create_year_csv(out_dir,year,kind, self.learner.dls)
             pbar.set_description(f"Predicting: {year}, total progress")
             if kind == ('ads' and int(year) >=1870) or (kind == 'headlines'):
                 s = create_session()
@@ -163,7 +180,7 @@ class nnPredict:
                 for i,batch in enumerate(tqdm(
                     batches, total=round(year_total//bs),leave=False, desc='Batch Progress')):
                     df = pd.DataFrame(batch)
-                    df["iiif_url"] = df.apply(lambda x: iiif_df_apply(x), axis=1)
+                    df["iiif_url"] = df.apply(lambda x: iiif_df_apply(x, size=size), axis=1)
                     futures = []
                     workers = get_max_workers(df)
                     for iif_url in df["iiif_url"].values:
@@ -177,7 +194,7 @@ class nnPredict:
                         tqdm.write(f"{none_index} skipped")
                     else:
                         pass
-                    test_data = learn.dls.test_dl(im_as_arrays)
+                    test_data = self.learner.dls.test_dl(im_as_arrays)
                     with self.learner.no_bar():
                         pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
                     pred_decoded = L(pred_tuple[2], use_list=True)
@@ -186,9 +203,9 @@ class nnPredict:
                     df["pred_decoded"] = pred_decoded.items
                     df["pred_decoded"] = df['pred_decoded'].astype(float)
                     # create an empty df column for each class in dls.vocab
-                    for c in dls.vocab:
+                    for c in self.dls.vocab:
                         df[f'{c}_prob'] = ''
                     # append the tensor predictions to the last `c` colomns of the df
-                    df.iloc[:,-dls.c:] = np.hsplit(pred_tensor.numpy(),dls.c) #split into columns
+                    df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.numpy(),self.dls.c) #split into columns
                     df.to_csv(out_fn, header=None, index=None, mode="a")
                     pbar.update(bs)
