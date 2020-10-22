@@ -115,7 +115,6 @@ class nnPredict:
         return dfs
 
 
-
     def predict(
         self,
         kind: str,
@@ -127,8 +126,8 @@ class nnPredict:
         step: int = 1,
         year_sample:bool=True,
     ):
-#         if Path(out_dir).exists() and len(os.scandir(out_dir)) >=1:
-#             raise ValueError(f'{out_fn} already exists and is not empty')
+        if Path(out_dir).exists() and len(os.scandir(out_dir)) >=1:
+            raise ValueError(f'{out_fn} already exists and is not empty')
         Path(out_dir).mkdir(exist_ok=True)
 #         if sample_size and not year_sample:
 #             if not type(sample_size) == int:
