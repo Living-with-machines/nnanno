@@ -95,7 +95,7 @@ class nnPredict:
                 gpu = False
         if gpu:
             self.learner.model = self.learner.model.cuda()
-        self.sample_df['iiif_url'] = self.sample_df.apply(lambda x: iiif_df_apply(x,size=(250,250)),axis=1)
+        self.sample_df['iiif_url'] = self.sample_df.apply(lambda x: iiif_df_apply(x),axis=1)
         dfs = []
         splits = round(len(self.sample_df)/bs)
         for df in tqdm(np.array_split(sample_df, splits)):
@@ -130,6 +130,26 @@ class nnPredict:
             dfs.append(df)
         return dfs
 
+    def predict_sample(self,
+        kind: str,
+        out_dir: str,
+        bs: int = 16,
+        sample_size: Union[int, float] = None,
+        start_year: int = 1850,
+        end_year: int = 1950,
+        step: int = 1,
+        year_sample:bool=True,
+        size=None):
+
+        years = range(start_year, end_year + 1, step)
+        pbar = tqdm(years)
+        for year in pbar:
+            pbar.set_description(f"Predicting: {year}, total progress")
+            sample = sample_year(kind, sample_size, year)
+            sample_df = pd.DataFrame.from_records(sample)
+            pred_df = self.predict_from_sample_df(sample_df, bs)
+            pred_df.to_json(f'{out_dir}/{year}.json')
+            pbar.update()
 
     def predict(
         self,
