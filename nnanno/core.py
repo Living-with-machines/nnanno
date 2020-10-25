@@ -41,7 +41,6 @@ def create_session():
     s.mount("http://", adapter)
     return s
 
-
 # Cell
 def create_cached_session():
     retry_strategy = Retry(total=80)
@@ -56,12 +55,12 @@ def get_max_workers(data=None):
     Returns int to pass to max_workers based on len of `data` if available or `cpu_count()`
     """
     if data is not None and hasattr(data, '__len__'):
-            return min(multiprocessing.cpu_count(), len(data))
+        return min(multiprocessing.cpu_count(), len(data))
     else:
         return multiprocessing.cpu_count()
 
 # Cell
-gen_data = (i for i in range(4))
+gen_data = iter(range(4))
 assert get_max_workers(gen_data) == multiprocessing.cpu_count()
 list_data = [1,2,3,4]
 assert get_max_workers(list_data) == min(multiprocessing.cpu_count(), len(list_data))
@@ -73,7 +72,7 @@ def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
     """Attempts to load an image from `url` returns `None` if request times out or no image at url"""
     im = None
     session = create_session()
-    with session.get(url,timeout=(30)) as r:
+    with session.get(url, timeout=(30)) as r:
         if r:
             try:
                 im = (Image.open(io.BytesIO(r.content))).convert(mode)
@@ -88,14 +87,14 @@ def save_image(im: PIL.Image.Image,fname, out_dir='.'):
     im.save(out_path)
 
 # Cell
-def download_image(url,fname,out_dir='.'):
+def download_image(url, fname, out_dir='.'):
     """
     Attempts to load image from `url` and save as `fname` to `out_dir`
     Returns `None` if bad URL or request timesout
     """
     im = load_url_image(url)
     if im:
-        save_image(im, fname,out_dir)
+        save_image(im, fname, out_dir)
     else:
         return None
 
@@ -133,11 +132,9 @@ def create_iiif_url(box:list,
     if pct:
         return  "/".join([url_prefix, url_chronam_path, url_coordinates, pct_downsampled])
     if size and preserve_asp_ratio:
-         return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"!{size[0]},{size[1]}/0/default.jpg"])
+        return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"!{size[0]},{size[1]}/0/default.jpg"])
     if size and not preserve_asp_ratio:
-            return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"{size[0]},{size[1]}/0/default.jpg"])
-   # IIIF_downsampled_url = "/".join([url_prefix, url_chronam_path, url_coordinates, url_suffix_downsampled])
-  #  return IIIF_downsampled_url
+        return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"{size[0]},{size[1]}/0/default.jpg"])
 
 # Cell
 def iiif_df_apply(
