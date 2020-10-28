@@ -7,7 +7,6 @@ __all__ = ['get_json_url', 'load_json', 'count_json_iter', 'get_year_size', 'get
 from .core import *
 
 # Cell
-# TODO tidy imports
 
 # sys
 import io
@@ -35,7 +34,7 @@ import pandas as pd
 from functools import partial
 import numpy as np
 
-# typing
+# Cell
 from typing import (
     Any,
     Optional,
@@ -70,7 +69,7 @@ def load_json(url) -> Dict[str, Any]:
 @functools.lru_cache(256)
 def count_json_iter(url: str, session=None) -> int:
     """
-    Returns count of objects in url json file using an iterator to avoid loading json          into memory
+    Returns count of objects in url json file using an iterator to avoid loading json into memory
 
     Parameters:
     url (str): URL for news-navigator json file
@@ -91,7 +90,20 @@ def count_json_iter(url: str, session=None) -> int:
 
 # Cell
 @functools.lru_cache(256)
-def get_year_size(year,kind):
+def get_year_size(year: Union[int,str], kind: str) -> dict:
+    """returns size of a json dataset for a given year and kind
+    results are cached
+    Parameters
+    ----------
+    year : Union[int,str]
+        year from newspaper navigator
+    kind : str
+        {'ads', 'photos', 'maps', 'illustrations', 'comics', 'cartoons', 'headlines'}
+    Returns
+    -------
+    size :dict
+        returns a dict with year as a key and size as value
+    """
     session = None
     dset_size = {}
     url = get_json_url(year,kind)
@@ -108,11 +120,11 @@ def get_year_sizes(kind,start=1850, end=1950, step=5):
     with step size 'step'
 
     Parameters:
-    kind (str): kind of image from news-navigator options:
-    photos, illustrations, maps, comics, cartoons, headlines, ads
+    kind (str): kind of image from news-navigator:
+    {'ads', 'photos', 'maps', 'illustrations', 'comics', 'cartoons', 'headlines'}
 
     Returns:
-    Pandas.DataFrame: with data from input json url
+    Pandas.DataFrame: holding data from input json url
     """
   #  dset_size = {}
     futures = []
@@ -126,19 +138,20 @@ def get_year_sizes(kind,start=1850, end=1950, step=5):
                 futures.append(future)
         results = [future.result() for future in futures]
         dset_size = {k: v for d in results for k, v in d.items()}
-    year_df = pd.DataFrame.from_dict(dset_size,orient='index',columns=[f'{kind}_count'])
-    return year_df
-
+    return pd.DataFrame.from_dict(
+        dset_size, orient='index', columns=[f'{kind}_count']
+    )
 
 # Cell
 def get_all_year_sizes(start=1850, end=1950,step=1, save:bool=True):
     """
     Returns a dataframe with number of counts from year `start` to `end`
     """
-    kinds = ['ads', 'photos', 'maps', 'illustrations', 'comics', 'cartoons','headlines']
+    kinds = ['ads', 'photos', 'maps', 'illustrations',
+                    'comics', 'cartoons', 'headlines']
     dfs = []
     for kind in tqdm(kinds):
-        df = get_year_sizes(kind, start=start, end=end,step=step)
+        df = get_year_sizes(kind, start=start, end=end, step=step)
         dfs.append(df)
     df = pd.concat(dfs, axis=1)
     df['total'] = df.sum(axis=1)
@@ -155,13 +168,12 @@ def sample_stream(stream, k:int):
     r = np.array(list(itertools.islice(stream, k)))
     for t, x in enumerate(stream, k + 1):
         i = np.random.randint(1, t + 1)
-
         if i <= k:
             r[i - 1] = x
     return r
 
 # Cell
-@functools.lru_cache(128)
+@functools.lru_cache(512)
 def calc_frac_size(url,frac):
     "returns fraction size from a json stream"
     return round(count_json_iter(url)*frac)
@@ -169,7 +181,7 @@ def calc_frac_size(url,frac):
 # Cell
 def calc_year_from_total(total,start,end,step):
     "Calculate size of a year sample based on a total sample size"
-    return max(1,round(total/(((end-start)+1)/step)))
+    return max(1, round(total/(((end-start)+1)/step)))
 
 # Cell
 def reduce_df_memory(df):
@@ -187,10 +199,10 @@ def reduce_df_memory(df):
         )
 
 # Cell
-def sample_year(kind:str,sample_size:Union[int,float], year:int) ->np.array:
+def sample_year(kind:str, sample_size:Union[int,float], year:int) ->np.array:
     url = get_json_url(year, kind)
     if type(sample_size) is float:
-        sample_size = calc_frac_size(url, sample_size)
+        sample_size = max(1,calc_frac_size(url, sample_size))
     if kind == 'ads' and int(year) >=1870 or (kind == 'headlines'):
         session = create_session()
     else:
@@ -206,13 +218,13 @@ def sample_year(kind:str,sample_size:Union[int,float], year:int) ->np.array:
 
 # Cell
 class nnSampler:
-    def __init__(self):
-        self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
-                                      index_col=0)
+    """
+    Sampler for creating samples from Newspaper Navigator data
+    """
+    population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'), index_col=0)
 
     def __repr__(self):
         return (f'{self.__class__.__name__}')
-
 
     def create_sample(
         self,
@@ -223,12 +235,26 @@ class nnSampler:
         step: int = 5,
         year_sample=True,
         save: bool = False,
-        reduce_memory=True,
-    ):
+        reduce_memory=True):
+        """
+        Creates a sample of Newspaper Navigator data for a given set of years and a kind
+
+        Parameters:
+        sample_size: int, float
+            `sample size` can either be a fixed number or a fraction of the total dataset size
+        kind (str): kind of image from news-navigator:
+        {'ads', 'photos', 'maps', 'illustrations', 'comics', 'cartoons', 'headlines'}
+
+
+        Returns:
+        Pandas.DataFrame: holding data from input json url
+        """
+
         if not year_sample:
-            if not type(sample_size) == int:
+            if type(sample_size) != int:
                 raise ValueError(
-                    f"type{sample_size} is not an int. Fractions are only supported for sampling by year"
+                    f"""type{sample_size} is not an int. Fractions are only supported
+                    for sampling by year"""
                 )
             sample_size = calc_year_from_total(sample_size, start_year, end_year, step)
         futures = []
@@ -252,14 +278,42 @@ class nnSampler:
 
     def download_sample(
         self,
-        out_dir,
-        csv_name=None,
-        df=None,
+        out_dir: str,
+        json_name: Optional[str]=None,
+        df: Optional[pd.DataFrame] = None,
         original: bool = True,
-        pct: int = None,
-        size: tuple = None,
+        pct: Optional[int] = None,
+        size: Optional[tuple] = None,
         preserve_asp_ratio: bool = True,
-    ):
+    ) -> Union[None]:
+        """Download images from associated with a sample
+        The majority of the options relate to some options available in a IIIF image request
+        see `https://iiif.io/api/image/3.0/#4-image-requests` for further information
+
+        Parameters
+        ----------
+        out_dir
+            The save directory for the images
+        json_name
+
+        df
+            optional DataFrame containing a sample
+        original
+            if `True` will download orginal size images via IIIF
+        pct
+            optional value which scales the size of images requested by `pct`
+        size
+            a tuple representing `width` by `height`, will be passed to IIIF request
+        preserve_asp_ratio
+            whether to ask the IIIF request to preserve aspect ratio of image or not
+
+        Returns
+        -------
+        None
+            Nothing is returned by a
+
+        """
+
         if df is not None:
             self.download_df = df.copy(deep=True)
         else:
@@ -272,10 +326,10 @@ class nnSampler:
         self.download_df["iiif_url"] = self.download_df.apply(
             lambda x: iiif_df_apply(
                 x,
-                original=original,
-                pct=pct,
-                size=size,
-                preserve_asp_ratio=preserve_asp_ratio,
+                 original=original,
+                 pct=pct,
+                 size=size,
+                 preserve_asp_ratio=preserve_asp_ratio,
             ),
             axis=1,
         )
@@ -286,16 +340,16 @@ class nnSampler:
         _download_image = lambda x: download_image(
             x.iiif_url, x.download_image_path, out_dir)
         with tqdm(total=len(self.download_df)) as progress:
-            with concurrent.futures.ThreadPoolExecutor() as executor:
+            workers = get_max_workers(self.download_df)
+            with concurrent.futures.ThreadPoolExecutor(workers) as executor:
                 futures = []
                 for tuple_row in self.download_df.itertuples():
                     future = executor.submit(_download_image, tuple_row)
                     future.add_done_callback(lambda p: progress.update())
                     futures.append(future)
                 del futures
-        if csv_name is None:
+        if json_name is None:
             today = datetime.today()
             time_stamp = today.strftime("%Y_%d_%m_%H_%M")
-            csv_name = f"{time_stamp}_{len(self.download_df)}_sample"
-        #self.download_df.to_csv(f'{out_dir}/{csv_name}.csv')
-        self.download_df.to_json(f'{out_dir}/{csv_name}.json') # TODO make sure to use json for saving outputs of samples
+            json_name = f"{time_stamp}_{len(self.download_df)}_sample"
+        self.download_df.to_json(f'{out_dir}/{json_name}.json')
