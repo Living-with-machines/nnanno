@@ -28,7 +28,9 @@ from PIL import Image
 import PIL
 
 # Cell
+import fastai
 from fastai.vision.all import *
+from fastcore import *
 
 # Cell
 def _filter_replace_none_image(results:List[Optional[PIL.Image.Image]]):
@@ -59,7 +61,7 @@ def _create_pred_header(fname, dls=None):
             "iiif_url",
             "pred_decoded"]
     if dls:
-        columns = columns + (list(dls.vocab))
+        columns += (list(dls.vocab))
     return pd.DataFrame(columns=columns).to_csv(fname, index=None)
 
 # Cell
@@ -70,47 +72,55 @@ def _create_year_csv(out_dir, year,kind,dls=None):
 
 # Cell
 def _create_year_json(out_dir, year,kind, batch):
-    fname = Path(f"{out_dir}/{year}_{kind}_{batch}.json")
-    return fname
+    return Path(f"{out_dir}/{year}_{kind}_{batch}.json")
 
 # Cell
+# TODO tidy class and refactor
 class nnPredict:
-    def __init__(self, learner, try_gpu=True):
-        self.learner = learner
-        self.dls = learner.dls
-        self.try_gpu = try_gpu
-        self.population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
+    """Class for predicting"""
+    population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
-    def _get_year_sample_size(self, kind,year):
-        return self.population[f"{kind}_count"][year]
+    def __init__(self, learner:fastai.learner, try_gpu:bool=True):
+        self.learner = learner
+        self.try_gpu = try_gpu
+        self.dls = learner.dls
 
-    def predict_from_sample_df(self, sample_df,bs=16):
-        # TODO docstring
+    @classmethod
+    def _get_year_population_size(cls, kind:str,year:Union[str,int]):
+        return cls.population[f"{kind}_count"][year]
+
+    @classmethod
+    def _get_year_sample_size(cls, kind:str, year:Union[str,int], sample_size):
+        return (cls._get_year_population_size(kind, year) * sample_size).clip(1).round()
+
+    def predict_from_sample_df(self, sample_df:pd.DataFrame,bs:int=16,
+                               disable_pro:bool=False):
         self.sample_df = sample_df
-       # Path(out_dir).mkdir(exist_ok=True)
-        if self.try_gpu:
-            if torch.cuda.is_available:
-                gpu = True
-            else:
-                gpu = False
+
+        gpu = False
+        if self.try_gpu and torch.cuda.is_available():
+            gpu = True
         if gpu:
             self.learner.model = self.learner.model.cuda()
-        self.sample_df['iiif_url'] = self.sample_df.apply(lambda x: iiif_df_apply(x),axis=1)
+
+        self.sample_df['iiif_url'] = self.sample_df.apply(lambda x: iiif_df_apply(x), axis=1)
         dfs = []
-        splits = round(len(self.sample_df)/bs)
-        for df in tqdm(np.array_split(sample_df, splits)):
-            futures=[]
+
+        splits = max(1,round(len(self.sample_df)/bs))
+        for df in tqdm(np.array_split(sample_df, splits),
+                       disable=disable_pro,
+                       leave=False,
+                       desc='Batch progress'):
+            futures = []
             for url in df['iiif_url'].to_list():
-                with ThreadPoolExecutor() as e:
-                    future = e.submit(load_url_image,url)
+                with concurrent.futures.ThreadPoolExecutor(get_max_workers(df)) as e:
+                    future = e.submit(load_url_image, url)
                     futures.append(future)
             results = [future.result() for future in futures]
             image_list, none_index = _filter_replace_none_image(results)
             im_as_arrays = [np.array(image) for image in image_list]
-            if len(none_index) >0:
-                        tqdm.write(f"{none_index} skipped")
-            else:
-                pass
+           # if len(none_index) >0:
+            #            tqdm.write(f"{none_index} skipped")
             test_data = self.learner.dls.test_dl(im_as_arrays)
             if gpu:
                 test_data.to('cuda')
@@ -118,38 +128,48 @@ class nnPredict:
                 pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
             pred_decoded = L(pred_tuple[2], use_list=True)
             pred_tensor =  L(pred_tuple[0],use_list=None)
-            pred_decoded[none_index] = np.nan; pred_tensor[none_index] = np.nan
+            pred_decoded[none_index] = np.nan
+            pred_tensor[none_index] = np.nan
             df["pred_decoded"] = pred_decoded.items
             df["pred_decoded"] = df['pred_decoded'].astype(float)
             # create an empty df column for each class in dls.vocab
             for c in self.dls.vocab:
                 df[f'{c}_prob'] = ''
             # append the tensor predictions to the last `c` colomns of the df
-            df.iloc[:,-dls.c:] = np.hsplit(pred_tensor.numpy(),dls.c) #split into columns
-            #df.to_csv('test.csv', header=None, index=None, mode="a")
+            df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.items.numpy(), self.dls.c) #split into columns
+           # if save:
+               # df.to_csv('test.csv', header=None, index=None, mode="a")
             dfs.append(df)
-        return dfs
+        return pd.concat(dfs)
+
+
 
     def predict_sample(self,
         kind: str,
         out_dir: str,
+        sample_size: Union[int, float],
         bs: int = 16,
-        sample_size: Union[int, float] = None,
         start_year: int = 1850,
         end_year: int = 1950,
         step: int = 1,
         year_sample:bool=True,
-        size=None):
+        size=None,
+        return_df:bool = False):
 
         years = range(start_year, end_year + 1, step)
-        pbar = tqdm(years)
-        for year in pbar:
-            pbar.set_description(f"Predicting: {year}, total progress")
-            sample = sample_year(kind, sample_size, year)
-            sample_df = pd.DataFrame.from_records(sample)
-            pred_df = self.predict_from_sample_df(sample_df, bs)
-            pred_df.to_json(f'{out_dir}/{year}.json')
-            pbar.update()
+        total = int(self._get_year_sample_size(kind,list(years),sample_size).sum())
+        dfs = []
+        with tqdm(total=total) as pbar:
+            for year in years:
+                pbar.set_description(f"Predicting: {year}, total progress")
+                sample = sample_year(kind, sample_size, year)
+                sample_df = pd.DataFrame.from_records(sample)
+                disable_pro = False
+                if len(sample_df) <= 2:
+                    disable_pro = True
+                pred_df = self.predict_from_sample_df(sample_df, bs, disable_pro=disable_pro)
+                pred_df.to_json(f'{out_dir}/{year}.json') # TODO make sure this file is created before attempting to save
+                pbar.update(len(pred_df))
 
     def predict(
         self,
@@ -172,60 +192,58 @@ class nnPredict:
 #                     f"type{sample_size} is not an int. Fractions are only supported for sampling by year"
 #                 )
 #             sample_size = calc_year_from_total(sample_size, start_year, end_year, step)
-        if self.try_gpu:
-            if torch.cuda.is_available():
-                gpu = True
-                print('using gpu')
-            else:
-                gpu = False
+        gpu = False
+        if self.try_gpu and torch.cuda.is_available():
+            gpu = True
         if gpu:
             self.learner.model = self.learner.model.cuda()
         years = range(start_year, end_year + 1, step)
-        total = self._get_year_sample_size(kind,years).sum()
-        pbar = tqdm(years,total=total)
-        for year in pbar:
-            out_fn = _create_year_csv(out_dir,year,kind, self.learner.dls)
-            pbar.set_description(f"Predicting: {year}, total progress")
-            if kind == ('ads' and int(year) >=1870) or (kind == 'headlines'):
-                s = create_session()
-            else:
-                s = create_cached_session()
-            with s.get(get_json_url(year, kind), timeout=60) as r:
-                if r.from_cache:
-                    tqdm.write('using cache')
-                data = ijson.items(r.content, "item")
-                # TODO add sample approach
-                batches = itertoolz.partition_all(bs, iter(data))
-                year_total = self._get_year_sample_size(kind,year)
-                for i,batch in enumerate(tqdm(
-                    batches, total=round(year_total//bs),leave=False, desc='Batch Progress')):
-                    df = pd.DataFrame(batch)
-                    df["iiif_url"] = df.apply(lambda x: iiif_df_apply(x, size=size), axis=1)
-                    futures = []
-                    workers = get_max_workers(df)
-                    for iif_url in df["iiif_url"].values:
-                        with concurrent.futures.ThreadPoolExecutor(workers) as e:
-                            future = e.submit(load_url_image, iif_url)
-                            futures.append(future)
-                    results = [future.result() for future in futures]
-                    image_list, none_index = _filter_replace_none_image(results)
-                    im_as_arrays = [np.array(image) for image in image_list]
-                    if len(none_index) >0:
-                        tqdm.write(f"{none_index} skipped")
-                    else:
-                        pass
-                    test_data = self.learner.dls.test_dl(im_as_arrays)
-                    with self.learner.no_bar():
-                        pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
-                    pred_decoded = L(pred_tuple[2], use_list=True)
-                    pred_tensor =  L(pred_tuple[0],use_list=None)
-                    pred_decoded[none_index] = np.nan; pred_tensor[none_index] = np.nan
-                    df["pred_decoded"] = pred_decoded.items
-                    df["pred_decoded"] = df['pred_decoded'].astype(float)
-                    # create an empty df column for each class in dls.vocab
-                    for c in self.dls.vocab:
-                        df[f'{c}_prob'] = ''
-                    # append the tensor predictions to the last `c` colomns of the df
-                    df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.numpy(),self.dls.c) #split into columns
-                    df.to_csv(out_fn, header=None, index=None, mode="a")
-                    pbar.update(bs)
+        total = self._get_year_population_size(kind,years).sum()
+        with tqdm(total=total) as pbar:
+            for year in years:
+                out_fn = _create_year_csv(out_dir,year,kind, self.learner.dls)
+                pbar.set_description(f"Predicting: {year}, total progress")
+                if kind == ('ads' and int(year) >=1870) or (kind == 'headlines'):
+                    s = create_session()
+                else:
+                    s = create_cached_session()
+                with s.get(get_json_url(year, kind), timeout=60) as r:
+                    data = ijson.items(r.content, "item")
+                    batches = itertoolz.partition_all(bs, iter(data))
+                    year_total = self._get_year_population_size(kind,year)
+                    if (year_total//bs) <= 1:
+                        disable_p_bar = True
+                    for i, batch in enumerate(tqdm(batches,total=round(year_total//bs),
+                                                   leave=False,
+                                                   desc='Batch Progress')):
+                        df = pd.DataFrame(batch)
+                        df["iiif_url"] = df.apply(lambda x: iiif_df_apply(x), axis=1)
+                        futures = []
+                        workers = get_max_workers(df)
+                        for iif_url in df["iiif_url"].values:
+                            with concurrent.futures.ThreadPoolExecutor(workers) as e:
+                                future = e.submit(load_url_image, iif_url)
+                                futures.append(future)
+                        results = [future.result() for future in futures]
+                        image_list, none_index = _filter_replace_none_image(results)
+                        im_as_arrays = [np.array(image) for image in image_list]
+                        if len(none_index) >0:
+                            tqdm.write(f"{none_index} skipped")
+                        else:
+                            pass
+                        test_data = self.learner.dls.test_dl(im_as_arrays)
+                        with self.learner.no_bar():
+                            pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
+                        pred_decoded = L(pred_tuple[2], use_list=True)
+                        pred_tensor =  L(pred_tuple[0],use_list=None)
+                        pred_decoded[none_index] = np.nan
+                        pred_tensor[none_index] = np.nan
+                        df["pred_decoded"] = pred_decoded.items
+                        df["pred_decoded"] = df['pred_decoded'].astype(float)
+                        # create an empty df column for each class in dls.vocab
+                        for c in self.dls.vocab:
+                            df[f'{c}_prob'] = ''
+                        # append the tensor predictions to the last `c` columns of the df
+                        df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.numpy(),self.dls.c) #split into columns
+                        df.to_csv(out_fn, header=None, index=None, mode="a")
+                        pbar.update(bs)
