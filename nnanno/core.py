@@ -5,20 +5,18 @@ __all__ = ['create_session', 'create_cached_session', 'get_max_workers', 'gen_da
 
 # Cell
 import math
-import PIL
+import pathlib
 from pathlib import Path
+import PIL
 from PIL import Image, UnidentifiedImageError
-import requests
 import io
 import pandas as pd
 import multiprocessing
 import requests
 import requests_cache
-import requests_cache
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-# Cell
 from typing import (
     Any,
     Optional,
@@ -32,14 +30,12 @@ from typing import (
 
 # Cell
 def create_session():
-    from requests.adapters import HTTPAdapter
-    from requests.packages.urllib3.util.retry import Retry
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
-    s = requests.Session()
-    s.mount("https://", adapter)
-    s.mount("http://", adapter)
-    return s
+    session = requests.Session()
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
 
 # Cell
 def create_cached_session():
@@ -50,7 +46,7 @@ def create_cached_session():
     return session
 
 # Cell
-def get_max_workers(data=None):
+def get_max_workers(data=None) -> int:
     """
     Returns int to pass to max_workers based on len of `data` if available or `cpu_count()`
     """
@@ -76,18 +72,18 @@ def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
         if r:
             try:
                 im = (Image.open(io.BytesIO(r.content))).convert(mode)
-            except UnidentifiedImageError as e:
+            except PIL.UnidentifiedImageError:
                 pass
         return im
 
 # Cell
-def save_image(im: PIL.Image.Image,fname, out_dir='.'):
+def save_image(im: PIL.Image.Image, fname: str, out_dir:Union[str, pathlib.Path] = '.'):
     """Saves `im` as `fname` to `out_dir`"""
     out_path = Path(f'{out_dir}/{fname}')
     im.save(out_path)
 
 # Cell
-def download_image(url, fname, out_dir='.'):
+def download_image(url: str, fname: str, out_dir:Union[str, pathlib.Path] ='.') -> None:
     """
     Attempts to load image from `url` and save as `fname` to `out_dir`
     Returns `None` if bad URL or request timesout
@@ -109,7 +105,7 @@ def parse_box(box: List) -> Tuple[float, float, float,float]:
     return x, y, w, h
 
 # Cell
-def create_iiif_url(box:list,
+def create_iiif_url(box:Union[Tuple,List],
                     url:str,
                     original:bool=False,
                     pct:int=None,
@@ -155,8 +151,8 @@ def iiif_df_apply(
     )
 
 # Cell
-def bytesto(bytes, to, bsize=1024):
-    #https://gist.github.com/shawnbutts/3906915
+def bytesto(bytes, to: str, bsize:int=1024) -> float:
+    """Takes bytes and returns value convereted to `to`"""
     a = {'k' : 1, 'm': 2, 'g' : 3, 't' : 4, 'p' : 5, 'e' : 6 }
     r = float(bytes)
     return bytes / (bsize ** a[to])
