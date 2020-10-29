@@ -40,7 +40,7 @@ def _filter_replace_none_image(results:List[Optional[PIL.Image.Image]]):
     results[none_image_index] = fakeim # Replaces None with fakeim
     return results.items, none_image_index
 
-# Cell
+# Internal Cell
 def _create_pred_header(fname, dls=None):
     columns=[
             "filepath",
@@ -74,10 +74,18 @@ def _create_year_csv(out_dir, year,kind,dls=None):
 def _create_year_json(out_dir, year,kind, batch):
     return Path(f"{out_dir}/{year}_{kind}_{batch}.json")
 
+# Internal Cell
+def _make_directory(directory):
+    if Path(directory).exists() and len(list(os.scandir(directory))) >=1:
+        raise ValueError(f'{directory} already exists and is not empty')
+    Path(directory).mkdir(exist_ok=True,parents=True)
+
 # Cell
 # TODO tidy class and refactor
 class nnPredict:
-    """Class for predicting"""
+    """
+    `nnPredict` is used in combination with a trained leanr to run inference on Newspaper Navigator
+    """
     population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
     def __init__(self, learner:fastai.learner, try_gpu:bool=True):
@@ -156,6 +164,7 @@ class nnPredict:
         size=None,
         return_df:bool = False):
 
+        _make_directory(out_dir)
         years = range(start_year, end_year + 1, step)
         total = int(self._get_year_sample_size(kind,list(years),sample_size).sum())
         dfs = []
@@ -176,22 +185,13 @@ class nnPredict:
         kind: str,
         out_dir: str,
         bs: int = 32,
-        sample_size: Union[int, float] = None,
         start_year: int = 1850,
         end_year: int = 1950,
         step: int = 1,
         year_sample:bool=True,
         size=None
     ):
-        #if Path(out_dir).exists() and len(list(os.scandir(out_dir))) >=1:
-         #   raise ValueError(f'{out_fn} already exists and is not empty')
-        Path(out_dir).mkdir(exist_ok=True)
-#         if sample_size and not year_sample:
-#             if not type(sample_size) == int:
-#                 raise ValueError(
-#                     f"type{sample_size} is not an int. Fractions are only supported for sampling by year"
-#                 )
-#             sample_size = calc_year_from_total(sample_size, start_year, end_year, step)
+        _make_directory(out_dir)
         gpu = False
         if self.try_gpu and torch.cuda.is_available():
             gpu = True
