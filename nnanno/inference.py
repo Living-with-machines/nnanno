@@ -34,6 +34,10 @@ from fastcore import *
 
 # Cell
 def _filter_replace_none_image(results:List[Optional[PIL.Image.Image]]):
+    """
+    filters a list containing images and `None`, replaces `None` with dummy images
+    returns: original images and dummy images + a location index for the dummy images
+    """
     fakeim = Image.fromarray(244 * np.ones((250,250,3), np.uint8))
     results = L(results)
     none_image_index = results.argwhere(lambda x: x is None) # Gets the index for images which are none
@@ -64,13 +68,13 @@ def _create_pred_header(fname, dls=None):
         columns += (list(dls.vocab))
     return pd.DataFrame(columns=columns).to_csv(fname, index=None)
 
-# Cell
+# Internal Cell
 def _create_year_csv(out_dir, year,kind,dls=None):
     fname = Path(f"{out_dir}/{year}_{kind}.csv")
     _create_pred_header(fname, dls)
     return fname
 
-# Cell
+# Internal Cell
 def _create_year_json(out_dir, year,kind, batch):
     return Path(f"{out_dir}/{year}_{kind}_{batch}.json")
 
@@ -83,12 +87,11 @@ def _make_directory(directory):
 # Cell
 # TODO tidy class and refactor
 class nnPredict:
-    """
-    `nnPredict` is used in combination with a trained leanr to run inference on Newspaper Navigator
-    """
+    """`nnPredict` is used in combination with a trained leaner to run inference on Newspaper Navigator"""
     population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
                                       index_col=0)
     def __init__(self, learner:fastai.learner, try_gpu:bool=True):
+        """Creates an ``nnPredict` instance from `learner`, puts on GPU if `try_gpu` is true and CUDA is avilable"""
         self.learner = learner
         self.try_gpu = try_gpu
         self.dls = learner.dls
@@ -102,7 +105,11 @@ class nnPredict:
         return (cls._get_year_population_size(kind, year) * sample_size).clip(1).round()
 
     def predict_from_sample_df(self, sample_df:pd.DataFrame,bs:int=16,
-                               disable_pro:bool=False):
+                               disable_pro:bool=False) -> pd.DataFrame:
+        """
+        Runs inference on `sample_df` using batch size `bs`.
+        returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from `learner.dls.vocab`
+        """
         self.sample_df = sample_df
 
         gpu = False

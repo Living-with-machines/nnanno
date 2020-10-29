@@ -53,14 +53,7 @@ def get_json_url(year: Union[str,int], kind:str='photos') -> str:
 
 # Cell
 def load_json(url) -> Dict[str, Any]:
-    """Returns loaded json from url
-
-    Parameters:
-    url (str): URL for news-navigator json file
-
-    Returns:
-    Dict: dictionary with data from input json url
-    """
+    """Returns json loaded from `url`"""
     with requests.get(url, timeout=2) as r:
         r.raise_for_status()
         return json.loads(r.content)
@@ -68,15 +61,7 @@ def load_json(url) -> Dict[str, Any]:
 # Cell
 @functools.lru_cache(256)
 def count_json_iter(url: str, session=None) -> int:
-    """
-    Returns count of objects in url json file using an iterator to avoid loading json into memory
-
-    Parameters:
-    url (str): URL for news-navigator json file
-
-    Returns:
-    int: count of json objects in url
-    """
+    """Returns count of objects in url json file using an iterator to avoid loading json into memory"""
     if not session:
         session = create_cached_session()
     with session.get(url, timeout=60) as r:
@@ -261,7 +246,8 @@ class nnSampler:
         years = range(start_year, end_year + 1, step)
         _year_sample = partial(sample_year, kind, sample_size)
         with tqdm(total=len(years)) as progress:
-            with concurrent.futures.ThreadPoolExecutor(1) as executor:
+            workers = get_max_workers(years)
+            with concurrent.futures.ThreadPoolExecutor(workers) as executor:
                 for year in years:
                     future = executor.submit(_year_sample, year)
                     future.add_done_callback(lambda p: progress.update())

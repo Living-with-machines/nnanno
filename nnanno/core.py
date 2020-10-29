@@ -88,7 +88,7 @@ def download_image(url: str, fname: str, out_dir:Union[str, pathlib.Path] ='.') 
         return None
 
 # Cell
-def parse_box(box: List) -> Tuple[float, float, float,float]:
+def parse_box(box: Union[Tuple,List]) -> Tuple[float, float, float,float]:
     """Parses the `box` value from Newspaper Navigator data to prepre for IIIF request"""
     box_x1, box_x2, box_y1, box_y2 = box
     x = math.floor(box_x1*10000)/100.
