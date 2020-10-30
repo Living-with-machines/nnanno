@@ -7,7 +7,7 @@ import ijson
 import pkg_resources
 import pandas as pd
 from cytoolz import itertoolz
-from tqdm.notebook import tqdm
+from tqdm.auto import tqdm
 
 # Cell
 from .core import *
@@ -96,6 +96,12 @@ class nnPredict:
         self.try_gpu = try_gpu
         self.dls = learner.dls
 
+    def __repr__(self):
+        return (f'{self.__class__.__name__} \n'
+               f'learner vocab:{self.learner.dls.vocab}')
+
+
+
     @classmethod
     def _get_year_population_size(cls, kind:str,year:Union[str,int]):
         return cls.population[f"{kind}_count"][year]
@@ -111,7 +117,6 @@ class nnPredict:
         returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from `learner.dls.vocab`
         """
         self.sample_df = sample_df
-
         gpu = False
         if self.try_gpu and torch.cuda.is_available():
             gpu = True
@@ -157,8 +162,6 @@ class nnPredict:
             dfs.append(df)
         return pd.concat(dfs)
 
-
-
     def predict_sample(self,
         kind: str,
         out_dir: str,
@@ -173,7 +176,10 @@ class nnPredict:
 
         _make_directory(out_dir)
         years = range(start_year, end_year + 1, step)
-        total = int(self._get_year_sample_size(kind,list(years),sample_size).sum())
+        if type(sample_size) == float:
+            total = int(self._get_year_sample_size(kind,list(years),sample_size).sum())
+        if type(sample_size) == int:
+            total = sample_size * len(years)
         dfs = []
         with tqdm(total=total) as pbar:
             for year in years:
@@ -195,7 +201,6 @@ class nnPredict:
         start_year: int = 1850,
         end_year: int = 1950,
         step: int = 1,
-        year_sample:bool=True,
         size=None
     ):
         _make_directory(out_dir)
