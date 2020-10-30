@@ -1,10 +1,9 @@
 {
-  "Notebook": {
-    "Export to modules": "/export",
-    "Convert to html": "/export2html",
-    "Show doc": "/showdoc",
-    "Test functions": "/test",
-    "Core functions": "/core",
-    "Command line functions": "/cli"
+  "nnanno": {
+    "Overview": "/",
+    "Core": "core.html",
+    "Sample": "sample.html",
+    "Annotate": "annotate.html",
+    "Inference": "inference.html"
   }
 }
