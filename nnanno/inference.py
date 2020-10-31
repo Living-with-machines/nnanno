@@ -100,8 +100,6 @@ class nnPredict:
         return (f'{self.__class__.__name__} \n'
                f'learner vocab:{self.learner.dls.vocab}')
 
-
-
     @classmethod
     def _get_year_population_size(cls, kind:str,year:Union[str,int]):
         return cls.population[f"{kind}_count"][year]
@@ -184,6 +182,8 @@ class nnPredict:
         with tqdm(total=total) as pbar:
             for year in years:
                 pbar.set_description(f"Predicting: {year}, total progress")
+                #if type(sample_size) == float:
+                #    sample_size = int(self._get_year_sample_size(kind,year,sample_size))
                 sample = sample_year(kind, sample_size, year)
                 sample_df = pd.DataFrame.from_records(sample)
                 disable_pro = False
@@ -233,7 +233,7 @@ class nnPredict:
                         futures = []
                         workers = get_max_workers(df)
                         for iif_url in df["iiif_url"].values:
-                            with concurrent.futures.ThreadPoolExecutor(workers) as e:
+                            with concurrent.futures.ThreadPoolExecutorolExecutor(workers) as e:
                                 future = e.submit(load_url_image, iif_url)
                                 futures.append(future)
                         results = [future.result() for future in futures]
