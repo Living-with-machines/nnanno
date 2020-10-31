@@ -9,6 +9,8 @@ import pandas as pd
 from cytoolz import itertoolz
 from tqdm.auto import tqdm
 
+from fastcore import *
+
 # Cell
 from .core import *
 from .sample import *
@@ -79,9 +81,10 @@ def _create_year_json(out_dir, year,kind, batch):
     return Path(f"{out_dir}/{year}_{kind}_{batch}.json")
 
 # Internal Cell
-def _make_directory(directory):
-    if Path(directory).exists() and len(list(os.scandir(directory))) >=1:
-        raise ValueError(f'{directory} already exists and is not empty')
+def _make_directory(directory, force=False):
+    if not force:
+        if Path(directory).exists() and len(list(os.scandir(directory))) >=1:
+            raise ValueError(f'{directory} already exists and is not empty')
     Path(directory).mkdir(exist_ok=True,parents=True)
 
 # Cell
@@ -170,9 +173,10 @@ class nnPredict:
         step: int = 1,
         year_sample:bool=True,
         size=None,
-        return_df:bool = False):
+        return_df:bool = False,
+        force_dir=False):
 
-        _make_directory(out_dir)
+        _make_directory(out_dir,force_dir)
         years = range(start_year, end_year + 1, step)
         if type(sample_size) == float:
             total = int(self._get_year_sample_size(kind,list(years),sample_size).sum())
