@@ -29,7 +29,8 @@ from typing import (
 )
 
 # Cell
-def create_session():
+def create_session() -> requests.sessions.Session:
+    """returns a requests session"""
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
     session = requests.Session()
@@ -39,7 +40,7 @@ def create_session():
 
 # Cell
 def create_cached_session():
-    """Creates a session which creates a cache of requests"""
+    """Creates a session which caches requests"""
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
     session = requests_cache.core.CachedSession('url_cache')

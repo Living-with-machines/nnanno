@@ -8,7 +8,7 @@ __all__ = ['get_json_url', 'load_json', 'count_json_iter', 'get_year_size', 'get
 from .core import *
 
 # Cell
-
+#TODO tidy imports
 # sys
 import io
 import shutil
@@ -26,7 +26,7 @@ from cytoolz import dicttoolz, itertoolz
 import random
 import json
 from PIL import Image
-import PIL
+
 import concurrent.futures
 import numpy as np
 import itertools
@@ -37,6 +37,8 @@ import numpy as np
 from fastcore.foundation import patch_to
 
 # Cell
+
+import PIL
 from typing import (
     Any,
     Optional,
@@ -281,8 +283,8 @@ def download_sample(self,
             pct: Optional[int] = None,
             size: Optional[tuple] = None,
             preserve_asp_ratio: bool = True) -> Union[None]:
-            """Download images from associated with a sample
-            The majority of the options relate to some options available in a IIIF image request
+            """Download images associated with a sample
+            The majority of paramters relate to the options available in a IIIF image request
             see `https://iiif.io/api/image/3.0/#4-image-requests` for further information
 
             Parameters
