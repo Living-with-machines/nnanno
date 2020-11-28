@@ -66,7 +66,7 @@ def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
         if r:
             try:
                 im = (Image.open(io.BytesIO(r.content))).convert(mode)
-            except PIL.UnidentifiedImageError:
+            except:
                 pass
         return im
 
