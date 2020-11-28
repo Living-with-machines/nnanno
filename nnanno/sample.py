@@ -271,8 +271,6 @@ def create_sample(self,
                 self.sample = df
                 return df
 
-
-
 # Cell
 @patch_to(nnSampler)
 def download_sample(self,
