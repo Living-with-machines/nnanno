@@ -256,7 +256,7 @@ def create_sample(self,
                 _year_sample = partial(sample_year, kind, sample_size)
                 with tqdm(total=len(years)) as progress:
                     workers = get_max_workers(years)
-                    with concurrent.futures.ThreadPoolExecutor(workers) as executor:
+                    with concurrent.futures.ThreadPoolExecutor(1) as executor:
                         for year in years:
                             future = executor.submit(_year_sample, year)
                             future.add_done_callback(lambda p: progress.update())
