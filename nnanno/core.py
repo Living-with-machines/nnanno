@@ -8,7 +8,7 @@ import math
 import pathlib
 from pathlib import Path
 import PIL
-from PIL import Image, UnidentifiedImageError
+from PIL import Image# UnidentifiedImageError
 import io
 import pandas as pd
 import multiprocessing

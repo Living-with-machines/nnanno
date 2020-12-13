@@ -31,7 +31,10 @@ index = {"create_session": "00_core.ipynb",
          "get_og_filepath": "02_annotate.ipynb",
          "anno_sample_merge": "02_annotate.ipynb",
          "nnAnnotations": "02_annotate.ipynb",
-         "nnPredict": "03_inference.ipynb"}
+         "nnPredict": "03_inference.ipynb",
+         "predict_from_sample_df": "03_inference.ipynb",
+         "predict_sample": "03_inference.ipynb",
+         "predict": "03_inference.ipynb"}
 
 modules = ["core.py",
            "sample.py",
