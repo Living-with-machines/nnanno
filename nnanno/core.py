@@ -44,14 +44,12 @@ def create_cached_session():
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
     session = requests_cache.core.CachedSession('url_cache')
-    session.mount('http://',adapter)
+    session.mount('http://', adapter)
     return session
 
 # Cell
 def get_max_workers(data=None) -> int:
-    """
-    Returns int to pass to max_workers based on len of `data` if available or `cpu_count()`
-    """
+    """Returns int to pass to max_workers based on len of `data` if available or `cpu_count()`"""
     if data is not None and hasattr(data, '__len__'):
         return min(multiprocessing.cpu_count(), len(data))
     else:
@@ -99,31 +97,28 @@ def parse_box(box: Union[Tuple,List]) -> Tuple[float, float, float,float]:
     return x, y, w, h
 
 # Cell
-def create_iiif_url(box:Union[Tuple,List],
-                    url:str,
-                    original:bool=False,
-                    pct:int=None,
-                    size:tuple=None,    # TODO make size a height and a width
-                    preserve_asp_ratio:bool=True
-                   )->str:
-    """Returns a IIIF URL from bounding box and url"""
+def create_iiif_url(box: Union[Tuple, List],
+                    url: str,
+                    original: bool = False,
+                    pct: int = None,
+                    size: tuple = None,
+                    preserve_asp_ratio: bool = True) -> Union[str, None]:
+    """Returns a IIIF URL from bounding box and URL"""
 
-    # TODO refactor to use string formating and tidy if else statements
     x, y, w, h = parse_box(box)
     url_coordinates = "pct:" + str(x) + "," + str(y) + "," + str(w) + "," + str(h)
     url_chronam_path = "%2F".join(url.split("/")[4:10]) + ".jp2"
 
     url_prefix = "https://chroniclingamerica.loc.gov/iiif/2"
-    url_suffix_full = "pct:100/0/default.jpg"
-    pct_downsampled = f"pct:{pct}/0/default.jpg"
-
     if original and not size and not pct:
+        url_suffix_full = "pct:100/0/default.jpg"
         return "/".join([url_prefix, url_chronam_path, url_coordinates, url_suffix_full])
     if pct:
+        pct_downsampled = f"pct:{pct}/0/default.jpg"
         return  "/".join([url_prefix, url_chronam_path, url_coordinates, pct_downsampled])
     if size and preserve_asp_ratio:
         return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"!{size[0]},{size[1]}/0/default.jpg"])
-    if size and not preserve_asp_ratio:
+    if size:
         return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"{size[0]},{size[1]}/0/default.jpg"])
 
 # Cell
