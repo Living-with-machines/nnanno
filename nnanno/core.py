@@ -57,7 +57,7 @@ def get_max_workers(data=None) -> int:
 
 # Cell
 def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
-    """Attempts to load an image from `url` returns `None` if request times out or no image at url"""
+    "Attempts to load an image from `url` returns `None` if request times out or no image at `url`"
     im = None
     session = create_session()
     with session.get(url, timeout=(30)) as r:

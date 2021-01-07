@@ -88,11 +88,9 @@ def _make_directory(directory, force=False):
     Path(directory).mkdir(exist_ok=True,parents=True)
 
 # Cell
-# TODO tidy class and refactor
 class nnPredict:
     """`nnPredict` is used in combination with a trained leaner to run inference on Newspaper Navigator"""
-    population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'),
-                                      index_col=0)
+    population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'), index_col=0)
     def __init__(self, learner:fastai.learner, try_gpu:bool=True):
         """Creates an ``nnPredict` instance from `learner`, puts on GPU if `try_gpu` is true and CUDA is avilable"""
         self.learner = learner
@@ -110,16 +108,16 @@ def _get_year_population_size(cls, kind:str,year:Union[str,int]):
 
 # Cell
 @patch_to(nnPredict, cls_method=True)
-def _get_year_sample_size(cls, kind:str, year:Union[str,int], sample_size):
+def _get_year_sample_size(cls, kind: str, year: Union[str,int],sample_size):
     return (cls._get_year_population_size(kind, year) * sample_size).clip(1).round()
 
 # Cell
 @patch_to(nnPredict)
-def predict_from_sample_df(self, sample_df:pd.DataFrame,bs:int=16,
-                           disable_pro:bool=False) -> pd.DataFrame:
+def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
+                           disable_pbar:bool=False) -> pd.DataFrame:
     """
-    Runs inference on `sample_df` using batch size `bs`.
-    returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from `learner.dls.vocab`
+    Runs inference on `sample_df` using batch size `bs`, `disable_pbar` controls whether to show progress bar
+    Returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from `learner.dls.vocab`
     """
     self.sample_df = sample_df
     gpu = False
@@ -133,7 +131,7 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame,bs:int=16,
 
     splits = max(1,round(len(self.sample_df)/bs))
     for df in tqdm(np.array_split(sample_df, splits),
-                   disable=disable_pro,
+                   disable=disable_pbar,
                    leave=False,
                    desc='Batch progress'):
         futures = []
@@ -181,7 +179,6 @@ def predict_sample(self,
     size=None,
     return_df:bool = False,
     force_dir=False):
-
     _make_directory(out_dir,force_dir)
     years = range(start_year, end_year + 1, step)
     if type(sample_size) == float:
@@ -196,10 +193,10 @@ def predict_sample(self,
             #    sample_size = int(self._get_year_sample_size(kind,year,sample_size))
             sample = sample_year(kind, sample_size, year)
             sample_df = pd.DataFrame.from_records(sample)
-            disable_pro = False
+            disable_pbar = False
             if len(sample_df) <= 2:
-                disable_pro = True
-            pred_df = self.predict_from_sample_df(sample_df, bs, disable_pro=disable_pro)
+                disable_pbar = True
+            pred_df = self.predict_from_sample_df(sample_df, bs, disable_pbar=disable_pbar)
             pred_df.to_json(f'{out_dir}/{year}.json') # TODO make sure this file is created before attempting to save
             pbar.update(len(pred_df))
 
@@ -245,7 +242,7 @@ def predict(
                     futures = []
                     workers = get_max_workers(df)
                     for iif_url in df["iiif_url"].values:
-                        with concurrent.futures.ThreadPoolExecutorolExecutor(workers) as e:
+                        with concurrent.futures.ThreadPoolExecutor(workers) as e:
                             future = e.submit(load_url_image, iif_url)
                             futures.append(future)
                     results = [future.result() for future in futures]
