@@ -103,7 +103,7 @@ def get_year_size(year: Union[int,str], kind: str) -> dict:
 
 # Cell
 @functools.lru_cache(512)
-def get_year_sizes(kind,start=1850, end=1950, step=5):
+def get_year_sizes(kind, start=1850, end=1950, step=5):
     """
     Returns the sizes for json data files for `kind` between year `start` and `end`
     with step size 'step'
@@ -115,7 +115,6 @@ def get_year_sizes(kind,start=1850, end=1950, step=5):
     Returns:
     Pandas.DataFrame: holding data from input json url
     """
-  #  dset_size = {}
     futures = []
     years = range(start,end+1,step)
     max_workers = get_max_workers(years)
@@ -149,7 +148,7 @@ def get_all_year_sizes(start=1850, end=1950,step=1, save:bool=True):
     return df
 
 # Cell
-def sample_stream(stream, k:int):
+def sample_stream(stream, k: int):
     """
     Return a random sample of k elements drawn without replacement from stream.
     Designed to be used when the elements of stream cannot easily fit into memory.
@@ -168,7 +167,7 @@ def calc_frac_size(url,frac, session=None):
     return round(count_json_iter(url,session)*frac)
 
 # Cell
-def calc_year_from_total(total,start,end,step):
+def calc_year_from_total(total, start, end, step):
     "Calculate size of a year sample based on a total sample size"
     return max(1, round(total/(((end-start)+1)/step)))
 
@@ -198,7 +197,7 @@ class nnSampler:
         return (f'{self.__class__.__name__}')
 
 # Cell
-def sample_year(kind:str, sample_size:Union[int,float], year:int) ->np.array:
+def sample_year(kind: str, sample_size:Union[int,float], year:int) ->np.array:
     url = get_json_url(year, kind)
     if kind == 'ads' and int(year) >=1870 or (kind == 'headlines'):
         session = create_session()
