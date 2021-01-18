@@ -188,9 +188,7 @@ def reduce_df_memory(df):
 
 # Cell
 class nnSampler:
-    """
-    Sampler for creating samples from Newspaper Navigator data
-    """
+    """Sampler for creating samples from Newspaper Navigator data"""
     population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'), index_col=0)
 
     def __repr__(self):
@@ -198,6 +196,7 @@ class nnSampler:
 
 # Cell
 def sample_year(kind: str, sample_size:Union[int,float], year:int) ->np.array:
+    """samples `sample_size` for `year` and `kind`"""
     url = get_json_url(year, kind)
     if kind == 'ads' and int(year) >=1870 or (kind == 'headlines'):
         session = create_session()
@@ -304,8 +303,6 @@ def download_sample(self,
             Returns
             -------
             None
-                Nothing is returned by a
-
             """
 
             if df is not None:

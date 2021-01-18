@@ -160,8 +160,6 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
             df[f'{c}_prob'] = ''
         # append the tensor predictions to the last `c` colomns of the df
         df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.items.numpy(), self.dls.c) #split into columns
-       # if save:
-           # df.to_csv('test.csv', header=None, index=None, mode="a")
         dfs.append(df)
     return pd.concat(dfs)
 
@@ -177,7 +175,6 @@ def predict_sample(self,
     step: int = 1,
     year_sample:bool=True,
     size=None,
-    return_df:bool = False,
     force_dir=False):
     _make_directory(out_dir,force_dir)
     years = range(start_year, end_year + 1, step)
@@ -189,8 +186,6 @@ def predict_sample(self,
     with tqdm(total=total) as pbar:
         for year in years:
             pbar.set_description(f"Predicting: {year}, total progress")
-            #if type(sample_size) == float:
-            #    sample_size = int(self._get_year_sample_size(kind,year,sample_size))
             sample = sample_year(kind, sample_size, year)
             sample_df = pd.DataFrame.from_records(sample)
             disable_pbar = False
