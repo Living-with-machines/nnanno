@@ -77,6 +77,436 @@ nb_path: "nbs/02_annotate.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nnanno.sample</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nnSampler</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;maps&#39;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1860</span><span class="p">,</span> <span class="n">year_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>filepath</th>
+      <th>pub_date</th>
+      <th>page_seq_num</th>
+      <th>edition_seq_num</th>
+      <th>batch</th>
+      <th>lccn</th>
+      <th>box</th>
+      <th>score</th>
+      <th>ocr</th>
+      <th>place_of_publication</th>
+      <th>geographic_coverage</th>
+      <th>name</th>
+      <th>publisher</th>
+      <th>url</th>
+      <th>page_url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>vi_blass_ver01/data/sn84024735/0041566431A/185...</td>
+      <td>1850-08-30</td>
+      <td>476</td>
+      <td>1</td>
+      <td>vi_blass_ver01</td>
+      <td>sn84024735</td>
+      <td>[0.01100225063116144, 0.05289745492724692, 0.1...</td>
+      <td>0.982224</td>
+      <td>[PROPERN, QjOEDO^liiLr, OF, ERROR., Iijftho, c...</td>
+      <td>Richmond, Va.</td>
+      <td>[Virginia--Richmond--Richmond]</td>
+      <td>Richmond enquirer. [volume]</td>
+      <td>Thomas Ritchie</td>
+      <td>https://news-navigator.labs.loc.gov/data/vi_bl...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>dlc_crunchy_ver01/data/sn83030213/00206530303/...</td>
+      <td>1850-04-16</td>
+      <td>654</td>
+      <td>1</td>
+      <td>dlc_crunchy_ver01</td>
+      <td>sn83030213</td>
+      <td>[0.49779551738017314, 0.019675302322796934, 0....</td>
+      <td>0.976809</td>
+      <td>[th", .?!, M, sum., Wo]</td>
+      <td>New-York [N.Y.]</td>
+      <td>[New York--New York--New York]</td>
+      <td>New-York daily tribune. [volume]</td>
+      <td>Greeley &amp; McElrath</td>
+      <td>https://news-navigator.labs.loc.gov/data/dlc_c...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ncu_lumber_ver01/data/sn84026536/00295879063/1...</td>
+      <td>1850-10-11</td>
+      <td>618</td>
+      <td>1</td>
+      <td>ncu_lumber_ver01</td>
+      <td>sn84026536</td>
+      <td>[0.6562250169657045, 0.14009789587814692, 0.81...</td>
+      <td>0.915456</td>
+      <td>[j9Those, whose, names, appear, on, this, List...</td>
+      <td>Wilmington, N.C.</td>
+      <td>[North Carolina--New Hanover--Wilmington]</td>
+      <td>Wilmington journal. [volume]</td>
+      <td>Alfred L. Price and David Fulton</td>
+      <td>https://news-navigator.labs.loc.gov/data/ncu_l...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ncu_lumber_ver01/data/sn84026536/00295879063/1...</td>
+      <td>1850-11-15</td>
+      <td>638</td>
+      <td>1</td>
+      <td>ncu_lumber_ver01</td>
+      <td>sn84026536</td>
+      <td>[0.4996424275681866, 0.6345808846609933, 0.652...</td>
+      <td>0.902577</td>
+      <td>[LIST, OK, LETTERS,, REMAINING, in, the, Post,...</td>
+      <td>Wilmington, N.C.</td>
+      <td>[North Carolina--New Hanover--Wilmington]</td>
+      <td>Wilmington journal. [volume]</td>
+      <td>Alfred L. Price and David Fulton</td>
+      <td>https://news-navigator.labs.loc.gov/data/ncu_l...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ncu_lumber_ver01/data/sn84026536/00295879063/1...</td>
+      <td>1850-01-11</td>
+      <td>449</td>
+      <td>1</td>
+      <td>ncu_lumber_ver01</td>
+      <td>sn84026536</td>
+      <td>[0.8094330624595207, 0.045515846960323375, 0.9...</td>
+      <td>0.959784</td>
+      <td>[I, REMAINING, in, the, Post, Office, at, Wilm...</td>
+      <td>Wilmington, N.C.</td>
+      <td>[North Carolina--New Hanover--Wilmington]</td>
+      <td>Wilmington journal. [volume]</td>
+      <td>Alfred L. Price and David Fulton</td>
+      <td>https://news-navigator.labs.loc.gov/data/ncu_l...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>wvu_kuwait_ver02/data/sn86092163/00202192464/1...</td>
+      <td>1855-06-16</td>
+      <td>688</td>
+      <td>1</td>
+      <td>wvu_kuwait_ver02</td>
+      <td>sn86092163</td>
+      <td>[0.0, 0.04375576815762362, 0.9587116934488547,...</td>
+      <td>0.956536</td>
+      <td>[Xtems, of, &amp;cta&gt;s,, fcc.", General, Joseph, L...</td>
+      <td>Morgantown, Va. [W. Va.]</td>
+      <td>[West Virginia--Monongalia--Morgantown]</td>
+      <td>Monongalia mirror. [volume]</td>
+      <td>Simeon Siegfried, Sr.</td>
+      <td>https://news-navigator.labs.loc.gov/data/wvu_k...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>curiv_hairgrass_ver01/data/sn93052786/print/18...</td>
+      <td>1855-06-19</td>
+      <td>6</td>
+      <td>1</td>
+      <td>curiv_hairgrass_ver01</td>
+      <td>sn93052786</td>
+      <td>[0.048265021187918526, 0.07172901274391968, 0....</td>
+      <td>0.937678</td>
+      <td>[4, &lt;S£, m, PnWico., Los, demagogos, son, los,...</td>
+      <td>Los Angeles, Calif.</td>
+      <td>[California--Los Angeles--Los Angeles]</td>
+      <td>El clamor público. [volume]</td>
+      <td>Francisco P. Ramirez</td>
+      <td>https://news-navigator.labs.loc.gov/data/curiv...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>curiv_hairgrass_ver01/data/sn93052786/print/18...</td>
+      <td>1855-10-16</td>
+      <td>74</td>
+      <td>1</td>
+      <td>curiv_hairgrass_ver01</td>
+      <td>sn93052786</td>
+      <td>[0.05541989443113478, 0.02968218537414966, 0.9...</td>
+      <td>0.952574</td>
+      <td>[72, El, Duende, critico, da, Madrid., sams, i...</td>
+      <td>Los Angeles, Calif.</td>
+      <td>[California--Los Angeles--Los Angeles]</td>
+      <td>El clamor público. [volume]</td>
+      <td>Francisco P. Ramirez</td>
+      <td>https://news-navigator.labs.loc.gov/data/curiv...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>ohi_gann_ver01/data/sn83035102/00296027078/185...</td>
+      <td>1855-09-15</td>
+      <td>481</td>
+      <td>1</td>
+      <td>ohi_gann_ver01</td>
+      <td>sn83035102</td>
+      <td>[0.6759463695769614, 0.06583273904784011, 0.94...</td>
+      <td>0.935379</td>
+      <td>[a-nr, Por, Por, Por, o, f, a, at, 3, or, hobl...</td>
+      <td>Ravenna, Ohio</td>
+      <td>[Ohio--Portage--Ravenna]</td>
+      <td>The weekly Portage sentinel. [volume]</td>
+      <td>A. Hart &amp; R.E. Craig</td>
+      <td>https://news-navigator.labs.loc.gov/data/ohi_g...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>ohi_gann_ver01/data/sn83035102/00296027078/185...</td>
+      <td>1855-08-18</td>
+      <td>465</td>
+      <td>1</td>
+      <td>ohi_gann_ver01</td>
+      <td>sn83035102</td>
+      <td>[0.6735400830285024, 0.09320364992132825, 0.93...</td>
+      <td>0.916583</td>
+      <td>[tot, PayseteflBt'r.ef, Stale, 1ebt, tot, yene...</td>
+      <td>Ravenna, Ohio</td>
+      <td>[Ohio--Portage--Ravenna]</td>
+      <td>The weekly Portage sentinel. [volume]</td>
+      <td>A. Hart &amp; R.E. Craig</td>
+      <td>https://news-navigator.labs.loc.gov/data/ohi_g...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>iahi_dragonite_ver01/data/sn84027096/002795294...</td>
+      <td>1860-02-11</td>
+      <td>22</td>
+      <td>1</td>
+      <td>iahi_dragonite_ver01</td>
+      <td>sn84027096</td>
+      <td>[0.266833311662683, 0.11826099061129386, 0.493...</td>
+      <td>0.959982</td>
+      <td>[s~r, .'.imt), 6, *i, %mS, fiisRg., bf, %j, •I...</td>
+      <td>Council Bluffs [Iowa]</td>
+      <td>[Iowa--Pottawattamie--Council Bluffs]</td>
+      <td>The Council Bluffs nonpareil. [volume]</td>
+      <td>Maynard &amp; Long</td>
+      <td>https://news-navigator.labs.loc.gov/data/iahi_...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>pst_intramural_ver01/data/sn82005159/002960284...</td>
+      <td>1860-06-22</td>
+      <td>286</td>
+      <td>1</td>
+      <td>pst_intramural_ver01</td>
+      <td>sn82005159</td>
+      <td>[0.6693450956826442, 0.05945117064196654, 0.82...</td>
+      <td>0.929225</td>
+      <td>[Ten, Tears,, including, Receipts, Expenditure...</td>
+      <td>Bedford, Pa.</td>
+      <td>[Pennsylvania--Bedford--Bedford]</td>
+      <td>The Bedford gazette. [volume]</td>
+      <td>Printed by Charles M'Dowell</td>
+      <td>https://news-navigator.labs.loc.gov/data/pst_i...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>lu_qualchan_ver01/data/sn82015753/00212475245/...</td>
+      <td>1860-03-06</td>
+      <td>500</td>
+      <td>1</td>
+      <td>lu_qualchan_ver01</td>
+      <td>sn82015753</td>
+      <td>[0.0034045652479450994, 0.020978123569308248, ...</td>
+      <td>0.903176</td>
+      <td>[sala, 'W., ..,, ATB., eq, 1G, 33e, .3, the., ...</td>
+      <td>[New Orleans, La.]</td>
+      <td>[Louisiana--Orleans--New Orleans]</td>
+      <td>New Orleans daily crescent. [volume]</td>
+      <td>J.H. Maddox</td>
+      <td>https://news-navigator.labs.loc.gov/data/lu_qu...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>vtu_hildene_ver01/data/sn84023209/00202197619/...</td>
+      <td>1860-08-02</td>
+      <td>154</td>
+      <td>1</td>
+      <td>vtu_hildene_ver01</td>
+      <td>sn84023209</td>
+      <td>[0.023114874424078526, 0.020240809379603326, 0...</td>
+      <td>0.925837</td>
+      <td>[irstur, ft, irw, m, v, xr, (Vol., XVII.-t, Hi...</td>
+      <td>Montpelier, Vt.</td>
+      <td>[Vermont--Washington--Montpelier]</td>
+      <td>Green-Mountain freeman. [volume]</td>
+      <td>J. Poland</td>
+      <td>https://news-navigator.labs.loc.gov/data/vtu_h...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>dlc_belmont_ver02/data/sn82014511/no/reel/1860...</td>
+      <td>1860-03-31</td>
+      <td>2</td>
+      <td>1</td>
+      <td>dlc_belmont_ver02</td>
+      <td>no</td>
+      <td>[0.3371166378426152, 0.03450527885344454, 0.74...</td>
+      <td>0.996431</td>
+      <td>[MAP, AMD, DESCRIPTSOM, OF, THE, PIKE’S, PEAK,...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>https://news-navigator.labs.loc.gov/data/dlc_b...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">download_sample</span><span class="p">(</span><span class="s1">&#39;test_anno&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span>label-studio init advert_annotations --template<span class="o">=</span>image_classification --input-path<span class="o">=</span>images --input-format<span class="o">=</span>image-dir --allow-serving-local-files
@@ -205,11 +635,11 @@ nb_path: "nbs/02_annotate.ipynb"
   <tbody>
     <tr>
       <th>0</th>
-      <td>1602236711</td>
-      <td>379001</td>
-      <td>1.248</td>
-      <td>[text-only]</td>
-      <td>{'image': 'http://localhost:8081/data/upload/9...</td>
+      <td>1602237290</td>
+      <td>457001</td>
+      <td>1.014</td>
+      <td>[illustrations]</td>
+      <td>{'image': 'http://localhost:8081/data/upload/d...</td>
     </tr>
   </tbody>
 </table>
@@ -231,66 +661,11 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">load_completions</span><span class="p">(</span><span class="s1">&#39;../ph/photos/multi_label/&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df = load_completions(&#39;../ph/photos/multi_label/&#39;)</span>
+<span class="c1">#df.head(1)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>created_at</th>
-      <th>id</th>
-      <th>lead_time</th>
-      <th>result</th>
-      <th>data</th>
-      <th>skipped</th>
-      <th>was_cancelled</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1596460221</td>
-      <td>3721001</td>
-      <td>8.94</td>
-      <td>[human, landscape]</td>
-      <td>{'image': '/data/vi_yes_ver01_data_sn84025841_...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -480,7 +855,7 @@ annotation_df : pd.DataFrame
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;text-only&#39;, &#39;illustrations&#39;], dtype=object)</pre>
+<pre>array([&#39;illustrations&#39;, &#39;text-only&#39;], dtype=object)</pre>
 </div>
 
 </div>
@@ -787,19 +1162,19 @@ Name: result, dtype: int64</pre>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1602236711</td>
-      <td>379001</td>
-      <td>1.248</td>
-      <td>text-only</td>
-      <td>pst_fenske_ver02_data_sn84026497_00280776129_1...</td>
+      <td>1602237290</td>
+      <td>457001</td>
+      <td>1.014</td>
+      <td>illustrations</td>
+      <td>txdn_argentina_ver01_data_sn84022109_002111018...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1602237071</td>
-      <td>396001</td>
-      <td>0.870</td>
+      <td>1602237157</td>
+      <td>179001</td>
+      <td>2.068</td>
       <td>text-only</td>
-      <td>scu_carlacox_ver01_data_sn84026965_00294551268...</td>
+      <td>khi_earhart_ver01_data_sn85032814_00237283260_...</td>
     </tr>
   </tbody>
 </table>

@@ -6,8 +6,8 @@ title: Sample
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Create samples from Newspaper navigator dataset"
-description: "Create samples from Newspaper navigator dataset"
+summary: "Create samples from <a href='https://news-navigator.labs.loc.gov/'>Newspaper Navigator</a> "
+description: "Create samples from <a href='https://news-navigator.labs.loc.gov/'>Newspaper Navigator</a> "
 nb_path: "nbs/01_sample.ipynb"
 ---
 <!--
@@ -29,13 +29,6 @@ nb_path: "nbs/01_sample.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>\ # TODO Intro to module</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -74,7 +67,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_json_url" class="doc_header"><code>get_json_url</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_json_url</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>str</code>, <code>int</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>)</p>
+<h4 id="get_json_url" class="doc_header"><code>get_json_url</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_json_url</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>str</code>, <code>int</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>)</p>
 </blockquote>
 <p>Returns url for the json data from news-navigator for given <code>year</code> and <code>kind</code></p>
 
@@ -125,7 +118,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_json" class="doc_header"><code>load_json</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_json</code>(<strong><code>url</code></strong>)</p>
+<h4 id="load_json" class="doc_header"><code>load_json</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_json</code>(<strong><code>url</code></strong>)</p>
 </blockquote>
 <p>Returns json loaded from <code>url</code></p>
 
@@ -245,7 +238,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;_yajl2.items at 0x1218eea30&gt;</pre>
+<pre>&lt;_yajl2.items at 0x11c372940&gt;</pre>
 </div>
 
 </div>
@@ -317,11 +310,56 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Counting-the-size-of-the-data">Counting the size of the data<a class="anchor-link" href="#Counting-the-size-of-the-data"> </a></h3><ul>
-<li>what </li>
-<li>how</li>
-<li>lru_cache</li>
-</ul>
+<h3 id="Counting-the-size-of-the-data">Counting the size of the data<a class="anchor-link" href="#Counting-the-size-of-the-data"> </a></h3><p>If we want to sample from newspaper navigator it is important to be able to know the size of the total population for a given year and kind of image i.e. 10000 photos for 1950.</p>
+<p>Normally in Python we would use <code>len</code> to count the length of a python object</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="s1">&#39;three&#39;</span><span class="p">}</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we try and do this with our <code>objects</code> we get an error <code>TypeError: object of type '_yajl2.items' has no len()</code>. This is because the point if of ijson is to avoid loading json into memory so we don't know how long the total data will be.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can get around this by using the <a href="https://toolz.readthedocs.io/en/">toolz</a> libraries <a href="https://toolz.readthedocs.io/en/latest/api.html#toolz.itertoolz.count">itertoolz.count</a> method. This is similar to <code>len</code> except that it can work on lazy sequences i.e. something which has a <code>next</code> attribute. This ends up being quite slow because we still need to go through all of the data which means that although we can avoid loading the data into memory we do still need to stream it all in order to get the length. Most of the time this won't be necessary anyway but in case we end up calling this function multiple times we cache the results to make sure we don't calculate the length of the same data multiple times.</p>
 
 </div>
 </div>
@@ -337,7 +375,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="count_json_iter" class="doc_header"><code>count_json_iter</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>count_json_iter</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="count_json_iter" class="doc_header"><code>count_json_iter</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>count_json_iter</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Returns count of objects in url json file using an iterator to avoid loading json into memory</p>
 
@@ -428,7 +466,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_year_size" class="doc_header"><code>get_year_size</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_size</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>int</code>, <code>str</code>], <strong><code>kind</code></strong>:<code>str</code>)</p>
+<h4 id="get_year_size" class="doc_header"><code>get_year_size</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_size</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>int</code>, <code>str</code>], <strong><code>kind</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>returns size of a json dataset for a given year and kind
 results are cached</p>
@@ -500,7 +538,7 @@ kind : str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_year_sizes" class="doc_header"><code>get_year_sizes</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_sizes</code>(<strong><code>kind</code></strong>, <strong><code>start</code></strong>=<em><code>1850</code></em>, <strong><code>end</code></strong>=<em><code>1950</code></em>, <strong><code>step</code></strong>=<em><code>5</code></em>)</p>
+<h4 id="get_year_sizes" class="doc_header"><code>get_year_sizes</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_sizes</code>(<strong><code>kind</code></strong>, <strong><code>start</code></strong>=<em><code>1850</code></em>, <strong><code>end</code></strong>=<em><code>1950</code></em>, <strong><code>step</code></strong>=<em><code>5</code></em>)</p>
 </blockquote>
 <p>Returns the sizes for json data files for <code>kind</code> between year <code>start</code> and <code>end</code>
 with step size 'step'</p>
@@ -556,8 +594,8 @@ Pandas.DataFrame: holding data from input json url</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-CPU times: user 51.3 ms, sys: 24.7 ms, total: 76 ms
-Wall time: 73.7 ms
+CPU times: user 81.6 ms, sys: 39.6 ms, total: 121 ms
+Wall time: 149 ms
 </pre>
 </div>
 </div>
@@ -669,7 +707,7 @@ Wall time: 73.7 ms
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_all_year_sizes" class="doc_header"><code>get_all_year_sizes</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L131" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_year_sizes</code>(<strong><code>start</code></strong>=<em><code>1850</code></em>, <strong><code>end</code></strong>=<em><code>1950</code></em>, <strong><code>step</code></strong>=<em><code>1</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="get_all_year_sizes" class="doc_header"><code>get_all_year_sizes</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_year_sizes</code>(<strong><code>start</code></strong>=<em><code>1850</code></em>, <strong><code>end</code></strong>=<em><code>1950</code></em>, <strong><code>step</code></strong>=<em><code>1</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Returns a dataframe with number of counts from year <code>start</code> to <code>end</code></p>
 
@@ -727,7 +765,7 @@ Wall time: 73.7 ms
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;Frankenstein&#39;]</pre>
+<pre>[&#39;If They Come in the Morning&#39;]</pre>
 </div>
 
 </div>
@@ -758,7 +796,7 @@ Wall time: 73.7 ms
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sample_stream" class="doc_header"><code>sample_stream</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_stream</code>(<strong><code>stream</code></strong>, <strong><code>k</code></strong>:<code>int</code>)</p>
+<h4 id="sample_stream" class="doc_header"><code>sample_stream</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_stream</code>(<strong><code>stream</code></strong>, <strong><code>k</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>Return a random sample of k elements drawn without replacement from stream.
 Designed to be used when the elements of stream cannot easily fit into memory.</p>
@@ -782,7 +820,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we sample whilst only loading a small numer of items into memory at one time. This does come at some cost, mainly speed. There are faster ways of sampling from a stream but this isn't the main bottle neck for sampling in this case.</p>
+<p>Now we sample whilst only loading a small numer of items into memory at one time. This does come at some cost, mainly speed. There are faster ways of sampling from a stream but this isn't the main bottle neck for sampling in this case. We can for example sample from a large range of numbers without memory issues.</p>
 
 </div>
 </div>
@@ -809,7 +847,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([40892, 90956, 95127, 93917, 62641])</pre>
+<pre>array([97491, 27049, 55940, 39111, 41782])</pre>
 </div>
 
 </div>
@@ -820,6 +858,13 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can still sample from lists</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -843,7 +888,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;Karl Marx&#39;, &#39;Rosa Luxenburg&#39;], dtype=&#39;&lt;U14&#39;)</pre>
+<pre>array([&#39;Raya Dunayevsk&#39;, &#39;CLR James&#39;], dtype=&#39;&lt;U14&#39;)</pre>
 </div>
 
 </div>
@@ -865,7 +910,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_frac_size" class="doc_header"><code>calc_frac_size</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_frac_size</code>(<strong><code>url</code></strong>, <strong><code>frac</code></strong>)</p>
+<h4 id="calc_frac_size" class="doc_header"><code>calc_frac_size</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_frac_size</code>(<strong><code>url</code></strong>, <strong><code>frac</code></strong>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>returns fraction size from a json stream</p>
 
@@ -897,7 +942,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_year_from_total" class="doc_header"><code>calc_year_from_total</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L167" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_year_from_total</code>(<strong><code>total</code></strong>, <strong><code>start</code></strong>, <strong><code>end</code></strong>, <strong><code>step</code></strong>)</p>
+<h4 id="calc_year_from_total" class="doc_header"><code>calc_year_from_total</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_year_from_total</code>(<strong><code>total</code></strong>, <strong><code>start</code></strong>, <strong><code>end</code></strong>, <strong><code>step</code></strong>)</p>
 </blockquote>
 <p>Calculate size of a year sample based on a total sample size</p>
 
@@ -925,7 +970,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">calc_year_from_total</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1850</span><span class="p">,</span> <span class="mi">18950</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">calc_year_from_total</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1850</span><span class="p">,</span> <span class="mi">18950</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -951,6 +996,13 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Reducing-memory-usage">Reducing memory usage<a class="anchor-link" href="#Reducing-memory-usage"> </a></h3><p>Since we are trying to be a bit careful with memory usage we will convert column <code>dtypes</code> to be smaller when possible.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -962,7 +1014,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="reduce_df_memory" class="doc_header"><code>reduce_df_memory</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L172" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reduce_df_memory</code>(<strong><code>df</code></strong>)</p>
+<h4 id="reduce_df_memory" class="doc_header"><code>reduce_df_memory</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L175" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reduce_df_memory</code>(<strong><code>df</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -982,6 +1034,19 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Sampling-Newspaper-navigator">Sampling Newspaper navigator<a class="anchor-link" href="#Sampling-Newspaper-navigator"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -993,8 +1058,9 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sample_year" class="doc_header"><code>sample_year</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L187" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_year</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>year</code></strong>:<code>int</code>)</p>
+<h2 id="nnSampler" class="doc_header"><code>class</code> <code>nnSampler</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L190" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnSampler</code>()</p>
 </blockquote>
+<p>Sampler for creating samples from Newspaper Navigator data</p>
 
 </div>
 
@@ -1009,6 +1075,31 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="sample_year" class="doc_header"><code>sample_year</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L198" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_year</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>year</code></strong>:<code>int</code>)</p>
+</blockquote>
+<p>samples <code>sample_size</code> for <code>year</code> and <code>kind</code></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -1034,6 +1125,23 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -1042,10 +1150,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="nnSampler" class="doc_header"><code>class</code> <code>nnSampler</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L205" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnSampler</code>()</p>
-</blockquote>
-<p>Sampler for creating samples from Newspaper Navigator data</p>
-
+<h4 id="None" class="doc_header"><code>None</code><a href="" class="source_link" style="float:right">[source]</a></h4>
 </div>
 
 </div>
@@ -1063,6 +1168,316 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="nnSampler.create_sample" class="doc_header"><code>nnSampler.create_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L221" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnSampler.create_sample</code>(<strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>5</code></em>, <strong><code>year_sample</code></strong>=<em><code>True</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>reduce_memory</code></strong>=<em><code>True</code></em>)</p>
+</blockquote>
+<p>Creates a sample of Newspaper Navigator data for a given set of years and a kind</p>
+<p>Parameters:
+sample_size: int, float
+    <code>sample size</code> can either be a fixed number or a fraction of the total dataset size
+kind (str): kind of image from news-navigator:
+{'ads', 'photos', 'maps', 'illustrations', 'comics', 'cartoons', 'headlines'}</p>
+<p>Returns:
+Pandas.DataFrame: holding data from input json url</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="/nnanno/sample.html#create_sample"><code>create_sample</code></a> returns a dataframe which samples from Newspaper Navigator. <code>year_sample</code> controls whether you want <code>sample_size</code> to be for each year or for you entire sample. Selecting <code>year_sample</code> false will return a sample of a size close to what you define in <code>sample_size</code>. This is useful for example if you plan to annotate your sample with some new labels.</p>
+<p>For any years where sample size is larger than the sample available you just get everything for that year.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">=</span> <span class="n">nnSampler</span><span class="p">()</span>
+<span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">end_year</span><span class="o">=</span><span class="mi">1852</span><span class="p">,</span> <span class="n">year_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>filepath</th>
+      <th>pub_date</th>
+      <th>page_seq_num</th>
+      <th>edition_seq_num</th>
+      <th>batch</th>
+      <th>lccn</th>
+      <th>box</th>
+      <th>score</th>
+      <th>ocr</th>
+      <th>place_of_publication</th>
+      <th>geographic_coverage</th>
+      <th>name</th>
+      <th>publisher</th>
+      <th>url</th>
+      <th>page_url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ohi_ingstad_ver01/data/sn85026051/00296027029/...</td>
+      <td>1850-12-14</td>
+      <td>120</td>
+      <td>1</td>
+      <td>ohi_ingstad_ver01</td>
+      <td>sn85026051</td>
+      <td>[0.3187102596316717, 0.6281719624215338, 0.451...</td>
+      <td>0.939053</td>
+      <td>[COME, IN,, WE, CALL, YOU!]</td>
+      <td>Fremont, Sandusky County, Ohio</td>
+      <td>[Ohio--Sandusky--Fremont]</td>
+      <td>Fremont weekly freeman. [volume]</td>
+      <td>J.S. Fouke</td>
+      <td>https://news-navigator.labs.loc.gov/data/ohi_i...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>vtu_londonderry_ver01/data/sn84023252/00200296...</td>
+      <td>1850-03-09</td>
+      <td>247</td>
+      <td>1</td>
+      <td>vtu_londonderry_ver01</td>
+      <td>sn84023252</td>
+      <td>[0.5134230714407026, 0.1490311215403323, 0.669...</td>
+      <td>0.922406</td>
+      <td>[OU1, Dr., Jftcob, Townaond.]</td>
+      <td>St. Johnsbury, Vt.</td>
+      <td>[Vermont--Caledonia--Saint Johnsbury]</td>
+      <td>The Caledonian. [volume]</td>
+      <td>A.G. Chadwick</td>
+      <td>https://news-navigator.labs.loc.gov/data/vtu_l...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ohi_ingstad_ver01/data/sn85026051/00296027029/...</td>
+      <td>1850-08-17</td>
+      <td>49</td>
+      <td>1</td>
+      <td>ohi_ingstad_ver01</td>
+      <td>sn85026051</td>
+      <td>[0.2943367379610656, 0.6305186744386874, 0.426...</td>
+      <td>0.956234</td>
+      <td>[COME, IN,, WE, CALL, YOU, !, o]</td>
+      <td>Fremont, Sandusky County, Ohio</td>
+      <td>[Ohio--Sandusky--Fremont]</td>
+      <td>Fremont weekly freeman. [volume]</td>
+      <td>J.S. Fouke</td>
+      <td>https://news-navigator.labs.loc.gov/data/ohi_i...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>msar_cloudchaser_ver01/data/sn87065038/0029587...</td>
+      <td>1852-10-07</td>
+      <td>262</td>
+      <td>1</td>
+      <td>msar_cloudchaser_ver01</td>
+      <td>sn87065038</td>
+      <td>[0.4655820986278216, 0.5739247633736971, 0.601...</td>
+      <td>0.968907</td>
+      <td>[i, "ntnTf-fhr-i, -irrr-T-, r, ., -, J, I]</td>
+      <td>Columbus, Miss.</td>
+      <td>[Mississippi--Lowndes--Columbus]</td>
+      <td>The primitive Republican.</td>
+      <td>F.G. Baldwin</td>
+      <td>https://news-navigator.labs.loc.gov/data/msar_...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>msar_minuette_ver01/data/sn87065704/0041566203...</td>
+      <td>1852-09-29</td>
+      <td>239</td>
+      <td>1</td>
+      <td>msar_minuette_ver01</td>
+      <td>sn87065704</td>
+      <td>[0.8134644563533058, 0.04407011917615351, 0.95...</td>
+      <td>0.915197</td>
+      <td>[W99rBiHM, Clothing!, Clothing!!]</td>
+      <td>Yazoo City, Miss.</td>
+      <td>[Mississippi--Yazoo--Yazoo City]</td>
+      <td>The Yazoo Democrat.</td>
+      <td>Samuel L. Lewis</td>
+      <td>https://news-navigator.labs.loc.gov/data/msar_...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>msar_jacard_ver01/data/sn87065481/00199917389/...</td>
+      <td>1852-08-25</td>
+      <td>390</td>
+      <td>1</td>
+      <td>msar_jacard_ver01</td>
+      <td>sn87065481</td>
+      <td>[0.0, 0.022159775512950158, 0.9562467963447399...</td>
+      <td>0.969408</td>
+      <td>[9», -T, ft, ne, *, ft., a-fo--*, ■■, -Saie, 1...</td>
+      <td>Port Gibson, Miss.</td>
+      <td>[Mississippi--Claiborne--Port Gibson]</td>
+      <td>Southern reveille.</td>
+      <td>L.O. Bridewell</td>
+      <td>https://news-navigator.labs.loc.gov/data/msar_...</td>
+      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Downloading-sample-images">Downloading sample images<a class="anchor-link" href="#Downloading-sample-images"> </a></h4>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="None" class="doc_header"><code>None</code><a href="" class="source_link" style="float:right">[source]</a></h4>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="nnSampler.download_sample" class="doc_header"><code>nnSampler.download_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L273" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnSampler.download_sample</code>(<strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>json_name</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>df</code></strong>:<code>Optional</code>[<code>DataFrame</code>]=<em><code>None</code></em>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pct</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>Optional</code>[<code>tuple</code>]=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+</blockquote>
+<p>Download images associated with a sample
+The majority of paramters relate to the options available in a IIIF image request
+see <code>https://iiif.io/api/image/3.0/#4-image-requests</code> for further information</p>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><p>out_dir
+    The save directory for the images
+json_name</p>
+<p>df
+    optional DataFrame containing a sample
+original
+    if <code>True</code> will download orginal size images via IIIF
+pct
+    optional value which scales the size of images requested by <code>pct</code>
+size
+    a tuple representing <code>width</code> by <code>height</code>, will be passed to IIIF request
+preserve_asp_ratio
+    whether to ask the IIIF request to preserve aspect ratio of image or not</p>
+<h2 id="Returns">Returns<a class="anchor-link" href="#Returns"> </a></h2><p>None</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="/nnanno/sample.html#download_sample"><code>download_sample</code></a> is used to download images from a <a href="/nnanno/sample.html"><code>sample</code></a></p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1366,51 +1781,51 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
   <tbody>
     <tr>
       <th>0</th>
-      <td>msar_icydrop_ver05/data/sn83016872/00295878502...</td>
-      <td>1850-12-31</td>
-      <td>986</td>
+      <td>ncu_hawk_ver02/data/sn84026472/00416156360/185...</td>
+      <td>1850-05-22</td>
+      <td>289</td>
       <td>1</td>
-      <td>msar_icydrop_ver05</td>
-      <td>sn83016872</td>
-      <td>[0.1624672249571918, 0.026467160391487225, 0.9...</td>
-      <td>0.963962</td>
-      <td>[k'.'-vk'', t', :j, 1, !'V1, kkk, .0, :I, .Ii:...</td>
-      <td>Canton, Miss.</td>
-      <td>[Mississippi--Madison--Canton]</td>
-      <td>The Mississippi Creole. [volume]</td>
-      <td>M.N. Prewett</td>
-      <td>https://news-navigator.labs.loc.gov/data/msar_...</td>
+      <td>ncu_hawk_ver02</td>
+      <td>sn84026472</td>
+      <td>[0.6732673909317263, 0.042179068056539225, 0.8...</td>
+      <td>0.914908</td>
+      <td>[]</td>
+      <td>Hillsborough, N.C.</td>
+      <td>[North Carolina--Orange--Hillsboro]</td>
+      <td>The Hillsborough recorder. [volume]</td>
+      <td>Dennis Heartt</td>
+      <td>https://news-navigator.labs.loc.gov/data/ncu_h...</td>
       <td>https://chroniclingamerica.loc.gov/data/batche...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>ohi_ingstad_ver01/data/sn85026051/00296027029/...</td>
-      <td>1850-07-20</td>
-      <td>33</td>
+      <td>vtu_londonderry_ver01/data/sn84023252/00200296...</td>
+      <td>1850-01-05</td>
+      <td>211</td>
       <td>1</td>
-      <td>ohi_ingstad_ver01</td>
-      <td>sn85026051</td>
-      <td>[0.3009427797781111, 0.6294158908847332, 0.433...</td>
-      <td>0.929614</td>
-      <td>[L, -, COME, IN,, WE, CALL, YOU, !, .v';:]</td>
-      <td>Fremont, Sandusky County, Ohio</td>
-      <td>[Ohio--Sandusky--Fremont]</td>
-      <td>Fremont weekly freeman. [volume]</td>
-      <td>J.S. Fouke</td>
-      <td>https://news-navigator.labs.loc.gov/data/ohi_i...</td>
+      <td>vtu_londonderry_ver01</td>
+      <td>sn84023252</td>
+      <td>[0.37258306108508027, 0.15734597789498914, 0.5...</td>
+      <td>0.950609</td>
+      <td>[Old, Dr., Jucob, Tovnaond,]</td>
+      <td>St. Johnsbury, Vt.</td>
+      <td>[Vermont--Caledonia--Saint Johnsbury]</td>
+      <td>The Caledonian. [volume]</td>
+      <td>A.G. Chadwick</td>
+      <td>https://news-navigator.labs.loc.gov/data/vtu_l...</td>
       <td>https://chroniclingamerica.loc.gov/data/batche...</td>
     </tr>
     <tr>
       <th>2</th>
       <td>vtu_londonderry_ver01/data/sn84023252/00200296...</td>
-      <td>1850-05-18</td>
-      <td>287</td>
+      <td>1850-04-13</td>
+      <td>267</td>
       <td>1</td>
       <td>vtu_londonderry_ver01</td>
       <td>sn84023252</td>
-      <td>[0.6835249535831405, 0.16362890757445187, 0.83...</td>
-      <td>0.915137</td>
-      <td>[;, j, w, Old, Dr., JncoUTovn8ond,, 'I'Lr, Ori...</td>
+      <td>[0.5326837941094917, 0.15329743127118706, 0.68...</td>
+      <td>0.921967</td>
+      <td>[Old, Dr., Jncob, Townfiond.]</td>
       <td>St. Johnsbury, Vt.</td>
       <td>[Vermont--Caledonia--Saint Johnsbury]</td>
       <td>The Caledonian. [volume]</td>
@@ -1420,33 +1835,33 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
     </tr>
     <tr>
       <th>3</th>
-      <td>ohi_ingstad_ver01/data/sn85026051/00296027029/...</td>
-      <td>1850-12-07</td>
-      <td>115</td>
+      <td>vtu_londonderry_ver01/data/sn84023252/00200296...</td>
+      <td>1850-03-02</td>
+      <td>243</td>
       <td>1</td>
-      <td>ohi_ingstad_ver01</td>
-      <td>sn85026051</td>
-      <td>[0.30707743987524494, 0.6473851770787806, 0.44...</td>
-      <td>0.984739</td>
-      <td>[COME, IN,, WE, CALL, YOU!]</td>
-      <td>Fremont, Sandusky County, Ohio</td>
-      <td>[Ohio--Sandusky--Fremont]</td>
-      <td>Fremont weekly freeman. [volume]</td>
-      <td>J.S. Fouke</td>
-      <td>https://news-navigator.labs.loc.gov/data/ohi_i...</td>
+      <td>vtu_londonderry_ver01</td>
+      <td>sn84023252</td>
+      <td>[0.5280499599947788, 0.15107026349285346, 0.68...</td>
+      <td>0.906733</td>
+      <td>[Old, Dr., Jnooh, TownHcnd,]</td>
+      <td>St. Johnsbury, Vt.</td>
+      <td>[Vermont--Caledonia--Saint Johnsbury]</td>
+      <td>The Caledonian. [volume]</td>
+      <td>A.G. Chadwick</td>
+      <td>https://news-navigator.labs.loc.gov/data/vtu_l...</td>
       <td>https://chroniclingamerica.loc.gov/data/batche...</td>
     </tr>
     <tr>
       <th>4</th>
       <td>vtu_londonderry_ver01/data/sn84023252/00200296...</td>
-      <td>1850-05-11</td>
-      <td>283</td>
+      <td>1850-03-09</td>
+      <td>247</td>
       <td>1</td>
       <td>vtu_londonderry_ver01</td>
       <td>sn84023252</td>
-      <td>[0.5275910554108796, 0.16344128086556137, 0.68...</td>
-      <td>0.915448</td>
-      <td>[Old, Dr., Jnaob, TownHond,, 'Jlu, Utigiml, l)...</td>
+      <td>[0.5134230714407026, 0.1490311215403323, 0.669...</td>
+      <td>0.922406</td>
+      <td>[OU1, Dr., Jftcob, Townaond.]</td>
       <td>St. Johnsbury, Vt.</td>
       <td>[Vermont--Caledonia--Saint Johnsbury]</td>
       <td>The Caledonian. [volume]</td>
