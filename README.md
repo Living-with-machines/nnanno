@@ -2,11 +2,23 @@
 > Sampling, annotating and making predictions on the Newspaper Navigator dataset  
 
 
-What is Newspaper Navigator?
+![CI](https://github.com/davanstrien/nnanno/workflows/CI/badge.svg)
+
+`nnanno` is a modest collection of tools to help work with the delightful [Newspaper Navigator](https://news-navigator.labs.loc.gov/) data. [Newspaper Navigator](https://news-navigator.labs.loc.gov/) is a project which extracted visual content (pictures, maps etc.) from the Library of Congress [Chronicling America](https://chroniclingamerica.loc.gov/) digitised newspaper collection. 
+
+Newspaper Navigator has released data in a number of formats including `json` files. `nnanno` was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful [nbdev](nbdev.fast.ai/) library it is possible to install it for your own use. 
+
+## Disclaimer
+
+This code was mainly written to help develop some example datasets for a tutorial. It has some tests but there are likely bugs and issues with the code. 
+
+This project is not an official Library of Congress project. 
 
 ## Install
 
-`pip install nnanno`
+At the moment installation is through Git. If the code gets a few more eyes on it then it may get uploaded to pip. 
+
+`pip install nnanno` #TODO add github link
 
 ## Programming Historian Data Preparation 
 
@@ -14,7 +26,13 @@ What is Newspaper Navigator?
 
 Fill me in please! Don't forget code examples:
 
-```
+## Creating samples
+
+## annotation
+
+## inference
+
+```python
 get_json_url(1850, 'ads')
 ```
 
@@ -25,7 +43,7 @@ get_json_url(1850, 'ads')
 
 
 
-```
+```python
 sampler = nnSampler()
 df = sampler.create_sample(2, end_year=1851)
 ```
@@ -33,16 +51,16 @@ df = sampler.create_sample(2, end_year=1851)
     
 
 
-```
+```python
 df['page_url'].head(1)
 ```
 
 
 
 
-    0    https://chroniclingamerica.loc.gov/data/batches/vtu_londonderry_ver01/data/sn84023252/00200296205/1850033001/0259.jp2
+    0    https://chroniclingamerica.loc.gov/data/batches/ohi_ingstad_ver01/data/sn85026051/00296027029/1850122101/0124.jp2
     Name: page_url, dtype: category
-    Categories (2, object): ['https://chroniclingamerica.loc.gov/data/batches/vtu_londonderry_ver01/data/sn84023252/00200296205/1850030201/0243.jp2', 'https://chroniclingamerica.loc.gov/data/batches/vtu_londonderry_ver01/data/sn84023252/00200296205/1850033001/0259.jp2']
+    Categories (2, object): ['https://chroniclingamerica.loc.gov/data/batches/ohi_ingstad_ver01/data/sn85026051/00296027029/1850072001/0033.jp2', 'https://chroniclingamerica.loc.gov/data/batches/ohi_ingstad_ver01/data/sn85026051/00296027029/1850122101/0124.jp2']
 
 
 
@@ -50,7 +68,7 @@ df['page_url'].head(1)
 
 # Inference
 
-```
+```python
 from fastai.vision.all import *
 dls = ImageDataLoaders.from_csv('../ph/ads/', 'ads_upsampled.csv',folder='images', fn_col='file', label_col='label',
                                 item_tfms=Resize(64,ResizeMethod.Squish), num_workers=0)
@@ -58,81 +76,61 @@ learn = cnn_learner(dls, resnet18, metrics=F1Score())
 learn.fine_tune(1)
 ```
 
-```
-predictor = nnPredict(learn,try_gpu=False)
-```
 
-```
-predictor.predict_sample('ads','testinference',0.01,end_year=1850)
-```
-
-    
-
-
-```
-df = pd.read_json('testinference/1850.json')
-df.iloc[:5,-3:]
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pred_decoded</th>
-      <th>illustrations_prob</th>
-      <th>text-only_prob</th>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>f1_score</th>
+      <th>time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0.179449</td>
-      <td>0.820551</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0.212609</td>
-      <td>0.787392</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>0.001641</td>
-      <td>0.998359</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>0.046870</td>
-      <td>0.953130</td>
-    </tr>
-    <tr>
-      <th>4</th>
       <td>0</td>
-      <td>0.999221</td>
-      <td>0.000779</td>
+      <td>1.003417</td>
+      <td>0.810943</td>
+      <td>0.779661</td>
+      <td>00:11</td>
     </tr>
   </tbody>
 </table>
-</div>
 
 
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>f1_score</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.608463</td>
+      <td>0.514722</td>
+      <td>0.789116</td>
+      <td>00:15</td>
+    </tr>
+  </tbody>
+</table>
+
+
+```python
+predictor = nnPredict(learn,try_gpu=False)
+```
+
+```python
+predictor.predict_sample('ads','testinference',0.01,end_year=1850)
+```
+
+```python
+df = pd.read_json('testinference/1850.json')
+df.iloc[:5,-3:]
+```
