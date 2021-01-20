@@ -18,12 +18,12 @@ def create_label_studio_json(sample: Union[pd.DataFrame,nnSampler], fname:Union[
     """create a json file which can be used to upload tasks to label studio"""
     if type(sample) == nnanno.sample.nnSampler:
         try:
-            annotation_df = sample.sample.copy()
+            sample = sample.sample.copy()
         except AttributeError as e:
             print(f"{sample} doesn't have a sample associated with it")
     else:
-        annotation_df = sample.copy()
-    annotation_df["image"] = annotation_df.apply(
+        sample = sample.copy()
+    sample["image"] = sample.apply(
                 lambda x: iiif_df_apply(
                     x,
                      original=original,
@@ -34,7 +34,7 @@ def create_label_studio_json(sample: Union[pd.DataFrame,nnSampler], fname:Union[
 
                 axis=1,
             )
-    label_studio_json = annotation_df.apply(lambda x:x.to_dict(), axis=1).to_list()
+    label_studio_json = sample.apply(lambda x:x.to_dict(), axis=1).to_list()
     with open(fname,'w') as f:
         json.dump(label_studio_json,f, ignore_nan=True)
 
