@@ -179,7 +179,7 @@ def predict_sample(self,
     _make_directory(out_dir,force_dir)
     years = range(start_year, end_year + 1, step)
     if type(sample_size) == float:
-        total = int(self._get_year_sample_size(kind,list(years),sample_size).sum())
+        total = int(self._get_year_sample_size(kind, list(years), sample_size).sum())
     if type(sample_size) == int:
         total = sample_size * len(years)
     dfs = []
