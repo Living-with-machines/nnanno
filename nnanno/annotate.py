@@ -14,8 +14,23 @@ from glob import glob
 from pathlib import Path
 
 # Cell
-def create_label_studio_json(sample: Union[pd.DataFrame,nnSampler], fname:Union[str,Path], original: bool = True,  pct: Optional[int] = None,  size: Optional[tuple] = None, preserve_asp_ratio: bool = True):
+import nnanno
+from typing import Union, Optional
+
+# Cell
+def create_label_studio_json(sample: Union[pd.DataFrame,nnSampler],
+                             fname: Union[str,Path],
+                             original: bool = True,
+                             pct: Optional[int] = None,
+                             size: Optional[tuple] = None,
+                             preserve_asp_ratio: bool = True):
     """create a json file which can be used to upload tasks to label studio"""
+    if Path(fname).exists():
+        raise FileExistsError(f"{fname} already exists")
+    if fname is None:
+        today = datetime.today()
+        time_stamp = today.strftime("%Y_%d_%m_%H_%M")
+        fname = f"{time_stamp}_tasks.json"
     if type(sample) == nnanno.sample.nnSampler:
         try:
             sample = sample.sample.copy()
@@ -24,25 +39,21 @@ def create_label_studio_json(sample: Union[pd.DataFrame,nnSampler], fname:Union[
     else:
         sample = sample.copy()
     sample["image"] = sample.apply(
-                lambda x: iiif_df_apply(
-                    x,
-                     original=original,
-                     pct=pct,
-                     size=size,
-                     preserve_asp_ratio=preserve_asp_ratio,
-                ),
-
-                axis=1,
-            )
+        lambda x: iiif_df_apply(x,
+                                original=original,
+                                pct=pct,
+                                size=size,
+                                preserve_asp_ratio=preserve_asp_ratio), axis=1)
     label_studio_json = sample.apply(lambda x:x.to_dict(), axis=1).to_list()
-    with open(fname,'w') as f:
+    with open(fname, 'w') as f:
         json.dump(label_studio_json,f, ignore_nan=True)
-
 
 # Cell
 def load_annotations_csv(csv: Union[str, Path], kind='classification'):
     if kind == 'classification':
-        return pd.read_csv(csv, converters={'box':eval})
+        df = pd.read_csv(csv, converters={'box':eval})
+        df['label'] = df['choice']
+        return df
     if kind == 'label':
         df = pd.read_csv(csv, converters={'box':eval, 'choice':eval})
         df['label'] = df.apply(lambda x: x.choice['choices'], axis=1)
