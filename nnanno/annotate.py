@@ -15,11 +15,14 @@ from pathlib import Path
 
 # Cell
 import nnanno
-from typing import Union, Optional
+from typing import Union, Optional, Type
 
 # Cell
-def create_label_studio_json(sample: Union[pd.DataFrame,nnanno.sample.nnSampler],
-                             fname: Union[str,Path],
+from .sample import *
+
+# Cell
+def create_label_studio_json(sample: Union[pd.DataFrame, Type[nnanno.sample.nnSampler]],
+                             fname: Union[str,Path, None]=None,
                              original: bool = True,
                              pct: Optional[int] = None,
                              size: Optional[tuple] = None,
