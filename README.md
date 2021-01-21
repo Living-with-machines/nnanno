@@ -15,7 +15,7 @@ Newspaper Navigator has released data in a number of formats including `json` fi
 ### nbdev notes
 
 
-```python
+```
 1+1
 ```
 
@@ -50,7 +50,7 @@ Fill me in please! Don't forget code examples:
 
 ## inference
 
-```python
+```
 get_json_url(1850, 'ads')
 ```
 
@@ -61,7 +61,7 @@ get_json_url(1850, 'ads')
 
 
 
-```python
+```
 sampler = nnSampler()
 df = sampler.create_sample(2, end_year=1851)
 ```
@@ -69,7 +69,7 @@ df = sampler.create_sample(2, end_year=1851)
     
 
 
-```python
+```
 df['page_url'].head(1)
 ```
 
@@ -86,7 +86,7 @@ df['page_url'].head(1)
 
 # Inference
 
-```python
+```
 from fastai.vision.all import *
 dls = ImageDataLoaders.from_csv('../ph/ads/', 'ads_upsampled.csv',folder='images', fn_col='file', label_col='label',
                                 item_tfms=Resize(64,ResizeMethod.Squish), num_workers=0)
@@ -140,15 +140,15 @@ learn.fine_tune(1)
 </table>
 
 
-```python
+```
 predictor = nnPredict(learn,try_gpu=False)
 ```
 
-```python
+```
 predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 ```
 
-```python
+```
 df = pd.read_json('testinference/1850.json')
 df.iloc[:5,-3:]
 ```
