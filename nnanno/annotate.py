@@ -18,7 +18,7 @@ import nnanno
 from typing import Union, Optional
 
 # Cell
-def create_label_studio_json(sample: Union[pd.DataFrame,nnSampler],
+def create_label_studio_json(sample: Union[pd.DataFrame,nnanno.sample.nnSampler],
                              fname: Union[str,Path],
                              original: bool = True,
                              pct: Optional[int] = None,
