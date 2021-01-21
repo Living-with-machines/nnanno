@@ -8,9 +8,27 @@
 
 Newspaper Navigator has released data in a number of formats including `json` files. `nnanno` was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful [nbdev](nbdev.fast.ai/) library it is possible to install it for your own use. 
 
-## Disclaimer
+## What nnanno tries to help with
 
-This code was mainly written to help develop some example datasets for a tutorial. It has some tests but there are likely bugs and issues with the code. 
+### Sampling 
+
+### nbdev notes
+
+
+```python
+1+1
+```
+
+
+
+
+    2
+
+
+
+### Disclaimer
+
+This code was mainly written to help develop some example datasets for a series of Programming Historian tutorials. It has some tests but there are likely bugs and issues with the code. The code in this repository was all written in notebooks, some people  hate notebooks. Those people will probably hate this too 🤷‍♂️
 
 This project is not an official Library of Congress project. 
 
