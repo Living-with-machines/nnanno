@@ -21,6 +21,12 @@ entries:
     - output: web,pdf
       title: Inference
       url: inference.html
+    - output: web,pdf
+      title: Maps inference
+      url: train_predict.html
+    - output: web,pdf
+      title: Mapping maps
+      url: mapping_maps.html
     output: web
     title: nnanno
   output: web

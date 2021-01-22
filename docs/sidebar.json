@@ -4,6 +4,8 @@
     "Core": "core.html",
     "Sample": "sample.html",
     "Annotate": "annotate.html",
-    "Inference": "inference.html"
+    "Inference": "inference.html",
+    "Maps inference": "train_predict.html",
+    "Mapping maps": "mapping_maps.html"
   }
 }

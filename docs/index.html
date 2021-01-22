@@ -38,21 +38,31 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>nnanno</code> is a modest collection of tools to help work with the delightful <a href="https://news-navigator.labs.loc.gov/">Newspaper Navigator</a> data. <a href="https://news-navigator.labs.loc.gov/">Newspaper Navigator</a> is a project which extracted visual content (pictures, maps etc.) from the Library of Congress <a href="https://chroniclingamerica.loc.gov/">Chronicling America</a> digitised newspaper collection.</p>
-<p>Newspaper Navigator has released data in a number of formats including <code>json</code> files. <code>nnanno</code> was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful <a href="nbdev.fast.ai/">nbdev</a> library it is possible to install it for your own use.</p>
+<p><code>nnanno</code> is a modest collection of tools to help work with the delightful <a href="https://news-navigator.labs.loc.gov/">Newspaper Navigator</a> data.</p>
+<p><a href="https://news-navigator.labs.loc.gov/">Newspaper Navigator</a> is a project which extracted visual content (pictures, maps etc.) from the Library of Congress <a href="https://chroniclingamerica.loc.gov/">Chronicling America</a> digitised newspaper collection.</p>
+<p>Newspaper Navigator has released data in a number of formats including <code>json</code> files which contain a range of metadata about the newspaper from which the image was taken from. <code>nnanno</code> was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful <a href="nbdev.fast.ai/">nbdev</a> library it is possible to install it for your own use.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-nnanno-tries-to-help-with">What nnanno tries to help with<a class="anchor-link" href="#What-nnanno-tries-to-help-with"> </a></h2><h3 id="Sampling">Sampling<a class="anchor-link" href="#Sampling"> </a></h3>
+<h2 id="What-nnanno-tries-to-help-with">What nnanno tries to help with<a class="anchor-link" href="#What-nnanno-tries-to-help-with"> </a></h2><p>nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data since people wanting to work with data will have different needs and interests. Instead it is a minimal collection of code that <em>may</em> help you if you want to work with the Newspaper Navigator data.</p>
+<p>There are three particular areas where nnanno tries to help a little:</p>
+<ul>
+<li>sampling from the full Newspaper Navigator data</li>
+<li>annotating this sample with additional labels using <a href="https://labelstud.io">label studio</a></li>
+<li>inference (experimental 😬) running inference i.e making new predictions with a machine learning model on the newspaper navigator dataset using IIIF.</li>
+</ul>
+<h4 id="Minimal(ish)-computing-\-#-TODO">Minimal(ish) computing \ # TODO<a class="anchor-link" href="#Minimal(ish)-computing-\-#-TODO"> </a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="nbdev-notes">nbdev notes<a class="anchor-link" href="#nbdev-notes"> </a></h3>
+<h3 id="nbdev-notes">nbdev notes<a class="anchor-link" href="#nbdev-notes"> </a></h3><p>This code was written using a tool called <code>nbdev</code>. This is a tool that helps write python libraries inside Jupyter notebooks. 
+Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:</p>
+
 </div>
 </div>
 </div>
@@ -63,7 +73,8 @@ nb_path: "nbs/index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -75,12 +86,10 @@ nb_path: "nbs/index.ipynb"
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2021-01-22
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -91,8 +100,14 @@ nb_path: "nbs/index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Is evaluated as Python code.  This also means all of the documentation and examples can be opened in notebooks and the code inspected, changed and run.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Disclaimer">Disclaimer<a class="anchor-link" href="#Disclaimer"> </a></h3><p>This code was mainly written to help develop some example datasets for a series of Programming Historian tutorials. It has some tests but there are likely bugs and issues with the code. The code in this repository was all written in notebooks, some people  hate notebooks. Those people will probably hate this too 🤷‍♂️</p>
-<p>This project is not an official Library of Congress project.</p>
 
 </div>
 </div>
@@ -119,32 +134,21 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
+<p>\ # TODO add link to prep notebooks</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Creating-samples">Creating samples<a class="anchor-link" href="#Creating-samples"> </a></h2>
+<h2 id="How-to-use-(tl;dr)">How to use (tl;dr)<a class="anchor-link" href="#How-to-use-(tl;dr)"> </a></h2><p>The three main areas of nnanno are shown below. The examples section in the documentation shows this in greater detail.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="annotation">annotation<a class="anchor-link" href="#annotation"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="inference">inference<a class="anchor-link" href="#inference"> </a></h2>
+<h3 id="Creating-samples">Creating samples<a class="anchor-link" href="#Creating-samples"> </a></h3>
 </div>
 </div>
 </div>
@@ -155,26 +159,10 @@ nb_path: "nbs/index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_json_url</span><span class="p">(</span><span class="mi">1850</span><span class="p">,</span> <span class="s1">&#39;ads&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nnanno.sample</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;https://news-navigator.labs.loc.gov/prepackaged/1850_ads.json&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -189,7 +177,7 @@ nb_path: "nbs/index.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nnSampler</span><span class="p">()</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1851</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span><span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1855</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -213,6 +201,13 @@ nb_path: "nbs/index.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This returns a dataframe containing samples from the Newspaper Navigator data (loaded via JSON) into a Pandas DataFrame.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -220,7 +215,7 @@ nb_path: "nbs/index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;page_url&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 
     </div>
@@ -235,9 +230,10 @@ nb_path: "nbs/index.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0    https://chroniclingamerica.loc.gov/data/batches/ohi_ingstad_ver01/data/sn85026051/00296027029/1850122101/0124.jp2
-Name: page_url, dtype: category
-Categories (2, object): [&#39;https://chroniclingamerica.loc.gov/data/batches/ohi_ingstad_ver01/data/sn85026051/00296027029/1850072001/0033.jp2&#39;, &#39;https://chroniclingamerica.loc.gov/data/batches/ohi_ingstad_ver01/data/sn85026051/00296027029/1850122101/0124.jp2&#39;]</pre>
+<pre>Index([&#39;filepath&#39;, &#39;pub_date&#39;, &#39;page_seq_num&#39;, &#39;edition_seq_num&#39;, &#39;batch&#39;,
+       &#39;lccn&#39;, &#39;box&#39;, &#39;score&#39;, &#39;ocr&#39;, &#39;place_of_publication&#39;,
+       &#39;geographic_coverage&#39;, &#39;name&#39;, &#39;publisher&#39;, &#39;url&#39;, &#39;page_url&#39;],
+      dtype=&#39;object&#39;)</pre>
 </div>
 
 </div>
@@ -250,16 +246,33 @@ Categories (2, object): [&#39;https://chroniclingamerica.loc.gov/data/batches/oh
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Annotate-samples">Annotate samples<a class="anchor-link" href="#Annotate-samples"> </a></h2>
+<h2 id="Annotation">Annotation<a class="anchor-link" href="#Annotation"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h1>
+<h2 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h2>
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nnanno.inference</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -271,7 +284,7 @@ Categories (2, object): [&#39;https://chroniclingamerica.loc.gov/data/batches/oh
 <span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="s1">&#39;../ph/ads/&#39;</span><span class="p">,</span> <span class="s1">&#39;ads_upsampled.csv&#39;</span><span class="p">,</span><span class="n">folder</span><span class="o">=</span><span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="n">fn_col</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="n">label_col</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span>
                                 <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Squish</span><span class="p">),</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">F1Score</span><span class="p">())</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -298,38 +311,10 @@ Categories (2, object): [&#39;https://chroniclingamerica.loc.gov/data/batches/oh
   <tbody>
     <tr>
       <td>0</td>
-      <td>1.003417</td>
-      <td>0.810943</td>
-      <td>0.779661</td>
-      <td>00:11</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: left;">
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>f1_score</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.608463</td>
-      <td>0.514722</td>
-      <td>0.789116</td>
-      <td>00:15</td>
+      <td>1.025671</td>
+      <td>0.924362</td>
+      <td>0.736842</td>
+      <td>00:12</td>
     </tr>
   </tbody>
 </table>
@@ -374,6 +359,20 @@ Categories (2, object): [&#39;https://chroniclingamerica.loc.gov/data/batches/oh
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -389,6 +388,77 @@ Categories (2, object): [&#39;https://chroniclingamerica.loc.gov/data/batches/oh
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pred_decoded</th>
+      <th>illustrations_prob</th>
+      <th>text-only_prob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.014062</td>
+      <td>0.985938</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0.999923</td>
+      <td>0.000078</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>0.041149</td>
+      <td>0.958851</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>0.032974</td>
+      <td>0.967026</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>0.018828</td>
+      <td>0.981172</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
