@@ -96,6 +96,7 @@ class nnPredict:
         self.learner = learner
         self.try_gpu = try_gpu
         self.dls = learner.dls
+        self.decode_map = {v: k for v, k in enumerate(self.learner.dls.vocab)}
 
     def __repr__(self):
         return (f'{self.__class__.__name__} \n'
@@ -136,7 +137,7 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
                    desc='Batch progress'):
         futures = []
         for url in df['iiif_url'].to_list():
-            with concurrent.futures.ThreadPoolExecutor(get_max_workers(df)) as e:
+            with concurrent.futures.ThreadPoolExecutor(4) as e:
                 future = e.submit(load_url_image, url)
                 futures.append(future)
         results = [future.result() for future in futures]
@@ -149,6 +150,7 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
             test_data.to('cuda')
         with self.learner.no_bar():
             pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
+            print(type(pred_tuple[2]))
         pred_decoded = L(pred_tuple[2], use_list=True)
         pred_tensor =  L(pred_tuple[0],use_list=None)
         pred_decoded[none_index] = np.nan
@@ -160,8 +162,11 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
             df[f'{c}_prob'] = ''
         # append the tensor predictions to the last `c` colomns of the df
         df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.items.numpy(), self.dls.c) #split into columns
+
         dfs.append(df)
-    return pd.concat(dfs)
+    df = pd.concat(dfs)
+    df['pred_decoded'] = df['pred_decoded'].map(self.decode_map)
+    return df
 
 # Cell
 @patch_to(nnPredict)
@@ -256,6 +261,7 @@ def predict(
                     pred_tensor[none_index] = np.nan
                     df["pred_decoded"] = pred_decoded.items
                     df["pred_decoded"] = df['pred_decoded'].astype(float)
+                    #df['pred_decoded'].map({v: k for v, k in enumerate(self.learner.dls.vocab)})
                     # create an empty df column for each class in dls.vocab
                     for c in self.dls.vocab:
                         df[f'{c}_prob'] = ''
