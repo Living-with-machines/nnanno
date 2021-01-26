@@ -181,6 +181,7 @@ def predict_sample(self,
     year_sample:bool=True,
     size=None,
     force_dir=False):
+    """runs inference for a sample of `sample_size` on  `kind` """
     _make_directory(out_dir,force_dir)
     years = range(start_year, end_year + 1, step)
     if type(sample_size) == float:

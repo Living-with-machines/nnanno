@@ -183,7 +183,7 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Multiprocessing">Multiprocessing<a class="anchor-link" href="#Multiprocessing"> </a></h2><p>Quite a few of the things done by nnanno can be done in parallel. A crude heurisitc for defining the max number of workers is based on the cpu count and length of data.</p>
+<h3 id="Multiprocessing">Multiprocessing<a class="anchor-link" href="#Multiprocessing"> </a></h3><p>Quite a few of the things done by nnanno can be done in parallel. A crude heurisitc for defining the max number of workers is based on the cpu count and length of data.</p>
 
 </div>
 </div>
@@ -263,14 +263,14 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Images">Images<a class="anchor-link" href="#Images"> </a></h2><p>This code deals with loading, saving and downloading images.</p>
+<h3 id="Images">Images<a class="anchor-link" href="#Images"> </a></h3><p>This code deals with loading, saving and downloading images.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loading">Loading<a class="anchor-link" href="#Loading"> </a></h3>
+<h4 id="Loading">Loading<a class="anchor-link" href="#Loading"> </a></h4>
 </div>
 </div>
 </div>
@@ -351,8 +351,8 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Casting-to-RGB">Casting to RGB<a class="anchor-link" href="#Casting-to-RGB"> </a></h3><p>Not used at the moment but we may sometimes want to enforce all <code>PIL Images</code> to <code>RGB</code> mode to avoid tensor mismatches between different images shapes.</p>
-<h4 id="Note">Note<a class="anchor-link" href="#Note"> </a></h4><p>I haven't looked closely at the impact of casting to <code>RGB</code> versus using grayscale images for machine learning. Since we don't loose information by casting to <code>RGB</code> this is probably a sensible starting point, especially as I am assuming images loaded will usually be used as part of a deep learning pipeline that involves transfer learning from images trained on three channels. There is some experimentation/research to be done on the best way of handling this to be done.</p>
+<h4 id="Casting-to-RGB">Casting to RGB<a class="anchor-link" href="#Casting-to-RGB"> </a></h4><p>Not used at the moment but we may sometimes want to enforce all <code>PIL Images</code> to <code>RGB</code> mode to avoid tensor mismatches between different images shapes.</p>
+<h5 id="Note">Note<a class="anchor-link" href="#Note"> </a></h5><p>I haven't looked closely at the impact of casting to <code>RGB</code> versus using grayscale images for machine learning. Since we don't loose information by casting to <code>RGB</code> this is probably a sensible starting point, especially as I am assuming images loaded will usually be used as part of a deep learning pipeline that involves transfer learning from images trained on three channels. There is some experimentation/research to be done on the best way of handling this to be done.</p>
 <p>\ # TODO Reading and experiments on best way/need to deal with grayscale vs 3 channel images using transfer learning.</p>
 
 </div>
@@ -490,7 +490,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="IIIF">IIIF<a class="anchor-link" href="#IIIF"> </a></h2><p>The Image Interoperability Framework (IIIF, pronounced “Triple-Eye-Eff”), is a lovely api for requesting images.</p>
+<h3 id="IIIF">IIIF<a class="anchor-link" href="#IIIF"> </a></h3><p>The Image Interoperability Framework (IIIF, pronounced “Triple-Eye-Eff”), is a lovely api for requesting images.</p>
 <p>We can utilise IIIF to download images from the Newspaper Navigator dataset because the API allows you to specify a region. As a bonus we can also specify a bunch of other useful things in our request such as size which will help ensure we only download the size of image we actually need. Thanks to Benjamin Lee for pointing out this API and for the code in <a href="https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/news_navigator_app">https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/news_navigator_app</a></p>
 
 </div>
@@ -507,7 +507,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parse_box" class="doc_header"><code>parse_box</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_box</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>])</p>
+<h4 id="parse_box" class="doc_header"><code>parse_box</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_box</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>[<code>T</code>]])</p>
 </blockquote>
 <p>Parses the <code>box</code> value from Newspaper Navigator data to prepre for IIIF request</p>
 
@@ -580,7 +580,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_iiif_url" class="doc_header"><code>create_iiif_url</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_iiif_url</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>], <strong><code>url</code></strong>:<code>str</code>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>pct</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="create_iiif_url" class="doc_header"><code>create_iiif_url</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_iiif_url</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>[<code>T</code>]], <strong><code>url</code></strong>:<code>str</code>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>pct</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Returns a IIIF URL from bounding box and URL</p>
 
@@ -705,7 +705,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Convenience">Convenience<a class="anchor-link" href="#Convenience"> </a></h2><p>Some convenience functions that might be used in other places</p>
+<h3 id="Convenience">Convenience<a class="anchor-link" href="#Convenience"> </a></h3><p>Some convenience functions that might be used in other places</p>
 
 </div>
 </div>

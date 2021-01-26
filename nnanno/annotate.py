@@ -26,7 +26,7 @@ from typing import Union, Optional, Type
 from .sample import *
 
 # Cell
-def create_label_studio_json(sample: Union[pd.DataFrame, Type[nnanno.sample.nnSampler]],
+def create_label_studio_json(sample: Union[pd.DataFrame, Type[nnSampler]],
                              fname: Union[str,Path, None]=None,
                              original: bool = True,
                              pct: Optional[int] = None,
