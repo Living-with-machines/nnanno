@@ -150,7 +150,6 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
             test_data.to('cuda')
         with self.learner.no_bar():
             pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
-            print(type(pred_tuple[2]))
         pred_decoded = L(pred_tuple[2], use_list=True)
         pred_tensor =  L(pred_tuple[0],use_list=None)
         pred_decoded[none_index] = np.nan
@@ -181,7 +180,7 @@ def predict_sample(self,
     year_sample:bool=True,
     size=None,
     force_dir=False):
-    """runs inference for a sample of `sample_size` on  `kind` """
+    """runs inference for a sample `sample_size` of `kind` from newspaper navigator using batch size `bs`"""
     _make_directory(out_dir,force_dir)
     years = range(start_year, end_year + 1, step)
     if type(sample_size) == float:
@@ -213,6 +212,7 @@ def predict(
     step: int = 1,
     size=None
 ):
+    """predict on the full dataset for a given `kind` from `start_year` until `end_year` using `step` size"""
     _make_directory(out_dir)
     gpu = False
     if self.try_gpu and torch.cuda.is_available():
