@@ -4,6 +4,8 @@
 
 ![CI](https://github.com/davanstrien/nnanno/workflows/CI/badge.svg)
 
+## tl;dr
+
 `nnanno` is a modest collection of tools to help work with the delightful [Newspaper Navigator](https://news-navigator.labs.loc.gov/) data. 
 
 [Newspaper Navigator](https://news-navigator.labs.loc.gov/) is a project which extracted visual content (pictures, maps etc.) from the Library of Congress [Chronicling America](https://chroniclingamerica.loc.gov/) digitised newspaper collection. 
@@ -25,7 +27,7 @@ This code was written mainly to help develop some example datasets for a series 
 
 If you want to work with the full Newspaper Navigator dataset you will likely be better of accessing it via the proived S3 bucket see [news-navigator.labs.loc.gov/]() for more information.
 
-### nbdev notes
+## nbdev notes
 This code was written using `nbdev`. This is a tool that helps use Jupyter notebooks for developing Python libraries. Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:
 
 ```
@@ -33,7 +35,7 @@ import datetime
 print(datetime.date.today())
 ```
 
-    2021-01-25
+    2021-02-02
 
 
 Is evaluated as Python code. This also means all of the documentation and examples can be opened in notebooks and the code inspected, changed and run. 
@@ -48,8 +50,8 @@ At the moment installation is through Git. If the code gets a few more eyes on i
 
 \ # TODO add link to prep notebooks
 
-## How to use (tl;dr)
-The three main areas of nnanno are shown below. The examples section in the documentation shows this in greater detail.
+## Functionality 
+The three main areas of `nnanno` are shown below. The examples section in the documentation shows this in greater detail.
 
 ### Creating samples
 
@@ -81,22 +83,14 @@ df.columns
 
 
 
-## Annotation
+### Annotation
 The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the [label studio](https://labelstud.io/) annotation tool. 
 
 ```
-from nnanno.annotate import *
+from nnanno.annotate import create_label_studio_json
 ```
 
-
-<h4 id="create_label_studio_json" class="doc_header"><code>create_label_studio_json</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L29" class="source_link" style="float:right">[source]</a></h4>
-
-> <code>create_label_studio_json</code>(**`sample`**:`Union`\[`DataFrame`, `Type`\[[`nnSampler`](/nnanno/sample.html#nnSampler)\]\], **`fname`**:`Union`\[`str`, `Path`, `NoneType`\]=*`None`*, **`original`**:`bool`=*`True`*, **`pct`**:`Optional`\[`int`\]=*`None`*, **`size`**:`Optional`\[`tuple`\]=*`None`*, **`preserve_asp_ratio`**:`bool`=*`True`*)
-
-create a json file which can be used to upload tasks to label studio
-
-
-## Inference
+### Inference
 
 The inference section of nnanno *attempts* to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained [fastai](https://docs.fast.ai/) model. 
 
@@ -106,8 +100,13 @@ from nnanno.inference import *
 
 ```
 from fastai.vision.all import *
-dls = ImageDataLoaders.from_csv('../ph/ads/', 'ads_upsampled.csv',folder='images', fn_col='file', label_col='label',
-                                item_tfms=Resize(64,ResizeMethod.Squish), num_workers=0)
+dls = ImageDataLoaders.from_csv('../ph/ads/', 
+                                'ads_upsampled.csv',
+                                folder='images', 
+                                fn_col='file', 
+                                label_col='label',
+                                item_tfms=Resize(64,ResizeMethod.Squish),
+                                num_workers=0)
 learn = cnn_learner(dls, resnet18, metrics=F1Score())
 learn.fit(1)
 ```
@@ -126,14 +125,16 @@ learn.fit(1)
   <tbody>
     <tr>
       <td>0</td>
-      <td>0.897608</td>
-      <td>0.781401</td>
-      <td>0.688312</td>
-      <td>00:13</td>
+      <td>0.771532</td>
+      <td>0.644032</td>
+      <td>0.800000</td>
+      <td>00:12</td>
     </tr>
   </tbody>
 </table>
 
+
+With a trained fastai model we can predict on a sample from Newspaper Navigator
 
 ```
 predictor = nnPredict(learn, try_gpu=False)
@@ -146,8 +147,30 @@ predictor.predict_sample('ads','testinference',0.01,end_year=1850)
     
 
 
+This returns a `json` file for each year from the sample containing the original newspaper navigator data plus the predictions from your model
+
 ```
 df = pd.read_json('testinference/1850.json')
+```
+
+We can access the 'decoded' predictions
+
+```
+df['pred_decoded'].value_counts()
+```
+
+
+
+
+    text-only        70
+    illustrations    18
+    Name: pred_decoded, dtype: int64
+
+
+
+or work with the probabilities directly
+
+```
 df.iloc[:5,-3:]
 ```
 
@@ -180,33 +203,33 @@ df.iloc[:5,-3:]
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>0.053181</td>
-      <td>0.946819</td>
+      <td>text-only</td>
+      <td>0.149351</td>
+      <td>0.850649</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>0.863718</td>
-      <td>0.136282</td>
+      <td>illustrations</td>
+      <td>0.722150</td>
+      <td>0.277850</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>0.001621</td>
-      <td>0.998379</td>
+      <td>illustrations</td>
+      <td>0.998170</td>
+      <td>0.001830</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>0.484867</td>
-      <td>0.515133</td>
+      <td>text-only</td>
+      <td>0.421549</td>
+      <td>0.578451</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>0.999903</td>
-      <td>0.000097</td>
+      <td>text-only</td>
+      <td>0.062635</td>
+      <td>0.937365</td>
     </tr>
   </tbody>
 </table>

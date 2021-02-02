@@ -317,7 +317,38 @@ nb_path: "nbs/02_annotate.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_annotations_csv" class="doc_header"><code>load_annotations_csv</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_annotations_csv</code>(<strong><code>csv</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>], <strong><code>kind</code></strong>=<em><code>'classification'</code></em>)</p>
+<h4 id="process_labels" class="doc_header"><code>process_labels</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process_labels</code>(<strong><code>x</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="load_annotations_csv" class="doc_header"><code>load_annotations_csv</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_annotations_csv</code>(<strong><code>csv</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>], <strong><code>kind</code></strong>=<em><code>'classification'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -343,8 +374,8 @@ nb_path: "nbs/02_annotate.ipynb"
         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">df</span>
     <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;box&#39;</span><span class="p">:</span><span class="nb">eval</span><span class="p">,</span> <span class="s1">&#39;choice&#39;</span><span class="p">:</span><span class="nb">eval</span><span class="p">})</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">choice</span><span class="p">[</span><span class="s1">&#39;choices&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;box&#39;</span><span class="p">:</span><span class="nb">eval</span><span class="p">})</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">process_labels</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">df</span>
 </pre></div>
 
@@ -508,7 +539,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="check_download_df_match" class="doc_header"><code>check_download_df_match</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>check_download_df_match</code>(<strong><code>dl_folder</code></strong>:<code>Union</code>[<code>Path</code>, <code>str</code>], <strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="check_download_df_match" class="doc_header"><code>check_download_df_match</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>check_download_df_match</code>(<strong><code>dl_folder</code></strong>:<code>Union</code>[<code>Path</code>, <code>str</code>], <strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -686,7 +717,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_df" class="doc_header"><code>load_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L80" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_df</code>(<strong><code>json_file</code></strong>)</p>
+<h4 id="load_df" class="doc_header"><code>load_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_df</code>(<strong><code>json_file</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -717,7 +748,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_completions" class="doc_header"><code>load_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_completions</code>(<strong><code>path</code></strong>)</p>
+<h4 id="load_completions" class="doc_header"><code>load_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L97" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_completions</code>(<strong><code>path</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -835,7 +866,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="anno_sample_merge" class="doc_header"><code>anno_sample_merge</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>anno_sample_merge</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>annotation_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="anno_sample_merge" class="doc_header"><code>anno_sample_merge</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>anno_sample_merge</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>annotation_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>anno_sample_merge merges a DataFrame containing a sample
 from Newspaper Navigator and a DataFrame containing annotations</p>
@@ -898,7 +929,7 @@ annotation_df : pd.DataFrame
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="nnAnnotations" class="doc_header"><code>class</code> <code>nnAnnotations</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L140" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnAnnotations</code>(<strong><code>df</code></strong>)</p>
+<h2 id="nnAnnotations" class="doc_header"><code>class</code> <code>nnAnnotations</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L148" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnAnnotations</code>(<strong><code>df</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -922,7 +953,7 @@ annotation_df : pd.DataFrame
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L150" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1064,7 +1095,7 @@ Name: result, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.merge_sample" class="doc_header"><code>nnAnnotations.merge_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.merge_sample</code>(<strong><code>sample_df</code></strong>)</p>
+<h4 id="nnAnnotations.merge_sample" class="doc_header"><code>nnAnnotations.merge_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L178" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.merge_sample</code>(<strong><code>sample_df</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1210,7 +1241,7 @@ Name: result, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.export_merged" class="doc_header"><code>nnAnnotations.export_merged</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L173" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.export_merged</code>(<strong><code>out_fn</code></strong>)</p>
+<h4 id="nnAnnotations.export_merged" class="doc_header"><code>nnAnnotations.export_merged</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L181" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.export_merged</code>(<strong><code>out_fn</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1251,7 +1282,7 @@ Name: result, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L150" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
