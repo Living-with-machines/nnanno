@@ -30,7 +30,7 @@ If you want to work with the full Newspaper Navigator dataset you will likely be
 ## nbdev notes
 This code was written using `nbdev`. This is a tool that helps use Jupyter notebooks for developing Python libraries. Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:
 
-```
+```python
 import datetime
 print(datetime.date.today())
 ```
@@ -55,11 +55,11 @@ The three main areas of `nnanno` are shown below. The examples section in the do
 
 ### Creating samples
 
-```
+```python
 from nnanno.sample import *
 ```
 
-```
+```python
 sampler = nnSampler()
 df = sampler.create_sample(1,'photos',start_year=1850, end_year=1855, step=1)
 ```
@@ -69,7 +69,7 @@ df = sampler.create_sample(1,'photos',start_year=1850, end_year=1855, step=1)
 
 This returns a dataframe containing samples from the Newspaper Navigator data (loaded via JSON) into a Pandas DataFrame. 
 
-```
+```python
 df.columns
 ```
 
@@ -86,7 +86,7 @@ df.columns
 ### Annotation
 The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the [label studio](https://labelstud.io/) annotation tool. 
 
-```
+```python
 from nnanno.annotate import create_label_studio_json
 ```
 
@@ -94,11 +94,11 @@ from nnanno.annotate import create_label_studio_json
 
 The inference section of nnanno *attempts* to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained [fastai](https://docs.fast.ai/) model. 
 
-```
+```python
 from nnanno.inference import *
 ```
 
-```
+```python
 from fastai.vision.all import *
 dls = ImageDataLoaders.from_csv('../ph/ads/', 
                                 'ads_upsampled.csv',
@@ -125,9 +125,9 @@ learn.fit(1)
   <tbody>
     <tr>
       <td>0</td>
-      <td>0.771532</td>
-      <td>0.644032</td>
-      <td>0.800000</td>
+      <td>0.924742</td>
+      <td>0.963872</td>
+      <td>0.645570</td>
       <td>00:12</td>
     </tr>
   </tbody>
@@ -136,11 +136,11 @@ learn.fit(1)
 
 With a trained fastai model we can predict on a sample from Newspaper Navigator
 
-```
+```python
 predictor = nnPredict(learn, try_gpu=False)
 ```
 
-```
+```python
 predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 ```
 
@@ -149,90 +149,39 @@ predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 
 This returns a `json` file for each year from the sample containing the original newspaper navigator data plus the predictions from your model
 
-```
+```python
 df = pd.read_json('testinference/1850.json')
 ```
 
 We can access the 'decoded' predictions
 
-```
+```python
 df['pred_decoded'].value_counts()
 ```
 
 
 
 
-    text-only        70
-    illustrations    18
+    text-only        50
+    illustrations    38
     Name: pred_decoded, dtype: int64
 
 
 
 or work with the probabilities directly
 
+```python
+df.iloc[:5,-2]
 ```
-df.iloc[:5,-3:]
-```
 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pred_decoded</th>
-      <th>illustrations_prob</th>
-      <th>text-only_prob</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>text-only</td>
-      <td>0.149351</td>
-      <td>0.850649</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>illustrations</td>
-      <td>0.722150</td>
-      <td>0.277850</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>illustrations</td>
-      <td>0.998170</td>
-      <td>0.001830</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>text-only</td>
-      <td>0.421549</td>
-      <td>0.578451</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>text-only</td>
-      <td>0.062635</td>
-      <td>0.937365</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+    0    0.152435
+    1    0.027183
+    2    0.096673
+    3    0.395800
+    4    0.957422
+    Name: illustrations_prob, dtype: float64
 
 

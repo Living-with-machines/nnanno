@@ -335,9 +335,9 @@ nb_path: "nbs/index.ipynb"
   <tbody>
     <tr>
       <td>0</td>
-      <td>0.771532</td>
-      <td>0.644032</td>
-      <td>0.800000</td>
+      <td>0.924742</td>
+      <td>0.963872</td>
+      <td>0.645570</td>
       <td>00:12</td>
     </tr>
   </tbody>
@@ -460,8 +460,8 @@ nb_path: "nbs/index.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>text-only        70
-illustrations    18
+<pre>text-only        50
+illustrations    38
 Name: pred_decoded, dtype: int64</pre>
 </div>
 
@@ -487,7 +487,7 @@ Name: pred_decoded, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -500,64 +500,14 @@ Name: pred_decoded, dtype: int64</pre>
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pred_decoded</th>
-      <th>illustrations_prob</th>
-      <th>text-only_prob</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>text-only</td>
-      <td>0.149351</td>
-      <td>0.850649</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>illustrations</td>
-      <td>0.722150</td>
-      <td>0.277850</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>illustrations</td>
-      <td>0.998170</td>
-      <td>0.001830</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>text-only</td>
-      <td>0.421549</td>
-      <td>0.578451</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>text-only</td>
-      <td>0.062635</td>
-      <td>0.937365</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0    0.152435
+1    0.027183
+2    0.096673
+3    0.395800
+4    0.957422
+Name: illustrations_prob, dtype: float64</pre>
 </div>
 
 </div>
