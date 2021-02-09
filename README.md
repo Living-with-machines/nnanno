@@ -8,8 +8,9 @@
 
 `nnanno` is a modest collection of tools to help work with the delightful [Newspaper Navigator](https://news-navigator.labs.loc.gov/) data. 
 
-[Newspaper Navigator](https://news-navigator.labs.loc.gov/) is a project which extracted visual content (pictures, maps etc.) from the Library of Congress [Chronicling America](https://chroniclingamerica.loc.gov/) digitised newspaper collection. 
+<img style="float: right" src="https://news-navigator.labs.loc.gov/static/labs/work/experiments/images/nnavigator-logo-cropped.jpg" width="250">
 
+[Newspaper Navigator](https://news-navigator.labs.loc.gov/) is a project which extracted visual content (pictures, maps etc.) from the Library of Congress [Chronicling America](https://chroniclingamerica.loc.gov/) digitised newspaper collection.
 Newspaper Navigator has released data in a number of formats including `json` files which contain a range of metadata about the newspaper from which the image was taken from. `nnanno` was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful [nbdev](nbdev.fast.ai/) library it is possible to install it for your own use. 
 
 ## What nnanno tries to help with
