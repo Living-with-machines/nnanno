@@ -1,0 +1,104 @@
+{
+    "Introduction": {
+        "How to Contribute a Chapter": "/intro.contribute"
+    },
+    "Course 2020": {
+        "Introduction": "/Introduction",
+        "": {
+            "Lesson 1 (Vision)": {
+                "Introduction": "/Introduction",
+                "Pets and the High Level API": "/Pets",
+                "Image Classification with a Custom Dataset": "/Custom"
+            },
+            "Lesson 2 (Vision)": {
+                "Low-Level API with MNIST and Building Models": "/MNIST",
+                "Stochastic Gradient Descent": "/SGD",
+                "Deployment": "/Deployment"
+            },
+            "Lesson 3 (Vision)": {
+                "Multi-Label Classification": "/Multi_Label",
+                "Recognizing Unkown Images (or the Unknown Label problem)": "/Unknown_Labels",
+                "Cross Validation and Ensembling": "/Cross_Validation",
+                "The Internal API of fastai": "/Internal_API_Walkthrough"
+            },
+            "Lesson 4 (Vision)": {
+                "Image Segmentation": "/Segmentation",
+                "ImageWoof and Exploring SOTA in fastai": "/ImageWoof",
+                "Debugging with the DataBlock": "/DBlock_Summary"
+            },
+            "Lesson 5 (Vision)": {
+                "Style Transfer": "/Style_Transfer",
+                "Deployment Continued": "/Inference_Server",
+                "EfficientNet and Custom Weights": "/EfficientNet_and_Custom_Weights"
+            },
+            "Lesson 6 (Vision)": {
+                "Keypoint Regression": "/Keypoint_Regression",
+                "Hybridizing Models": "/Hybridizing_Models",
+                "Object Detection": "/Object_Detection",
+                "Multimodal Head and Kaggle": "/Multimodal_Head_and_Kaggle"
+            },
+            "Lesson 7 (Vision)": {
+                "Super Resolution": "/Super_Resolution",
+                "Siamese": "/Siamese",
+                "Audio": "/Audio"
+            },
+            "Lesson 1 (Tabular)": {
+                "Introduction to Pandas": "/Pandas",
+                "The Tabular API with Binary Classification": "/Adults"
+            },
+            "Lesson 2 (Tabular)": {
+                "Regression and Permutation Importance": "/Regression_and_Permutation_Importance",
+                "Ensembling with Other Libraries": "/Ensembling",
+                "Bayesian Optimization": "/Bayesian_Optimization"
+            },
+            "Lesson 3 (Tabular)": {
+                "SHAP and fastinference": "/SHAP",
+                "ClassConfusion and fastinference": "/ClassConfusion",
+                "Doing Research": "/Research"
+            },
+            "Lesson 4 (Tabular)": {
+                "TabNet": "/TabNet",
+                "Time Series": "/TimeSeries"
+            }
+        }
+    },
+    "Vision": {
+        "Introduction": "/vision.intro",
+        "": {
+            "Classification": {
+                "Single Label (Beginner)": "/vision.clas.single_label"
+            }
+        },
+        "empty1": {
+            "Regression": {
+                "Multi-Point (Beginner)": "/Multi_Point_Regression",
+                "Scalar (Beginner)": "/Scalar_Regression"
+            }
+        },
+        "empty2": {
+            "External Model Integrations": {
+                "timm (Intermediate)": "/vision.external.timm"
+            }
+        },
+        "Binary Segmentation (Beginner)": "/Binary_Segmentation"
+    },
+    "Tabular": {
+        "Introduction": "/tab.clas.binary",
+        "": {
+            "Classification": {
+                "Binary (Beginner)": "/tab.clas.binary"
+            }
+        },
+        "empty1": {
+            "Useful TabularPandas Extensions": {
+                "Production (Beginner)": "/tab.export",
+                "Custom Transform Statistics (Intermediate)": "/tab.stats"
+            }
+        },
+        "AutoEncoders (Intermediate)": "/tab.ae"
+    },
+    "General Training Tutorials": {
+        "Finding a Learning Rate (Beginner)": "/lr_finder",
+        "Showing Prediction Results (Beginner)": "/interp"
+    }
+}

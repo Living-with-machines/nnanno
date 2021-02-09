@@ -4,6 +4,18 @@
     "Core": "core.html",
     "Sample": "sample.html",
     "Annotate": "annotate.html",
-    "Inference": "inference.html"
+    "Inference": "inference.html",
+    "Creating training data": "sampling_and_labels.html",
+    "Maps inference": "train_predict.html",
+    "Mapping maps": "mapping_maps.html"
+  },
+  "Examples": {
+    "Overview": "example_overview.html",
+    "": {
+      "Can CNNs time travel?": {
+        "Intro": "intro.html",
+        "Sampling": "sampling_and_labels.html"
+      }
+    }
   }
 }

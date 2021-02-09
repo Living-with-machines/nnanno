@@ -21,7 +21,32 @@ entries:
     - output: web,pdf
       title: Inference
       url: inference.html
+    - output: web,pdf
+      title: Creating training data
+      url: sampling_and_labels.html
+    - output: web,pdf
+      title: Maps inference
+      url: train_predict.html
+    - output: web,pdf
+      title: Mapping maps
+      url: mapping_maps.html
     output: web
     title: nnanno
+  - folderitems:
+    - output: web,pdf
+      title: Overview
+      url: example_overview.html
+      subfolders:
+      - output: web
+        subfolderitems:
+        - output: web,pdf
+          title: Intro
+          url: intro.html
+        - output: web,pdf
+          title: Sampling
+          url: sampling_and_labels.html
+        title: Can Convolutional Neural Networks time travel?
+    output: web
+    title: Examples
   output: web
   title: Sidebar
