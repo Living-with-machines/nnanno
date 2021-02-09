@@ -105,11 +105,13 @@ class nnPredict:
 # Cell
 @patch_to(nnPredict, cls_method=True)
 def _get_year_population_size(cls, kind:str,year:Union[str,int]):
-        return cls.population[f"{kind}_count"][year]
+    """gets year population size"""
+    return cls.population[f"{kind}_count"][year]
 
 # Cell
 @patch_to(nnPredict, cls_method=True)
 def _get_year_sample_size(cls, kind: str, year: Union[str,int],sample_size):
+    """get sample size for year"""
     return (cls._get_year_population_size(kind, year) * sample_size).clip(1).round()
 
 # Cell
