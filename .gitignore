@@ -1,6 +1,6 @@
 
 snippets/
-
+*.sqlite
 *.bak
 .gitattributes
 .last_checked
