@@ -1382,7 +1382,7 @@ Name: year, Length: 1085, dtype: int64</pre>
         <span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
         <span class="n">test_dict</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">])[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
         
-        <span class="n">test_metrics</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{train_year}</span><span class="s1">_epoch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dict</span>
+        <span class="n">test_metrics</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">train_year</span><span class="si">}</span><span class="s1">_epoch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dict</span>
 </pre></div>
 
     </div>
