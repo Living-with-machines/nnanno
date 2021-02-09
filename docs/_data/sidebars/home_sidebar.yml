@@ -45,7 +45,16 @@ entries:
         - output: web,pdf
           title: Sampling
           url: sampling_and_labels.html
-        title: Can Convolutional Neural Networks time travel?
+        - output: web,pdf
+          title: Can CNNs time travel?
+          url: cnn_time_travel.html
+        - output: web,pdf
+          title: Inference
+          url: ads_inference.html
+        - output: web,pdf
+          title: Working with outputs
+          url: working_with_outputs.html
+        title: History of Advertising
     output: web
     title: Examples
   output: web

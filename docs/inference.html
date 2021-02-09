@@ -445,6 +445,29 @@ This model is just intended to help develop the inference functionality so we wo
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-258671a5eaee&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#export</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">@</span>patch_to<span class="ansi-blue-fg">(</span>nnPredict<span class="ansi-blue-fg">,</span> cls_method<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">def</span> _get_year_population_size<span class="ansi-blue-fg">(</span>cls<span class="ansi-blue-fg">,</span> kind<span class="ansi-blue-fg">:</span>str<span class="ansi-blue-fg">,</span>year<span class="ansi-blue-fg">:</span>Union<span class="ansi-blue-fg">[</span>str<span class="ansi-blue-fg">,</span>int<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-blue-fg">&#34;&#34;&#34;gets year population size&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">return</span> cls<span class="ansi-blue-fg">.</span>population<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">f&#34;{kind}_count&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">[</span>year<span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;patch_to&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -495,7 +518,7 @@ This model is just intended to help develop the inference functionality so we wo
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict_from_sample_df" class="doc_header"><code>nnPredict.predict_from_sample_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L116" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_from_sample_df</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>disable_pbar</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="nnPredict.predict_from_sample_df" class="doc_header"><code>nnPredict.predict_from_sample_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_from_sample_df</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>disable_pbar</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Runs inference on <code>sample_df</code> using batch size <code>bs</code>, <code>disable_pbar</code> controls whether to show progress bar
 Returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from <code>learner.dls.vocab</code></p>
@@ -557,7 +580,7 @@ Returns a Pandas DataFrame containing orginal dataframe and predictions, with la
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict_sample" class="doc_header"><code>nnPredict.predict_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L171" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_sample</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>year_sample</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>, <strong><code>force_dir</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="nnPredict.predict_sample" class="doc_header"><code>nnPredict.predict_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L173" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_sample</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>year_sample</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>, <strong><code>force_dir</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>runs inference for a sample <code>sample_size</code> of <code>kind</code> from newspaper navigator using batch size <code>bs</code></p>
 
@@ -890,7 +913,7 @@ Name: text-only_prob, dtype: float64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict" class="doc_header"><code>nnPredict.predict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L204" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>32</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnPredict.predict" class="doc_header"><code>nnPredict.predict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L206" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>32</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>predict on the full dataset for a given <code>kind</code> from <code>start_year</code> until <code>end_year</code> using <code>step</code> size</p>
 

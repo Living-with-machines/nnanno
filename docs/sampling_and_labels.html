@@ -1,13 +1,13 @@
 ---
 
-title: Creating training data
+title: Creating a sample 
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Labelling visual content in adverts"
-description: "Labelling visual content in adverts"
+summary: "Classifying visual content in adverts"
+description: "Classifying visual content in adverts"
 nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 ---
 <!--
@@ -36,7 +36,7 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
@@ -53,6 +53,43 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Aims">Aims<a class="anchor-link" href="#Aims"> </a></h2><p>This notebook will go through the process of creating a sample for input to a machine learning model. The code is fairly minimal, with a good chunk of the notebook being questions about best approach.</p>
+<h2 id="Creating-a-sammple-for-the-period-1850-1950">Creating a sammple for the period 1850-1950<a class="anchor-link" href="#Creating-a-sammple-for-the-period-1850-1950"> </a></h2><ul>
+<li>What do we want the model to be able to do well at?</li>
+<li>Newspaper navigator training data</li>
+<li>Models on models on models (using ouptuts from other models) </li>
+<li>How much time can we put into annotating?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First we import some modules from <code>nnanno</code> and <code>Path</code> from the <code>pathlib</code> from the Python standard library which makes working with paths delightful.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -71,6 +108,13 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We create an <a href="/nnanno/sample.html#nnSampler"><code>nnSampler</code></a> instance which we can use to creat our sample</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -90,7 +134,78 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We'll create a sample of ~1000 images. This will hopefully be a good balance between generating a big enough training dataset and not having to annotate too much. Since we're going to be annotating binary labels the cognitive load of annotating becomes much lower which should also help make a higher number of annotations relatively quick to do.</p>
+<h3 id="Choosing-paramters-for-sampling">Choosing paramters for sampling<a class="anchor-link" href="#Choosing-paramters-for-sampling"> </a></h3><p>One of the first decisions we need to make is which paramters we'll use to create our sample. We can access the 'population' of the Newspaper Navigator data via <code>population</code>. This returns a Pandas DataFrame containing the number of ads for each year. We can quickly plot this to see the distribution over time</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">population</span><span class="p">[[</span><span class="s1">&#39;total&#39;</span><span class="p">,</span><span class="s1">&#39;ads_count&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;AxesSubplot:&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that the number of adverts grows over time and drops off sharply. This broadly follows the same pattern as the overall dataset (with some divergence in the total vs the ad prortion).</p>
+<p>We have two questions when creating a sample to train a model to classify images of ads as 'visual' or 'not visual':</p>
+<ul>
+<li>How much to sample?</li>
+<li>How to sample?</li>
+</ul>
+<p>For thje first question, we'll create a sample of ~1000 images. This will hopefully be a good balance between generating a big enough training dataset and not having to annotate too much. Since we're going to be annotating binary labels the cognitive load of annotating becomes much lower which should also help make a higher number of annotations relatively quick to do. Whether this number is enough to train a good classifier will depend on what we're trying to label etc. There may be a temptation to do all of the annotation upfront but we'll often learn things about our data from training a model so we may want to try and get to this stage sooner. We can come back to the sampling/annotation step if we need.</p>
+<p>For how to sample we currently have a few main options:</p>
+<ul>
+<li>Sample for ever year or take a sample for every <code>n</code> years</li>
+<li>Sample a specific  number for each year i.e. 100 examples per year</li>
+<li>Sample a fraction from each year i.e. 1% per year</li>
+</ul>
+<p>Since we are working with an uneven distribution of samples accross time we could reasonably choose to sample a fraction for each year. However, because we are traning a computer vision model with this data we may want to help ensure our model works equally well for every year by showing an even number of examples for each year. Whether this (i.e. the period of the training data is important for accuracy on all periods) is important or not is something we'll begin to look at in the next notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The time it takes to generate this sample will depend on your connection speed. If you have previously requested the same data the results will be cached making the request quicker.</p>
 
 </div>
@@ -113,166 +228,13 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>filepath</th>
-      <th>pub_date</th>
-      <th>page_seq_num</th>
-      <th>edition_seq_num</th>
-      <th>batch</th>
-      <th>lccn</th>
-      <th>box</th>
-      <th>score</th>
-      <th>ocr</th>
-      <th>place_of_publication</th>
-      <th>geographic_coverage</th>
-      <th>name</th>
-      <th>publisher</th>
-      <th>url</th>
-      <th>page_url</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>iahi_bellsprout_ver01/data/sn86081965/00279528...</td>
-      <td>1850-03-29</td>
-      <td>97</td>
-      <td>1</td>
-      <td>iahi_bellsprout_ver01</td>
-      <td>sn86081965</td>
-      <td>[0.024251411534562894, 0.3835335029129611, 0.1...</td>
-      <td>0.913842</td>
-      <td>[IVt'w, Tailor, JVI., W7FOX,, bt, laving, had,...</td>
-      <td>[Ottumwa] Iowa</td>
-      <td>[Iowa--Wapello--Ottumwa]</td>
-      <td>Des Moines courier.</td>
-      <td>Jos. H.D. Street &amp; R.H. Warden</td>
-      <td>https://news-navigator.labs.loc.gov/data/iahi_...</td>
-      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ncu_jefferson_ver02/data/sn84020750/0041566727...</td>
-      <td>1850-06-15</td>
-      <td>527</td>
-      <td>1</td>
-      <td>ncu_jefferson_ver02</td>
-      <td>sn84020750</td>
-      <td>[0.34810119576694826, 0.2741584396107822, 0.50...</td>
-      <td>0.936948</td>
-      <td>[WONDERS, OF, THE, AGE., NEW, STORE, AVO, Come...</td>
-      <td>Fayetteville [N.C.]</td>
-      <td>[North Carolina--Cumberland--Fayetteville]</td>
-      <td>The North-Carolinian. [volume]</td>
-      <td>H.L. Holmes</td>
-      <td>https://news-navigator.labs.loc.gov/data/ncu_j...</td>
-      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>vtu_irasburg_ver01/data/sn83025667/00280777791...</td>
-      <td>1850-06-11</td>
-      <td>98</td>
-      <td>1</td>
-      <td>vtu_irasburg_ver01</td>
-      <td>sn83025667</td>
-      <td>[0.04051448987877887, 0.039025070075701954, 0....</td>
-      <td>0.929399</td>
-      <td>["HOHESTY, It'llE, BEST, POLICY.", fpilft, Srn...</td>
-      <td>Middlebury, Vt.</td>
-      <td>[Vermont--Addison--Middlebury]</td>
-      <td>The Middlebury register. [volume]</td>
-      <td>J.H. Barrett &amp; Cobb</td>
-      <td>https://news-navigator.labs.loc.gov/data/vtu_i...</td>
-      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>msar_eiffel_ver02/data/sn87090127/0029587756A/...</td>
-      <td>1850-09-28</td>
-      <td>125</td>
-      <td>1</td>
-      <td>msar_eiffel_ver02</td>
-      <td>sn87090127</td>
-      <td>[0.6785962092050805, 0.3929028666983783, 0.832...</td>
-      <td>0.915581</td>
-      <td>[L., XV., COOK,, DEALERS, IN, MAHOGANY, &amp;, KOE...</td>
-      <td>Oxford, Miss.</td>
-      <td>[Mississippi--Lafayette--Oxford]</td>
-      <td>The organizer.</td>
-      <td>B.F. Dill &amp; Wm. Delay</td>
-      <td>https://news-navigator.labs.loc.gov/data/msar_...</td>
-      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>vi_kernals_ver01/data/sn84024718/00414183736/1...</td>
-      <td>1850-03-27</td>
-      <td>53</td>
-      <td>1</td>
-      <td>vi_kernals_ver01</td>
-      <td>sn84024718</td>
-      <td>[0.4941717015081273, 0.17639242121013235, 0.64...</td>
-      <td>0.916670</td>
-      <td>[Agents., 0C&gt;-, W., S., Feb’tig,, Esq.,, of, H...</td>
-      <td>Staunton, Va.</td>
-      <td>[Virginia--Staunton]</td>
-      <td>Staunton spectator. [volume]</td>
-      <td>L. Waddell, J.A. Waddell</td>
-      <td>https://news-navigator.labs.loc.gov/data/vi_ke...</td>
-      <td>https://chroniclingamerica.loc.gov/data/batche...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We now have our sample inside a dataframe. We creat a folder to keep our data (semi) organised</p>
 
 </div>
 </div>
-
 </div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -290,6 +252,13 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can use <a href="/nnanno/annotate.html#create_label_studio_json"><code>create_label_studio_json</code></a> to turn this sample into a json file that we can use for creating annotation tasks in the <a href="labelstud.io/">label-studio</a> annotation software.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -309,6 +278,21 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>This command returns a json file containing the IIIF links (with specified) sizes that we can use to load images into label-studio.</p>
+<p>We'll create a new label studio project using the <code>label-studio init</code> command. See the label studio documentation for more details on options for <a href="https://labelstud.io/guide/setup.html">setup</a>. In this example I used the GUI to load in the <code>ads_task.json</code> file for creating the tasks. "Tasks" here means the images we are going to annotate.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We use the following XML file as our 'label conig'. Again the <a href="https://labelstud.io/guide/setup.html#Labeling-config">docs</a> for label studio give more information on how to create these configs.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="nt">&lt;View&gt;</span>
   <span class="nt">&lt;Image</span> <span class="na">name=</span><span class="s">&quot;image&quot;</span> <span class="na">value=</span><span class="s">&quot;$image&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;Choices</span> <span class="na">name=</span><span class="s">&quot;choice&quot;</span> <span class="na">toName=</span><span class="s">&quot;image&quot;</span> <span class="na">showInLine=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
@@ -323,7 +307,15 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="load">load<a class="anchor-link" href="#load"> </a></h2>
+<p>The next step is to annotate. For this task the annotations didn't take too long (an hour or so) since the labels are quite 'obvious' to a human eye and since we only have two options to choose from.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loading-out-annotations">Loading out annotations<a class="anchor-link" href="#Loading-out-annotations"> </a></h2><p>When we have completed the annotations we can export them as a CSV file from label studio. We can then use the <code>load_annotations</code> function to parse this CSV into a Pandas DataFrame</p>
+
 </div>
 </div>
 </div>
@@ -424,53 +416,10 @@ nb_path: "nbs/examples/ads/01_sampling_and_labels.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pub_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1890    99
-1910    99
-1930    99
-1850    99
-1870    99
-1940    99
-1900    99
-1950    99
-1920    98
-1860    98
-1880    97
-Name: pub_date, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="download-annotations">download annotations<a class="anchor-link" href="#download-annotations"> </a></h1>
+<h1 id="Download-annotations">Download annotations<a class="anchor-link" href="#Download-annotations"> </a></h1><p>Now we have loaded our annotations it's likely we want to download them locally. We can do this using the <code>sampler.download_sample</code> method. One reason this can be useful is if you are working locally when doing the annotations but want to work in the cloud to train a model. The annotations csv is small enough to store in version control and the images themselves can be download once in the cloud.</p>
+
 </div>
 </div>
 </div>
@@ -499,6 +448,23 @@ Name: pub_date, dtype: int64</pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 

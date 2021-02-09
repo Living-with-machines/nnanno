@@ -12,9 +12,12 @@
   "Examples": {
     "Overview": "example_overview.html",
     "": {
-      "Can CNNs time travel?": {
+      "History of Advertising": {
         "Intro": "intro.html",
-        "Sampling": "sampling_and_labels.html"
+        "Sampling": "sampling_and_labels.html",
+        "Can CNNs time travel?": "cnn_time_travel.html",
+        "Inference": "ads_inference.html",
+        "Working with outputs": "working_with_outputs.html"
       }
     }
   }
