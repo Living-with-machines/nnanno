@@ -2,7 +2,7 @@ repository: davanstrien/nnanno
 output: web
 topnav_title: nnanno
 site_title: nnanno
-company_name: Daniel van Strien
+company_name: The Alan Turing Institute, British Library Board, Queen Mary University of London, University of Exeter, University of East Anglia and University of Cambridge
 description: Sample and annotate Newspaper Navigator data for computer vision tasks
 # Set to false to disable KaTeX math
 use_math: true
