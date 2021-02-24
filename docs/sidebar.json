@@ -4,11 +4,7 @@
     "Core": "core.html",
     "Sample": "sample.html",
     "Annotate": "annotate.html",
-    "Inference": "inference.html",
-    "Creating training data": "sampling_and_labels.html",
-    "Maps inference": "train_predict.html",
-    "Mapping maps": "mapping_maps.html"
-  },
+    "Inference": "inference.html"},
   "Examples": {
     "Overview": "example_overview.html",
     "": {

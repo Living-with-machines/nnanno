@@ -6,8 +6,8 @@ title: Inference
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Inference"
-description: "Inference"
+summary: "Making predictions on new data"
+description: "Making predictions on new data"
 nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 ---
 <!--
@@ -25,6 +25,54 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this notebook we move to the process of making predictions. As mentioned in other places, one of the aims of <code>nnanno</code> was to show a <em>possible</em> way of using computer vision/deep learning without requiring unconstrained resources. This notebook tries to demo this approach in action. This notebook was all run on Google Colab  <em>full disclaimer</em> I have a 'pro' account which bumps up the maximum run time but this approach will work on the free version of Colab too.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you are running this on colab you can run this cell to mount your drive. Saving progress on Colab can be a bit annoying but it's simple to store things in Google Drive. This means you can avoid reloading data every time you interact with Colab and also allows you to save the progress of your model so you don't have to retrain a model multiple times.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># drive.mount(&quot;/content/drive&quot;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -53,25 +101,10 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Mounted at /content/drive
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -95,6 +128,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Install fastai. The latest version is likely to be fine but if there is a breaking change to fastai you can use the pinned version.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -103,6 +143,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install fastai -U
+<span class="c1">#!pip install fastai==2.2.5</span>
 </pre></div>
 
     </div>
@@ -112,6 +153,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For reference the version of fastai used for this notebook</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -120,6 +168,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fastai</span>
+
 <span class="n">fastai</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 
@@ -146,6 +195,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check that we have cuda available (GPU). If this returns false click on 'runtime' and choose 'change runtime type' and choose GPU acceleration</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -154,6 +210,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
 <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
 </pre></div>
 
@@ -187,8 +244,9 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 
@@ -216,6 +274,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So far in this series of example notebooks we have used square resizing on all of our images. This maybe okay but since newspapers images tend to be more vertical it might be worth considering a different way of resizing. We can use a handy helper function <code>get_image_files</code> to grab all of our images</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -223,7 +288,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Models/nnanno_all_years/data/&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;images&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -233,6 +298,14 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This function returns the image paths wrapped in an <code>L</code> instance. <code>L</code> is essentially a fancy Python list that includes some extra goodies. See the <a href="https://fastcore.fast.ai/#L">fastcore docs</a> for a fuller explanation.</p>
+<p>We'll use <code>map</code> to go through our images, load them, grab the shape and then calculate the average ratio</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -240,8 +313,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;images&#39;</span><span class="p">)</span>
-<span class="n">images</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">load_image</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">images</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">load_image</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -274,7 +346,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">256</span><span class="o">*</span><span class="mf">1.68</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">256</span> <span class="o">*</span> <span class="mf">1.68</span>
 </pre></div>
 
     </div>
@@ -300,6 +372,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll use this ratio to reshape our images. This won't always make sense but if for example you are working with photos of a standard size, or film clips with a consistent aspect ratio it makes sense to batch them in this way.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -318,6 +397,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Most of the next cells are the same as in our previous notebook. The main thing we change is that we use a non square size for our transform.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -342,7 +428,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valid</span><span class="p">,</span> <span class="n">train</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">train_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">pub_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valid</span><span class="p">,</span> <span class="n">train</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">pub_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -359,8 +445,8 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;is_valid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">valid</span><span class="p">[</span><span class="s1">&#39;is_valid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;is_valid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">valid</span><span class="p">[</span><span class="s2">&quot;is_valid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
     </div>
@@ -377,7 +463,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span><span class="n">valid</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">valid</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -411,12 +497,17 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_data</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span><span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span>
-                   <span class="n">splitter</span><span class="o">=</span><span class="n">ColSplitter</span><span class="p">(),</span>
-                   <span class="n">get_x</span><span class="o">=</span><span class="n">ColReader</span><span class="p">(</span><span class="s1">&#39;download_image_path&#39;</span><span class="p">,</span> <span class="n">pref</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="s2">&quot;images/&quot;</span><span class="p">),</span>
-                   <span class="n">get_y</span><span class="o">=</span><span class="n">ColReader</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">),</span>
-                   <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">((</span><span class="mi">1024</span><span class="p">),</span> <span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Squish</span><span class="p">),</span>
-                  <span class="n">batch_tfms</span><span class="o">=</span><span class="p">[</span><span class="o">*</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">430</span><span class="p">,</span><span class="mi">256</span><span class="p">),</span><span class="n">max_rotate</span><span class="o">=.</span><span class="mi">01</span><span class="p">,</span> <span class="n">max_warp</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">Normalize</span><span class="o">.</span><span class="n">from_stats</span><span class="p">(</span><span class="o">*</span><span class="n">imagenet_stats</span><span class="p">)])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_data</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span>
+    <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span>
+    <span class="n">splitter</span><span class="o">=</span><span class="n">ColSplitter</span><span class="p">(),</span>
+    <span class="n">get_x</span><span class="o">=</span><span class="n">ColReader</span><span class="p">(</span><span class="s2">&quot;download_image_path&quot;</span><span class="p">,</span> <span class="n">pref</span><span class="o">=</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;images/&quot;</span><span class="p">),</span>
+    <span class="n">get_y</span><span class="o">=</span><span class="n">ColReader</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">),</span>
+    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">((</span><span class="mi">1024</span><span class="p">),</span> <span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Squish</span><span class="p">),</span>
+    <span class="n">batch_tfms</span><span class="o">=</span><span class="p">[</span>
+        <span class="o">*</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">430</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span> <span class="n">max_rotate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_warp</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">Normalize</span><span class="o">.</span><span class="n">from_stats</span><span class="p">(</span><span class="o">*</span><span class="n">imagenet_stats</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -426,6 +517,13 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once we have created our <code>DataBlock</code> we use the <code>dataloaders</code> method to load our data.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -478,6 +576,20 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that this time our images are no longer square.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Training-our-model">Training our model<a class="anchor-link" href="#Training-our-model"> </a></h2><p>Now we get to training our model, again we define some metrics we want to track</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -485,7 +597,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="n">F1Score</span><span class="p">(</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">),</span> <span class="n">Precision</span><span class="p">(),</span> <span class="n">Recall</span><span class="p">(),</span> <span class="n">accuracy</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="n">F1Score</span><span class="p">(</span><span class="n">average</span><span class="o">=</span><span class="s2">&quot;weighted&quot;</span><span class="p">),</span> <span class="n">Precision</span><span class="p">(),</span> <span class="n">Recall</span><span class="p">(),</span> <span class="n">accuracy</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -495,6 +607,37 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Choosing-a-model">Choosing a model<a class="anchor-link" href="#Choosing-a-model"> </a></h3><p>There are various things we might care about when choosing a model. These include (but are not limited to):</p>
+<ul>
+<li>performance</li>
+<li>memory usage</li>
+<li>how data-hungry the model is</li>
+<li>training speed</li>
+<li>inference speed</li>
+</ul>
+<p>Since we have committed to working with relatively constrained resources, we might want to try a model architecture with lower resource requirements. A smaller model should help speed up inference. One option is a variant of <code>squeezenet</code>.</p>
+<p>The title of the paper <a href="https://arxiv.org/abs/1602.07360"><em>SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and &lt;0.5MB model size</em></a> already tell us that this model aims to perform with more constrained resources. Another paper, <a href="https://ieeexplore.ieee.org/document/8506339"><em>Benchmark Analysis of Representative Deep Neural Network Architectures</em></a> gives some comparisons between a range of computer vision model architectures. Of particular interest here is that inference speed comparison.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://gist.githubusercontent.com/davanstrien/875d36c651440e85f029605e9b43187c/raw/f07482435d8d9a9c6648740b2077d2d1299f9e4b/squeeze.png" alt="">
+<a href="https://arxiv.org/pdf/1810.00736.pdf">Source</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We might have to trade some performance in termes of accuracy for speed, let's see how this model does</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -502,7 +645,9 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">squeezenet1_0</span><span class="p">,</span><span class="n">loss_func</span><span class="o">=</span><span class="n">LabelSmoothingCrossEntropy</span><span class="p">(),</span> <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span>
+    <span class="n">dls</span><span class="p">,</span> <span class="n">squeezenet1_0</span><span class="p">,</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">LabelSmoothingCrossEntropy</span><span class="p">(),</span> <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -563,11 +708,16 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">base_lr</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span>
-                <span class="n">cbs</span><span class="o">=</span><span class="p">[</span><span class="n">EarlyStoppingCallback</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;f1_score&#39;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
-                     <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;f1_score&#39;</span><span class="p">,</span><span class="n">patience</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                     <span class="n">SaveModelCallback</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;f1_score&#39;</span><span class="p">),</span>
-                     <span class="n">MixUp</span><span class="p">()])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span>
+    <span class="mi">30</span><span class="p">,</span>
+    <span class="n">base_lr</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span>
+    <span class="n">cbs</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">EarlyStoppingCallback</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;f1_score&quot;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+        <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;f1_score&quot;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+        <span class="n">SaveModelCallback</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;f1_score&quot;</span><span class="p">),</span>
+        <span class="n">MixUp</span><span class="p">(),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -741,23 +891,20 @@ No improvement since epoch 2: early stopping
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The final performance we get isn't too bad so we'll continue using this model for our inference process.</p>
 
 </div>
-    {% endraw %}
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Save-our-model">Save our model<a class="anchor-link" href="#Save-our-model"> </a></h3><p>We may want to come back to our model later so we will use the 'export' function to save the model weights. We could also share this model with other people if we think it will be helpful to them. If we do this, we should be careful to make sure we document the model as much as possible.</p>
 
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -792,6 +939,13 @@ No improvement since epoch 2: early stopping
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h2><p>We're now ready to do inference. We'll start by importing the inference module from nnanno</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -809,6 +963,13 @@ No improvement since epoch 2: early stopping
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can load our previous learner</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -816,7 +977,7 @@ No improvement since epoch 2: early stopping
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">load_learner</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;export.pkl&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">load_learner</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;export.pkl&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -859,6 +1020,13 @@ No improvement since epoch 2: early stopping
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I've had the odd issue with running inference if the dls isn't set expliclty. This is something to look into properly... \ # TODO diagnose dls inference issues</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -876,6 +1044,13 @@ No improvement since epoch 2: early stopping
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We now create an instance of <a href="/nnanno/inference.html#nnPredict"><code>nnPredict</code></a> and pass in our learner and a flag to use the GPU</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -927,6 +1102,13 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll create a new folder for storing our inference outputs</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -934,7 +1116,7 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;inference&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Path</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;inference&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -944,6 +1126,19 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="How-to-sample?">How to sample?<a class="anchor-link" href="#How-to-sample?"> </a></h4><p>When we created a sample for generating training data we sampled a (roughly) an equal number of images for each decade. We did this because we wanted our model to be equally good for all decades we're looking at. We evaluated in the previous notebook.</p>
+<p>Now we are turning to predict on the dataset we might have different criteria. Since we are looking to explore trends across a broad time (1850-1950), we will replicate our strategy from our initial sample of taking snapshots every ten years. One thing we will change this time is to sample a certain percentage from each decade rather than taking a fixed amount. This will allow us to see the relative presence of visual vs non-visual ads for each year as well as underlying changes in the dataset in terms of total numbers.</p>
+<p>Going through our other parameters, <code>ads</code> is the class we want to predict. 
+<code>out_dir</code> is the folder where we'll store the predictions. These predictions consist of the rows from the original newspaper navigator dataset with extra columns for the predicted classes. We'll explore this output in more detail in subsequent notebooks.</p>
+<p><code>bs</code> is the size of each batch we want to use for inference. <code>nnanno</code> will grab a batch of 64 images at a time and then pass this to the GPU (if using the GPU).</p>
+<p>The  <code>sample_size</code> is the size of our sample as a float (percentage). We could also pass in a specific value. <code>step</code> is the step between years, in this case, every ten years. Size is used to form the iiif request. We can use the IIIF URL request to send us a certain sized image. By default, this will try and get the size as close as possible to this <em>without</em> warping the image. This means we only send the size of the image required. <code>force_dir</code> is a flag that can be used to stop nnanno complaining if you are using a non-empty directory to store your annotations. Usually, this check is there to help you avoid overwritting predictions accidently. However, it's often useful to get a sense for how long things are going to take. When we start the <a href="/nnanno/inference.html#predict_sample"><code>predict_sample</code></a> method we will see two progress bars. The top progress bar shows the total progress through the entire sample. The secoond progress bar shows you the progrss through each batch. If a sample for a particular year fits into less than one batch, the second progress bar won't show for that batch. We can use this progress bar to quite quickly give a sense of how long our full requested sample will take. We can then use this to adjust the size of our sample if necessary.</p>
+<h2 id="Considerations">Considerations<a class="anchor-link" href="#Considerations"> </a></h2><p>As pointed out in other parts of the documentation nnano is intended to help smaller samples of the newspaper navigator dataset. Although IIIF can handle large request loads, we should still be considerate. If you want to predict the entire dataset, the newspaper navigator data is also available via an <a href="news-navigator.labs.loc.gov/">s3 bucket</a>.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -951,13 +1146,15 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predict</span><span class="o">.</span><span class="n">predict_sample</span><span class="p">(</span><span class="s1">&#39;ads&#39;</span><span class="p">,</span>
-                       <span class="n">out_dir</span><span class="o">=</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;inference&#39;</span><span class="p">,</span>
-                       <span class="n">bs</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-                       <span class="n">sample_size</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span> 
-                       <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
-                       <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">430</span><span class="p">,</span><span class="mi">256</span><span class="p">),</span> 
-                       <span class="n">force_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predict</span><span class="o">.</span><span class="n">predict_sample</span><span class="p">(</span>
+    <span class="s2">&quot;ads&quot;</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;inference&quot;</span><span class="p">,</span>
+    <span class="n">bs</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+    <span class="n">sample_size</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">430</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+    <span class="n">force_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -967,6 +1164,21 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now is a good time to get a coffee or have a nap...</p>
+<p>For these long running jobs in Colab you may occassionaly deal with timeouts or getting kicked off Colab. This is one of the trade-offs for getting something 'free'. This is why it's good to save the results of training and inference as you go so it's easier to pickup where you left off. For example making sure you save to a Google Drive folder (or a mounted s3 bucket etc.). In the next notebook we'll start to explore our predictions 😀</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>fin</p>
+
+</div>
+</div>
+</div>
 </div>
  
 
