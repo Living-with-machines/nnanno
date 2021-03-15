@@ -1,11 +1,9 @@
-# How to contribute
+# How to contribute/provide feedback/raise issues
 
-## How to get started
+## General feedback 
 
-Before anything else, please install the git hooks that run automatic scripts during each commit and merge to strip the notebooks of superfluous metadata (and avoid merge conflicts). After cloning the repository, run the following command inside it:
-```
-nbdev_install_git_hooks
-```
+The best way to provide feedback is by opening up a GitHub issue. See the [GitHub Documentation](https://docs.github.com/en/github/managing-your-work-on-github/creating-an-issue) for a guide on how to do this. 
+
 
 ## Did you find a bug?
 
