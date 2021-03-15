@@ -148,7 +148,7 @@ nb_path: "nbs/examples/ads/02_cnn_time_travel.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Load-the-data">Load the data<a class="anchor-link" href="#Load-the-data"> </a></h2><p>First we'll start by loading the data</p>
+<h3 id="Downloading-the-data">Downloading the data<a class="anchor-link" href="#Downloading-the-data"> </a></h3><p>If you don't have your own annotations to work with you can get the required annotations and images by uncommenting the cells below.</p>
 
 </div>
 </div>
@@ -160,7 +160,10 @@ nb_path: "nbs/examples/ads/02_cnn_time_travel.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#from nnanno.annotate import *</span>
+<span class="c1">#sampler = nnSampler()</span>
+<span class="c1">#df = load_annotations_csv(&quot;https://github.com/Living-with-machines/nnanno_example_data/blob/main/annotations/results.csv&quot;)</span>
+<span class="c1">#sampler.download_sample(&quot;data/images&quot;, original=True, df=df)</span>
 </pre></div>
 
     </div>
@@ -170,6 +173,12 @@ nb_path: "nbs/examples/ads/02_cnn_time_travel.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Load-the-data">Load the data<a class="anchor-link" href="#Load-the-data"> </a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll load the JSON file containing our annotated data. If you need a reminder of where this came from,  refer to the previous notebook in this series where this data was created.</p>
