@@ -13,7 +13,7 @@ Newspaper Navigator has released data in a number of formats including `json` fi
 
 ## What nnanno tries to help with
 
-nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data since people wanting to work with data will have different needs and interests. Instead it is a minimal collection of code that *may* help you if you want to work with the Newspaper Navigator data.
+nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data. Instead it is a minimal collection of code that *may* help you if you want to work with the Newspaper Navigator data.
 
 There are three particular areas where nnanno tries to help a little:
 - sampling from the full Newspaper Navigator data 
@@ -24,7 +24,7 @@ There are three particular areas where nnanno tries to help a little:
 
 This code was written mainly to help develop some example datasets for a series of Programming Historian tutorials. It has some tests but there are likely bugs and issues with the code. The code in this repository was all written in notebooks, some people  hate notebooks. Those people will probably hate this too 🤷‍♂️
 
-If you want to work with the full Newspaper Navigator dataset you will likely be better of accessing it via the proived S3 bucket see [news-navigator.labs.loc.gov/]() for more information.
+If you want to work with the full Newspaper Navigator data you will likely be better of accessing it via the provided S3 bucket see [news-navigator.labs.loc.gov/]() for more information.
 
 ## nbdev notes
 This code was written using `nbdev`. This is a tool that helps use Jupyter notebooks for developing Python libraries. Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:
@@ -43,7 +43,7 @@ Is evaluated as Python code. This also means all of the documentation and exampl
 
 At the moment installation is through Git. If the code gets a few more eyes on it then it may get uploaded to pip. 
 
-`pip install nnanno` #TODO add github link
+`pip install` #TODO add github link
 
 ## Programming Historian Data Preparation 
 
@@ -184,3 +184,6 @@ df.iloc[:5,-2]
     Name: illustrations_prob, dtype: float64
 
 
+
+### Acknowledgment 
+This work was support by [Living with Machines](livingwithmachines.ac.uk/). This project, funded by the UK Research and Innovation (UKRI) Strategic Priority Fund, is a multidisciplinary collaboration delivered by the Arts and Humanities Research Council (AHRC), with The Alan Turing Institute, the British Library and the Universities of Cambridge, East Anglia, Exeter, and Queen Mary University of London.
