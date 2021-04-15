@@ -44,7 +44,7 @@ def create_cached_session():
     """Creates a session which caches requests"""
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
-    session = requests_cache.core.CachedSession('url_cache')
+    session = requests_cache.CachedSession('url_cache')
     session.mount('http://', adapter)
     return session
 
