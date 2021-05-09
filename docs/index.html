@@ -41,7 +41,7 @@ nb_path: "nbs/index.ipynb"
 <h2 id="tl;dr">tl;dr<a class="anchor-link" href="#tl;dr"> </a></h2><p><code>nnanno</code> is a modest collection of tools to help work with the delightful <a href="https://news-navigator.labs.loc.gov/">Newspaper Navigator</a> data.</p>
 <p><a href="https://news-navigator.labs.loc.gov/">Newspaper Navigator</a> is a project which extracted visual content (pictures, maps etc.) from the Library of Congress <a href="https://chroniclingamerica.loc.gov/">Chronicling America</a> digitised newspaper collection.
 Newspaper Navigator has released data in a number of formats including <code>json</code> files which contain a range of metadata about the newspaper from which the image was taken from. <code>nnanno</code> was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful <a href="nbdev.fast.ai/">nbdev</a> library it is possible to install it for your own use.</p>
-<h2 id="What-nnanno-tries-to-help-with">What nnanno tries to help with<a class="anchor-link" href="#What-nnanno-tries-to-help-with"> </a></h2><p>nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data since people wanting to work with data will have different needs and interests. Instead it is a minimal collection of code that <em>may</em> help you if you want to work with the Newspaper Navigator data.</p>
+<h2 id="What-nnanno-tries-to-help-with">What nnanno tries to help with<a class="anchor-link" href="#What-nnanno-tries-to-help-with"> </a></h2><p>nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data. Instead it is a minimal collection of code that <em>may</em> help you if you want to work with the Newspaper Navigator data.</p>
 <p>There are three particular areas where nnanno tries to help a little:</p>
 <ul>
 <li>sampling from the full Newspaper Navigator data </li>
@@ -55,7 +55,7 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Disclaimer">Disclaimer<a class="anchor-link" href="#Disclaimer"> </a></h3><p>This code was written mainly to help develop some example datasets for a series of Programming Historian tutorials. It has some tests but there are likely bugs and issues with the code. The code in this repository was all written in notebooks, some people  hate notebooks. Those people will probably hate this too 🤷‍♂️</p>
-<p>If you want to work with the full Newspaper Navigator dataset you will likely be better of accessing it via the proived S3 bucket see <a href="">news-navigator.labs.loc.gov/</a> for more information.</p>
+<p>If you want to work with the full Newspaper Navigator data you will likely be better of accessing it via the provided S3 bucket see <a href="">news-navigator.labs.loc.gov/</a> for more information.</p>
 
 </div>
 </div>
@@ -115,7 +115,7 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install nnanno</code> #TODO add github link</p>
+<p><code>pip install</code> #TODO add github link</p>
 
 </div>
 </div>
@@ -128,7 +128,14 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\ # TODO add link to prep notebooks</p>
+<p>The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repostitory for this code.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="An-'end-to-end'-example">An 'end-to-end' example<a class="anchor-link" href="#An-'end-to-end'-example"> </a></h3><p>You can find an 'end-to-end' example in examples folder of the documentation. # TODO add link</p>
 
 </div>
 </div>
@@ -175,20 +182,6 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -512,6 +505,13 @@ Name: illustrations_prob, dtype: float64</pre>
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Acknowledgment">Acknowledgment<a class="anchor-link" href="#Acknowledgment"> </a></h3><p>This work was support by <a href="livingwithmachines.ac.uk/">Living with Machines</a>. This project, funded by the UK Research and Innovation (UKRI) Strategic Priority Fund, is a multidisciplinary collaboration delivered by the Arts and Humanities Research Council (AHRC), with The Alan Turing Institute, the British Library and the Universities of Cambridge, East Anglia, Exeter, and Queen Mary University of London.</p>
+
+</div>
+</div>
+</div>
 </div>
  
 
