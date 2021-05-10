@@ -29,7 +29,7 @@ If you want to work with the full Newspaper Navigator data you will likely be be
 ## nbdev notes
 This code was written using `nbdev`. This is a tool that helps use Jupyter notebooks for developing Python libraries. Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:
 
-```
+```python
 import datetime
 print(datetime.date.today())
 ```
@@ -47,28 +47,28 @@ At the moment installation is through Git. If the code gets a few more eyes on i
 
 ## Programming Historian Data Preparation 
 
-\ # TODO add link to prep notebooks
+The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repostitory for this code. 
+
+### An 'end-to-end' example
+You can find an 'end-to-end' example in examples folder of the documentation. # TODO add link 
 
 ## Functionality 
 The three main areas of `nnanno` are shown below. The examples section in the documentation shows this in greater detail.
 
 ### Creating samples
 
-```
+```python
 from nnanno.sample import *
 ```
 
-```
+```python
 sampler = nnSampler()
 df = sampler.create_sample(1,'photos',start_year=1850, end_year=1855, step=1)
 ```
 
-    
-
-
 This returns a dataframe containing samples from the Newspaper Navigator data (loaded via JSON) into a Pandas DataFrame. 
 
-```
+```python
 df.columns
 ```
 
@@ -85,7 +85,7 @@ df.columns
 ### Annotation
 The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the [label studio](https://labelstud.io/) annotation tool. 
 
-```
+```python
 from nnanno.annotate import create_label_studio_json
 ```
 
@@ -93,11 +93,11 @@ from nnanno.annotate import create_label_studio_json
 
 The inference section of nnanno *attempts* to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained [fastai](https://docs.fast.ai/) model. 
 
-```
+```python
 from nnanno.inference import *
 ```
 
-```
+```python
 from fastai.vision.all import *
 dls = ImageDataLoaders.from_csv('../ph/ads/', 
                                 'ads_upsampled.csv',
@@ -135,11 +135,11 @@ learn.fit(1)
 
 With a trained fastai model we can predict on a sample from Newspaper Navigator
 
-```
+```python
 predictor = nnPredict(learn, try_gpu=False)
 ```
 
-```
+```python
 predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 ```
 
@@ -148,13 +148,13 @@ predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 
 This returns a `json` file for each year from the sample containing the original newspaper navigator data plus the predictions from your model
 
-```
+```python
 df = pd.read_json('testinference/1850.json')
 ```
 
 We can access the 'decoded' predictions
 
-```
+```python
 df['pred_decoded'].value_counts()
 ```
 
@@ -169,7 +169,7 @@ df['pred_decoded'].value_counts()
 
 or work with the probabilities directly
 
-```
+```python
 df.iloc[:5,-2]
 ```
 
