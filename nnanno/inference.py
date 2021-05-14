@@ -30,9 +30,12 @@ from PIL import Image
 import PIL
 
 # Cell
-import fastai
-from fastai.vision.all import *
-from fastcore import *
+try:
+    import fastai
+    from fastai.vision.all import *
+except ModuleNotFoundError as e:
+    print("fastai not found, if you want to use the inference module please install fastai")
+    raise e
 
 # Cell
 def _filter_replace_none_image(results:List[Optional[PIL.Image.Image]]):
