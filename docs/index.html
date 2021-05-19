@@ -44,7 +44,7 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 <h2 id="What-nnanno-tries-to-help-with">What nnanno tries to help with<a class="anchor-link" href="#What-nnanno-tries-to-help-with"> </a></h2><p>nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data. Instead it is a minimal collection of code that <em>may</em> help you if you want to work with the Newspaper Navigator data.</p>
 <p>There are three particular areas where nnanno tries to help a little:</p>
 <ul>
-<li>sampling from the full Newspaper Navigator data </li>
+<li>sampling subsets from the full Newspaper Navigator data</li>
 <li>annotating this sample with additional labels using <a href="https://labelstud.io">label studio</a></li>
 <li>inference (experimental 😬) running inference i.e making new predictions with a machine learning model on the newspaper navigator dataset using IIIF.</li>
 </ul>
@@ -108,7 +108,7 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2><p>At the moment installation is through Git. If the code gets a few more eyes on it then it may get uploaded to pip.</p>
+<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2><p>You can install the package via <a href="pypi.org/">PyPI</a> or via GitHub:</p>
 
 </div>
 </div>
@@ -128,28 +128,30 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repostitory for this code.</p>
+<p>The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repository for <code>nnanno</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="An-'end-to-end'-example">An 'end-to-end' example<a class="anchor-link" href="#An-'end-to-end'-example"> </a></h3><p>You can find an 'end-to-end' example in examples folder of the documentation. # TODO add link</p>
+<h3 id="An-'end-to-end'-example">An 'end-to-end' example<a class="anchor-link" href="#An-'end-to-end'-example"> </a></h3><p>You can find an 'end-to-end' example in examples folder of the documentation.# TODO add link 
+This example goes through the process of sampling, annotating, training a model and predicting this against the newspaper navigator data.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functionality">Functionality<a class="anchor-link" href="#Functionality"> </a></h2><p>The three main areas of <code>nnanno</code> are shown below. The examples section in the documentation shows this in greater detail.</p>
+<h2 id="Functionality">Functionality<a class="anchor-link" href="#Functionality"> </a></h2><p>The three main areas of <code>nnanno</code> are shown below. The examples in the documentation and in the "end-to-end" example shows this functionality in more detail.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Creating-samples">Creating samples<a class="anchor-link" href="#Creating-samples"> </a></h3>
+<h3 id="Creating-samples">Creating samples<a class="anchor-link" href="#Creating-samples"> </a></h3><p><code>nnanno</code> can be used to create samples from the Newspaper Navigator data:</p>
+
 </div>
 </div>
 </div>
@@ -178,7 +180,11 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nnSampler</span><span class="p">()</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span><span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1855</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+                           <span class="s1">&#39;photos&#39;</span><span class="p">,</span>
+                           <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> 
+                           <span class="n">end_year</span><span class="o">=</span><span class="mi">1855</span><span class="p">,</span> 
+                           <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -233,7 +239,7 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Annotation">Annotation<a class="anchor-link" href="#Annotation"> </a></h3><p>The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the <a href="https://labelstud.io/">label studio</a> annotation tool.</p>
+<h3 id="Annotation">Annotation<a class="anchor-link" href="#Annotation"> </a></h3><p>The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the <a href="https://labelstud.io/">label studio</a> annotation tool. Since we can annotate via IIIF this offers a way of annotating without having to download large amounts of data locally.</p>
 
 </div>
 </div>
@@ -257,7 +263,7 @@ Newspaper Navigator has released data in a number of formats including <code>jso
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h3><p>The inference section of nnanno <em>attempts</em> to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained <a href="https://docs.fast.ai/">fastai</a> model.</p>
+<h3 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h3><p>The inference section of nnanno <em>attempts</em> to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained <a href="https://docs.fast.ai/">fastai</a> model. This will allow you to make predictions against larger parts of the Newspaper Navigator data.</p>
 
 </div>
 </div>
@@ -507,7 +513,8 @@ Name: illustrations_prob, dtype: float64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Acknowledgment">Acknowledgment<a class="anchor-link" href="#Acknowledgment"> </a></h3><p>This work was support by <a href="livingwithmachines.ac.uk/">Living with Machines</a>. This project, funded by the UK Research and Innovation (UKRI) Strategic Priority Fund, is a multidisciplinary collaboration delivered by the Arts and Humanities Research Council (AHRC), with The Alan Turing Institute, the British Library and the Universities of Cambridge, East Anglia, Exeter, and Queen Mary University of London.</p>
+<h3 id="Acknowledgment">Acknowledgment<a class="anchor-link" href="#Acknowledgment"> </a></h3><blockquote><p>This work was support by <a href="livingwithmachines.ac.uk/">Living with Machines</a>. This project, funded by the UK Research and Innovation (UKRI) Strategic Priority Fund, is a multidisciplinary collaboration delivered by the Arts and Humanities Research Council (AHRC), with The Alan Turing Institute, the British Library and the Universities of Cambridge, East Anglia, Exeter, and Queen Mary University of London.</p>
+</blockquote>
 
 </div>
 </div>
