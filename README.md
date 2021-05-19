@@ -16,7 +16,7 @@ Newspaper Navigator has released data in a number of formats including `json` fi
 nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data. Instead it is a minimal collection of code that *may* help you if you want to work with the Newspaper Navigator data.
 
 There are three particular areas where nnanno tries to help a little:
-- sampling from the full Newspaper Navigator data 
+- sampling subsets from the full Newspaper Navigator data
 - annotating this sample with additional labels using [label studio](https://labelstud.io)
 - inference (experimental 😬) running inference i.e making new predictions with a machine learning model on the newspaper navigator dataset using IIIF.
 
@@ -29,7 +29,7 @@ If you want to work with the full Newspaper Navigator data you will likely be be
 ## nbdev notes
 This code was written using `nbdev`. This is a tool that helps use Jupyter notebooks for developing Python libraries. Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:
 
-```python
+```
 import datetime
 print(datetime.date.today())
 ```
@@ -41,34 +41,41 @@ Is evaluated as Python code. This also means all of the documentation and exampl
 
 ## Install
 
-At the moment installation is through Git. If the code gets a few more eyes on it then it may get uploaded to pip. 
+You can install the package via [PyPI](pypi.org/) or via GitHub:
 
 `pip install` #TODO add github link
 
 ## Programming Historian Data Preparation 
 
-The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repostitory for this code. 
+The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repository for `nnanno`.
 
 ### An 'end-to-end' example
-You can find an 'end-to-end' example in examples folder of the documentation. # TODO add link 
+You can find an 'end-to-end' example in examples folder of the documentation.# TODO add link 
+This example goes through the process of sampling, annotating, training a model and predicting this against the newspaper navigator data. 
 
 ## Functionality 
-The three main areas of `nnanno` are shown below. The examples section in the documentation shows this in greater detail.
+The three main areas of `nnanno` are shown below. The examples in the documentation and in the "end-to-end" example shows this functionality in more detail. 
 
 ### Creating samples
 
-```python
+`nnanno` can be used to create samples from the Newspaper Navigator data:
+
+```
 from nnanno.sample import *
 ```
 
-```python
+```
 sampler = nnSampler()
-df = sampler.create_sample(1,'photos',start_year=1850, end_year=1855, step=1)
+df = sampler.create_sample(1,
+                           'photos',
+                           start_year=1850, 
+                           end_year=1855, 
+                           step=1)
 ```
 
 This returns a dataframe containing samples from the Newspaper Navigator data (loaded via JSON) into a Pandas DataFrame. 
 
-```python
+```
 df.columns
 ```
 
@@ -83,21 +90,21 @@ df.columns
 
 
 ### Annotation
-The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the [label studio](https://labelstud.io/) annotation tool. 
+The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the [label studio](https://labelstud.io/) annotation tool. Since we can annotate via IIIF this offers a way of annotating without having to download large amounts of data locally. 
 
-```python
+```
 from nnanno.annotate import create_label_studio_json
 ```
 
 ### Inference
 
-The inference section of nnanno *attempts* to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained [fastai](https://docs.fast.ai/) model. 
+The inference section of nnanno *attempts* to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained [fastai](https://docs.fast.ai/) model. This will allow you to make predictions against larger parts of the Newspaper Navigator data. 
 
-```python
+```
 from nnanno.inference import *
 ```
 
-```python
+```
 from fastai.vision.all import *
 dls = ImageDataLoaders.from_csv('../ph/ads/', 
                                 'ads_upsampled.csv',
@@ -135,11 +142,11 @@ learn.fit(1)
 
 With a trained fastai model we can predict on a sample from Newspaper Navigator
 
-```python
+```
 predictor = nnPredict(learn, try_gpu=False)
 ```
 
-```python
+```
 predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 ```
 
@@ -148,13 +155,13 @@ predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 
 This returns a `json` file for each year from the sample containing the original newspaper navigator data plus the predictions from your model
 
-```python
+```
 df = pd.read_json('testinference/1850.json')
 ```
 
 We can access the 'decoded' predictions
 
-```python
+```
 df['pred_decoded'].value_counts()
 ```
 
@@ -169,7 +176,7 @@ df['pred_decoded'].value_counts()
 
 or work with the probabilities directly
 
-```python
+```
 df.iloc[:5,-2]
 ```
 
@@ -186,4 +193,5 @@ df.iloc[:5,-2]
 
 
 ### Acknowledgment 
-This work was support by [Living with Machines](livingwithmachines.ac.uk/). This project, funded by the UK Research and Innovation (UKRI) Strategic Priority Fund, is a multidisciplinary collaboration delivered by the Arts and Humanities Research Council (AHRC), with The Alan Turing Institute, the British Library and the Universities of Cambridge, East Anglia, Exeter, and Queen Mary University of London.
+
+> This work was support by [Living with Machines](livingwithmachines.ac.uk/). This project, funded by the UK Research and Innovation (UKRI) Strategic Priority Fund, is a multidisciplinary collaboration delivered by the Arts and Humanities Research Council (AHRC), with The Alan Turing Institute, the British Library and the Universities of Cambridge, East Anglia, Exeter, and Queen Mary University of London.
