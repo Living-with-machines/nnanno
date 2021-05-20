@@ -53,6 +53,61 @@ nb_path: "nbs/03_inference.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import fastai</span>
+<span class="c1"># from fastai.vision.all import *</span>
+<span class="c1"># from fastcore import *</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>fastai not found, if you want to use the inference module please install fastai
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-f0e1ee821c7b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">except</span> ModuleNotFoundError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;fastai not found, if you want to use the inference module please install fastai&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> e
+
+<span class="ansi-green-fg">&lt;ipython-input-5-f0e1ee821c7b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#export</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">import</span> fastai
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">from</span> fastai<span class="ansi-blue-fg">.</span>vision<span class="ansi-blue-fg">.</span>all <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">except</span> ModuleNotFoundError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;fastai&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -391,7 +446,7 @@ This model is just intended to help develop the inference functionality so we wo
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="nnPredict" class="doc_header"><code>class</code> <code>nnPredict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L91" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnPredict</code>(<strong><code>learner</code></strong>:<code>fastai.learner</code>, <strong><code>try_gpu</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h2 id="nnPredict" class="doc_header"><code>class</code> <code>nnPredict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L94" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnPredict</code>(<strong><code>learner</code></strong>:<code>fastai.learner</code>, <strong><code>try_gpu</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p><a href="/nnanno/inference.html#nnPredict"><code>nnPredict</code></a> is used in combination with a trained leaner to run inference on Newspaper Navigator</p>
 
@@ -518,7 +573,7 @@ This model is just intended to help develop the inference functionality so we wo
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict_from_sample_df" class="doc_header"><code>nnPredict.predict_from_sample_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_from_sample_df</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>disable_pbar</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="nnPredict.predict_from_sample_df" class="doc_header"><code>nnPredict.predict_from_sample_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L121" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_from_sample_df</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>disable_pbar</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Runs inference on <code>sample_df</code> using batch size <code>bs</code>, <code>disable_pbar</code> controls whether to show progress bar
 Returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from <code>learner.dls.vocab</code></p>
@@ -580,7 +635,7 @@ Returns a Pandas DataFrame containing orginal dataframe and predictions, with la
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict_sample" class="doc_header"><code>nnPredict.predict_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L173" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_sample</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>year_sample</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>, <strong><code>force_dir</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="nnPredict.predict_sample" class="doc_header"><code>nnPredict.predict_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_sample</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>year_sample</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>, <strong><code>force_dir</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>runs inference for a sample <code>sample_size</code> of <code>kind</code> from newspaper navigator using batch size <code>bs</code></p>
 
@@ -913,7 +968,7 @@ Name: text-only_prob, dtype: float64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict" class="doc_header"><code>nnPredict.predict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L206" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>32</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnPredict.predict" class="doc_header"><code>nnPredict.predict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>32</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>predict on the full dataset for a given <code>kind</code> from <code>start_year</code> until <code>end_year</code> using <code>step</code> size</p>
 
