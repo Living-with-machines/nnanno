@@ -13,7 +13,7 @@ Newspaper Navigator has released data in a number of formats including `json` fi
 
 ## What nnanno tries to help with
 
-nnanno doesn't to provide an end-to-end to end 'pipeline' for using machine learning with the Newspaper Navigator data. Instead it is a minimal collection of code that *may* help you if you want to work with the Newspaper Navigator data.
+nnanno doesn't to provide an end-to-end to end software for using machine learning with the Newspaper Navigator data. Instead it is a minimal collection of code that *may* help you if you want to work with the Newspaper Navigator data.
 
 There are three particular areas where nnanno tries to help a little:
 - sampling subsets from the full Newspaper Navigator data
