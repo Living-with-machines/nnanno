@@ -8,8 +8,11 @@
 
 `nnanno` is a modest collection of tools to help work with the delightful [Newspaper Navigator](https://news-navigator.labs.loc.gov/) data. 
 
+## nnanno
+
 [Newspaper Navigator](https://news-navigator.labs.loc.gov/) is a project which extracted visual content (pictures, maps etc.) from the Library of Congress [Chronicling America](https://chroniclingamerica.loc.gov/) digitised newspaper collection.
-Newspaper Navigator has released data in a number of formats including `json` files which contain a range of metadata about the newspaper from which the image was taken from. `nnanno` was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials. Since this code was developed using the wonderful [nbdev](nbdev.fast.ai/) library it is possible to install it for your own use. 
+
+Newspaper Navigator has released data in a number of formats including `json` files which contain a range of metadata about the newspaper from which the image was taken from. `nnanno` was thrown together to help work with this collection as part of the preparation of some example datasets used in a series of Programming Historian tutorials (currently under review). Since this code was developed using the wonderful [nbdev](nbdev.fast.ai/) library it is possible to install it for your own use. 
 
 ## What nnanno tries to help with
 
@@ -29,7 +32,7 @@ If you want to work with the full Newspaper Navigator data you will likely be be
 ## nbdev notes
 This code was written using `nbdev`. This is a tool that helps use Jupyter notebooks for developing Python libraries. Inside the documentation you will see code cells followed by output. This is generated from a Jupyter notebook and shows the actual output of the code rather than something that has been copied and pasted for example:
 
-```
+```python
 import datetime
 print(datetime.date.today())
 ```
@@ -41,15 +44,23 @@ Is evaluated as Python code. This also means all of the documentation and exampl
 
 ## Install
 
-You can install the package via [PyPI](pypi.org/) or via GitHub:
+You can install `nnanno` via GitHub:
 
 `pip install` #TODO add github link
 
-## Programming Historian Data Preparation 
+This will install all of the code for sampling from Newspaper Navigator data. 
 
-The notebooks which prepare data for Programming Historian lessons can be found in the GitHub repository for `nnanno`.
+## Optional extra packages 
+If you want to use all of the parts of `nnanno` you'll need to install some extra packages. 
 
-### An 'end-to-end' example
+### label studio 
+If you also want to use `label-studio` for annotating you will need to install this too. There are various ways in which you may want to install label-studio. See the label studio [documentation](https://labelstud.io/) for various options for setting this up. 
+
+### fastai
+If you want to use the experimental inference functionality you will need to install fastai. See the [fastai docs](https://docs.fast.ai/#Installing) for options for doing this. 
+
+## Illustrations in advertising: an 'end-to-end' example of using nnanno 
+
 You can find an 'end-to-end' example in examples folder of the documentation.# TODO add link 
 This example goes through the process of sampling, annotating, training a model and predicting this against the newspaper navigator data. 
 
@@ -60,11 +71,11 @@ The three main areas of `nnanno` are shown below. The examples in the documentat
 
 `nnanno` can be used to create samples from the Newspaper Navigator data:
 
-```
+```python
 from nnanno.sample import *
 ```
 
-```
+```python
 sampler = nnSampler()
 df = sampler.create_sample(1,
                            'photos',
@@ -75,7 +86,7 @@ df = sampler.create_sample(1,
 
 This returns a dataframe containing samples from the Newspaper Navigator data (loaded via JSON) into a Pandas DataFrame. 
 
-```
+```python
 df.columns
 ```
 
@@ -92,7 +103,7 @@ df.columns
 ### Annotation
 The annotation part of nnanno is mainly a little bit of documentation and a few functions to help setup annotation of a sample from Newspaper Navigator using IIIF urls and the [label studio](https://labelstud.io/) annotation tool. Since we can annotate via IIIF this offers a way of annotating without having to download large amounts of data locally. 
 
-```
+```python
 from nnanno.annotate import create_label_studio_json
 ```
 
@@ -100,11 +111,11 @@ from nnanno.annotate import create_label_studio_json
 
 The inference section of nnanno *attempts* to show one possible way to use IIIF to run inference against samples of Newspaper Navigator using a trained [fastai](https://docs.fast.ai/) model. This will allow you to make predictions against larger parts of the Newspaper Navigator data. 
 
-```
+```python
 from nnanno.inference import *
 ```
 
-```
+```python
 from fastai.vision.all import *
 dls = ImageDataLoaders.from_csv('../ph/ads/', 
                                 'ads_upsampled.csv',
@@ -142,11 +153,11 @@ learn.fit(1)
 
 With a trained fastai model we can predict on a sample from Newspaper Navigator
 
-```
+```python
 predictor = nnPredict(learn, try_gpu=False)
 ```
 
-```
+```python
 predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 ```
 
@@ -155,13 +166,13 @@ predictor.predict_sample('ads','testinference',0.01,end_year=1850)
 
 This returns a `json` file for each year from the sample containing the original newspaper navigator data plus the predictions from your model
 
-```
+```python
 df = pd.read_json('testinference/1850.json')
 ```
 
 We can access the 'decoded' predictions
 
-```
+```python
 df['pred_decoded'].value_counts()
 ```
 
@@ -176,7 +187,7 @@ df['pred_decoded'].value_counts()
 
 or work with the probabilities directly
 
-```
+```python
 df.iloc[:5,-2]
 ```
 
