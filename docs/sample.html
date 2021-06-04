@@ -52,7 +52,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Newspaper-Navigator-JSON-files">Newspaper Navigator JSON files<a class="anchor-link" href="#Newspaper-Navigator-JSON-files"> </a></h2><p>We need to work with the JSON files from the Newspaper Navigator data. The first thing that might be helpful is some code for generating the URLs for a particular year and kind. Since the URLs are systematically structured this is easy.</p>
+<h2 id="Newspaper-Navigator-JSON-files">Newspaper Navigator JSON files<a class="anchor-link" href="#Newspaper-Navigator-JSON-files"> </a></h2><p>We need to work with the JSON files from the Newspaper Navigator data. The first thing that might be helpful is some code for generating the URLs for a particular year and kind. Since the URLs are systematically structured, this is easy.</p>
 
 </div>
 </div>
@@ -142,7 +142,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also test that this returns what we think inside the notebook. These tests are often hidden in the documentation but inside the notebook there will often be a cell below a function which includes some tests for the function which has just been defined.</p>
+<p>We can also test that this returns what we think inside the notebook. These tests are often hidden in the documentation. However, inside the notebook, there will usually be a cell below a function definition that includes some tests.</p>
 
 </div>
 </div>
@@ -186,8 +186,8 @@ nb_path: "nbs/01_sample.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Streaming-JSON">Streaming JSON<a class="anchor-link" href="#Streaming-JSON"> </a></h2><p>One way to get around this would be to throw more RAM at the problem. However since we only want to sample the JSON and don't need to work with the whole dataset this seems a bit wasteful. Instead we'll <code>ijson</code> a Python library for streaming JSON.</p>
-<p>We can see how this works for a url from newspaper navigator. If we create a request via Requests using <code>stream=True</code> to return a streaming version of the response.</p>
+<h2 id="Streaming-JSON">Streaming JSON<a class="anchor-link" href="#Streaming-JSON"> </a></h2><p>One way to get around this would be to throw more RAM at the problem. However, since we only want to sample the JSON and don't need to work with the whole dataset, this seems wasteful. So instead, we'll use <code>ijson</code>, a Python library for streaming JSON.</p>
+<p>We can see how this works for a URL from Newspaper Navigator if we create a request via Requests using <code>stream=True</code> to return a streaming version of the response.</p>
 
 </div>
 </div>
@@ -252,8 +252,8 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We get back something from <code>_yajl2</code> this is the underlying parser ijson is using. See <code>ijson</code> docs for more on available parsers.</p>
-<p>We can call next on this object to start iterating over it, one item at a time. If we look at the keys of the first response you'll see that this is one entry from the original JSON data.</p>
+<p>We get back something from <code>_yajl2</code> this is the underlying parser <code>ijson</code> is using. See <code>ijson</code> docs for more on <a href="https://pypi.org/project/ijson/#id3">available parsers</a>.</p>
+<p>We can call next on this object to start iterating over it, one item at a time. If we look at the keys of the first response, you'll see that this is one entry from the original JSON data.</p>
 
 </div>
 </div>
@@ -360,7 +360,7 @@ nb_path: "nbs/01_sample.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can get around this by using the <a href="https://toolz.readthedocs.io/en/">toolz</a> libraries <a href="https://toolz.readthedocs.io/en/latest/api.html#toolz.itertoolz.count">itertoolz.count</a> method. This is similar to <code>len</code> except that it can work on lazy sequences i.e. something which has a <code>next</code> attribute. This ends up being quite slow because we still need to go through all of the data which means that although we can avoid loading the data into memory we do still need to stream it all in order to get the length. Most of the time this won't be necessary anyway but in case we end up calling this function multiple times we cache the results to make sure we don't calculate the length of the same data multiple times.</p>
+<p>We can get around this by using the <a href="https://toolz.readthedocs.io/en/">toolz</a> libraries <a href="https://toolz.readthedocs.io/en/latest/api.html#toolz.itertoolz.count">itertoolz.count</a> method. <code>count</code> is similar to <code>len</code> except that it can work on lazy sequences, i.e. something with a <code>next</code> attribute. Unfortunately, this ends up being relatively slow because we still need to go through all of the data, which means that although we can avoid loading the data into memory, we still need to stream it to get the length. We usually won't need to call this repeatedly, but if we call this function multiple times, we cache the results to make sure we don't calculate the length of the same data multiple times.</p>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/nnanno/sample.html#count_json_iter"><code>count_json_iter</code></a> counts the length of a json file loaded via <code>url</code>.</p>
+<p><a href="/nnanno/sample.html#count_json_iter"><code>count_json_iter</code></a> counts the length of a json file loaded via <code>URL</code>.</p>
 
 </div>
 </div>
@@ -568,7 +568,7 @@ Pandas.DataFrame: holding data from input json url</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Returns the year sizes for a given kind taking a step size <code>step</code>. For example to get the number of photos in the news-navigator dataset between 1850 and 1860 for every year:</p>
+<p>Returns the year sizes for a given kind, taking a step size <code>step</code>. For example, to get the number of photos in the news-navigator dataset between 1850 and 1860 for every year:</p>
 
 </div>
 </div>
@@ -721,7 +721,7 @@ Wall time: 1.2 s
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Streaming-sampling">Streaming sampling<a class="anchor-link" href="#Streaming-sampling"> </a></h3><p>Since we want a subset of the Newspaper Navigator datasets which we can either work with for <a href="!TODO add link">annotation</a> or for inference we want to create samples. Sampling in python can be complicated depending on the type of population you are working with and the properties your sample needs to have but usually we can do something fairly simple like. For example, if we want to sample from a selection of books we could do:</p>
+<h3 id="Streaming-sampling">Streaming sampling<a class="anchor-link" href="#Streaming-sampling"> </a></h3><p>Since we want a subset of the Newspaper Navigator datasets we can either work with for annotation or inference, we want to create samples. Sampling in Python can be complicated depending on the type of population you are working with and your sample's properties. Usually, we can do something relatively simple. For example, if we want to sample from a selection of books, we could do:</p>
 
 </div>
 </div>
@@ -763,7 +763,7 @@ Wall time: 1.2 s
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, we run into a same problem as when trying to get the length of a json dataset which wouldn't fit into memory above. For example if we want to sample $k$ examples from one of our json files which we can't load into memory. To get around this we can use <a href="https://en.wikipedia.org/wiki/Reservoir_sampling">Reservoir_sampling</a>:</p>
+<p>However, we run into the same problem as trying to get the length of a JSON dataset that wouldn't fit into memory above. For example, we want to sample $k$ examples from one of our JSON files that we can't load into memory. To get around this, we can use <a href="https://en.wikipedia.org/wiki/Reservoir_sampling">Reservoir_sampling</a>:</p>
 <blockquote><p>Reservoir sampling is a family of randomized algorithms for choosing a simple random sample without replacement of k items from a population of unknown size n in a single pass over the items. The size of the population n is not known to the algorithm and is typically too large to fit all n items into main memory. The population is revealed to the algorithm over time, and the algorithm cannot look back at previous items.</p>
 </blockquote>
 
@@ -805,7 +805,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we sample whilst only loading a small numer of items into memory at one time. This does come at some cost, mainly speed. There are faster ways of sampling from a stream but this isn't the main bottle neck for sampling in this case. We can for example sample from a large range of numbers without memory issues.</p>
+<p>Now we sample whilst only loading a small number of items into memory at one time. This does come at some cost, mainly speed. There are faster ways of sampling from a stream but this isn't the main bottle neck for sampling in this case. We can for example sample from a large range of numbers without memory issues.</p>
 
 </div>
 </div>
@@ -1099,23 +1099,6 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_year</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1850</span><span class="p">)</span>
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_year</span><span class="p">(</span><span class="s1">&#39;maps&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1850</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1"># test we always have a sample size of at least one </span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
