@@ -1,5 +1,5 @@
 # nnanno
-> Sampling, annotating and making predictions on the Newspaper Navigator dataset  
+> Sample, annotate and apply computer vision models to the Newspaper Navigator dataset  
 
 
 ![CI](https://github.com/davanstrien/nnanno/workflows/CI/badge.svg)
