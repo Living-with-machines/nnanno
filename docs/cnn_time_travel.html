@@ -49,7 +49,7 @@ nb_path: "nbs/examples/ads/02_cnn_time_travel.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the previous notebook, we created a sample and annotated this data. Since we want to create a classifier to help us understand a historical phenomenon, i.e. the use of visuals in newspaper advertising, we must see how robust our model is across the period of our data.</p>
-<p>Since we have quite an extensive date range (1850-1950), we want to ensure that our model doesn't do <em>significantly</em> worse on some years. If it does do particularly badly on some years, we may draw mistaken conclusions about the historical trends we're trying to detect through our classifier.</p>
+<p>Since we have quite an extensive date range (1850-1950), we want to ensure our model doesn't do <em>significantly</em> worse for some years. If it does do particularly badly for some years, we may draw mistaken conclusions about the historical trends we're trying to detect through our classifier.</p>
 
 </div>
 </div>
@@ -260,7 +260,7 @@ nb_path: "nbs/examples/ads/02_cnn_time_travel.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Create-date-info">Create date info<a class="anchor-link" href="#Create-date-info"> </a></h3><p>Since we're going to be working with dates extensively, we'll want to make sure we can easily filter by this field. We can parse the  <code>pub_date</code> column into a pandas datetime column. We can then use this to grab the year.</p>
+<h3 id="Create-date-info">Create date info<a class="anchor-link" href="#Create-date-info"> </a></h3><p>Since we're going to be working with dates extensively, we'll want to make sure we can easily filter by this field. We can parse the  <code>pub_date</code> column into a pandas DateTime column. We can then use this to grab the year.</p>
 
 </div>
 </div>
@@ -352,8 +352,8 @@ Name: pub_date, Length: 1085, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Evaluating-decade-accuracy">Evaluating decade accuracy<a class="anchor-link" href="#Evaluating-decade-accuracy"> </a></h2><p>To see if our model will perform worse on some years, we'll train a model on the entire dataset and the run predictions on a subset and see if particular years perform worse.</p>
-<p>Some years may be 'harder' for the model regardless of the training data. For example, the newspaper for some years might have been subject to damage. These biases might be systematic, or the might be random, trying out the model across all years will give us a way of roughly checking this.</p>
+<h2 id="Evaluating-decade-accuracy">Evaluating decade accuracy<a class="anchor-link" href="#Evaluating-decade-accuracy"> </a></h2><p>To see if our model will perform worse for some years, we'll train a model on the entire dataset and the run predictions on a subset and see if particular years perform worse.</p>
+<p>Some years may be 'harder' for the model regardless of the training data. For example, the newspaper for some years might have been subject to damage. These biases might be systematic, or they might be random; trying out the model across all years will give us a way of roughly checking this.</p>
 
 </div>
 </div>
@@ -631,8 +631,8 @@ Name: pub_date, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you have followed the Programming Historian lesson, we always loaded the data via fastai 'factory' methods. One of the beautiful things about the fastai API is that it is layered and we can easily jump 'down' a layer to get more control when needed. One way we can do this is with the DataBlocK API. You can read more about this API in the DataBlock <a href="https://docs.fast.ai/tutorial.datablock.html">tutorial</a>.</p>
-<p>A tl;dr summary of the DataBlock API;  it allows us to define how we want to load our data by specifying various pipeline components. For example <code>get_y</code> is used to say how the labels should be loaded, <code>splitter</code> is used to define how we split our data.</p>
+<p>One of the beautiful things about the fastai API is that it is layered, and we can quickly jump 'down' a layer to get more control when needed. One way we can do this is with the DataBlocK API. You can read more about this API in the DataBlock <a href="https://docs.fast.ai/tutorial.datablock.html">tutorial</a>.</p>
+<p>A tl;dr summary of the DataBlock API; it allows us to define how we want to load our data by specifying various pipeline components. For example, <code>get_y</code> is used to say how the labels should be loaded, <code>splitter</code> is used to define how we split our data.</p>
 
 </div>
 </div>
@@ -721,7 +721,7 @@ Name: pub_date, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Train">Train<a class="anchor-link" href="#Train"> </a></h3><p>Now we'll create a model and train it using two callbacks. <code>SaveModelCallback</code> will keep track of our best model monitoring <code>f1_score</code> at the end of the training, it will return the best performing model. <code>EarlyStoppingCallback</code> will stop the model after a set amount of <code>patience</code> (i.e. epochs during which there is no improvement).</p>
+<h3 id="Train">Train<a class="anchor-link" href="#Train"> </a></h3><p>Now we'll create a model and train it using two callbacks. <code>SaveModelCallback</code> will keep track of our best model monitoring <code>f1_score</code> at the end of the training; it will return the best performing model. <code>EarlyStoppingCallback</code> will stop the model after a set amount of <code>patience</code> (i.e. epochs during which there is no improvement).</p>
 
 </div>
 </div>
@@ -944,7 +944,7 @@ encodes: (Path,object) -&gt; create
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If we look at the first tuple (slicing the first few examples) you'll see we have a tensor with two columns. As you might guess each of these is a columns is the probability for one of the possible labels</p>
+<p>If we look at the first tuple (slicing the first few examples), you'll see we have a tensor with two columns. As you might guess, each of these is a column with the probability for one of the possible labels.</p>
 
 </div>
 </div>
@@ -1052,7 +1052,7 @@ encodes: (Path,object) -&gt; create
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We now want to check whether these are correct. You'll notice that the decoded predictions don't contain our actual labels. We can quicky conver these using a list comphrension. We can access the vocab from our learner to check which order the labels are</p>
+<p>We now want to check whether these are correct. You'll notice that the decoded predictions don't contain our actual labels. We can quickly convert these using a list comprehension. We can access the vocab from our learner to check which order the labels are</p>
 
 </div>
 </div>
@@ -1571,7 +1571,7 @@ Name: correct, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This has been a very rough and ready exploration of this topic but hopefully shows some of the potential areas of investigation when working with historical images. In the next notebook we'll move onto model training in more detail.</p>
+<p>This notebook has offered a very rough exploration of this topic but hopefully shows some of the potential areas of investigation when working with historical images.  In the next notebook, we'll move onto model training in more detail.</p>
 
 </div>
 </div>

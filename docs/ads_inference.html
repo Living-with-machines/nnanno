@@ -31,7 +31,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook we move to the process of making predictions. As mentioned in other places, one of the aims of <code>nnanno</code> was to show a <em>possible</em> way of using computer vision/deep learning without requiring unconstrained resources. This notebook tries to demo this approach in action. This notebook was all run on Google Colab  <em>full disclaimer</em> I have a 'pro' account which bumps up the maximum run time but this approach will work on the free version of Colab too.</p>
+<p>In this notebook, we move to the process of making predictions. As mentioned in other places, one of the aims of <code>nnanno</code> was to show a <em>possible</em> way of using computer vision/deep learning without requiring unconstrained resources. This notebook tries to demo this approach in action. This notebook was all run on Google Colab  <em>full disclaimer</em> I have a 'pro' account that bumps up the maximum run time, but this approach will work fine on the free version of Colab.</p>
 
 </div>
 </div>
@@ -55,7 +55,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you are running this on colab you can run this cell to mount your drive. Saving progress on Colab can be a bit annoying but it's simple to store things in Google Drive. This means you can avoid reloading data every time you interact with Colab and also allows you to save the progress of your model so you don't have to retrain a model multiple times.</p>
+<p>If you are running this on Colab you can run the below cell to mount your google drive. Saving progress on Colab can be a bit annoying, but it's simple to store things in Google Drive. This means you can avoid reloading data every time you interact with Colab and also allows you to save the progress of your model, so you don't have to retrain a model multiple times.</p>
 
 </div>
 </div>
@@ -168,7 +168,6 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fastai</span>
-
 <span class="n">fastai</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 
@@ -210,7 +209,6 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-
 <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
 </pre></div>
 
@@ -617,8 +615,8 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 <li>training speed</li>
 <li>inference speed</li>
 </ul>
-<p>Since we have committed to working with relatively constrained resources, we might want to try a model architecture with lower resource requirements. A smaller model should help speed up inference. One option is a variant of <code>squeezenet</code>.</p>
-<p>The title of the paper <a href="https://arxiv.org/abs/1602.07360"><em>SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and &lt;0.5MB model size</em></a> already tell us that this model aims to perform with more constrained resources. Another paper, <a href="https://ieeexplore.ieee.org/document/8506339"><em>Benchmark Analysis of Representative Deep Neural Network Architectures</em></a> gives some comparisons between a range of computer vision model architectures. Of particular interest here is that inference speed comparison.</p>
+<p>Since we have committed to working with relatively constrained resources, we might want to try a model architecture with lower resource requirements. In addition, a smaller model should help speed up inference. One option is a variant of <code>squeezenet</code>.</p>
+<p>The title of the paper <a href="https://arxiv.org/abs/1602.07360"><em>SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and &lt;0.5MB model size</em></a> already tell us that this model aims to perform with more constrained resources. Another paper, <a href="https://ieeexplore.ieee.org/document/8506339"><em>Benchmark Analysis of Representative Deep Neural Network Architectures</em></a>, gives some comparisons between a range of computer vision model architectures. Of particular interest here is that inference speed comparison.</p>
 
 </div>
 </div>
@@ -633,7 +631,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We might have to trade some performance in termes of accuracy for speed, let's see how this model does</p>
+<p>We might have to trade some performance in terms of accuracy for speed; let's see how this model does:</p>
 
 </div>
 </div>
@@ -664,7 +662,7 @@ nb_path: "nbs/examples/ads/03_ads_inference.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">min</span><span class="p">,</span> <span class="n">steep</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">min_</span><span class="p">,</span> <span class="n">steep</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -900,7 +898,7 @@ No improvement since epoch 2: early stopping
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Save-our-model">Save our model<a class="anchor-link" href="#Save-our-model"> </a></h3><p>We may want to come back to our model later so we will use the 'export' function to save the model weights. We could also share this model with other people if we think it will be helpful to them. If we do this, we should be careful to make sure we document the model as much as possible.</p>
+<h3 id="Save-our-model">Save our model<a class="anchor-link" href="#Save-our-model"> </a></h3><p>We may want to come back to our model later so we will use the 'export' function to save the model weights. We could also share this model with other people if we think it will be helpful to them. If we do this, we should be careful to document the model as much as possible.</p>
 
 </div>
 </div>
@@ -941,7 +939,7 @@ No improvement since epoch 2: early stopping
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h2><p>We're now ready to do inference. We'll start by importing the inference module from nnanno</p>
+<h2 id="Inference">Inference<a class="anchor-link" href="#Inference"> </a></h2><p>We're now ready to do inference. We'll start by importing the inference module from <code>nnanno</code></p>
 
 </div>
 </div>
@@ -1020,13 +1018,6 @@ No improvement since epoch 2: early stopping
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I've had the odd issue with running inference if the dls isn't set expliclty. This is something to look into properly... \ # TODO diagnose dls inference issues</p>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1128,13 +1119,13 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="How-to-sample?">How to sample?<a class="anchor-link" href="#How-to-sample?"> </a></h4><p>When we created a sample for generating training data we sampled a (roughly) an equal number of images for each decade. We did this because we wanted our model to be equally good for all decades we're looking at. We evaluated in the previous notebook.</p>
-<p>Now we are turning to predict on the dataset we might have different criteria. Since we are looking to explore trends across a broad time (1850-1950), we will replicate our strategy from our initial sample of taking snapshots every ten years. One thing we will change this time is to sample a certain percentage from each decade rather than taking a fixed amount. This will allow us to see the relative presence of visual vs non-visual ads for each year as well as underlying changes in the dataset in terms of total numbers.</p>
+<h4 id="How-to-sample?">How to sample?<a class="anchor-link" href="#How-to-sample?"> </a></h4><p>When we created a sample for generating training data, we sampled (roughly) an equal number of images for each decade. We did this because we wanted our model to be equally good for all decades we're looking at. We evaluated in the previous notebook.</p>
+<p>Now we are turning to predict on the dataset we might have different criteria. Since we are looking to explore trends across a broad time (1850-1950), we will replicate our strategy from our initial sample of taking snapshots every ten years. One thing we will change this time, is to sample a certain percentage from each decade rather than taking a fixed amount for each year.. This will allow us to see the relative presence of visual vs non-visual ads for each year and underlying changes in the dataset in terms of total numbers.</p>
 <p>Going through our other parameters, <code>ads</code> is the class we want to predict. 
 <code>out_dir</code> is the folder where we'll store the predictions. These predictions consist of the rows from the original newspaper navigator dataset with extra columns for the predicted classes. We'll explore this output in more detail in subsequent notebooks.</p>
 <p><code>bs</code> is the size of each batch we want to use for inference. <code>nnanno</code> will grab a batch of 64 images at a time and then pass this to the GPU (if using the GPU).</p>
-<p>The  <code>sample_size</code> is the size of our sample as a float (percentage). We could also pass in a specific value. <code>step</code> is the step between years, in this case, every ten years. Size is used to form the iiif request. We can use the IIIF URL request to send us a certain sized image. By default, this will try and get the size as close as possible to this <em>without</em> warping the image. This means we only send the size of the image required. <code>force_dir</code> is a flag that can be used to stop nnanno complaining if you are using a non-empty directory to store your annotations. Usually, this check is there to help you avoid overwritting predictions accidently. However, it's often useful to get a sense for how long things are going to take. When we start the <a href="/nnanno/inference.html#predict_sample"><code>predict_sample</code></a> method we will see two progress bars. The top progress bar shows the total progress through the entire sample. The secoond progress bar shows you the progrss through each batch. If a sample for a particular year fits into less than one batch, the second progress bar won't show for that batch. We can use this progress bar to quite quickly give a sense of how long our full requested sample will take. We can then use this to adjust the size of our sample if necessary.</p>
-<h2 id="Considerations">Considerations<a class="anchor-link" href="#Considerations"> </a></h2><p>As pointed out in other parts of the documentation nnano is intended to help smaller samples of the newspaper navigator dataset. Although IIIF can handle large request loads, we should still be considerate. If you want to predict the entire dataset, the newspaper navigator data is also available via an <a href="news-navigator.labs.loc.gov/">s3 bucket</a>.</p>
+<p>The  <code>sample_size</code> is the size of our sample as a float (percentage). We could also pass in a specific value. <code>step</code> is the step between years, in this case, every ten years. Size is used to form the IIIF request. We can use the IIIF URL request to send us a specific sized image. By default, this will try and get the size as close as possible to this <em>without</em> warping the image. This means we only send the size of the image required. <code>force_dir</code> is a flag that can be used to stop <code>nnanno</code> complaining if you are using a non-empty directory to store your annotations. Usually, this check is there to help you avoid overwriting predictions accidentally. However, it's often helpful to get a sense of how long things are going to take. When we start the <a href="/nnanno/inference.html#predict_sample"><code>predict_sample</code></a> method, we will see two progress bars. The top progress bar shows the total progress through the entire sample. The second progress bar shows you the progress through each batch. If a sample for a particular year fits into less than one batch, the second progress bar won't show for that batch. We can use this progress bar to quickly give a sense of how long our total requested sample will take. We can then use this to adjust the size of our sample if necessary.</p>
+<h2 id="Considerations">Considerations<a class="anchor-link" href="#Considerations"> </a></h2><p>As pointed out in other parts of the documentation <code>nnanno</code> is intended to help smaller samples of the newspaper navigator dataset. Although IIIF can handle large request loads, we should still be considerate. If you want to predict the entire dataset, the newspaper navigator data is available via an <a href="news-navigator.labs.loc.gov/">s3 bucket</a>.</p>
 
 </div>
 </div>
@@ -1166,8 +1157,8 @@ learner vocab:[&#39;text_only&#39;, &#39;visual&#39;]</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now is a good time to get a coffee or have a nap...</p>
-<p>For these long running jobs in Colab you may occassionaly deal with timeouts or getting kicked off Colab. This is one of the trade-offs for getting something 'free'. This is why it's good to save the results of training and inference as you go so it's easier to pickup where you left off. For example making sure you save to a Google Drive folder (or a mounted s3 bucket etc.). In the next notebook we'll start to explore our predictions 😀</p>
+<p>Now is an excellent time to get a coffee or have a nap...</p>
+<p>For these long-running jobs in Colab, you may occasionally deal with timeouts or getting kicked off Colab. This is one of the trade-offs for getting something 'free'. This is why it's good to save the results of training and inference as you go, so it's easier to pick up where you left off. For example, making sure you save to a Google Drive folder (or a mounted s3 bucket etc.). In the next notebook, we'll start to explore our predictions 😀</p>
 
 </div>
 </div>

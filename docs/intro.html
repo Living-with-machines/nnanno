@@ -31,7 +31,7 @@ nb_path: "nbs/examples/ads/00_intro.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Overview">Overview<a class="anchor-link" href="#Overview"> </a></h2><p>Working with digitsed historic materials at scale poses some challenges. This series of notebooks is intended to give an rough overview of some of the considerations involved. It is intended as an 'extension' to a Programming Historian lesson \ # TODO link to PH lesson. It is not intended to model best practice.</p>
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview"> </a></h2><p>Working with digitized historic materials at scale poses some challenges. This series of notebooks is intended to give a rough overview of some of the considerations involved. It is not intended to model best practice.</p>
 <p>Each of these notebooks looks at a particular stage in a machine learning pipeline.</p>
 <h3 id="Semi-minimal-computing">Semi minimal computing<a class="anchor-link" href="#Semi-minimal-computing"> </a></h3><p>Minimal computing refers to</p>
 <blockquote><p>"computing done under some set of significant constraints of hardware, software, education, network capacity, power, or other factors. Minimal computing includes both the maintenance, refurbishing, and use of machines to do DH work out of necessity along with the use of new streamlined computing hardware like the Raspberry Pi or the Arduino micro controller to do DH work by choice." - Source <a href="">https://go-dh.github.io/mincomp/about/</a></p>
@@ -42,20 +42,20 @@ nb_path: "nbs/examples/ads/00_intro.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Deep learning has a reputation of being resource heavy in multiple ways. In particular deep learning is associated with requiring lots of data and a large amount of compute resource. Although there is truth to this reputation, it is increasingly possible to use deep learning with smallish amounts of data and smallish amounts of compute. Since smallish is a little bit vague in these notebooks the following constrains are observed:</p>
+<p>Deep learning has a reputation for being resource-heavy in multiple ways. In particular deep learning is associated with requiring lots of data and a large amount of compute resource. Although there is truth to this reputation, it is increasingly possible to use deep learning with smallish amounts of data and smallish amounts of compute. Since smallish is a little bit vague in these notebooks, the following constraints are observed:</p>
 <ul>
 <li>only one person doing annotating </li>
-<li>the majority of code was run on a consumer laptop (Macbook Pro 2016) </li>
-<li>some of the notebooks are execute on the <a href="https://colab.research.google.com/">Google Colab</a> platform to take advantage of the 'free' GPUs. </li>
+<li>the majority of code was run on a consumer laptop (Macbook Pro 2018) </li>
+<li>some of the notebooks are executed on the <a href="https://colab.research.google.com/">Google Colab</a> platform to take advantage of the 'free' GPUs. </li>
 </ul>
-<p>Although these constraints aren't super minimal they hopefully show that deep learning might be something that could be used in the absence of large grants or 'donations' of cloud credits.</p>
+<p>Although these constraints aren't super minimal, they hopefully show that deep learning might be something that could be used in the absence of large grants or donations of cloud credits.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Our-question">Our question<a class="anchor-link" href="#Our-question"> </a></h2><p>The question guiding these notebooks is the changes in visual content in advertising in newspapers over the time period covered by the Newspaper Navigator data. In particular we want to see how much advertising was 'visual' and how much was text only. We may then go on to explore how the relative frequency of these types of advertising intersects with other information we can find in the Newspaper Navigator data.</p>
+<h2 id="Our-question">Our question<a class="anchor-link" href="#Our-question"> </a></h2><p>The question guiding these notebooks is the changes in visual content in advertising in newspapers over the period covered by the Newspaper Navigator data. In particular, we want to see how much advertising was 'visual' and how much was text only. We may then explore how the relative frequency of these types of advertising intersects with other information we can find in the Newspaper Navigator data.</p>
 
 </div>
 </div>
@@ -69,15 +69,15 @@ nb_path: "nbs/examples/ads/00_intro.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="How-our-training-data-interacts-with-out-models:-can-CNNs-time-travel?">How our training data interacts with out models: can CNNs time travel?<a class="anchor-link" href="#How-our-training-data-interacts-with-out-models:-can-CNNs-time-travel?"> </a></h3><p>Although we may want to use computer vision to answer humanities questions, we should still consider how these models work and where they might not work. This may not involve developing new computer vision model architectures as much as trying to find ways of evaluating existing models for biases on the data you are going to be working with.</p>
-<p>The next notebook explores an example of this type of question by looking at whether classifiers trained on one decade will be effective at making predictions in a much later or earlier time period</p>
+<h3 id="How-our-training-data-interacts-with-our-models:-can-CNNs-time-travel?">How our training data interacts with our models: can CNNs time travel?<a class="anchor-link" href="#How-our-training-data-interacts-with-our-models:-can-CNNs-time-travel?"> </a></h3><p>Although we may want to use computer vision to answer humanities questions, we should still consider how these models work and where they might not work. This may not involve developing new computer vision model architectures as much as trying to find ways of evaluating existing models for biases on the data you will be working with.</p>
+<p>The following notebook explores an example of this type of question by looking at whether classifiers trained on one decade will be effective at making predictions in a much later or earlier time period.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Images-as-data:-Inference-and-working-with-outputs">Images as data: Inference and working with outputs<a class="anchor-link" href="#Images-as-data:-Inference-and-working-with-outputs"> </a></h3><p>Once we are <em>semi</em> confident our model does fairly well across all data in our corpus we move to inference (the process of creating predictions on new unseen data). This also includes some discussion of some considerations we might want to make when we do this process on large collections with relatively limited computational resources.</p>
+<h3 id="Images-as-data:-Inference-and-working-with-outputs">Images as data: Inference and working with outputs<a class="anchor-link" href="#Images-as-data:-Inference-and-working-with-outputs"> </a></h3><p>Once we are <em>semi</em> confident our model does fairly well across all data in our corpus, we move to inference (the process of creating predictions on new unseen data). This includes some discussion of some considerations we might want to make when we do this process on extensive collections with relatively limited computational resources.</p>
 
 </div>
 </div>
