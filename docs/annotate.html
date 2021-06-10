@@ -69,21 +69,21 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Annotating-Newspaper-Navigator-data">Annotating Newspaper Navigator data<a class="anchor-link" href="#Annotating-Newspaper-Navigator-data"> </a></h2><p>Once you have created a sample of Newspaper Navigator data you might want to annotate it in some way. These annotations may function as the input for a machine learning model or could be used directly to explore images in the newspaper navigator data. There are some examples in the example directory which show how annotations can be used to generate training data for machine learning tasks. # TODO add link</p>
+<h2 id="Annotating-Newspaper-Navigator-data">Annotating Newspaper Navigator data<a class="anchor-link" href="#Annotating-Newspaper-Navigator-data"> </a></h2><p>Once you have created a sample of Newspaper Navigator data using <a href="/nnanno/sample.html"><code>sample</code></a>, you might want to annotate it somehow. These annotations may function as the input for a machine learning model or could be used directly to explore images in the newspaper navigator data. The <code>Examples</code> section in the documentation shows how annotations can generate training data for machine learning tasks.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup-annotation-task">Setup annotation task<a class="anchor-link" href="#Setup-annotation-task"> </a></h2><p>The bulk of annotation work is outsourced to label studio, label studio is a flexible annotations system which supports annotations for a range of types of data including images and text. This module does a few steps to help process annotations produced through label studio. This module is largely some suggestions on how you can get label studio setup with data from Newspaper Navigator.</p>
+<h2 id="Setup-annotation-task">Setup annotation task<a class="anchor-link" href="#Setup-annotation-task"> </a></h2><p>The bulk of annotation work is outsourced to label studio, which provides a flexible annotations system that supports annotations for various data types, including images and text. This module does a few steps to help process annotations produced through label studio. This module is essentially some suggestions on how you can get label-studio setup with data from Newspaper Navigator.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First we'll create a small sample of images we want to annotate. If you have already done this step you can skip this.</p>
+<p>First, we'll create a small sample of images we want to annotate using <a href="/nnanno/sample.html"><code>sample</code></a>. If you have already done this step, you can skip this.</p>
 
 </div>
 </div>
@@ -145,15 +145,15 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are a few ways in which we can use label studio to annotate. We could download images from our sample using <code>sample.download_sample</code>. If we have a large sample though we might want to do some annotating before we download all of these  images locally.</p>
-<p>label studio supports annotating form a url. We can use this in combination with IIIF to annotate images without having to download them all first. Since IIIF is such a flexible interface for getting images this also gives us flexibility in annotating at a lower resolution/size before downloading higher res images.</p>
+<p>There are a few ways in which we can use label studio to annotate. For example, we could download images from our sample using <code>sample.download_sample</code>. However, if we have a large sample of images, we might want to do some annotating before downloading all of these images locally.</p>
+<p>Label-studio supports annotating from a URL. We can use this combined with IIIF to annotate images without downloading them all first since IIIF is a flexible interface for getting images. IIIF also gives us flexibility in annotating at a smaller resolution/size before downloading higher-res images.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Create-label-studio-annotation-tasks">Create label studio annotation tasks<a class="anchor-link" href="#Create-label-studio-annotation-tasks"> </a></h2><p>label studio supports a load of different ways of setting up 'tasks'. In this context a 'task' is an image to be annotated. One way of setting up a task is to import a <code>JSON</code> file which includes tasks. To do this we take an existing sample DataFrame and add an additional column <code>image</code> which contains a IIIF URL.</p>
+<h2 id="Create-label-studio-annotation-tasks">Create label studio annotation tasks<a class="anchor-link" href="#Create-label-studio-annotation-tasks"> </a></h2><p>Label-studio supports a load of different ways of setting up 'tasks'. In this context, a 'task' is an image to be annotated. One way of setting up a task is to import a <code>JSON</code> file that includes tasks. To do this, we take an existing sample DataFrame and add column <code>image</code>, which contains a IIIF URL.</p>
 
 </div>
 </div>
@@ -192,7 +192,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can pass in either a dataframe or <a href="/nnanno/sample.html#nnSampler"><code>nnSampler</code></a> to <a href="/nnanno/annotate.html#create_label_studio_json"><code>create_label_studio_json</code></a>. This is a simple function which will create a <code>JSON</code> file which can be used to create 'tasks' in labels studio. In this example we pass in a size parameters. This is used to generate a IIIF URL which will request this size.</p>
+<p>We can pass in either a dataframe or <a href="/nnanno/sample.html#nnSampler"><code>nnSampler</code></a> to <a href="/nnanno/annotate.html#create_label_studio_json"><code>create_label_studio_json</code></a>. This is a simple function that will create a <code>JSON</code> file that can create 'tasks' in labels studio. In this example, we pass in size parameters. This is used to generate a IIIF URL that will request this size.</p>
 
 </div>
 </div>
@@ -216,8 +216,8 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This creates a <code>JSON</code> file we can use to load tasks into label studio.</p>
-<h3 id="Importing-tasks-into-label-studio">Importing tasks into label studio<a class="anchor-link" href="#Importing-tasks-into-label-studio"> </a></h3><p>To avoid this documentation becoming out of date I haven't included screenshots etc. However, you can currently (January 2021) create tasks in label studio via the GUI or by passing in tasks through the CLI. For example to load the tasks and create a template for annotating classifications</p>
+<p>This creates a <code>JSON</code> file we can use to load tasks into label-studio.</p>
+<h3 id="Importing-tasks-into-label-studio">Importing tasks into label studio<a class="anchor-link" href="#Importing-tasks-into-label-studio"> </a></h3><p>To avoid this documentation becoming out of date, I haven't included screenshots etc. However, you can currently (January 2021) create tasks in label studio via the GUI or by passing in tasks through the CLI. For example, to load the tasks and create a template for annotating classifications</p>
 
 </div>
 </div>
@@ -247,7 +247,7 @@ nb_path: "nbs/02_annotate.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setting-up-labeling">Setting up labeling<a class="anchor-link" href="#Setting-up-labeling"> </a></h2><p>For a proper introduction to configuring your labels consult the label studio <a href="https://labelstud.io/guide/">documentation</a>. One way in which you can setup labels is to use a template as shown above for setting up image classification. There are other <a href="https://labelstud.io/templates/">templates</a> for other tasks. These templates consist of <code>XML</code> templates that are used to define your labels. These templates allow you to both define how you want to label your images and to share these definitions with others. For example</p>
+<h2 id="Setting-up-labeling">Setting up labeling<a class="anchor-link" href="#Setting-up-labeling"> </a></h2><p>For a proper introduction to configuring your labels, consult the label studio <a href="https://labelstud.io/guide/">documentation</a>. One way in which you can setup labels is to use a template as shown above.  This template setups an image classification task. There are other <a href="https://labelstud.io/templates/">templates</a> for different tasks. These templates consist of <code>XML</code> templates that define your labels. These templates allow you to define how you want to label your images and share these definitions with others. For example</p>
 
 </div>
 </div>
@@ -270,31 +270,31 @@ nb_path: "nbs/02_annotate.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are a bunch of other options you can change in label studio, and features such as adding a machine learning backend to support annotations. These are discussed in more detail in the label studio documentation.</p>
+<p>You can change many other options in Label-studio. It also includes features such as adding a machine learning backend to support annotations.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Notes-on-labeling-using-IIIF-images">Notes on labeling using IIIF images<a class="anchor-link" href="#Notes-on-labeling-using-IIIF-images"> </a></h3><p>There are a few things to consider and be aware of when loading images via IIIF in label studio.</p>
-<h4 id="Missing-images">Missing images<a class="anchor-link" href="#Missing-images"> </a></h4><p>Occasionally when you are doing your annotations in label studio for IIIF URLs you will get a missing image error. This is probably because for some reason the IIIF URL has been generated incorrectly for that image or that image doesn't exist via IIIF. If this happens you can 'skip' this image in the annotation interface.</p>
-<h4 id="Setting-a-comfortable-size-for-viewing">Setting a comfortable size for viewing<a class="anchor-link" href="#Setting-a-comfortable-size-for-viewing"> </a></h4><p>You can take advantage of the flexibility of IIIF by requesting images to be a certain size when you create the tasks. This also helps to speed up the process of loading each image since we often end up requesting a smaller sized image to comfortably fit it in on a smallish screen.</p>
-<h4 id="Annotating-vs-training-image-size,-resolution-etc.">Annotating vs training image size, resolution etc.<a class="anchor-link" href="#Annotating-vs-training-image-size,-resolution-etc."> </a></h4><p>IF you are doing annotation of labels or classifications then you may decide to annotate at a smaller size or quality and work with a higher quality image when you come to training a model. If you are doing any annotations of pixels or regions of the image you will want to be careful to make sure these aren't lost if moving between different sizes of image.</p>
+<h3 id="Notes-on-labelling-using-IIIF-images">Notes on labelling using IIIF images<a class="anchor-link" href="#Notes-on-labelling-using-IIIF-images"> </a></h3><p>There are a few things to consider and be aware of when loading images via IIIF in label studio.</p>
+<h4 id="Missing-images">Missing images<a class="anchor-link" href="#Missing-images"> </a></h4><p>Occasionally when you are doing your annotations in label studio for IIIF URLs, you will get a missing image error. This is probably because for some reason the IIIF URL has been generated incorrectly for that image, or that image doesn't exist via IIIF. If this happens, you can 'skip' this image in the annotation interface.</p>
+<h4 id="Setting-a-comfortable-size-for-viewing">Setting a comfortable size for viewing<a class="anchor-link" href="#Setting-a-comfortable-size-for-viewing"> </a></h4><p>You can take advantage of the flexibility of IIIF by requesting images to be a specific size when you create the tasks. This also helps speed up the process of loading each image since we often request a smaller sized image to fit it in on a smallish screen comfortably.</p>
+<h4 id="Annotating-vs-training-image-size,-resolution-etc.">Annotating vs training image size, resolution etc.<a class="anchor-link" href="#Annotating-vs-training-image-size,-resolution-etc."> </a></h4><p>IF you are annotating labels or classifications, you may decide to annotate at a smaller size or quality and work with a higher quality image when you come to training a model. If you are doing any annotations of pixels or regions of the image, you will want to be careful to make sure these aren't lost if moving between different sizes of the image.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exporting-and-loading-annotations-from-label-studio">Exporting and loading annotations from label studio<a class="anchor-link" href="#Exporting-and-loading-annotations-from-label-studio"> </a></h3><p>Label studio supports a broad range of annotation tasks which may require particular export formats i.e. COCO or VOC for object detection. Since the processing of these outputs is tasks specific this module only contains functionality to deal with image classification and labelling tasks since these were the tasks covered in the Programming Historian lessons for which this code was originally written.</p>
+<h3 id="Exporting-and-loading-annotations-from-label-studio">Exporting and loading annotations from label studio<a class="anchor-link" href="#Exporting-and-loading-annotations-from-label-studio"> </a></h3><p>Label studio supports a broad range of annotation tasks which may require particular export formats i.e. COCO or VOC for object detection. Since the processing of these outputs is tasks specific this module only contains functionality to deal with image classification and labeling tasks since these were the tasks covered in the Programming Historian lessons for which this code was originally written.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exporting-and-processing-CSV">Exporting and processing CSV<a class="anchor-link" href="#Exporting-and-processing-CSV"> </a></h3><p>Once you have finished annotating all your images or got too bored of annotating you can export in a variety of formats including JSON and CSV. For simple tasks a CSV export is often sufficient and has the additional benefit of having a lower barrier to entry than JSON for people who aren't coders.</p>
+<h3 id="Exporting-and-processing-CSV">Exporting and processing CSV<a class="anchor-link" href="#Exporting-and-processing-CSV"> </a></h3><p>Once you have finished annotating all your images or got too bored of annotating, you can export in various formats, including JSON and CSV. A CSV export is often sufficient for simple tasks and has the additional benefit of having a lower barrier to entry than JSON for people who aren't coders.</p>
 
 </div>
 </div>
@@ -388,8 +388,8 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see this code doesn't do very much to process the annotations into a DataFrame. The main things to note are the <code>kind</code> parameter. The CSV export for labeling tasks includes a column which contains a JSON with the labels. In this case we use a pandas converter and <code>eval</code> and grab the choices which returns a list of labels.</p>
-<p>If we look at the columns from the annotation DataFrame we'll see that label studio kept the original metadata and we now have a new column <code>label</code> which contains our annotations. We also have a column <code>choice</code> which contains the original column format from the label studio export which will be different from the <code>label</code> column when processing labeling annotations.</p>
+<p>As you can see above, this code doesn't do much to process the annotations into a DataFrame. The main things to note are the <code>kind</code> parameter. The CSV export for labelling tasks includes a column that contains a JSON with the labels. In this case, we use a pandas converter and <code>eval</code> and grab the choices, which returns a list of labels.</p>
+<p>If we look at the columns from the annotation DataFrame we'll see that label studio kept the original metadata. We now have a new column <code>label</code> that contains our annotations. We also have a column <code>choice</code> containing the original column format from the label studio export, which will be different from the <code>label</code> column when processing labelling annotations.</p>
 
 </div>
 </div>
@@ -476,8 +476,8 @@ Name: choice, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Downloading-the-images-associated-with-annotations">Downloading the images associated with annotations<a class="anchor-link" href="#Downloading-the-images-associated-with-annotations"> </a></h3><p>Once we have some annotations done we'll often want to get the original images to work with 'locally'. This is particularly important if we are planning to train a machine learning model with these images. Although it is possible to train a model using the images from IIIF, since we'll usually be grabbing these images multiple times for each epoch this isn't going to be particularly efficient and also isn't very friendly to the IIIF endpoint.</p>
-<p>We can use the <code>sampler.download_sample</code> method to download our sample, we just pass in our annotation DataFrame a folder we want to download images to and an optional name to save our 'log' of the download. We can also pass in different parameters to request different size etc. of the image. See the <a href="/nnanno/sample.html#download_sample"><code>download_sample</code></a> docs for more details.</p>
+<h3 id="Downloading-the-images-associated-with-annotations">Downloading the images associated with annotations<a class="anchor-link" href="#Downloading-the-images-associated-with-annotations"> </a></h3><p>Once we have some annotations done, we'll often want to get the original images to work locally. This is particularly important if we are planning to train a machine learning model with these images. Although it is possible to train a model using the images from IIIF, since we'll usually be grabbing these images multiple times for each epoch, this isn't particularly efficient and isn't very friendly to the IIIF endpoint.</p>
+<p>We can use the <code>sampler.download_sample</code> method to download our sample; we just pass in our annotation DataFrame a folder we want to download images to and an optional name to save our 'log' of the download. We can also pass in different parameters to request different size etc. of the image. See the <a href="/nnanno/sample.html#download_sample"><code>download_sample</code></a> docs for more details.</p>
 
 </div>
 </div>
@@ -515,8 +515,8 @@ Name: choice, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Moving-between-local-annotation-and-the-cloud-&#9729;">Moving between local annotation and the cloud &#9729;<a class="anchor-link" href="#Moving-between-local-annotation-and-the-cloud-&#9729;"> </a></h3><p>Although 'storage is cheap', it isn't free. One useful feature of the IIIF annotations workflow is that it allows you to annotate 'locally' i.e. on a personal computer and then easily move the information required to download all the images into the cloud without having to pass the images themselves around. This is particularly useful if you are going to use a service like Google colab to train a computer vision model i.e. you don't have the resources to rent GPUs.</p>
-<p>In the context of working with limited bandwith it might also be relatively time consuming to download a large set of images. However it might be feasible to get around this by annotating using the IIIF images and then using a service like google Colab when you want to grab the actual images files. Since Colab is running in the cloud with a big internet tube this should be much more doable even if your own internet is limited.</p>
+<h3 id="Moving-between-local-annotation-and-the-cloud-&#9729;">Moving between local annotation and the cloud &#9729;<a class="anchor-link" href="#Moving-between-local-annotation-and-the-cloud-&#9729;"> </a></h3><p>Although 'storage is cheap', it isn't free. One helpful feature of the IIIF annotations workflow is that it allows you to annotate 'locally,' i.e. on a personal computer and then quickly move the information required to download all the images into the cloud without having to pass the images themselves around. This is particularly useful if you will use a service like Google Colab to train a computer vision model, i.e. you don't have the resources to rent GPUs.</p>
+<p>In the context of working with limited bandwidth, it might also be relatively time-consuming to download a large set of images. However, it might be feasible to get around this by annotating using the IIIF images and then using a service like google Colab when you want to grab the actual images files. Since Colab is running in the cloud with a big internet tube, this should be much more doable even if your internet is limited.</p>
 
 </div>
 </div>
