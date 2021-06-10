@@ -84,8 +84,8 @@ nb_path: "nbs/03_inference.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we are going to use fastai for inference we'll quickly create a model that we can use to test inference functionality. 
-This model is just intended to help develop the inference functionality so we won't worry about the performance of the model itself.</p>
+<p>Since we will use fastai for inference, we'll quickly create a model that we can use to test inference functionality. 
+This model is just intended to help develop the inference functionality so we won't worry about the model's performance.</p>
 
 </div>
 </div>
@@ -275,8 +275,8 @@ This model is just intended to help develop the inference functionality so we wo
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see above <a href="/nnanno/core.html#load_url_image"><code>load_url_image</code></a> will sometimes return <code>None</code>. When we're running inference this can cause an issue because we want to create batches of images to speed up inference. We don't want to include <code>None</code>s in a batch of images to predict since fastai/pytorch won't know what to do with it.</p>
-<p>To get around this we create a function which filters a batch of images and replaces <code>None</code> with a fake image. This function also returns the index of items which were originally <code>None</code>. We later use this index of items which were <code>None</code> to replace any predictions made for dummy images with <code>np.nan</code></p>
+<p>As you can see above, <a href="/nnanno/core.html#load_url_image"><code>load_url_image</code></a> will sometimes return <code>None</code>. When we're running inference, this can cause an issue because we want to create batches of images to speed up inference. We don't want to include <code>None's</code> in a batch of images to predict since fastai/Pytorch won't know what to do with it.</p>
+<p>To get around this, we create a function which filters a batch of images and replaces <code>None</code> with a fake image. This function also returns the index of items that were originally <code>None</code>. We later use this index of items which were <code>None</code> to replace any predictions made for dummy images with <code>np.nan</code></p>
 
 </div>
 </div>
@@ -290,8 +290,8 @@ This model is just intended to help develop the inference functionality so we wo
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We use this function to deal with <code>None</code>s appearing in our image batches before we pass them to a fastai learner.</p>
-<h4 id="Note">Note<a class="anchor-link" href="#Note"> </a></h4><p>This could be a sub-optimal approach to this issue but since we don't encounter too many missing images and the overhead for this is fairly low it seems like an okay solution and allows us to still work in batches rather than working with a single image at a time. This is useful especially when we have a GPU available.</p>
+<p>We use this function to deal with <code>None</code>s appearing in our image batches before passing them to a fastai learner.</p>
+<h4 id="Note">Note<a class="anchor-link" href="#Note"> </a></h4><p>This could be a sub-optimal approach to this issue, but since we don't encounter too many missing images and the overhead for this is fairly low, it seems like an okay solution and allows us to work in batches rather than work with a single image at a time. This is useful especially when we have a GPU available.</p>
 
 </div>
 </div>
