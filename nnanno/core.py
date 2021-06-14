@@ -40,7 +40,7 @@ def create_session() -> requests.sessions.Session:
     return session
 
 # Cell
-def create_cached_session() -> requests_cache.core.CachedSession:
+def create_cached_session() -> requests_cache.CachedSession:
     """Creates a session which caches requests"""
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
