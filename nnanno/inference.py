@@ -34,67 +34,76 @@ try:
     import fastai
     from fastai.vision.all import *
 except ModuleNotFoundError as e:
-    print("fastai not found, if you want to use the inference module please install fastai")
+    print(
+        "fastai not found, if you want to use the inference module please install fastai"
+    )
     raise e
 
 # Cell
-def _filter_replace_none_image(results:List[Optional[PIL.Image.Image]]):
+def _filter_replace_none_image(results: List[Optional[PIL.Image.Image]]):
     """
     filters a list containing images and `None`, replaces `None` with dummy images
     returns: original images and dummy images + a location index for the dummy images
     """
-    fakeim = Image.fromarray(244 * np.ones((250,250,3), np.uint8))
+    fakeim = Image.fromarray(244 * np.ones((250, 250, 3), np.uint8))
     results = L(results)
-    none_image_index = results.argwhere(lambda x: x is None) # Gets the index for images which are none
-    results[none_image_index] = fakeim # Replaces None with fakeim
+    none_image_index = results.argwhere(
+        lambda x: x is None
+    )  # Gets the index for images which are none
+    results[none_image_index] = fakeim  # Replaces None with fakeim
     return results.items, none_image_index
 
 # Internal Cell
 def _create_pred_header(fname, dls=None):
-    columns=[
-            "filepath",
-            "pub_date",
-            "page_seq_num",
-            "edition_seq_num",
-            "batch",
-            "lccn",
-            "box",
-            "score",
-            "ocr",
-            "place_of_publication",
-            "geographic_coverage",
-            "name",
-            "publisher",
-            "url",
-            "page_url",
-            "iiif_url",
-            "pred_decoded"]
+    columns = [
+        "filepath",
+        "pub_date",
+        "page_seq_num",
+        "edition_seq_num",
+        "batch",
+        "lccn",
+        "box",
+        "score",
+        "ocr",
+        "place_of_publication",
+        "geographic_coverage",
+        "name",
+        "publisher",
+        "url",
+        "page_url",
+        "iiif_url",
+        "pred_decoded",
+    ]
     if dls:
-        columns += (list(dls.vocab))
+        columns += list(dls.vocab)
     return pd.DataFrame(columns=columns).to_csv(fname, index=None)
 
 # Internal Cell
-def _create_year_csv(out_dir, year,kind,dls=None):
+def _create_year_csv(out_dir, year, kind, dls=None):
     fname = Path(f"{out_dir}/{year}_{kind}.csv")
     _create_pred_header(fname, dls)
     return fname
 
 # Internal Cell
-def _create_year_json(out_dir, year,kind, batch):
+def _create_year_json(out_dir, year, kind, batch):
     return Path(f"{out_dir}/{year}_{kind}_{batch}.json")
 
 # Internal Cell
 def _make_directory(directory, force=False):
     if not force:
-        if Path(directory).exists() and len(list(os.scandir(directory))) >=1:
-            raise ValueError(f'{directory} already exists and is not empty')
-    Path(directory).mkdir(exist_ok=True,parents=True)
+        if Path(directory).exists() and len(list(os.scandir(directory))) >= 1:
+            raise ValueError(f"{directory} already exists and is not empty")
+    Path(directory).mkdir(exist_ok=True, parents=True)
 
 # Cell
 class nnPredict:
     """`nnPredict` is used in combination with a trained leaner to run inference on Newspaper Navigator"""
-    population = pd.read_csv(pkg_resources.resource_stream('nnanno', 'data/all_year_counts.csv'), index_col=0)
-    def __init__(self, learner:fastai.learner, try_gpu:bool=True):
+
+    population = pd.read_csv(
+        pkg_resources.resource_stream("nnanno", "data/all_year_counts.csv"), index_col=0
+    )
+
+    def __init__(self, learner: fastai.learner, try_gpu: bool = True):
         """Creates an ``nnPredict` instance from `learner`, puts on GPU if `try_gpu` is true and CUDA is avilable"""
         self.learner = learner
         self.try_gpu = try_gpu
@@ -102,25 +111,25 @@ class nnPredict:
         self.decode_map = {v: k for v, k in enumerate(self.learner.dls.vocab)}
 
     def __repr__(self):
-        return (f'{self.__class__.__name__} \n'
-               f'learner vocab:{self.learner.dls.vocab}')
+        return f"{self.__class__.__name__} \n" f"learner vocab:{self.learner.dls.vocab}"
 
 # Cell
 @patch_to(nnPredict, cls_method=True)
-def _get_year_population_size(cls, kind:str,year:Union[str,int]):
+def _get_year_population_size(cls, kind: str, year: Union[str, int]):
     """gets year population size"""
     return cls.population[f"{kind}_count"][year]
 
 # Cell
 @patch_to(nnPredict, cls_method=True)
-def _get_year_sample_size(cls, kind: str, year: Union[str,int],sample_size):
+def _get_year_sample_size(cls, kind: str, year: Union[str, int], sample_size):
     """get sample size for year"""
     return (cls._get_year_population_size(kind, year) * sample_size).clip(1).round()
 
 # Cell
 @patch_to(nnPredict)
-def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
-                           disable_pbar:bool=False) -> pd.DataFrame:
+def predict_from_sample_df(
+    self, sample_df: pd.DataFrame, bs: int = 16, disable_pbar: bool = False
+) -> pd.DataFrame:
     """
     Runs inference on `sample_df` using batch size `bs`, `disable_pbar` controls whether to show progress bar
     Returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from `learner.dls.vocab`
@@ -132,49 +141,56 @@ def predict_from_sample_df(self, sample_df:pd.DataFrame, bs: int = 16,
     if gpu:
         self.learner.model = self.learner.model.cuda()
 
-    self.sample_df['iiif_url'] = self.sample_df.apply(lambda x: iiif_df_apply(x), axis=1)
+    self.sample_df["iiif_url"] = self.sample_df.apply(
+        lambda x: iiif_df_apply(x), axis=1
+    )
     dfs = []
 
-    splits = max(1,round(len(self.sample_df)/bs))
-    for df in tqdm(np.array_split(sample_df, splits),
-                   disable=disable_pbar,
-                   leave=False,
-                   desc='Batch progress'):
+    splits = max(1, round(len(self.sample_df) / bs))
+    for df in tqdm(
+        np.array_split(sample_df, splits),
+        disable=disable_pbar,
+        leave=False,
+        desc="Batch progress",
+    ):
         futures = []
-        for url in df['iiif_url'].to_list():
+        for url in df["iiif_url"].to_list():
             with concurrent.futures.ThreadPoolExecutor(4) as e:
                 future = e.submit(load_url_image, url)
                 futures.append(future)
         results = [future.result() for future in futures]
         image_list, none_index = _filter_replace_none_image(results)
         im_as_arrays = [np.array(image) for image in image_list]
-       # if len(none_index) >0:
+        # if len(none_index) >0:
         #            tqdm.write(f"{none_index} skipped")
         test_data = self.learner.dls.test_dl(im_as_arrays)
         if gpu:
-            test_data.to('cuda')
+            test_data.to("cuda")
         with self.learner.no_bar():
             pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
         pred_decoded = L(pred_tuple[2], use_list=True)
-        pred_tensor =  L(pred_tuple[0],use_list=None)
+        pred_tensor = L(pred_tuple[0], use_list=None)
         pred_decoded[none_index] = np.nan
         pred_tensor[none_index] = np.nan
         df["pred_decoded"] = pred_decoded.items
-        df["pred_decoded"] = df['pred_decoded'].astype(float)
+        df["pred_decoded"] = df["pred_decoded"].astype(float)
         # create an empty df column for each class in dls.vocab
         for c in self.dls.vocab:
-            df[f'{c}_prob'] = ''
+            df[f"{c}_prob"] = ""
         # append the tensor predictions to the last `c` colomns of the df
-        df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.items.numpy(), self.dls.c) #split into columns
+        df.iloc[:, -self.dls.c :] = np.hsplit(
+            pred_tensor.items.numpy(), self.dls.c
+        )  # split into columns
 
         dfs.append(df)
     df = pd.concat(dfs)
-    df['pred_decoded'] = df['pred_decoded'].map(self.decode_map)
+    df["pred_decoded"] = df["pred_decoded"].map(self.decode_map)
     return df
 
 # Cell
 @patch_to(nnPredict)
-def predict_sample(self,
+def predict_sample(
+    self,
     kind: str,
     out_dir: str,
     sample_size: Union[int, float],
@@ -182,11 +198,12 @@ def predict_sample(self,
     start_year: int = 1850,
     end_year: int = 1950,
     step: int = 1,
-    year_sample:bool=True,
+    year_sample: bool = True,
     size=None,
-    force_dir=False):
+    force_dir=False,
+):
     """runs inference for a sample `sample_size` of `kind` from newspaper navigator using batch size `bs`"""
-    _make_directory(out_dir,force_dir)
+    _make_directory(out_dir, force_dir)
     years = range(start_year, end_year + 1, step)
     if type(sample_size) == float:
         total = int(self._get_year_sample_size(kind, list(years), sample_size).sum())
@@ -201,8 +218,12 @@ def predict_sample(self,
             disable_pbar = False
             if len(sample_df) <= 2:
                 disable_pbar = True
-            pred_df = self.predict_from_sample_df(sample_df, bs, disable_pbar=disable_pbar)
-            pred_df.to_json(f'{out_dir}/{year}.json') # TODO make sure this file is created before attempting to save
+            pred_df = self.predict_from_sample_df(
+                sample_df, bs, disable_pbar=disable_pbar
+            )
+            pred_df.to_json(
+                f"{out_dir}/{year}.json"
+            )  # TODO make sure this file is created before attempting to save
             pbar.update(len(pred_df))
 
 # Cell
@@ -215,7 +236,7 @@ def predict(
     start_year: int = 1850,
     end_year: int = 1950,
     step: int = 1,
-    size=None
+    size=None,
 ):
     """predict on the full dataset for a given `kind` from `start_year` until `end_year` using `step` size"""
     _make_directory(out_dir)
@@ -225,24 +246,29 @@ def predict(
     if gpu:
         self.learner.model = self.learner.model.cuda()
     years = range(start_year, end_year + 1, step)
-    total = self._get_year_population_size(kind,years).sum()
+    total = self._get_year_population_size(kind, years).sum()
     with tqdm(total=total) as pbar:
         for year in years:
-            out_fn = _create_year_csv(out_dir,year,kind, self.learner.dls)
+            out_fn = _create_year_csv(out_dir, year, kind, self.learner.dls)
             pbar.set_description(f"Predicting: {year}, total progress")
-            if kind == ('ads' and int(year) >=1870) or (kind == 'headlines'):
+            if kind == ("ads" and int(year) >= 1870) or (kind == "headlines"):
                 s = create_session()
             else:
                 s = create_cached_session()
             with s.get(get_json_url(year, kind), timeout=60) as r:
                 data = ijson.items(r.content, "item")
                 batches = itertoolz.partition_all(bs, iter(data))
-                year_total = self._get_year_population_size(kind,year)
-                if (year_total//bs) <= 1:
+                year_total = self._get_year_population_size(kind, year)
+                if (year_total // bs) <= 1:
                     disable_p_bar = True
-                for i, batch in enumerate(tqdm(batches,total=round(year_total//bs),
-                                               leave=False,
-                                               desc='Batch Progress')):
+                for i, batch in enumerate(
+                    tqdm(
+                        batches,
+                        total=round(year_total // bs),
+                        leave=False,
+                        desc="Batch Progress",
+                    )
+                ):
                     df = pd.DataFrame(batch)
                     df["iiif_url"] = df.apply(lambda x: iiif_df_apply(x), axis=1)
                     futures = []
@@ -254,24 +280,28 @@ def predict(
                     results = [future.result() for future in futures]
                     image_list, none_index = _filter_replace_none_image(results)
                     im_as_arrays = [np.array(image) for image in image_list]
-                    if len(none_index) >0:
+                    if len(none_index) > 0:
                         tqdm.write(f"{none_index} skipped")
                     else:
                         pass
                     test_data = self.learner.dls.test_dl(im_as_arrays)
                     with self.learner.no_bar():
-                        pred_tuple = self.learner.get_preds(dl=test_data, with_decoded=True)
+                        pred_tuple = self.learner.get_preds(
+                            dl=test_data, with_decoded=True
+                        )
                     pred_decoded = L(pred_tuple[2], use_list=True)
-                    pred_tensor =  L(pred_tuple[0],use_list=None)
+                    pred_tensor = L(pred_tuple[0], use_list=None)
                     pred_decoded[none_index] = np.nan
                     pred_tensor[none_index] = np.nan
                     df["pred_decoded"] = pred_decoded.items
-                    df["pred_decoded"] = df['pred_decoded'].astype(float)
-                    #df['pred_decoded'].map({v: k for v, k in enumerate(self.learner.dls.vocab)})
+                    df["pred_decoded"] = df["pred_decoded"].astype(float)
+                    # df['pred_decoded'].map({v: k for v, k in enumerate(self.learner.dls.vocab)})
                     # create an empty df column for each class in dls.vocab
                     for c in self.dls.vocab:
-                        df[f'{c}_prob'] = ''
+                        df[f"{c}_prob"] = ""
                     # append the tensor predictions to the last `c` columns of the df
-                    df.iloc[:,-self.dls.c:] = np.hsplit(pred_tensor.numpy(),self.dls.c) #split into columns
+                    df.iloc[:, -self.dls.c :] = np.hsplit(
+                        pred_tensor.numpy(), self.dls.c
+                    )  # split into columns
                     df.to_csv(out_fn, header=None, index=None, mode="a")
                     pbar.update(bs)

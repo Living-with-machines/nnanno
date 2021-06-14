@@ -26,12 +26,14 @@ from typing import Union, Optional, Type
 from .sample import *
 
 # Cell
-def create_label_studio_json(sample: Union[pd.DataFrame, Type[nnSampler]],
-                             fname: Union[str,Path, None]=None,
-                             original: bool = True,
-                             pct: Optional[int] = None,
-                             size: Optional[tuple] = None,
-                             preserve_asp_ratio: bool = True):
+def create_label_studio_json(
+    sample: Union[pd.DataFrame, Type[nnSampler]],
+    fname: Union[str, Path, None] = None,
+    original: bool = True,
+    pct: Optional[int] = None,
+    size: Optional[tuple] = None,
+    preserve_asp_ratio: bool = True,
+):
     """create a json file which can be used to upload tasks to label studio"""
     if fname and Path(fname).exists():
         raise FileExistsError(f"{fname} already exists")
@@ -47,68 +49,89 @@ def create_label_studio_json(sample: Union[pd.DataFrame, Type[nnSampler]],
     else:
         sample = sample.copy()
     sample["image"] = sample.apply(
-        lambda x: iiif_df_apply(x,
-                                original=original,
-                                pct=pct,
-                                size=size,
-                                preserve_asp_ratio=preserve_asp_ratio), axis=1)
-    label_studio_json = sample.apply(lambda x:x.to_dict(), axis=1).to_list()
-    with open(fname, 'w') as f:
-        json.dump(label_studio_json,f, ignore_nan=True)
+        lambda x: iiif_df_apply(
+            x,
+            original=original,
+            pct=pct,
+            size=size,
+            preserve_asp_ratio=preserve_asp_ratio,
+        ),
+        axis=1,
+    )
+    label_studio_json = sample.apply(lambda x: x.to_dict(), axis=1).to_list()
+    with open(fname, "w") as f:
+        json.dump(label_studio_json, f, ignore_nan=True)
 
 # Cell
 def process_labels(x):
     try:
-        x = "|".join(eval(x)['choices'])
+        x = "|".join(eval(x)["choices"])
     except:
         NameError
     return x
 
 # Cell
-def load_annotations_csv(csv: Union[str, Path], kind='classification'):
-    if kind == 'classification':
-        df = pd.read_csv(csv, converters={'box':eval})
-        df['label'] = df['choice']
+def load_annotations_csv(csv: Union[str, Path], kind="classification"):
+    if kind == "classification":
+        df = pd.read_csv(csv, converters={"box": eval})
+        df["label"] = df["choice"]
         return df
-    if kind == 'label':
-        df = pd.read_csv(csv, converters={'box':eval})
-        df['label'] = df['choice'].apply(process_labels)
+    if kind == "label":
+        df = pd.read_csv(csv, converters={"box": eval})
+        df["label"] = df["choice"].apply(process_labels)
         return df
 
 # Cell
-def check_download_df_match(dl_folder: Union[Path,str], df: pd.DataFrame) -> str:
-    im_count = count(f for f in Path(dl_folder).iterdir() if f.suffix in image_extensions)
+def check_download_df_match(dl_folder: Union[Path, str], df: pd.DataFrame) -> str:
+    im_count = count(
+        f for f in Path(dl_folder).iterdir() if f.suffix in image_extensions
+    )
     if type(df) == pd.core.frame.DataFrame:
         if len(df) == im_count:
-            print(f'Length of DataFrame {len(df)} and number of images in {dl_folder} {im_count} match', "\U0001F600")
+            print(
+                f"Length of DataFrame {len(df)} and number of images in {dl_folder} {im_count} match",
+                "\U0001F600",
+            )
         if len(df) != im_count:
-            print(f'Length of DataFrame {len(df)} and number of images in {dl_folder} {im_count} do not match', "\U0001F615")
+            print(
+                f"Length of DataFrame {len(df)} and number of images in {dl_folder} {im_count} do not match",
+                "\U0001F615",
+            )
 
 # Cell
-def load_df(json_file):
+def load_df(json_file: Union[str, Path]):
     with open(json_file) as f:
         data = json.load(f)
-        df = json_normalize(data,record_path=['completions'],meta=['data'])
-       # df['result'] = df['result'].apply(lambda x: return_choice(x[0]) if len([x][0]) ==1 else x)
-        df['result'] = df['result'].apply(lambda x: x[0]['value']['choices'] if len([x][0]) ==1 else x)
+        df = json_normalize(data, record_path=["completions"], meta=["data"])
+        # df['result'] = df['result'].apply(lambda x: return_choice(x[0]) if len([x][0]) ==1 else x)
+        df["result"] = df["result"].apply(
+            lambda x: x[0]["value"]["choices"] if len([x][0]) == 1 else x
+        )
         return df
 
 # Cell
-def load_completions(path):
-    filenames = glob(f'{path}/completions/*.json')
+def load_completions(path: Union[str, Path]):
+    filenames = glob(f"{path}/completions/*.json")
     dataframes = [load_df(f) for f in filenames]
     return pd.concat(dataframes)
 
 # Internal Cell
-def _df_to_csv(df,out_fn):
-    df[['data','result']].to_csv(out_fn,header=['file','label',],index=False)
+def _df_to_csv(df, out_fn):
+    df[["data", "result"]].to_csv(
+        out_fn,
+        header=[
+            "file",
+            "label",
+        ],
+        index=False,
+    )
 
 # Internal Cell
-def _df_to_json(df,out_fn):
-    df[['data','value.choices']].to_json(out_fn)
+def _df_to_json(df, out_fn):
+    df[["data", "value.choices"]].to_json(out_fn)
 
 # Internal Cell
-def _df_to_pkl(df,out_fn):
+def _df_to_pkl(df, out_fn):
     df.to_pickle(out_fn)
 
 # Internal Cell
@@ -116,13 +139,15 @@ def get_og_filepath(x):
     """
     Transforms a filepaths from processed ImageStudio format back to the Orginal Newspaper Navigator filepath  format
     """
-    b, m, e = re.split('(_data_)',x)
-    m = m.replace('_','/')
-    e = re.split('(\d{3}_\d{1}_\d{2}.jpg)',e)
-    return b+m+e[0].replace('_','/') +e[1]
+    b, m, e = re.split("(_data_)", x)
+    m = m.replace("_", "/")
+    e = re.split("(\d{3}_\d{1}_\d{2}.jpg)", e)
+    return b + m + e[0].replace("_", "/") + e[1]
 
 # Cell
-def anno_sample_merge(sample_df: pd.DataFrame, annotation_df: pd.DataFrame) -> pd.DataFrame:
+def anno_sample_merge(
+    sample_df: pd.DataFrame, annotation_df: pd.DataFrame
+) -> pd.DataFrame:
     """anno_sample_merge merges a DataFrame containing a sample
     from Newspaper Navigator and a DataFrame containing annotations
 
@@ -140,43 +165,47 @@ def anno_sample_merge(sample_df: pd.DataFrame, annotation_df: pd.DataFrame) -> p
         A new DataFrame which merges the two input DataFrames
     """
     sample_df, annotation_df = sample_df.copy(), annotation_df.copy()
-    annotation_df['id'] = annotation_df['data'].map(lambda x:get_og_filepath(x))
-    return sample_df.merge(annotation_df, left_on='filepath',right_on='id')
+    annotation_df["id"] = annotation_df["data"].map(lambda x: get_og_filepath(x))
+    return sample_df.merge(annotation_df, left_on="filepath", right_on="id")
 
 # Cell
+
 
 class nnAnnotations:
     def __init__(self, df):
         self.annotation_df = df
-        self.labels = df['result'].unique()
-        self.label_counts = df['result'].value_counts()
+        self.labels = df["result"].unique()
+        self.label_counts = df["result"].value_counts()
 
     def __repr__(self):
-        return (f'{self.__class__.__name__}'
-                f' #annotations:{len(self.annotation_df)}')
+        return f"{self.__class__.__name__}" f" #annotations:{len(self.annotation_df)}"
 
     @classmethod
     def from_completions(cls, path, kind, drop_dupes=True, sample_df=None):
         df = load_completions(path)
-        df = df.reset_index(drop=True) # add index
-        df['data']= df['data'].map(lambda x: x['image'])
-        df['data'] = df['data'].map(lambda x: x.split('?')[0])
-        df['data'] = df['data'].apply(lambda x: Path(x).name)
-        if any(df['data'].str.contains('-')): # removes labelstudio hash from data loaded via web interface
-            df['data'] = df['data'].str.split('-',expand=True)[1]
+        df = df.reset_index(drop=True)  # add index
+        df["data"] = df["data"].map(lambda x: x["image"])
+        df["data"] = df["data"].map(lambda x: x.split("?")[0])
+        df["data"] = df["data"].apply(lambda x: Path(x).name)
+        if any(
+            df["data"].str.contains("-")
+        ):  # removes labelstudio hash from data loaded via web interface
+            df["data"] = df["data"].str.split("-", expand=True)[1]
         if drop_dupes:
-            df = df.drop_duplicates(subset='data',keep='last')
-        if kind=='classification':
-            empty_rows = df[df['result'].apply(lambda x:len(x)==0)].index
+            df = df.drop_duplicates(subset="data", keep="last")
+        if kind == "classification":
+            empty_rows = df[df["result"].apply(lambda x: len(x) == 0)].index
             df = df.drop(empty_rows)
-            df['result'] = df['result'].map(lambda x: x[0])
-        if kind=='label':
-            df['result'] = df['result'].map(lambda x: "|".join(map(str,x)) if len(x) >=1 else x)
-            df['result'] = df['result'].map(lambda x:"" if len(x)==0 else x)
+            df["result"] = df["result"].map(lambda x: x[0])
+        if kind == "label":
+            df["result"] = df["result"].map(
+                lambda x: "|".join(map(str, x)) if len(x) >= 1 else x
+            )
+            df["result"] = df["result"].map(lambda x: "" if len(x) == 0 else x)
         return cls(df)
 
     def merge_sample(self, sample_df):
-        self.merged_df = anno_sample_merge(sample_df,self.annotation_df)
+        self.merged_df = anno_sample_merge(sample_df, self.annotation_df)
 
     def export_merged(self, out_fn):
         self.merged_df.to_csv(out_fn)
@@ -186,9 +215,9 @@ class nnAnnotations:
         if not Path(out_fn).exists():
             Path(out_fn).touch()
         suffix = Path(out_fn).suffix
-        if suffix == '.csv':
+        if suffix == ".csv":
             _df_to_csv(df, out_fn)
-        if suffix == '.json':
-            _df_to_json(df,out_fn)
-        if suffix == '.pkl':
-            _df_to_pkl(df,out_fn)
+        if suffix == ".json":
+            _df_to_json(df, out_fn)
+        if suffix == ".pkl":
+            _df_to_pkl(df, out_fn)
