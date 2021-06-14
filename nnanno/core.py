@@ -9,7 +9,7 @@ import mimetypes
 import pathlib
 from pathlib import Path
 import PIL
-from PIL import Image# UnidentifiedImageError
+from PIL import Image  # UnidentifiedImageError
 import io
 import pandas as pd
 import multiprocessing
@@ -40,24 +40,24 @@ def create_session() -> requests.sessions.Session:
     return session
 
 # Cell
-def create_cached_session():
+def create_cached_session() -> requests_cache.CachedSession:
     """Creates a session which caches requests"""
     retry_strategy = Retry(total=80)
     adapter = HTTPAdapter(max_retries=retry_strategy)
-    session = requests_cache.CachedSession('url_cache')
-    session.mount('http://', adapter)
+    session = requests_cache.CachedSession("url_cache")
+    session.mount("http://", adapter)
     return session
 
 # Cell
 def get_max_workers(data=None) -> int:
     """Returns int to pass to max_workers based on len of `data` if available or `cpu_count()`"""
-    if data is not None and hasattr(data, '__len__'):
+    if data is not None and hasattr(data, "__len__"):
         return min(multiprocessing.cpu_count(), len(data))
     else:
         return multiprocessing.cpu_count()
 
 # Cell
-def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
+def load_url_image(url: str, mode="RGB") -> Union[PIL.Image.Image, None]:
     "Attempts to load an image from `url` returns `None` if request times out or no image at `url`"
     im = None
     session = create_session()
@@ -70,13 +70,17 @@ def load_url_image(url: str, mode='RGB') -> Union[PIL.Image.Image,None]:
         return im
 
 # Cell
-def save_image(im: PIL.Image.Image, fname: str, out_dir:Union[str, pathlib.Path] = '.'):
+def save_image(
+    im: PIL.Image.Image, fname: str, out_dir: Union[str, pathlib.Path] = "."
+):
     """Saves `im` as `fname` to `out_dir`"""
-    out_path = Path(f'{out_dir}/{fname}')
+    out_path = Path(f"{out_dir}/{fname}")
     im.save(out_path)
 
 # Cell
-def download_image(url: str, fname: str, out_dir:Union[str, pathlib.Path] ='.') -> None:
+def download_image(
+    url: str, fname: str, out_dir: Union[str, pathlib.Path] = "."
+) -> None:
     """
     Attempts to load image from `url` and save as `fname` to `out_dir`
     Returns `None` if bad URL or request timesout
@@ -88,22 +92,24 @@ def download_image(url: str, fname: str, out_dir:Union[str, pathlib.Path] ='.') 
         return None
 
 # Cell
-def parse_box(box: Union[Tuple,List]) -> Tuple[float, float, float,float]:
+def parse_box(box: Union[Tuple, List]) -> Tuple[float, float, float, float]:
     """Parses the `box` value from Newspaper Navigator data to prepre for IIIF request"""
     box_x1, box_x2, box_y1, box_y2 = box
-    x = math.floor(box_x1*10000)/100.
-    y = math.ceil(box_x2*10000)/100.
-    w = math.ceil((box_y1 - box_x1)*10000)/100.
-    h = math.ceil((box_y2 - box_x2)*10000)/100.
+    x = math.floor(box_x1 * 10000) / 100.0
+    y = math.ceil(box_x2 * 10000) / 100.0
+    w = math.ceil((box_y1 - box_x1) * 10000) / 100.0
+    h = math.ceil((box_y2 - box_x2) * 10000) / 100.0
     return x, y, w, h
 
 # Cell
-def create_iiif_url(box: Union[Tuple, List],
-                    url: str,
-                    original: bool = False,
-                    pct: int = None,
-                    size: tuple = None,
-                    preserve_asp_ratio: bool = True) -> Union[str, None]:
+def create_iiif_url(
+    box: Union[Tuple, List],
+    url: str,
+    original: bool = False,
+    pct: int = None,
+    size: tuple = None,
+    preserve_asp_ratio: bool = True,
+) -> Union[str, None]:
     """Returns a IIIF URL from bounding box and URL"""
 
     x, y, w, h = parse_box(box)
@@ -113,14 +119,32 @@ def create_iiif_url(box: Union[Tuple, List],
     url_prefix = "https://chroniclingamerica.loc.gov/iiif/2"
     if original and not size and not pct:
         url_suffix_full = "pct:100/0/default.jpg"
-        return "/".join([url_prefix, url_chronam_path, url_coordinates, url_suffix_full])
+        return "/".join(
+            [url_prefix, url_chronam_path, url_coordinates, url_suffix_full]
+        )
     if pct:
         pct_downsampled = f"pct:{pct}/0/default.jpg"
-        return  "/".join([url_prefix, url_chronam_path, url_coordinates, pct_downsampled])
+        return "/".join(
+            [url_prefix, url_chronam_path, url_coordinates, pct_downsampled]
+        )
     if size and preserve_asp_ratio:
-        return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"!{size[0]},{size[1]}/0/default.jpg"])
+        return "/".join(
+            [
+                url_prefix,
+                url_chronam_path,
+                url_coordinates,
+                f"!{size[0]},{size[1]}/0/default.jpg",
+            ]
+        )
     if size:
-        return "/".join([url_prefix, url_chronam_path, url_coordinates,  f"{size[0]},{size[1]}/0/default.jpg"])
+        return "/".join(
+            [
+                url_prefix,
+                url_chronam_path,
+                url_coordinates,
+                f"{size[0]},{size[1]}/0/default.jpg",
+            ]
+        )
 
 # Cell
 def iiif_df_apply(
@@ -141,11 +165,13 @@ def iiif_df_apply(
     )
 
 # Cell
-image_extensions = set(k for k,v in mimetypes.types_map.items() if v.startswith('image/'))
+image_extensions = set(
+    k for k, v in mimetypes.types_map.items() if v.startswith("image/")
+)
 
 # Cell
-def bytesto(bytes, to: str, bsize:int=1024) -> float:
+def bytesto(bytes, to: str, bsize: int = 1024) -> float:
     """Takes bytes and returns value convereted to `to`"""
-    a = {'k' : 1, 'm': 2, 'g' : 3, 't' : 4, 'p' : 5, 'e' : 6 }
+    a = {"k": 1, "m": 2, "g": 3, "t": 4, "p": 5, "e": 6}
     r = float(bytes)
     return bytes / (bsize ** a[to])
