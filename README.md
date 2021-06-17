@@ -2,7 +2,7 @@
 > Sample, annotate and apply computer vision models to the Newspaper Navigator dataset  
 
 
-![CI](https://github.com/davanstrien/nnanno/workflows/CI/badge.svg)
+[![CI](https://github.com/Living-with-machines/nnanno/actions/workflows/main.yml/badge.svg)](https://github.com/Living-with-machines/nnanno/actions/workflows/main.yml)
 
 ## tl;dr
 
