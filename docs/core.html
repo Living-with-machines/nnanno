@@ -78,7 +78,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_session" class="doc_header"><code>create_session</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_session</code>()</p>
+<h4 id="create_session" class="doc_header"><code>create_session</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_session</code>()</p>
 </blockquote>
 <p>returns a requests session</p>
 
@@ -126,7 +126,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_cached_session" class="doc_header"><code>create_cached_session</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_cached_session</code>()</p>
+<h4 id="create_cached_session" class="doc_header"><code>create_cached_session</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_cached_session</code>()</p>
 </blockquote>
 <p>Creates a session which caches requests</p>
 
@@ -207,7 +207,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_max_workers" class="doc_header"><code>get_max_workers</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_max_workers</code>(<strong><code>data</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="get_max_workers" class="doc_header"><code>get_max_workers</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_max_workers</code>(<strong><code>data</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Returns int to pass to max_workers based on len of <code>data</code> if available or <code>cpu_count()</code></p>
 
@@ -242,7 +242,7 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">get_max_workers</span><span class="p">(</span><span class="n">list_data</span><span class="p">),</span> <span class="n">get_max_workers</span><span class="p">()</span>
 </pre></div>
 
@@ -293,7 +293,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_url_image" class="doc_header"><code>load_url_image</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_url_image</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>mode</code></strong>=<em><code>'RGB'</code></em>)</p>
+<h4 id="load_url_image" class="doc_header"><code>load_url_image</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_url_image</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>mode</code></strong>=<em><code>'RGB'</code></em>)</p>
 </blockquote>
 <p>Attempts to load an image from <code>url</code> returns <code>None</code> if request times out or no image at <code>url</code></p>
 
@@ -328,8 +328,9 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://news-navigator.labs.loc.gov/data/dlc_fiji_ver01/data/sn83030214/00175040936/1900102801/0519/001_0_99.jpg&#39;</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">load_url_image</span><span class="p">(</span><span class="n">url</span><span class="p">);</span><span class="n">im</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://news-navigator.labs.loc.gov/data/dlc_fiji_ver01/data/sn83030214/00175040936/1900102801/0519/001_0_99.jpg&quot;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">load_url_image</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">im</span>
 </pre></div>
 
     </div>
@@ -375,7 +376,7 @@ nb_path: "nbs/00_core.ipynb"
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_to_rgb</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
     <span class="n">rgb_images</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">im</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
-        <span class="n">rgb_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">))</span>
+        <span class="n">rgb_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">rgb_images</span>
 </pre></div>
 
@@ -403,7 +404,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="save_image" class="doc_header"><code>save_image</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_image</code>(<strong><code>im</code></strong>:<code>Image</code>, <strong><code>fname</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>]=<em><code>'.'</code></em>)</p>
+<h4 id="save_image" class="doc_header"><code>save_image</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_image</code>(<strong><code>im</code></strong>:<code>Image</code>, <strong><code>fname</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>]=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Saves <code>im</code> as <code>fname</code> to <code>out_dir</code></p>
 
@@ -439,7 +440,7 @@ nb_path: "nbs/00_core.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-<span class="n">save_image</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="s1">&#39;test_iif.jpg&#39;</span><span class="p">)</span>
+<span class="n">save_image</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="s2">&quot;test_iif.jpg&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -466,7 +467,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_image" class="doc_header"><code>download_image</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_image</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>fname</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>]=<em><code>'.'</code></em>)</p>
+<h4 id="download_image" class="doc_header"><code>download_image</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_image</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>fname</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>]=<em><code>'.'</code></em>)</p>
 </blockquote>
 <p>Attempts to load image from <code>url</code> and save as <code>fname</code> to <code>out_dir</code>
 Returns <code>None</code> if bad URL or request timesout</p>
@@ -514,7 +515,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="parse_box" class="doc_header"><code>parse_box</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_box</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>[<code>T</code>]])</p>
+<h4 id="parse_box" class="doc_header"><code>parse_box</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_box</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>[<code>T</code>]])</p>
 </blockquote>
 <p>Parses the <code>box</code> value from Newspaper Navigator data to prepre for IIIF request</p>
 
@@ -587,7 +588,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_iiif_url" class="doc_header"><code>create_iiif_url</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_iiif_url</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>[<code>T</code>]], <strong><code>url</code></strong>:<code>str</code>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>pct</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="create_iiif_url" class="doc_header"><code>create_iiif_url</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_iiif_url</code>(<strong><code>box</code></strong>:<code>Union</code>[<code>Tuple</code>, <code>List</code>[<code>T</code>]], <strong><code>url</code></strong>:<code>str</code>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>pct</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Returns a IIIF URL from bounding box and URL</p>
 
@@ -624,7 +625,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">box</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2624743069</span><span class="p">,</span> <span class="mf">0.0310959541</span><span class="p">,</span> <span class="mf">0.9860676740000001</span><span class="p">,</span> <span class="mf">0.2558741574</span><span class="p">]</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://news-navigator.labs.loc.gov/data/dlc_fiji_ver01/data/sn83030214/00175040936/1900102801/0519/001_0_99.jpg&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://news-navigator.labs.loc.gov/data/dlc_fiji_ver01/data/sn83030214/00175040936/1900102801/0519/001_0_99.jpg&quot;</span>
 </pre></div>
 
     </div>
@@ -642,7 +643,8 @@ Returns <code>None</code> if bad URL or request timesout</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">iiifurl</span> <span class="o">=</span> <span class="n">create_iiif_url</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">pct</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">iiifurl</span><span class="p">);</span><span class="n">load_url_image</span><span class="p">(</span><span class="n">iiifurl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iiifurl</span><span class="p">)</span>
+<span class="n">load_url_image</span><span class="p">(</span><span class="n">iiifurl</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -689,7 +691,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="iiif_df_apply" class="doc_header"><code>iiif_df_apply</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iiif_df_apply</code>(<strong><code>row</code></strong>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>pct</code></strong>:<code>int</code>=<em><code>50</code></em>, <strong><code>size</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="iiif_df_apply" class="doc_header"><code>iiif_df_apply</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L150" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iiif_df_apply</code>(<strong><code>row</code></strong>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>pct</code></strong>:<code>int</code>=<em><code>50</code></em>, <strong><code>size</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Creates IIIF urls from a pandas DataFrame containing newspaper navigator data</p>
 
@@ -735,7 +737,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="bytesto" class="doc_header"><code>bytesto</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/core.py#L147" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bytesto</code>(<strong><code>bytes</code></strong>, <strong><code>to</code></strong>:<code>str</code>, <strong><code>bsize</code></strong>:<code>int</code>=<em><code>1024</code></em>)</p>
+<h4 id="bytesto" class="doc_header"><code>bytesto</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/core.py#L173" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>bytesto</code>(<strong><code>bytes</code></strong>, <strong><code>to</code></strong>:<code>str</code>, <strong><code>bsize</code></strong>:<code>int</code>=<em><code>1024</code></em>)</p>
 </blockquote>
 <p>Takes bytes and returns value convereted to <code>to</code></p>
 
@@ -764,6 +766,7 @@ Returns <code>None</code> if bad URL or request timesout</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
+
 <span class="n">notebook2script</span><span class="p">()</span>
 </pre></div>
 

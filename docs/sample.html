@@ -68,7 +68,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_json_url" class="doc_header"><code>get_json_url</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_json_url</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>str</code>, <code>int</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>)</p>
+<h4 id="get_json_url" class="doc_header"><code>get_json_url</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_json_url</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>str</code>, <code>int</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>)</p>
 </blockquote>
 <p>Returns url for the json data from news-navigator for given <code>year</code> and <code>kind</code></p>
 
@@ -96,9 +96,18 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">get_json_url</span><span class="p">(</span><span class="mi">1860</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;https://news-navigator.labs.loc.gov/prepackaged/1860_photos.json&#39;</span> 
-<span class="k">assert</span> <span class="n">get_json_url</span><span class="p">(</span><span class="mi">1950</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;https://news-navigator.labs.loc.gov/prepackaged/1950_photos.json&#39;</span> 
-<span class="k">assert</span> <span class="n">get_json_url</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span><span class="s1">&#39;ads&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;https://news-navigator.labs.loc.gov/prepackaged/1950_ads.json&#39;</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">(</span>
+    <span class="n">get_json_url</span><span class="p">(</span><span class="mi">1860</span><span class="p">)</span>
+    <span class="o">==</span> <span class="s2">&quot;https://news-navigator.labs.loc.gov/prepackaged/1860_photos.json&quot;</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="n">get_json_url</span><span class="p">(</span><span class="mi">1950</span><span class="p">)</span>
+    <span class="o">==</span> <span class="s2">&quot;https://news-navigator.labs.loc.gov/prepackaged/1950_photos.json&quot;</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="n">get_json_url</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="s2">&quot;ads&quot;</span><span class="p">)</span>
+    <span class="o">==</span> <span class="s2">&quot;https://news-navigator.labs.loc.gov/prepackaged/1950_ads.json&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -119,7 +128,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_json" class="doc_header"><code>load_json</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_json</code>(<strong><code>url</code></strong>)</p>
+<h4 id="load_json" class="doc_header"><code>load_json</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L59" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_json</code>(<strong><code>url</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Returns json loaded from <code>url</code></p>
 
@@ -154,7 +163,9 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_json</span> <span class="o">=</span> <span class="n">load_json</span><span class="p">(</span><span class="s1">&#39;https://news-navigator.labs.loc.gov/prepackaged/1950_photos.json&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_json</span> <span class="o">=</span> <span class="n">load_json</span><span class="p">(</span>
+    <span class="s2">&quot;https://news-navigator.labs.loc.gov/prepackaged/1950_photos.json&quot;</span>
+<span class="p">)</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">test_json</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">dict</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">test_json</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span>
 </pre></div>
@@ -199,7 +210,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">get_json_url</span><span class="p">(</span><span class="mi">1850</span><span class="p">,</span> <span class="s1">&#39;ads&#39;</span><span class="p">),</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">get_json_url</span><span class="p">(</span><span class="mi">1850</span><span class="p">,</span> <span class="s2">&quot;ads&quot;</span><span class="p">),</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -324,7 +335,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="s1">&#39;three&#39;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;three&quot;</span><span class="p">}</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
@@ -376,7 +387,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="count_json_iter" class="doc_header"><code>count_json_iter</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>count_json_iter</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="count_json_iter" class="doc_header"><code>count_json_iter</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>count_json_iter</code>(<strong><code>url</code></strong>:<code>str</code>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Returns count of objects in url json file using an iterator to avoid loading json into memory</p>
 
@@ -411,7 +422,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count_json_iter</span><span class="p">(</span><span class="s1">&#39;https://news-navigator.labs.loc.gov/prepackaged/1850_photos.json&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count_json_iter</span><span class="p">(</span><span class="s2">&quot;https://news-navigator.labs.loc.gov/prepackaged/1850_photos.json&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -444,7 +455,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://news-navigator.labs.loc.gov/prepackaged/1850_photos.json&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://news-navigator.labs.loc.gov/prepackaged/1850_photos.json&quot;</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">count_json_iter</span><span class="p">(</span><span class="n">url</span><span class="p">))</span> <span class="o">==</span> <span class="nb">int</span>
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span> <span class="o">==</span> <span class="n">count_json_iter</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
@@ -467,7 +478,7 @@ nb_path: "nbs/01_sample.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_year_size" class="doc_header"><code>get_year_size</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_size</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>int</code>, <code>str</code>], <strong><code>kind</code></strong>:<code>str</code>)</p>
+<h4 id="get_year_size" class="doc_header"><code>get_year_size</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_size</code>(<strong><code>year</code></strong>:<code>Union</code>[<code>int</code>, <code>str</code>], <strong><code>kind</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>returns size of a json dataset for a given year and kind
 results are cached</p>
@@ -502,7 +513,7 @@ kind : str
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_year_size</span><span class="p">(</span><span class="mi">1850</span><span class="p">,</span> <span class="s1">&#39;photos&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_year_size</span><span class="p">(</span><span class="mi">1850</span><span class="p">,</span> <span class="s2">&quot;photos&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -539,7 +550,7 @@ kind : str
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_year_sizes" class="doc_header"><code>get_year_sizes</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_sizes</code>(<strong><code>kind</code></strong>, <strong><code>start</code></strong>=<em><code>1850</code></em>, <strong><code>end</code></strong>=<em><code>1950</code></em>, <strong><code>step</code></strong>=<em><code>5</code></em>)</p>
+<h4 id="get_year_sizes" class="doc_header"><code>get_year_sizes</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_year_sizes</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>start</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>5</code></em>)</p>
 </blockquote>
 <p>Returns the sizes for json data files for <code>kind</code> between year <code>start</code> and <code>end</code>
 with step size 'step'</p>
@@ -581,7 +592,7 @@ Pandas.DataFrame: holding data from input json url</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="n">get_year_sizes</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span><span class="mi">1850</span><span class="p">,</span> <span class="mi">1855</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">get_year_sizes</span><span class="p">(</span><span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="mi">1850</span><span class="p">,</span> <span class="mi">1855</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -670,8 +681,8 @@ Wall time: 1.2 s
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">get_year_sizes</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span><span class="mi">1850</span><span class="p">,</span> <span class="mi">1860</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">11</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">get_year_sizes</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span><span class="mi">1850</span><span class="p">,</span><span class="mi">1860</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">6</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">get_year_sizes</span><span class="p">(</span><span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="mi">1850</span><span class="p">,</span> <span class="mi">1860</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">11</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">get_year_sizes</span><span class="p">(</span><span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="mi">1850</span><span class="p">,</span> <span class="mi">1860</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">6</span>
 </pre></div>
 
     </div>
@@ -692,7 +703,7 @@ Wall time: 1.2 s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_all_year_sizes" class="doc_header"><code>get_all_year_sizes</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L134" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_year_sizes</code>(<strong><code>start</code></strong>=<em><code>1850</code></em>, <strong><code>end</code></strong>=<em><code>1950</code></em>, <strong><code>step</code></strong>=<em><code>1</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="get_all_year_sizes" class="doc_header"><code>get_all_year_sizes</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_year_sizes</code>(<strong><code>start</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Returns a dataframe with number of counts from year <code>start</code> to <code>end</code></p>
 
@@ -734,7 +745,8 @@ Wall time: 1.2 s
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">books</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;War and Peace&#39;</span><span class="p">,</span> <span class="s1">&#39;Frankenstein&#39;</span><span class="p">,</span> <span class="s1">&#39;If They Come in the Morning&#39;</span><span class="p">]</span>
+
+<span class="n">books</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;War and Peace&quot;</span><span class="p">,</span> <span class="s2">&quot;Frankenstein&quot;</span><span class="p">,</span> <span class="s2">&quot;If They Come in the Morning&quot;</span><span class="p">]</span>
 <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -781,7 +793,7 @@ Wall time: 1.2 s
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sample_stream" class="doc_header"><code>sample_stream</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_stream</code>(<strong><code>stream</code></strong>, <strong><code>k</code></strong>:<code>int</code>)</p>
+<h4 id="sample_stream" class="doc_header"><code>sample_stream</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_stream</code>(<strong><code>stream</code></strong>, <strong><code>k</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>Return a random sample of k elements drawn without replacement from stream.
 Designed to be used when the elements of stream cannot easily fit into memory.</p>
@@ -817,7 +829,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_stream</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100000</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_stream</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -857,7 +869,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Karl Marx&#39;</span><span class="p">,</span> <span class="s1">&#39;Rosa Luxenburg&#39;</span><span class="p">,</span> <span class="s1">&#39;Raya Dunayevskaya&#39;</span><span class="p">,</span> <span class="s1">&#39;CLR James&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Karl Marx&quot;</span><span class="p">,</span> <span class="s2">&quot;Rosa Luxenburg&quot;</span><span class="p">,</span> <span class="s2">&quot;Raya Dunayevskaya&quot;</span><span class="p">,</span> <span class="s2">&quot;CLR James&quot;</span><span class="p">]</span>
 <span class="n">sample_stream</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -895,7 +907,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_frac_size" class="doc_header"><code>calc_frac_size</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_frac_size</code>(<strong><code>url</code></strong>, <strong><code>frac</code></strong>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="calc_frac_size" class="doc_header"><code>calc_frac_size</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L171" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_frac_size</code>(<strong><code>url</code></strong>, <strong><code>frac</code></strong>, <strong><code>session</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>returns fraction size from a json stream</p>
 
@@ -927,7 +939,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="calc_year_from_total" class="doc_header"><code>calc_year_from_total</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_year_from_total</code>(<strong><code>total</code></strong>, <strong><code>start</code></strong>, <strong><code>end</code></strong>, <strong><code>step</code></strong>)</p>
+<h4 id="calc_year_from_total" class="doc_header"><code>calc_year_from_total</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L177" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>calc_year_from_total</code>(<strong><code>total</code></strong>, <strong><code>start</code></strong>, <strong><code>end</code></strong>, <strong><code>step</code></strong>)</p>
 </blockquote>
 <p>Calculate size of a year sample based on a total sample size</p>
 
@@ -999,7 +1011,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="reduce_df_memory" class="doc_header"><code>reduce_df_memory</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L175" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reduce_df_memory</code>(<strong><code>df</code></strong>)</p>
+<h4 id="reduce_df_memory" class="doc_header"><code>reduce_df_memory</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L182" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>reduce_df_memory</code>(<strong><code>df</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1044,7 +1056,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="nnSampler" class="doc_header"><code>class</code> <code>nnSampler</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L190" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnSampler</code>()</p>
+<h2 id="nnSampler" class="doc_header"><code>class</code> <code>nnSampler</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L199" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnSampler</code>()</p>
 </blockquote>
 <p>Sampler for creating samples from Newspaper Navigator data</p>
 
@@ -1076,7 +1088,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="sample_year" class="doc_header"><code>sample_year</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L198" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_year</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>year</code></strong>:<code>int</code>)</p>
+<h4 id="sample_year" class="doc_header"><code>sample_year</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L210" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sample_year</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>year</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>samples <code>sample_size</code> for <code>year</code> and <code>kind</code></p>
 
@@ -1097,8 +1109,10 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_year</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1850</span><span class="p">)</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_year</span><span class="p">(</span><span class="s1">&#39;maps&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1850</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1"># test we always have a sample size of at least one </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_year</span><span class="p">(</span><span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1850</span><span class="p">)</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">sample_year</span><span class="p">(</span><span class="s2">&quot;maps&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1850</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="p">)</span>  <span class="c1"># test we always have a sample size of at least one</span>
 </pre></div>
 
     </div>
@@ -1148,7 +1162,7 @@ Designed to be used when the elements of stream cannot easily fit into memory.</
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnSampler.create_sample" class="doc_header"><code>nnSampler.create_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L221" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnSampler.create_sample</code>(<strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>5</code></em>, <strong><code>year_sample</code></strong>=<em><code>True</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>reduce_memory</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="nnSampler.create_sample" class="doc_header"><code>nnSampler.create_sample</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L233" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnSampler.create_sample</code>(<strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>kind</code></strong>:<code>str</code>=<em><code>'photos'</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>5</code></em>, <strong><code>year_sample</code></strong>=<em><code>True</code></em>, <strong><code>save</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>reduce_memory</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Creates a sample of Newspaper Navigator data for a given set of years and a kind</p>
 <p>Parameters:
@@ -1184,8 +1198,8 @@ Pandas.DataFrame: holding data from input json url</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">=</span> <span class="n">nnSampler</span><span class="p">()</span>
-<span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">end_year</span><span class="o">=</span><span class="mi">1852</span><span class="p">,</span> <span class="n">year_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nnSampler</span><span class="p">()</span>
+<span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1852</span><span class="p">,</span> <span class="n">year_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1402,7 +1416,7 @@ Pandas.DataFrame: holding data from input json url</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnSampler.download_sample" class="doc_header"><code>nnSampler.download_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/sample.py#L273" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnSampler.download_sample</code>(<strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>json_name</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>df</code></strong>:<code>Optional</code>[<code>DataFrame</code>]=<em><code>None</code></em>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pct</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>Optional</code>[<code>tuple</code>]=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="nnSampler.download_sample" class="doc_header"><code>nnSampler.download_sample</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/sample.py#L287" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnSampler.download_sample</code>(<strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>json_name</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>df</code></strong>:<code>Optional</code>[<code>DataFrame</code>]=<em><code>None</code></em>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pct</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>Optional</code>[<code>tuple</code>]=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>Download images associated with a sample
 The majority of paramters relate to the options available in a IIIF image request
@@ -1681,7 +1695,9 @@ preserve_asp_ratio
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span><span class="n">end_year</span><span class="o">=</span><span class="mi">1855</span><span class="p">,</span><span class="n">reduce_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span>
+    <span class="n">sample_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1855</span><span class="p">,</span> <span class="n">reduce_memory</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
@@ -1849,8 +1865,10 @@ preserve_asp_ratio
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;ads&#39;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span><span class="n">end_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span><span class="n">reduce_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sampler</span><span class="o">.</span><span class="n">download_sample</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span>
+    <span class="n">sample_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;ads&quot;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">reduce_memory</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">sampler</span><span class="o">.</span><span class="n">download_sample</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1868,6 +1886,7 @@ preserve_asp_ratio
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
+
 <span class="n">notebook2script</span><span class="p">()</span>
 </pre></div>
 

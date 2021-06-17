@@ -97,8 +97,15 @@ This model is just intended to help develop the inference functionality so we wo
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="s1">&#39;../ph/ads/&#39;</span><span class="p">,</span> <span class="s1">&#39;ads_upsampled.csv&#39;</span><span class="p">,</span><span class="n">folder</span><span class="o">=</span><span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="n">fn_col</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="n">label_col</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span>
-                                <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Squish</span><span class="p">),</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span>
+    <span class="s2">&quot;../ph/ads/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ads_upsampled.csv&quot;</span><span class="p">,</span>
+    <span class="n">folder</span><span class="o">=</span><span class="s2">&quot;images&quot;</span><span class="p">,</span>
+    <span class="n">fn_col</span><span class="o">=</span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
+    <span class="n">label_col</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
+    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Squish</span><span class="p">),</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -310,7 +317,7 @@ This model is just intended to help develop the inference functionality so we wo
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">L</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">L</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -350,13 +357,16 @@ This model is just intended to help develop the inference functionality so we wo
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_files</span> <span class="o">=</span> <span class="p">(</span><span class="n">get_image_files</span><span class="p">(</span><span class="s1">&#39;../ph/ads/images&#39;</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span> 
-<span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">PILImage</span><span class="o">.</span><span class="n">create</span><span class="p">,</span><span class="n">im_files</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_files</span> <span class="o">=</span> <span class="p">(</span><span class="n">get_image_files</span><span class="p">(</span><span class="s2">&quot;../ph/ads/images&quot;</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">PILImage</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">im_files</span><span class="p">))</span>
 <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">results</span>
-<span class="n">image_batch</span><span class="p">,</span><span class="n">none_image_index</span> <span class="o">=</span><span class="n">_filter_replace_none_image</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">image_batch</span><span class="p">,</span> <span class="n">none_image_index</span> <span class="o">=</span> <span class="n">_filter_replace_none_image</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_batch</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">none_image_index</span><span class="o">.</span><span class="n">items</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># check indexes are at the start and end of list</span>
+<span class="k">assert</span> <span class="n">none_image_index</span><span class="o">.</span><span class="n">items</span> <span class="o">==</span> <span class="p">[</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="mi">9</span><span class="p">,</span>
+<span class="p">]</span>  <span class="c1"># check indexes are at the start and end of list</span>
 </pre></div>
 
     </div>
@@ -410,7 +420,7 @@ This model is just intended to help develop the inference functionality so we wo
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="nnPredict" class="doc_header"><code>class</code> <code>nnPredict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L94" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnPredict</code>(<strong><code>learner</code></strong>:<code>fastai.learner</code>, <strong><code>try_gpu</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h2 id="nnPredict" class="doc_header"><code>class</code> <code>nnPredict</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/inference.py#L99" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnPredict</code>(<strong><code>learner</code></strong>:<code>fastai.learner</code>, <strong><code>try_gpu</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p><a href="/nnanno/inference.html#nnPredict"><code>nnPredict</code></a> is used in combination with a trained leaner to run inference on Newspaper Navigator</p>
 
@@ -433,8 +443,12 @@ This model is just intended to help develop the inference functionality so we wo
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">nnPredict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;`nnPredict` is used in combination with a trained leaner to run inference on Newspaper Navigator&quot;&quot;&quot;</span>
-    <span class="n">population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_stream</span><span class="p">(</span><span class="s1">&#39;nnanno&#39;</span><span class="p">,</span> <span class="s1">&#39;data/all_year_counts.csv&#39;</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">learner</span><span class="p">:</span><span class="n">fastai</span><span class="o">.</span><span class="n">learner</span><span class="p">,</span> <span class="n">try_gpu</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+    <span class="n">population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_stream</span><span class="p">(</span><span class="s2">&quot;nnanno&quot;</span><span class="p">,</span> <span class="s2">&quot;data/all_year_counts.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">learner</span><span class="p">:</span> <span class="n">fastai</span><span class="o">.</span><span class="n">learner</span><span class="p">,</span> <span class="n">try_gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates an ``nnPredict` instance from `learner`, puts on GPU if `try_gpu` is true and CUDA is avilable&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">learner</span> <span class="o">=</span> <span class="n">learner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">try_gpu</span> <span class="o">=</span> <span class="n">try_gpu</span>
@@ -442,8 +456,7 @@ This model is just intended to help develop the inference functionality so we wo
         <span class="bp">self</span><span class="o">.</span><span class="n">decode_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">learner</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">)}</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
-               <span class="sa">f</span><span class="s1">&#39;learner vocab:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">learner</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="sa">f</span><span class="s2">&quot;learner vocab:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">learner</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 
     </div>
@@ -514,7 +527,7 @@ This model is just intended to help develop the inference functionality so we wo
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict_from_sample_df" class="doc_header"><code>nnPredict.predict_from_sample_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L121" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_from_sample_df</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>disable_pbar</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="nnPredict.predict_from_sample_df" class="doc_header"><code>nnPredict.predict_from_sample_df</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/inference.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_from_sample_df</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>disable_pbar</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Runs inference on <code>sample_df</code> using batch size <code>bs</code>, <code>disable_pbar</code> controls whether to show progress bar
 Returns a Pandas DataFrame containing orginal dataframe and predictions, with labels taken from <code>learner.dls.vocab</code></p>
@@ -576,7 +589,7 @@ Returns a Pandas DataFrame containing orginal dataframe and predictions, with la
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict_sample" class="doc_header"><code>nnPredict.predict_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L176" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_sample</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>year_sample</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>, <strong><code>force_dir</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="nnPredict.predict_sample" class="doc_header"><code>nnPredict.predict_sample</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/inference.py#L191" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict_sample</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>sample_size</code></strong>:<code>Union</code>[<code>int</code>, <code>float</code>], <strong><code>bs</code></strong>:<code>int</code>=<em><code>16</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>year_sample</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>, <strong><code>force_dir</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>runs inference for a sample <code>sample_size</code> of <code>kind</code> from newspaper navigator using batch size <code>bs</code></p>
 
@@ -670,7 +683,16 @@ learner vocab:[&#39;illustrations&#39;, &#39;text-only&#39;]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred</span><span class="o">.</span><span class="n">predict_sample</span><span class="p">(</span><span class="s1">&#39;ads&#39;</span><span class="p">,</span><span class="s1">&#39;test/&#39;</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1852</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">force_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred</span><span class="o">.</span><span class="n">predict_sample</span><span class="p">(</span>
+    <span class="s2">&quot;ads&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;test/&quot;</span><span class="p">,</span>
+    <span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">start_year</span><span class="o">=</span><span class="mi">1850</span><span class="p">,</span>
+    <span class="n">end_year</span><span class="o">=</span><span class="mi">1852</span><span class="p">,</span>
+    <span class="n">bs</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">force_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -694,7 +716,7 @@ learner vocab:[&#39;illustrations&#39;, &#39;text-only&#39;]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s1">&#39;*json&#39;</span><span class="p">))])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*json&quot;</span><span class="p">))])</span>
 </pre></div>
 
     </div>
@@ -762,7 +784,7 @@ learner vocab:[&#39;illustrations&#39;, &#39;text-only&#39;]</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pred_decoded&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred_decoded&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -804,7 +826,7 @@ Name: pred_decoded, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;text-only_prob&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;text-only_prob&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -895,7 +917,7 @@ Name: text-only_prob, dtype: float64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnPredict.predict" class="doc_header"><code>nnPredict.predict</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/inference.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>32</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnPredict.predict" class="doc_header"><code>nnPredict.predict</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/inference.py#L230" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnPredict.predict</code>(<strong><code>kind</code></strong>:<code>str</code>, <strong><code>out_dir</code></strong>:<code>str</code>, <strong><code>bs</code></strong>:<code>int</code>=<em><code>32</code></em>, <strong><code>start_year</code></strong>:<code>int</code>=<em><code>1850</code></em>, <strong><code>end_year</code></strong>:<code>int</code>=<em><code>1950</code></em>, <strong><code>step</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>size</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>predict on the full dataset for a given <code>kind</code> from <code>start_year</code> until <code>end_year</code> using <code>step</code> size</p>
 
@@ -917,6 +939,7 @@ Name: text-only_prob, dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
+
 <span class="n">notebook2script</span><span class="p">()</span>
 </pre></div>
 

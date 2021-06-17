@@ -119,7 +119,9 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1910</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1920</span><span class="p">,</span> <span class="n">year_sample</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">create_sample</span><span class="p">(</span>
+    <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;photos&quot;</span><span class="p">,</span> <span class="n">start_year</span><span class="o">=</span><span class="mi">1910</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">1920</span><span class="p">,</span> <span class="n">year_sample</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -169,7 +171,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_label_studio_json" class="doc_header"><code>create_label_studio_json</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_label_studio_json</code>(<strong><code>sample</code></strong>:<code>Union</code>[<code>DataFrame</code>, <code>Type</code>[<a href="/nnanno/sample.html#nnSampler"><code>nnSampler</code></a>]], <strong><code>fname</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pct</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>Optional</code>[<code>tuple</code>]=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
+<h4 id="create_label_studio_json" class="doc_header"><code>create_label_studio_json</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_label_studio_json</code>(<strong><code>sample</code></strong>:<code>Union</code>[<code>DataFrame</code>, <code>Type</code>[<a href="/nnanno/sample.html#nnSampler"><code>nnSampler</code></a>]], <strong><code>fname</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>, <code>NoneType</code>]=<em><code>None</code></em>, <strong><code>original</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pct</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>size</code></strong>:<code>Optional</code>[<code>tuple</code>]=<em><code>None</code></em>, <strong><code>preserve_asp_ratio</code></strong>:<code>bool</code>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>create a json file which can be used to upload tasks to label studio</p>
 
@@ -204,7 +206,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_label_studio_json</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;tasks.json&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_label_studio_json</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;tasks.json&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -317,7 +319,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="process_labels" class="doc_header"><code>process_labels</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process_labels</code>(<strong><code>x</code></strong>)</p>
+<h4 id="process_labels" class="doc_header"><code>process_labels</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process_labels</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -348,7 +350,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_annotations_csv" class="doc_header"><code>load_annotations_csv</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_annotations_csv</code>(<strong><code>csv</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>], <strong><code>kind</code></strong>=<em><code>'classification'</code></em>)</p>
+<h4 id="load_annotations_csv" class="doc_header"><code>load_annotations_csv</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_annotations_csv</code>(<strong><code>csv</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>], <strong><code>kind</code></strong>=<em><code>'classification'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -368,14 +370,14 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_annotations_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;classification&#39;</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;classification&#39;</span><span class="p">:</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;box&#39;</span><span class="p">:</span><span class="nb">eval</span><span class="p">})</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_annotations_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;classification&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;classification&quot;</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="nb">eval</span><span class="p">})</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">df</span>
-    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;box&#39;</span><span class="p">:</span><span class="nb">eval</span><span class="p">})</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">process_labels</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="nb">eval</span><span class="p">})</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">process_labels</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">df</span>
 </pre></div>
 
@@ -401,7 +403,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotation_df</span> <span class="o">=</span> <span class="n">load_annotations_csv</span><span class="p">(</span><span class="s1">&#39;test_iiif_anno/label_studio_export.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotation_df</span> <span class="o">=</span> <span class="n">load_annotations_csv</span><span class="p">(</span><span class="s2">&quot;test_iiif_anno/label_studio_export.csv&quot;</span><span class="p">)</span>
 <span class="n">annotation_df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 
@@ -446,7 +448,7 @@ nb_path: "nbs/02_annotate.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotation_df</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotation_df</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -489,7 +491,9 @@ Name: choice, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">download_sample</span><span class="p">(</span><span class="s1">&#39;test_iiif_anno/test_dl&#39;</span><span class="p">,</span><span class="n">df</span><span class="o">=</span><span class="n">annotation_df</span><span class="p">,</span> <span class="n">original</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">json_name</span><span class="o">=</span><span class="s1">&#39;test_dl&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sampler</span><span class="o">.</span><span class="n">download_sample</span><span class="p">(</span>
+    <span class="s2">&quot;test_iiif_anno/test_dl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">annotation_df</span><span class="p">,</span> <span class="n">original</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">json_name</span><span class="o">=</span><span class="s2">&quot;test_dl&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -539,7 +543,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="check_download_df_match" class="doc_header"><code>check_download_df_match</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>check_download_df_match</code>(<strong><code>dl_folder</code></strong>:<code>Union</code>[<code>Path</code>, <code>str</code>], <strong><code>df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="check_download_df_match" class="doc_header"><code>check_download_df_match</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>check_download_df_match</code>(<strong><code>dl_folder</code></strong>:<code>Union</code>[<code>Path</code>, <code>str</code>], <strong><code>df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 
 </div>
@@ -573,7 +577,7 @@ Name: choice, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_download_df_match</span><span class="p">(</span><span class="s1">&#39;test_iiif_anno/test_dl&#39;</span><span class="p">,</span> <span class="n">annotation_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_download_df_match</span><span class="p">(</span><span class="s2">&quot;test_iiif_anno/test_dl&quot;</span><span class="p">,</span> <span class="n">annotation_df</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -634,7 +638,7 @@ Name: choice, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;test_iiif_anno/test_dl/test_dl.json&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;test_iiif_anno/test_dl/test_dl.json&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -651,10 +655,14 @@ Name: choice, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;test_iiif_anno/test_dl&#39;</span><span class="p">,</span> 
-                               <span class="n">fn_col</span><span class="o">=</span><span class="s1">&#39;download_image_path&#39;</span><span class="p">,</span> 
-                               <span class="n">label_col</span><span class="o">=</span><span class="s1">&#39;choice&#39;</span><span class="p">,</span>
-                               <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">bs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="s2">&quot;test_iiif_anno/test_dl&quot;</span><span class="p">,</span>
+    <span class="n">fn_col</span><span class="o">=</span><span class="s2">&quot;download_image_path&quot;</span><span class="p">,</span>
+    <span class="n">label_col</span><span class="o">=</span><span class="s2">&quot;choice&quot;</span><span class="p">,</span>
+    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span>
+    <span class="n">bs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -717,7 +725,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_df" class="doc_header"><code>load_df</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_df</code>(<strong><code>json_file</code></strong>)</p>
+<h4 id="load_df" class="doc_header"><code>load_df</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_df</code>(<strong><code>json_file</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 
 </div>
@@ -748,7 +756,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_completions" class="doc_header"><code>load_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L97" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_completions</code>(<strong><code>path</code></strong>)</p>
+<h4 id="load_completions" class="doc_header"><code>load_completions</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_completions</code>(<strong><code>path</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
 
 </div>
@@ -775,7 +783,7 @@ Name: choice, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">load_completions</span><span class="p">(</span><span class="s1">&#39;../ph/ads/ad_annotations/&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">load_completions</span><span class="p">(</span><span class="s2">&quot;../ph/ads/ad_annotations/&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -844,8 +852,8 @@ Name: choice, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df = load_completions(&#39;../ph/photos/multi_label/&#39;)</span>
-<span class="c1">#df.head(1)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df = load_completions(&#39;../ph/photos/multi_label/&#39;)</span>
+<span class="c1"># df.head(1)</span>
 </pre></div>
 
     </div>
@@ -866,7 +874,7 @@ Name: choice, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="anno_sample_merge" class="doc_header"><code>anno_sample_merge</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>anno_sample_merge</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>annotation_df</code></strong>:<code>DataFrame</code>)</p>
+<h4 id="anno_sample_merge" class="doc_header"><code>anno_sample_merge</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>anno_sample_merge</code>(<strong><code>sample_df</code></strong>:<code>DataFrame</code>, <strong><code>annotation_df</code></strong>:<code>DataFrame</code>)</p>
 </blockquote>
 <p>anno_sample_merge merges a DataFrame containing a sample
 from Newspaper Navigator and a DataFrame containing annotations</p>
@@ -901,7 +909,7 @@ annotation_df : pd.DataFrame
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../ph/ads/sample.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../ph/ads/sample.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -929,7 +937,7 @@ annotation_df : pd.DataFrame
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="nnAnnotations" class="doc_header"><code>class</code> <code>nnAnnotations</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L148" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnAnnotations</code>(<strong><code>df</code></strong>)</p>
+<h2 id="nnAnnotations" class="doc_header"><code>class</code> <code>nnAnnotations</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L174" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>nnAnnotations</code>(<strong><code>df</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -953,7 +961,7 @@ annotation_df : pd.DataFrame
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -973,7 +981,9 @@ annotation_df : pd.DataFrame
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nnAnnotations</span><span class="o">.</span><span class="n">from_completions</span><span class="p">(</span><span class="s1">&#39;../ph/ads/ad_annotations/&#39;</span><span class="p">,</span> <span class="s1">&#39;classification&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nnAnnotations</span><span class="o">.</span><span class="n">from_completions</span><span class="p">(</span>
+    <span class="s2">&quot;../ph/ads/ad_annotations/&quot;</span><span class="p">,</span> <span class="s2">&quot;classification&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1095,7 +1105,7 @@ Name: result, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.merge_sample" class="doc_header"><code>nnAnnotations.merge_sample</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L178" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.merge_sample</code>(<strong><code>sample_df</code></strong>)</p>
+<h4 id="nnAnnotations.merge_sample" class="doc_header"><code>nnAnnotations.merge_sample</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.merge_sample</code>(<strong><code>sample_df</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1241,7 +1251,7 @@ Name: result, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.export_merged" class="doc_header"><code>nnAnnotations.export_merged</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L181" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.export_merged</code>(<strong><code>out_fn</code></strong>)</p>
+<h4 id="nnAnnotations.export_merged" class="doc_header"><code>nnAnnotations.export_merged</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L210" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.export_merged</code>(<strong><code>out_fn</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1261,7 +1271,7 @@ Name: result, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotations</span><span class="o">.</span><span class="n">export_merged</span><span class="p">(</span><span class="s1">&#39;testmerge.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotations</span><span class="o">.</span><span class="n">export_merged</span><span class="p">(</span><span class="s2">&quot;testmerge.csv&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1282,7 +1292,7 @@ Name: result, dtype: int64</pre>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/davanstrien/nnanno/tree/master/nnanno/annotate.py#L158" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="nnAnnotations.from_completions" class="doc_header"><code>nnAnnotations.from_completions</code><a href="https://github.com/Living-with-machines/nnanno/tree/master/nnanno/annotate.py#L183" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>nnAnnotations.from_completions</code>(<strong><code>path</code></strong>, <strong><code>kind</code></strong>, <strong><code>drop_dupes</code></strong>=<em><code>True</code></em>, <strong><code>sample_df</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -1302,7 +1312,9 @@ Name: result, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nnAnnotations</span><span class="o">.</span><span class="n">from_completions</span><span class="p">(</span><span class="s1">&#39;../ph/ads/ad_annotations/&#39;</span><span class="p">,</span> <span class="s1">&#39;classification&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nnAnnotations</span><span class="o">.</span><span class="n">from_completions</span><span class="p">(</span>
+    <span class="s2">&quot;../ph/ads/ad_annotations/&quot;</span><span class="p">,</span> <span class="s2">&quot;classification&quot;</span>
+<span class="p">)</span>
 <span class="n">annotations</span><span class="o">.</span><span class="n">annotation_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -1380,6 +1392,7 @@ Name: result, dtype: int64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
+
 <span class="n">notebook2script</span><span class="p">()</span>
 </pre></div>
 
