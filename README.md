@@ -46,7 +46,7 @@ Is evaluated as Python code. This also means all of the documentation and exampl
 
 You can install `nnanno` via GitHub:
 
-`pip install` #TODO add github link
+`pip install git+https://github.com/Living-with-machines/nnanno`
 
 This will install all of the code for sampling from Newspaper Navigator data. 
 

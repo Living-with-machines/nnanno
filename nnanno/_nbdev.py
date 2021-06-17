@@ -46,8 +46,8 @@ modules = ["core.py",
            "annotate.py",
            "inference.py"]
 
-doc_url = "https://davanstrien.github.io/nnanno/"
+doc_url = "https://Living-with-machines.github.io/nnanno/"
 
-git_url = "https://github.com/davanstrien/nnanno/tree/master/"
+git_url = "https://github.com/Living-with-machines/nnanno/tree/master/"
 
 def custom_doc_links(name): return None
