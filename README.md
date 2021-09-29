@@ -44,9 +44,9 @@ Is evaluated as Python code. This also means all of the documentation and exampl
 
 ## Install
 
-You can install `nnanno` via GitHub:
+You can install `nnanno` via `PyPI`:
 
-`pip install git+https://github.com/Living-with-machines/nnanno`
+`pip install nnanno`
 
 This will install all of the code for sampling from Newspaper Navigator data. 
 
