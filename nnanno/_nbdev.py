@@ -48,6 +48,6 @@ modules = ["core.py",
 
 doc_url = "https://Living-with-machines.github.io/nnanno/"
 
-git_url = "https://github.com/Living-with-machines/nnanno/tree/master/"
+git_url = "https://github.com/Living-with-machines/nnanno/tree/main/"
 
 def custom_doc_links(name): return None
