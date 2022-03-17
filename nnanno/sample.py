@@ -250,7 +250,12 @@ def create_sample(
         `sample size` can either be a fixed number or a fraction of the total dataset size
     kind (str): kind of image from news-navigator:
     {'ads', 'photos', 'maps', 'illustrations', 'comics', 'cartoons', 'headlines'}
-
+    start_year (int): year to begin sample from
+    end_year (int): year to end sample on
+    step: step size between years being sampled
+    year_sample (bool): whether to sample by year or total dataset size
+    save (bool): whether to save the sample to a `json` file
+    redue_memory (bool): use pandas dtypes to reduce memory foot print of sample DataFrame
 
     Returns:
     Pandas.DataFrame: holding data from input json url
